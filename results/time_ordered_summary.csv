@@ -1,0 +1,7 @@
+label,model,n_test,precision,recall,f1,roc_auc,pr_auc
+label_delay,heuristic,72,0.143,1.0,0.25,,
+label_delay,logreg,72,0.16,0.4,0.229,0.403,0.386
+label_delay,random_forest,72,1.0,0.4,0.571,0.494,0.474
+label_spillover,heuristic,72,0.9,0.969,0.933,,
+label_spillover,logreg,72,0.932,0.846,0.887,0.723,0.963
+label_spillover,random_forest,72,0.912,0.954,0.932,0.747,0.961

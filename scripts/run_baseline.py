@@ -1,0 +1,133 @@
+"""
+Orchestrates the Week 10 working baseline: load data -> build labels and
+features -> train/evaluate heuristic, logistic regression, and random
+forest under both validation schemes from the proposal -> write results.
+
+Usage:
+    python -m scripts.run_baseline
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import pandas as pd
+
+from src.baselines import MODEL_FACTORIES, heuristic_predict
+from src.data.load_koralage import load_dataset
+from src.evaluate import evaluate
+from src.features import ALL_FEATURES, add_features, build_model_frame
+from src.labels import add_labels
+
+RESULTS_DIR = Path(__file__).resolve().parents[1] / "results"
+LABELS = ["label_delay", "label_spillover"]
+TIME_SPLIT_TRAIN_FRACTION = 0.7
+
+
+def time_ordered_split(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Per-project time-ordered split, combined across projects."""
+    train_parts, test_parts = [], []
+    for _, g in frame.groupby("project"):
+        g = g.sort_values("start_date")
+        cut = max(1, int(len(g) * TIME_SPLIT_TRAIN_FRACTION))
+        train_parts.append(g.iloc[:cut])
+        test_parts.append(g.iloc[cut:])
+    return pd.concat(train_parts), pd.concat(test_parts)
+
+
+def run_one(train: pd.DataFrame, test: pd.DataFrame, label_col: str) -> dict:
+    row = {}
+
+    # Heuristic needs no fitting.
+    row["heuristic"] = evaluate(test[label_col], heuristic_predict(test))
+
+    for name, factory in MODEL_FACTORIES.items():
+        model = factory()
+        model.fit(train[ALL_FEATURES], train[label_col])
+        proba = model.predict_proba(test[ALL_FEATURES])[:, 1]
+        pred = (proba >= 0.5).astype(int)
+        row[name] = evaluate(test[label_col], pred, proba)
+
+    return row
+
+
+def main() -> None:
+    sprints, _ = load_dataset()
+    labeled = add_labels(sprints)
+    featured = add_features(labeled)
+
+    print(f"Loaded {len(sprints)} sprints across {sprints['project'].nunique()} projects.")
+    print("Label prevalence (fraction of sprints flagged at-risk):")
+    print(labeled[["label_delay", "label_spillover", "at_risk"]].mean().round(3).to_string())
+
+    all_results = {}
+
+    for label_col in LABELS:
+        frame = build_model_frame(featured, label_col)
+        all_results[label_col] = {}
+
+        # (a) Time-ordered per-project split.
+        train, test = time_ordered_split(frame)
+        all_results[label_col]["time_ordered"] = run_one(train, test, label_col)
+
+        # (b) Leave-one-project-out.
+        lopo = {}
+        for held_out in frame["project"].unique():
+            train = frame[frame["project"] != held_out]
+            test = frame[frame["project"] == held_out]
+            if test[label_col].nunique() < 1 or len(test) == 0:
+                continue
+            lopo[held_out] = run_one(train, test, label_col)
+        all_results[label_col]["leave_one_project_out"] = lopo
+
+    RESULTS_DIR.mkdir(exist_ok=True)
+    out_path = RESULTS_DIR / "baseline_results.json"
+    out_path.write_text(json.dumps(all_results, indent=2, default=float))
+    print(f"\nWrote results to {out_path}")
+
+    # Human-readable summary table for the time-ordered split.
+    print("\n=== Time-ordered split summary ===")
+    rows = []
+    for label_col in LABELS:
+        for model_name, m in all_results[label_col]["time_ordered"].items():
+            rows.append(
+                {
+                    "label": label_col,
+                    "model": model_name,
+                    "n_test": m["n"],
+                    "precision": round(m["precision"], 3),
+                    "recall": round(m["recall"], 3),
+                    "f1": round(m["f1"], 3),
+                    "roc_auc": round(m["roc_auc"], 3) if m["roc_auc"] == m["roc_auc"] else None,
+                    "pr_auc": round(m["pr_auc"], 3) if m["pr_auc"] == m["pr_auc"] else None,
+                }
+            )
+    summary = pd.DataFrame(rows)
+    print(summary.to_string(index=False))
+    summary.to_csv(RESULTS_DIR / "time_ordered_summary.csv", index=False)
+
+    print("\n=== Leave-one-project-out summary (mean over held-out projects) ===")
+    lopo_rows = []
+    for label_col in LABELS:
+        per_project = all_results[label_col]["leave_one_project_out"]
+        for model_name in ["heuristic"] + list(MODEL_FACTORIES.keys()):
+            f1s = [m[model_name]["f1"] for m in per_project.values()]
+            recalls = [m[model_name]["recall"] for m in per_project.values()]
+            precisions = [m[model_name]["precision"] for m in per_project.values()]
+            lopo_rows.append(
+                {
+                    "label": label_col,
+                    "model": model_name,
+                    "n_held_out_projects": len(per_project),
+                    "mean_precision": round(sum(precisions) / len(precisions), 3) if precisions else None,
+                    "mean_recall": round(sum(recalls) / len(recalls), 3) if recalls else None,
+                    "mean_f1": round(sum(f1s) / len(f1s), 3) if f1s else None,
+                }
+            )
+    lopo_summary = pd.DataFrame(lopo_rows)
+    print(lopo_summary.to_string(index=False))
+    lopo_summary.to_csv(RESULTS_DIR / "leave_one_project_out_summary.csv", index=False)
+
+
+if __name__ == "__main__":
+    main()
