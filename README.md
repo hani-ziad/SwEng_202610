@@ -92,6 +92,20 @@ Two things worth flagging honestly rather than glossing over:
 Full per-project (leave-one-project-out) numbers are in
 `results/leave_one_project_out_summary.csv`.
 
+## Originality / contribution: verified leakage case studies
+
+Several published sprint-risk/performance papers (see the proposal's
+related work) report unusually high accuracy. `docs/leakage_case_studies.md`
+verifies two of them against the papers' own text (one uses only
+post-outcome features to classify already-finished sprints; the other
+appears to oversample before splitting train/test) and then reproduces
+both mechanisms on this project's own data, with real before/after
+numbers (`python -m scripts.run_leakage_case_studies`). That comparison —
+not just "our model gets X score" — is this project's specific
+contribution: showing how much of this literature's reported performance
+is consistent with avoidable methodology mistakes, and under what
+conditions the effect is large vs. negligible.
+
 ## Moving to the full-scale dataset (TAWOS)
 
 See `docs/data_access_and_versioning.md` -- short version: download TAWOS
