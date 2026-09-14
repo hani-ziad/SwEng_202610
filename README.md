@@ -9,6 +9,7 @@ Folders:
 - `week-12-method-preliminary-results` - reproducible project used for the final analyses
 - `week-14-full-results-analysis` - full interpretation of the final results
 - `week-16-article-artifact-presentation` - 7-page conference paper and presentation
+-  'originality' - similarity, original, and AI writing reports 
 - `long paper` - extended manuscript with the full methodological audit
 
 For reproduction, start with `REPRODUCE.docx`, then work inside `week-12-method-preliminary-results/sprint-risk-prediction`.
