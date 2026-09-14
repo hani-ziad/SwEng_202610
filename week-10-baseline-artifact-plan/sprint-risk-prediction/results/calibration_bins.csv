@@ -1,0 +1,21 @@
+label,population,model,bin,n,mean_predicted,observed_rate
+label_delay,full,random_forest,"(-0.001, 0.1]",0,,
+label_delay,full,random_forest,"(0.1, 0.2]",0,,
+label_delay,full,random_forest,"(0.2, 0.3]",57,0.2718875650205821,0.05263157894736842
+label_delay,full,random_forest,"(0.3, 0.4]",159,0.3564615163973717,0.18238993710691823
+label_delay,full,random_forest,"(0.4, 0.5]",314,0.45045776911459634,0.23248407643312102
+label_delay,full,random_forest,"(0.5, 0.6]",144,0.5438971445125249,0.625
+label_delay,full,random_forest,"(0.6, 0.7]",61,0.6522172189808892,0.5409836065573771
+label_delay,full,random_forest,"(0.7, 0.8]",46,0.7491789414143837,0.34782608695652173
+label_delay,full,random_forest,"(0.8, 0.9]",5,0.8280471936919301,0.4
+label_delay,full,random_forest,"(0.9, 1.0]",0,,
+label_spillover,nonempty,random_forest,"(-0.001, 0.1]",0,,
+label_spillover,nonempty,random_forest,"(0.1, 0.2]",0,,
+label_spillover,nonempty,random_forest,"(0.2, 0.3]",25,0.2722647510059258,0.6
+label_spillover,nonempty,random_forest,"(0.3, 0.4]",49,0.3504276256188546,0.8979591836734694
+label_spillover,nonempty,random_forest,"(0.4, 0.5]",48,0.45489157614429904,0.875
+label_spillover,nonempty,random_forest,"(0.5, 0.6]",59,0.5492377143895856,0.9322033898305084
+label_spillover,nonempty,random_forest,"(0.6, 0.7]",53,0.6583303131939795,0.9622641509433962
+label_spillover,nonempty,random_forest,"(0.7, 0.8]",81,0.7519078919882688,0.9753086419753086
+label_spillover,nonempty,random_forest,"(0.8, 0.9]",87,0.8478222331563615,1.0
+label_spillover,nonempty,random_forest,"(0.9, 1.0]",109,0.9472417551353007,1.0

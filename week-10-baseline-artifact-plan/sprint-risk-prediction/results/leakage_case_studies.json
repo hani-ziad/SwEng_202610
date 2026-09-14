@@ -1,0 +1,70 @@
+{
+  "label_delay": {
+    "case_study_a_post_outcome_feature": {
+      "leakage_safe (this project's protocol)": {
+        "precision": 0.4,
+        "recall": 0.55,
+        "f1": 0.463,
+        "roc_auc": 0.632,
+        "pr_auc": 0.355
+      },
+      "leaky (+ this sprint's own completion_ratio)": {
+        "precision": 0.397,
+        "recall": 0.584,
+        "f1": 0.473,
+        "roc_auc": 0.638,
+        "pr_auc": 0.359
+      }
+    },
+    "case_study_b_oversample_order": {
+      "correct order (oversample train only, after split)": {
+        "precision": 0.388,
+        "recall": 0.557,
+        "f1": 0.457,
+        "roc_auc": 0.638,
+        "pr_auc": 0.36
+      },
+      "incorrect order (oversample whole pool, then split)": {
+        "precision": 0.65,
+        "recall": 0.642,
+        "f1": 0.646,
+        "roc_auc": 0.688,
+        "pr_auc": 0.68
+      }
+    }
+  },
+  "label_spillover": {
+    "case_study_a_post_outcome_feature": {
+      "leakage_safe (this project's protocol)": {
+        "precision": 0.983,
+        "recall": 0.614,
+        "f1": 0.756,
+        "roc_auc": 0.834,
+        "pr_auc": 0.988
+      },
+      "leaky (+ this sprint's own completion_ratio)": {
+        "precision": 1.0,
+        "recall": 0.981,
+        "f1": 0.991,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0
+      }
+    },
+    "case_study_b_oversample_order": {
+      "correct order (oversample train only, after split)": {
+        "precision": 0.945,
+        "recall": 1.0,
+        "f1": 0.972,
+        "roc_auc": 0.83,
+        "pr_auc": 0.988
+      },
+      "incorrect order (oversample whole pool, then split)": {
+        "precision": 0.945,
+        "recall": 1.0,
+        "f1": 0.972,
+        "roc_auc": 0.829,
+        "pr_auc": 0.987
+      }
+    }
+  }
+}

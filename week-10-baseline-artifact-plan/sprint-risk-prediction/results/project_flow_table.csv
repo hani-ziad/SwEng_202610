@@ -1,0 +1,9 @@
+project,raw_sprints,closed,future,active,invalid_closed_timestamps,eligible_closed,modeled,zero_scope,nonempty,late_positive,spillover_positive
+Apache Mesos,227,225,0,2,0,225,224,91,133,66,128
+Appcelerator Studio,163,163,0,0,0,163,162,33,129,73,121
+Atlassian Confluence Cloud,477,467,7,3,2,465,464,267,197,186,187
+Atlassian Confluence Server,565,558,5,2,0,558,557,268,289,171,255
+Lsstcorp Data management,396,388,3,5,0,388,387,78,309,226,304
+Mule,311,298,13,0,0,298,297,69,228,57,200
+The Titanium SDK,301,300,0,1,0,300,299,58,241,179,228
+Titanium Mobile Platform,217,214,2,1,1,213,212,47,165,48,152

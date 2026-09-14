@@ -1,0 +1,235 @@
+PACKAGE_FILE_LIST.txt
+README.md
+REPRODUCE.docx
+guides/AI-Basics-and-Reproduction-Guide.docx
+guides/Beginner_Learning_Guide.docx
+guides/Full Project Walkthrough.docx
+guides/Getting the TAWOS Dataset.docx
+guides/README.docx
+guides/Rebuild_From_Scratch_Manual.docx
+guides/Understanding the TAWOS Pipeline.docx
+long paper/calibration_reliability.pdf
+long paper/dataflow_timing.pdf
+long paper/lopo_auc_by_project.pdf
+long paper/sprint_risk_paper_long.pdf
+long paper/sprint_risk_paper_long.tex
+week-08-proposal/Proposal.docx
+week-10-baseline-artifact-plan/checkpoint-summary.docx
+week-10-baseline-artifact-plan/sprint-risk-prediction/.gitignore
+week-10-baseline-artifact-plan/sprint-risk-prediction/README.docx
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/1. Issues Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/2. Issue Summary Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/3. Sprint Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues 554.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues summery 568.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Sprints 41.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/1. Issues Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/2. Issue Summary Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/3. Sprint Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Issue Summary 370.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Sprint 96.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/Mesos Stories 176.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/1. Issues Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/2. Issue Summary Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/3. Sprint Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues 1992.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues Summary 2861.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Sprints 67.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/1. Issues Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/2. Issue Summary Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/3. Sprint Terminology
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues 824.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues Summary 929.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Sprints 36.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/tawos/tawos_change_log.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/tawos/tawos_issue.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/tawos/tawos_sprint.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/docs/data_access_and_versioning.docx
+week-10-baseline-artifact-plan/sprint-risk-prediction/docs/leakage_case_studies.docx
+week-10-baseline-artifact-plan/sprint-risk-prediction/docs/test_plan.docx
+week-10-baseline-artifact-plan/sprint-risk-prediction/requirements-lock.txt
+week-10-baseline-artifact-plan/sprint-risk-prediction/requirements.txt
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/ablation_results.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/ablation_summary.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/baseline_results.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/calibration_bins.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/calibration_reliability.pdf
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/cluster_uncertainty.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/commitment_provenance.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/commitment_provenance_by_project.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/commitment_provenance_sensitivity.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/conditional_spillover.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/dataflow_timing.pdf
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/environment_versions.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/error_analysis.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/experiment_log.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/feature_importance.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/invalid_status_sensitivity.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/label_sensitivity.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/leakage_case_studies.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/leave_one_project_out_summary.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/lopo_with_denominators.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/manuscript_number_crosswalk.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/missing_history_sensitivity.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/permutation_importance.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/project_flow_table.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/reconstruction_coverage_by_project.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/rolling_temporal_splits.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/scope_only_baselines.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/time_ordered_summary.csv
+week-10-baseline-artifact-plan/sprint-risk-prediction/results/validation_sensitivity_results.json
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/__init__.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/audit_commitment_provenance.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/backfill_experiment_log.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/export_tawos_subset.sql
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/generate_reproducibility_manifest.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/log_experiment.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/make_calibration_figure.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/make_dataflow_figure.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_ablation.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_baseline.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_baseline_snapshot.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_cluster_bootstrap.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_error_analysis.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_full_reproduction.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_label_sensitivity.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_leakage_case_studies.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_lopo_no_project.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_project_jackknife.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_scope_decomposition.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_statistical_analysis.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_tests.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/scripts/run_validation_sensitivity_analyses.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/__init__.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/baselines.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/data/__init__.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/data/load_koralage.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/data/load_tawos.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/data/planning_snapshot.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/evaluate.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/features.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/labels.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/src/leakage_case_studies.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/__init__.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_features.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_fixed_cold_start.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_labels.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_leakage_case_studies.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_load_koralage.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_no_leakage.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_planning_snapshot.py
+week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_scope_decomposition.py
+week-12-method-preliminary-results/README.docx
+week-12-method-preliminary-results/Week-10-vs-Week-12-Comparison.docx
+week-12-method-preliminary-results/sprint-risk-prediction/.gitignore
+week-12-method-preliminary-results/sprint-risk-prediction/README.docx
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/1. Issues Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/2. Issue Summary Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/3. Sprint Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues 554.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues summery 568.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Sprints 41.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/1. Issues Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/2. Issue Summary Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/3. Sprint Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Issue Summary 370.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Sprint 96.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/Mesos Stories 176.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/1. Issues Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/2. Issue Summary Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/3. Sprint Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues 1992.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues Summary 2861.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Sprints 67.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/1. Issues Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/2. Issue Summary Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/3. Sprint Terminology
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues 824.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues Summary 929.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Sprints 36.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/tawos/tawos_change_log.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/tawos/tawos_issue.csv
+week-12-method-preliminary-results/sprint-risk-prediction/data/raw/tawos/tawos_sprint.csv
+week-12-method-preliminary-results/sprint-risk-prediction/docs/data_access_and_versioning.docx
+week-12-method-preliminary-results/sprint-risk-prediction/docs/leakage_case_studies.docx
+week-12-method-preliminary-results/sprint-risk-prediction/docs/test_plan.docx
+week-12-method-preliminary-results/sprint-risk-prediction/requirements-lock.txt
+week-12-method-preliminary-results/sprint-risk-prediction/requirements.txt
+week-12-method-preliminary-results/sprint-risk-prediction/results/ablation_results.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/ablation_summary.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/baseline_results.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/calibration_bins.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/calibration_reliability.pdf
+week-12-method-preliminary-results/sprint-risk-prediction/results/cluster_uncertainty.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/commitment_provenance.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/commitment_provenance_by_project.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/commitment_provenance_sensitivity.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/conditional_spillover.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/dataflow_timing.pdf
+week-12-method-preliminary-results/sprint-risk-prediction/results/environment_versions.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/error_analysis.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/experiment_log.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/feature_importance.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/invalid_status_sensitivity.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/label_sensitivity.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/leakage_case_studies.json
+week-12-method-preliminary-results/sprint-risk-prediction/results/leave_one_project_out_summary.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/lopo_with_denominators.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/manuscript_number_crosswalk.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/missing_history_sensitivity.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/permutation_importance.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/project_flow_table.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/reconstruction_coverage_by_project.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/rolling_temporal_splits.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/scope_only_baselines.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/time_ordered_summary.csv
+week-12-method-preliminary-results/sprint-risk-prediction/results/validation_sensitivity_results.json
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/audit_commitment_provenance.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/backfill_experiment_log.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/export_tawos_subset.sql
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/generate_reproducibility_manifest.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/log_experiment.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/make_calibration_figure.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/make_dataflow_figure.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_ablation.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_baseline.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_baseline_snapshot.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_cluster_bootstrap.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_error_analysis.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_full_reproduction.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_label_sensitivity.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_leakage_case_studies.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_lopo_no_project.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_project_jackknife.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_scope_decomposition.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_statistical_analysis.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_tests.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_validation_sensitivity_analyses.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/baselines.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/load_koralage.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/load_tawos.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/planning_snapshot.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/evaluate.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/features.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/labels.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/leakage_case_studies.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_features.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_fixed_cold_start.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_labels.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_leakage_case_studies.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_load_koralage.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_no_leakage.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_planning_snapshot.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/test_scope_decomposition.py
+week-14-full-results-analysis/Week_14_Full_Results_Analysis.docx
+week-16-article-artifact-presentation/README.docx
+week-16-article-artifact-presentation/calibration_reliability.pdf
+week-16-article-artifact-presentation/dataflow_timing.pdf
+week-16-article-artifact-presentation/lopo_auc_by_project.pdf
+week-16-article-artifact-presentation/sprint_risk_paper.pdf
+week-16-article-artifact-presentation/sprint_risk_paper.tex
+week-16-article-artifact-presentation/sprint_risk_presentation.pptx

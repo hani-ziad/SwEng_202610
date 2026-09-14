@@ -1,0 +1,17 @@
+timestamp,git_commit,dataset,n_projects,n_sprints,label,validation_scheme,model,n_test_or_held_out,precision,recall,f1,roc_auc,pr_auc,notes
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,time_ordered,heuristic,786,0.328,0.8333,0.4707,,,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,time_ordered,logreg,786,0.4516,0.4553,0.4534,0.6356,0.4014,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,time_ordered,random_forest,786,0.5508,0.5732,0.5618,0.7052,0.4575,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,time_ordered,xgboost,786,0.5546,0.5163,0.5347,0.695,0.4784,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,leave_one_project_out_mean,heuristic,8,0.384,0.8177,0.5119,,,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,leave_one_project_out_mean,logreg,8,0.3986,0.5208,0.4114,0.5127,0.4033,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,leave_one_project_out_mean,random_forest,8,0.555,0.4528,0.4553,0.6156,0.5331,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_delay,leave_one_project_out_mean,xgboost,8,0.5765,0.3579,0.4287,0.6255,0.5454,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,time_ordered,heuristic,786,0.6384,0.8808,0.7403,,,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,time_ordered,logreg,786,0.9807,0.7859,0.8725,0.9831,0.9878,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,time_ordered,random_forest,786,0.9398,1.0,0.969,0.9861,0.9885,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,time_ordered,xgboost,786,0.947,0.9868,0.9665,0.9877,0.9899,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,leave_one_project_out_mean,heuristic,8,0.6937,0.8826,0.7735,,,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,leave_one_project_out_mean,logreg,8,0.9725,0.8144,0.8743,0.9711,0.9774,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,leave_one_project_out_mean,random_forest,8,0.9336,0.9806,0.9552,0.9695,0.9761,python -m scripts.run_baseline
+2026-09-14 05:54 UTC,no-git,tawos,8,2610,label_spillover,leave_one_project_out_mean,xgboost,8,0.9368,0.9918,0.9632,0.9739,0.9812,python -m scripts.run_baseline

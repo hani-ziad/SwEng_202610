@@ -1,0 +1,22 @@
+{
+  "label_delay": {
+    "project": 0.3516274014724293,
+    "sprint_length_days": 0.2028339082956036,
+    "prior_avg_delivered_sp_3": 0.09911664196386062,
+    "prior_sprint_carryover": 0.07903563085765199,
+    "committed_issue_count": 0.07755816528823942,
+    "committed_story_points": 0.07178860884868213,
+    "prior_avg_completion_ratio_3": 0.06792983031067695,
+    "prior_sprint_completion_ratio": 0.05010981296285596
+  },
+  "label_spillover": {
+    "committed_issue_count": 0.5560139543158051,
+    "committed_story_points": 0.25137051507334063,
+    "prior_avg_delivered_sp_3": 0.06506776470383745,
+    "project": 0.039635199197890186,
+    "prior_avg_completion_ratio_3": 0.034921040445373364,
+    "prior_sprint_carryover": 0.022168125053344135,
+    "prior_sprint_completion_ratio": 0.01666872583629744,
+    "sprint_length_days": 0.014154675374111622
+  }
+}

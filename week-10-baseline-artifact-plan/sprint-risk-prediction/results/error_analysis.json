@@ -1,0 +1,313 @@
+{
+  "label_delay": {
+    "n_test": 786,
+    "outcome_counts": {
+      "true_negative": 425,
+      "true_positive": 141,
+      "false_positive": 115,
+      "false_negative": 105
+    },
+    "false_positive_rate_by_project": {
+      "Atlassian Confluence Server": 0.0,
+      "Atlassian Confluence Cloud": 0.007,
+      "Lsstcorp Data management": 0.265,
+      "Mule": 0.0,
+      "The Titanium SDK": 0.667,
+      "Apache Mesos": 0.044,
+      "Titanium Mobile Platform": 0.016,
+      "Appcelerator Studio": 0.388
+    },
+    "false_negative_rate_by_project": {
+      "Atlassian Confluence Server": 0.208,
+      "Atlassian Confluence Cloud": 0.207,
+      "Lsstcorp Data management": 0.103,
+      "Mule": 0.178,
+      "The Titanium SDK": 0.0,
+      "Apache Mesos": 0.059,
+      "Titanium Mobile Platform": 0.109,
+      "Appcelerator Studio": 0.041
+    },
+    "feature_profile_by_outcome": {
+      "false_negative": {
+        "committed_issue_count": 3.91,
+        "committed_story_points": 14.3,
+        "sprint_length_days": 11.72,
+        "prior_avg_completion_ratio_3": 0.5,
+        "prior_sprint_carryover": 2.33
+      },
+      "false_positive": {
+        "committed_issue_count": 15.02,
+        "committed_story_points": 73.73,
+        "sprint_length_days": 16.43,
+        "prior_avg_completion_ratio_3": 0.45,
+        "prior_sprint_carryover": 12.57
+      },
+      "true_negative": {
+        "committed_issue_count": 3.68,
+        "committed_story_points": 14.59,
+        "sprint_length_days": 11.64,
+        "prior_avg_completion_ratio_3": 0.57,
+        "prior_sprint_carryover": 2.2
+      },
+      "true_positive": {
+        "committed_issue_count": 9.7,
+        "committed_story_points": 46.53,
+        "sprint_length_days": 15.44,
+        "prior_avg_completion_ratio_3": 0.56,
+        "prior_sprint_carryover": 7.77
+      }
+    },
+    "false_positive_vs_true_positive_mannwhitneyu": {
+      "committed_issue_count": {
+        "u_stat": 10153.5,
+        "p_value": 0.00034313894801910093
+      },
+      "committed_story_points": {
+        "u_stat": 10036.5,
+        "p_value": 0.0005896581216813907
+      },
+      "sprint_length_days": {
+        "u_stat": 9001.5,
+        "p_value": 0.1294379474286225
+      },
+      "prior_avg_completion_ratio_3": {
+        "u_stat": 6250.5,
+        "p_value": 0.0016159709494936757
+      },
+      "prior_sprint_carryover": {
+        "u_stat": 9765.0,
+        "p_value": 0.003913041911991486
+      }
+    },
+    "most_confident_false_positives": [
+      {
+        "sprint_id": "The Titanium SDK__4687",
+        "project": "The Titanium SDK",
+        "y_proba": 0.854473903126902,
+        "committed_issue_count": 24,
+        "committed_story_points": 100.0,
+        "sprint_length_days": 11.0,
+        "prior_avg_completion_ratio_3": 0.21693121693121709,
+        "prior_sprint_carryover": 19.0
+      },
+      {
+        "sprint_id": "The Titanium SDK__4672",
+        "project": "The Titanium SDK",
+        "y_proba": 0.8230557995156043,
+        "committed_issue_count": 0,
+        "committed_story_points": 0.0,
+        "sprint_length_days": 10.999456018518519,
+        "prior_avg_completion_ratio_3": 0.4385964912280704,
+        "prior_sprint_carryover": 13.0
+      },
+      {
+        "sprint_id": "The Titanium SDK__4674",
+        "project": "The Titanium SDK",
+        "y_proba": 0.8102413726627851,
+        "committed_issue_count": 0,
+        "committed_story_points": 0.0,
+        "sprint_length_days": 10.99988425925926,
+        "prior_avg_completion_ratio_3": 0.0,
+        "prior_sprint_carryover": 17.0
+      },
+      {
+        "sprint_id": "The Titanium SDK__4708",
+        "project": "The Titanium SDK",
+        "y_proba": 0.7960865577403109,
+        "committed_issue_count": 0,
+        "committed_story_points": 0.0,
+        "sprint_length_days": 10.99957175925926,
+        "prior_avg_completion_ratio_3": 0.42096774193548403,
+        "prior_sprint_carryover": 11.0
+      },
+      {
+        "sprint_id": "The Titanium SDK__4711",
+        "project": "The Titanium SDK",
+        "y_proba": 0.7958554266204931,
+        "committed_issue_count": 30,
+        "committed_story_points": 255.0,
+        "sprint_length_days": 12.0,
+        "prior_avg_completion_ratio_3": 0.12419871794871806,
+        "prior_sprint_carryover": 25.0
+      }
+    ],
+    "most_confident_false_negatives": [
+      {
+        "sprint_id": "Titanium Mobile Platform__881",
+        "project": "Titanium Mobile Platform",
+        "y_proba": 0.25633725313421596,
+        "committed_issue_count": 4,
+        "committed_story_points": 44.0,
+        "sprint_length_days": 6.999699074074074,
+        "prior_avg_completion_ratio_3": 0.1111111111111111,
+        "prior_sprint_carryover": 3.0
+      },
+      {
+        "sprint_id": "Mule__4229",
+        "project": "Mule",
+        "y_proba": 0.27253652241058474,
+        "committed_issue_count": 19,
+        "committed_story_points": 77.0,
+        "sprint_length_days": 13.999606481481482,
+        "prior_avg_completion_ratio_3": 0.6000000000000001,
+        "prior_sprint_carryover": 0.0
+      },
+      {
+        "sprint_id": "Titanium Mobile Platform__915",
+        "project": "Titanium Mobile Platform",
+        "y_proba": 0.2919406365453698,
+        "committed_issue_count": 5,
+        "committed_story_points": 21.0,
+        "sprint_length_days": 6.999317129629629,
+        "prior_avg_completion_ratio_3": 0.20000000000000004,
+        "prior_sprint_carryover": 3.0
+      },
+      {
+        "sprint_id": "Titanium Mobile Platform__918",
+        "project": "Titanium Mobile Platform",
+        "y_proba": 0.3052943876422727,
+        "committed_issue_count": 3,
+        "committed_story_points": 18.0,
+        "sprint_length_days": 6.999826388888889,
+        "prior_avg_completion_ratio_3": 0.4666666666666666,
+        "prior_sprint_carryover": 4.0
+      },
+      {
+        "sprint_id": "Mule__4242",
+        "project": "Mule",
+        "y_proba": 0.31316407424767184,
+        "committed_issue_count": 0,
+        "committed_story_points": 0.0,
+        "sprint_length_days": 13.99931712962963,
+        "prior_avg_completion_ratio_3": 0.38095238095238093,
+        "prior_sprint_carryover": 3.0
+      }
+    ]
+  },
+  "label_spillover": {
+    "n_test": 786,
+    "outcome_counts": {
+      "true_positive": 453,
+      "true_negative": 304,
+      "false_positive": 29
+    },
+    "false_positive_rate_by_project": {
+      "Atlassian Confluence Server": 0.018,
+      "Atlassian Confluence Cloud": 0.029,
+      "Lsstcorp Data management": 0.026,
+      "Mule": 0.1,
+      "The Titanium SDK": 0.044,
+      "Apache Mesos": 0.029,
+      "Titanium Mobile Platform": 0.016,
+      "Appcelerator Studio": 0.061
+    },
+    "false_negative_rate_by_project": {
+      "Atlassian Confluence Server": 0.0,
+      "Atlassian Confluence Cloud": 0.0,
+      "Lsstcorp Data management": 0.0,
+      "Mule": 0.0,
+      "The Titanium SDK": 0.0,
+      "Apache Mesos": 0.0,
+      "Titanium Mobile Platform": 0.0,
+      "Appcelerator Studio": 0.0
+    },
+    "feature_profile_by_outcome": {
+      "false_positive": {
+        "committed_issue_count": 1.48,
+        "committed_story_points": 4.83,
+        "sprint_length_days": 12.07,
+        "prior_avg_completion_ratio_3": 0.61,
+        "prior_sprint_carryover": 3.97
+      },
+      "true_negative": {
+        "committed_issue_count": 0.0,
+        "committed_story_points": 0.0,
+        "sprint_length_days": 13.18,
+        "prior_avg_completion_ratio_3": 0.64,
+        "prior_sprint_carryover": 2.93
+      },
+      "true_positive": {
+        "committed_issue_count": 11.09,
+        "committed_story_points": 49.89,
+        "sprint_length_days": 12.99,
+        "prior_avg_completion_ratio_3": 0.47,
+        "prior_sprint_carryover": 5.99
+      }
+    },
+    "false_positive_vs_true_positive_mannwhitneyu": {
+      "committed_issue_count": {
+        "u_stat": 1600.5,
+        "p_value": 6.7360661093114774e-12
+      },
+      "committed_story_points": {
+        "u_stat": 2981.0,
+        "p_value": 7.571808207923816e-07
+      },
+      "sprint_length_days": {
+        "u_stat": 6255.0,
+        "p_value": 0.6668679393016903
+      },
+      "prior_avg_completion_ratio_3": {
+        "u_stat": 8609.0,
+        "p_value": 0.005016069681409009
+      },
+      "prior_sprint_carryover": {
+        "u_stat": 4978.0,
+        "p_value": 0.025681408717331378
+      }
+    },
+    "most_confident_false_positives": [
+      {
+        "sprint_id": "Titanium Mobile Platform__888",
+        "project": "Titanium Mobile Platform",
+        "y_proba": 0.8393764884735754,
+        "committed_issue_count": 3,
+        "committed_story_points": 16.0,
+        "sprint_length_days": 6.999479166666666,
+        "prior_avg_completion_ratio_3": 0.5,
+        "prior_sprint_carryover": 2.0
+      },
+      {
+        "sprint_id": "The Titanium SDK__4706",
+        "project": "The Titanium SDK",
+        "y_proba": 0.8353902338845038,
+        "committed_issue_count": 2,
+        "committed_story_points": 10.0,
+        "sprint_length_days": 12.99994212962963,
+        "prior_avg_completion_ratio_3": 0.5327160493827162,
+        "prior_sprint_carryover": 23.0
+      },
+      {
+        "sprint_id": "Lsstcorp Data management__2976",
+        "project": "Lsstcorp Data management",
+        "y_proba": 0.8342201981951731,
+        "committed_issue_count": 4,
+        "committed_story_points": 8.0,
+        "sprint_length_days": 11.999594907407408,
+        "prior_avg_completion_ratio_3": 0.6923076923076925,
+        "prior_sprint_carryover": 0.0
+      },
+      {
+        "sprint_id": "Apache Mesos__327",
+        "project": "Apache Mesos",
+        "y_proba": 0.8248019062708232,
+        "committed_issue_count": 3,
+        "committed_story_points": 19.0,
+        "sprint_length_days": 13.999606481481482,
+        "prior_avg_completion_ratio_3": 0.5666666666666667,
+        "prior_sprint_carryover": 0.0
+      },
+      {
+        "sprint_id": "Mule__4201",
+        "project": "Mule",
+        "y_proba": 0.8220538888420164,
+        "committed_issue_count": 4,
+        "committed_story_points": 20.0,
+        "sprint_length_days": 13.99994212962963,
+        "prior_avg_completion_ratio_3": 0.8333333333333335,
+        "prior_sprint_carryover": 0.0
+      }
+    ],
+    "most_confident_false_negatives": []
+  }
+}

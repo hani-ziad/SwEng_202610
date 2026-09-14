@@ -1,0 +1,14 @@
+quantity,value,source_file,notes
+modeled_sprints,2602,project_flow_table.csv,after outcome exclusions and 8 cold starts
+late_closure_rf_auc,0.7051904547,scope_only_baselines.csv,main 70/30 test
+late_closure_rf_f1,0.5617529880,scope_only_baselines.csv,fixed 0.5 threshold
+conditional_spillover_scope_lr_auc,0.8849978538,scope_only_baselines.csv,nonempty main 70/30 test
+conditional_spillover_rf_auc,0.8523393905,scope_only_baselines.csv,nonempty main 70/30 test
+conditional_spillover_test_n,511,scope_only_baselines.csv,nonempty main 70/30 test
+conditional_spillover_test_positives,482,scope_only_baselines.csv,94.3 percent positive
+late_closure_rf_auc_ci,0.6045-0.7826,cluster_uncertainty.csv,project-cluster bootstrap 95 percent interval
+conditional_scope_lr_auc_ci,0.8202-0.9217,cluster_uncertainty.csv,project-cluster bootstrap 95 percent interval
+conditional_rf_auc_ci,0.7972-0.9143,cluster_uncertainty.csv,project-cluster bootstrap 95 percent interval
+strict_sprint_story_test_n,110,commitment_provenance_sensitivity.csv,all committed items have observed Sprint and Story Points history
+strict_sprint_story_scope_lr_auc,0.7716090426,commitment_provenance_sensitivity.csv,strict provenance subset
+strict_sprint_story_rf_auc,0.6522606383,commitment_provenance_sensitivity.csv,strict provenance subset
