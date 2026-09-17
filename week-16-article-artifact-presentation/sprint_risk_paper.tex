@@ -1,16 +1,16 @@
 \documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
 \usepackage[T1]{fontenc}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{url}
-\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{microtype}
+\usepackage{balance}
 \setlist[itemize]{leftmargin=*,nosep}
 \begin{document}
+\pagestyle{empty}
 
 \title{Predicting Late Sprint Closure and Unfinished Committed Scope from Reconstructed Jira Histories}
 
@@ -23,13 +23,14 @@
 \IEEEauthorblockN{Rafat Damseh}
 \IEEEauthorblockA{United Arab Emirates University\\United Arab Emirates\\rdamseh@uaeu.ac.ae}}
 \maketitle
+\thispagestyle{empty}
 
 \begin{abstract}
-Repository data are useful at Sprint Planning only if the features reflect what was known at that time. We examine two repository-derived outcomes in eight TAWOS projects: late sprint closure and unfinished scope that was committed when the sprint began. Sprint membership and story points are reconstructed from Jira change history, with a documented static fallback when no relevant history is recorded. After removing nonclosed and invalid sprint rows and one genuine cold start per project, 2,602 sprints remain. Late closure is only moderately discriminable: random forest reaches 0.705 ROC-AUC on the main time-ordered split, with a project-cluster 95\% interval of 0.604--0.783. For nonempty sprints, a simple scope-only logistic model reaches 0.885 ROC-AUC, compared with 0.852 for random forest. The simpler model therefore captures most of the useful spillover ranking signal. Provenance matters: when the analysis is restricted to the much smaller subset in which every committed item has observed Sprint and Story Points history, the random-forest AUC falls to 0.652 on 110 test sprints. Results are also reported across multiple temporal cut points and held-out projects. The evidence supports cautious retrospective ranking of these two outcomes, not a deployment-ready Scrum decision system.
+Repository data are useful at Sprint Planning only if the features reflect what was known at that time. We examine two repository-derived outcomes in eight TAWOS projects: late sprint closure and unfinished scope that was committed when the sprint began. Sprint membership and story points are reconstructed from Jira change history, with a documented static fallback when no relevant history is recorded. After removing nonclosed and invalid sprint rows and one genuine cold start per project, 2,602 sprints remain. Late closure is only moderately discriminable: random forest reaches 0.705 area under the receiver operating characteristic curve on the main time-ordered split, with a project-cluster 95\% interval of 0.604--0.783. For nonempty sprints, a simple scope-only logistic model reaches 0.885 on this measure, compared with 0.852 for random forest. The simpler model therefore captures most of the useful spillover ranking signal. Provenance matters: when the analysis is restricted to the much smaller subset in which every committed item has observed Sprint and Story Points history, the random-forest area under the receiver operating characteristic curve falls to 0.652 on 110 test sprints. Results are also reported across multiple temporal cut points and held-out projects. The evidence supports cautious retrospective ranking of these two outcomes, not a deployment-ready Scrum decision system.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Scrum, sprint analytics, Jira, temporal provenance, software analytics, machine learning, data leakage
+Scrum, sprint analytics, Jira, machine learning, data leakage
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -48,7 +49,7 @@ The real question is narrower: did we actually have access to these predictors a
 
 Table~\ref{tab:related} compares the studies we selected against our own setup, focusing especially on what's being predicted, when the inputs were captured, and whether evaluation held out whole projects.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Selected related work and the evaluation gap}
 \label{tab:related}
@@ -70,7 +71,7 @@ This work & Closure / unfinished scope & Reconstructed & Yes\\
 \section{Data and Reconstruction}
 We use eight open-source projects from TAWOS~\cite{tawosi2022}, each with at least 30 sprint records. Altogether, the selected projects give us 2,657 sprint rows and 145,309 issues. Table~\ref{tab:flow} shows how those sprint rows get filtered down before modeling. FUTURE and ACTIVE rows are removed before labels are built because their closure outcome is not observed. Three CLOSED rows with impossible timestamps are also removed. Historical features require a predecessor, so the first eligible sprint in each project is the only cold start excluded. After these exclusions, 2,602 sprints remain for modeling.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Sprint flow by project}
 \label{tab:flow}
@@ -93,7 +94,7 @@ Titanium Mobile & 217 & 3 & 1 & 212 & 165\\
 
 TAWOS uses two different sprint identifiers: the database ID and the Jira sprint ID. We build project-level maps for both before tracing issue history. Starting from the latest recorded state, the code walks each issue's changes backward to the sprint-start time. An issue is included in the committed set only if it already existed, belonged to that sprint at that time, and was not resolved before the start. Story Points are reconstructed in the same way. This produces 20,603 issue-sprint commitments across the eligible sprints.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Commitment provenance by project}
 \label{tab:provproj}
@@ -130,7 +131,7 @@ The reconstruction is applied in the same order for every issue. Change events a
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{dataflow_timing.pdf}
+\includegraphics[width=0.93\columnwidth]{dataflow_timing_clean.png}
 \caption{Data timing and reconstruction used before model fitting.}
 \label{fig:dataflow}
 \end{figure}
@@ -152,7 +153,7 @@ where $u_s$ is the number of sprint-start committed issues unresolved by the pla
 Current-sprint predictors are committed issue count, committed story points, and planned sprint length. Historical predictors summarize recent delivered points, recent completion ratio, prior carryover, and the immediately preceding sprint's completion ratio. Project identity is included only in the full models. The scope-only logistic model uses current scope and sprint length, with no project identity or historical variables.
 
 \subsection{Models, thresholds, and validation}
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Predictor groups used in the final analysis}
 \label{tab:features}
@@ -170,7 +171,7 @@ Context & one-hot project identity in full models only\\
 
 We compare prevalence baselines, count-only and scope-only logistic regression, random forest, and XGBoost. Random forest uses 300 trees, maximum depth 5, and minimum leaf size 3. XGBoost uses 300 trees, maximum depth 4, learning rate 0.05, and log-loss optimization. Logistic regression and random forest use balanced class weights; XGBoost is unweighted. Precision, recall, and F1 use a fixed 0.5 threshold chosen before testing. We use ROC-AUC as our main measure of ranking performance. Brier scores and reliability bins are included as descriptive checks, since class weighting changes how the raw probabilities should be read.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Model settings held fixed across the reported runs}
 \label{tab:settings}
@@ -217,7 +218,7 @@ The outcome rates are not similar across the eight projects. Late closure ranges
 \subsection{Cohort characteristics}
 The descriptive numbers already separate the two outcomes. Across the 2,602 modeled sprints, starting scope averages 7.9 issues and 35.0 story points. Late and on-time sprints are fairly close in scope and planned duration. Spillover is different: many negative cases have no reconstructed committed work at all, so the gap between positive and negative sprints is much larger. For that reason, we report a separate analysis that keeps only nonempty sprints.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Planning-time feature means over 2,602 modeled sprints}
 \label{tab:descriptive}
@@ -262,7 +263,7 @@ Spillover, nonempty & Random forest & 511 & 482 & .943 & .875 & .852 & .990 & .1
 \end{tabular}
 \end{table*}
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Project-cluster 95\% intervals on the main split}
 \label{tab:cluster}
@@ -283,7 +284,7 @@ Project-level resampling gives a 95\% AUC interval of 0.604--0.783 for the late-
 
 The forward splits are consistent with that picture. Late-closure random-forest AUC varies from 0.669 at 50/50 to 0.711 at 80/20. For nonempty spillover, random forest stays between 0.846 and 0.856, while scope-only logistic regression ranges from 0.865 to 0.887. The result is therefore not specific to the 70/30 split.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Temporal sensitivity. AUC values on forward test periods.}
 \label{tab:temporal}
@@ -302,7 +303,7 @@ Spillover, RF & .846 & .856 & .852 & .853\\
 \subsection{Results across projects and feature evidence}
 LOPO results vary substantially by project. Late-closure random-forest AUC ranges from 0.531 to 0.780. Conditional-spillover random forest ranges from 0.706 to 0.950. Table~\ref{tab:lopo} includes denominators because project prevalence differs considerably. A model that transfers well to one project may be only modestly useful on another.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{LOPO random-forest AUC with test denominators}
 \label{tab:lopo}
@@ -325,7 +326,7 @@ Titanium Mobile & 212/48 & .531 & 165/152 & .780\\
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{lopo_auc_by_project.pdf}
+\includegraphics[width=0.93\columnwidth]{lopo_auc_by_project.png}
 \caption{Held-out-project AUC by project.}
 \label{fig:lopo}
 \end{figure}
@@ -334,7 +335,7 @@ Held-out permutation importance shows what the random forest is actually relying
 
 A feature-group ablation tells the same story. For late closure, keeping only planning-time variables barely changes performance (0.706 AUC versus 0.705 for the full model), and dropping project identity entirely still gives 0.696. For full-population spillover, random forest stays essentially unchanged at 0.987 AUC, while using historical features alone drops performance to 0.697. In other words, historical features can't rescue the spillover prediction once you already know the initial scope.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Random-forest feature-group ablation, F1 (AUC)}
 \label{tab:abshort}
@@ -356,7 +357,7 @@ Our main reconstruction blends observed change history with a static fallback wh
 
 Table~\ref{tab:prov} narrows the conditional spillover analysis down to subsets with stronger provenance. Requiring observed Sprint history for every committed item cuts the sample to 1,174 modeled sprints (356 in the test set), where scope-only logistic regression still holds at 0.875 AUC and random forest at 0.850. Requiring both Sprint and Story Points history shrinks things further, to just 358 modeled sprints and 110 test sprints. On this stricter subset, scope-only AUC drops to 0.772 and random forest to 0.652. The smaller sample means less stable estimates, but the drop itself is worth taking seriously --- it shows that provenance quality changes how hard the task actually looks.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Conditional-spillover sensitivity to observed history}
 \label{tab:prov}
@@ -376,12 +377,12 @@ Sprint + SP history & RF & 110 & 94 & .876 & .652\\
 \subsection{Calibration and leakage checks}
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{calibration_reliability.pdf}
+\includegraphics[width=0.93\columnwidth]{calibration_reliability.png}
 \caption{Reliability bins for selected random-forest scores.}
 \label{fig:cal}
 \end{figure}
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Selected random-forest reliability bins}
 \label{tab:calbins}
@@ -400,7 +401,7 @@ Spillover & .9--1.0 & 109 & .947 & 1.000\\
 \end{tabular}
 \end{table}
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Leakage demonstrations, F1 before and after the mistake}
 \label{tab:leak}
@@ -424,7 +425,7 @@ Two controlled leakage checks show how easily evaluation choices can distort the
 \subsection{Outcome-definition sensitivity}
 The broad findings are not tied to one exact threshold. For late closure, random-forest AUC is 0.696 with no grace day, 0.705 with the one-day definition, 0.685 with a three-day tolerance, and 0.626 with seven days. In the full spillover population, requiring at least two or three unfinished issues still produces AUCs of 0.984 and 0.980. A story-point completion-ratio label below 0.8 gives 0.977 AUC. These checks do not remove the provenance and prevalence concerns, but they show that the full-population separation is not created by a single arbitrary cutoff.
 
-\begin{table}[t]
+\begin{table}[!htb]
 \centering\scriptsize
 \caption{Selected label-sensitivity results, random forest}
 \label{tab:labelsens}
@@ -446,7 +447,7 @@ SP completion $<$.8 & .467 & .957 & .977\\
 \subsection{Reconstruction audit}
 The exported change log contains 88,364 relevant Sprint and Story Points events. At issue level, history coverage varies substantially: 38.1\% of Titanium Mobile issues have Sprint history, compared with 2.9\% in Confluence Cloud. Commitment-level coverage is higher because committed items are not a random sample of all project issues. Both project coverage and stricter subset results are reported because missing history is not uniform across the data.
 
-Several edge cases are handled explicitly. Multi-valued Sprint fields are treated as sets. An issue can carry a historical sprint identifier that belongs to a sprint outside the retained subset; that identifier is ignored instead of being forced into a selected sprint. Missing story points contribute zero points but do not remove an otherwise valid commitment. Issues resolved before the sprint starts are excluded from planning scope because they cannot represent unresolved work at that time.
+Several edge cases are handled explicitly: multi-valued Sprint fields are treated as sets; a historical sprint identifier belonging to a sprint outside the retained subset is ignored rather than forced into a selected sprint; missing story points contribute zero points without removing an otherwise valid commitment; and issues resolved before the sprint starts are excluded from planning scope, since they cannot represent unresolved work at that time.
 
 \section{Discussion}
 The clearest finding is not that a complex model wins. It is that the two repository outcomes behave differently. Late closure contains a modest signal that depends on project context and sprint length, and that signal transfers unevenly. Unfinished committed scope is easier to rank, but most of that ranking comes from the amount of work present at sprint start, so a transparent scope-only model earns its place as a real baseline here, not just a formality.
@@ -464,32 +465,11 @@ The provenance sensitivity is equally important. Reconstructing timestamped fiel
 
 \textit{External validity.} The projects are open-source Jira projects. Enterprise teams may differ in staffing, backlog practice, and administrative use of sprints. Absolute performance should not be transported without local validation.
 
+\balance
 \section{Reproducibility and Audit Trail}
-The artifact keeps the data preparation and modeling stages separate so that a reader can inspect the reconstruction before looking at model scores. The raw project subset consists of three CSV exports: Sprint, Issue, and the relevant Sprint/Story Points rows from Change\_Log. The reconstruction code writes the planning-time aggregates used by the models, while the analysis scripts save their outputs as CSV or JSON rather than only printing them to the console.
+The artifact separates data preparation from modeling. Three CSV exports (Sprint, Issue, and Sprint/Story Points rows from Change\_Log) feed the reconstruction, and analysis outputs are saved as CSV or JSON. The principal results are regenerated by \texttt{scripts.run\_baseline}, \texttt{scripts.audit\_commitment\_provenance}, and \texttt{scripts.run\_validation\_sensitivity\_analyses}; label-sensitivity and leakage checks remain separate.
 
-The main result tables can be regenerated with three commands. \texttt{python -m scripts.run\_baseline} rebuilds the principal temporal and held-out-project results. \texttt{python -m scripts.audit\_commitment\_provenance} creates the provenance summaries and the stricter-history sensitivity sets. \texttt{python -m scripts.run\_validation\_sensitivity\_analyses} produces the transparent baselines, project-cluster intervals, forward cut points, project-flow counts, held-out permutation importance, calibration bins, and the recorded software environment. Label sensitivity and leakage demonstrations are kept in separate scripts so that they do not alter the primary results.
-
-\begin{table}[t]
-\centering\scriptsize
-\caption{Recorded software environment}
-\label{tab:env}
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}lr@{}}
-\toprule
-Component & Version\\
-\midrule
-Python & 3.13.5\\
-NumPy & 2.3.5\\
-pandas & 2.2.3\\
-scikit-learn & 1.8.0\\
-XGBoost & 3.1.3\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Automated tests cover label construction, cold-start handling, reconstruction of planning snapshots, feature creation, scope decomposition, and known leakage cases. The package also includes a manuscript-number crosswalk that points each headline statistic to the result file from which it was taken. This is a practical safeguard against one manuscript being updated while another retains an older number.
-
-Exact bitwise agreement can still depend on operating-system and library details for tree-based learners. The reproducibility target is therefore the data-cleaning rules, reconstructed cohort, split definitions, feature construction, and reported metrics within ordinary numerical tolerance. The recorded environment in Table~\ref{tab:env} is provided to make that target as concrete as possible.
+Automated tests cover labels, cold starts, planning snapshots, feature construction, scope decomposition, and leakage cases. A manuscript-number crosswalk links headline statistics to result files. Reproducibility targets the cleaned cohort, split definitions, features, and metrics within ordinary numerical tolerance. The recorded environment was Python 3.13.5, NumPy 2.3.5, pandas 2.2.3, scikit-learn 1.8.0, and XGBoost 3.1.3.
 
 \section{Conclusion}
 Reconstructed Jira history contains measurable signal for two sprint-start outcomes, but the signal is narrower than a generic ``sprint risk'' claim. Late closure is only moderately discriminable and varies across projects. For nonempty sprints, initial scope is strongly associated with unfinished work; a simple scope-only logistic model reaches 0.885 AUC and does not lose to the more complex random forest on the main split. Stricter provenance requirements reduce the sample and weaken some estimates, which makes data history part of the result rather than a footnote. The practical value of these rankings remains a question for prospective validation with real teams.
