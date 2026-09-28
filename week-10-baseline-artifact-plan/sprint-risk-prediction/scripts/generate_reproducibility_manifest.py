@@ -108,7 +108,7 @@ def write_split_manifests() -> None:
         "note": (
             "Identical for label_delay and label_spillover (asserted at "
             "generation time). One row per sprint that survived the "
-            "cold-start filter (n=2,002); each sprint_id is "
+            "cold-start filter (n=2,602); each sprint_id is "
             "'<project>__<raw TAWOS Sprint.ID>'."
         ),
         "n_train": len(train_ids["label_delay"]),
@@ -123,12 +123,12 @@ def write_split_manifests() -> None:
     # LOPO fold manifest: every modeled sprint's project IS its fold
     # assignment (held out when fold == project, trained on otherwise) --
     # so a full listing is just sprint_id -> project, using the same
-    # n=2,002 modeled population as the time-ordered split above.
+    # n=2,602 modeled population as the time-ordered split above.
     frame = frames["label_delay"]
     lopo_payload = {
         "note": (
             "For LOPO fold F, the row is in the TEST fold iff "
-            "project == F, else TRAIN. Same n=2,002 modeled population "
+            "project == F, else TRAIN. Same n=2,602 modeled population "
             "as the time-ordered manifest (LOPO re-uses build_model_frame "
             "'s cold-start-filtered frame, not the raw n=2,657 sprints)."
         ),

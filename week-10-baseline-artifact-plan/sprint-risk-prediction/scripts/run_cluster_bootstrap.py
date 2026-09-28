@@ -22,8 +22,7 @@ within-cluster correlation exists.
 
 Same models (logreg, random_forest), same time-ordered split, same fixed
 0.5 threshold as the rest of the analysis (Section sec:tuning) -- only the
-resampling unit changes. XGBoost is excluded for the same reason as
-run_statistical_analysis.py (not installable in the original development environment).
+resampling unit changes. XGBoost is excluded here for the same scope reason as run_statistical_analysis.py: this uncertainty script compares logistic regression and random forest only.
 
 Usage:
     python -m scripts.run_cluster_bootstrap

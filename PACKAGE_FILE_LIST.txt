@@ -1,4 +1,6 @@
+.gitignore
 PACKAGE_FILE_LIST.txt
+PHASE1_FREEZE_CHANGELOG.md
 README.md
 REPRODUCE.docx
 guides/AI-Basics-and-Reproduction-Guide.docx
@@ -8,11 +10,6 @@ guides/Getting the TAWOS Dataset.docx
 guides/README.docx
 guides/Rebuild_From_Scratch_Manual.docx
 guides/Understanding the TAWOS Pipeline.docx
-long paper/calibration_reliability.pdf
-long paper/dataflow_timing.pdf
-long paper/lopo_auc_by_project.pdf
-long paper/sprint_risk_paper_long.pdf
-long paper/sprint_risk_paper_long.tex
 week-08-proposal/Proposal.docx
 week-10-baseline-artifact-plan/checkpoint-summary.docx
 week-10-baseline-artifact-plan/sprint-risk-prediction/.gitignore
@@ -122,6 +119,10 @@ week-10-baseline-artifact-plan/sprint-risk-prediction/tests/test_scope_decomposi
 week-12-method-preliminary-results/README.docx
 week-12-method-preliminary-results/Week-10-vs-Week-12-Comparison.docx
 week-12-method-preliminary-results/sprint-risk-prediction/.gitignore
+week-12-method-preliminary-results/sprint-risk-prediction/.pytest_cache/.gitignore
+week-12-method-preliminary-results/sprint-risk-prediction/.pytest_cache/CACHEDIR.TAG
+week-12-method-preliminary-results/sprint-risk-prediction/.pytest_cache/README.md
+week-12-method-preliminary-results/sprint-risk-prediction/.pytest_cache/v/cache/nodeids
 week-12-method-preliminary-results/sprint-risk-prediction/README.docx
 week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/1. Issues Terminology
 week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/2. Issue Summary Terminology
@@ -185,6 +186,8 @@ week-12-method-preliminary-results/sprint-risk-prediction/results/scope_only_bas
 week-12-method-preliminary-results/sprint-risk-prediction/results/time_ordered_summary.csv
 week-12-method-preliminary-results/sprint-risk-prediction/results/validation_sensitivity_results.json
 week-12-method-preliminary-results/sprint-risk-prediction/scripts/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/__pycache__/__init__.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/scripts/__pycache__/run_leakage_case_studies.cpython-313.pyc
 week-12-method-preliminary-results/sprint-risk-prediction/scripts/audit_commitment_provenance.py
 week-12-method-preliminary-results/sprint-risk-prediction/scripts/backfill_experiment_log.py
 week-12-method-preliminary-results/sprint-risk-prediction/scripts/export_tawos_subset.sql
@@ -207,8 +210,17 @@ week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_statistica
 week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_tests.py
 week-12-method-preliminary-results/sprint-risk-prediction/scripts/run_validation_sensitivity_analyses.py
 week-12-method-preliminary-results/sprint-risk-prediction/src/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/__pycache__/__init__.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/__pycache__/evaluate.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/__pycache__/features.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/__pycache__/labels.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/__pycache__/leakage_case_studies.cpython-313.pyc
 week-12-method-preliminary-results/sprint-risk-prediction/src/baselines.py
 week-12-method-preliminary-results/sprint-risk-prediction/src/data/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/__pycache__/__init__.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/__pycache__/load_koralage.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/__pycache__/load_tawos.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/src/data/__pycache__/planning_snapshot.cpython-313.pyc
 week-12-method-preliminary-results/sprint-risk-prediction/src/data/load_koralage.py
 week-12-method-preliminary-results/sprint-risk-prediction/src/data/load_tawos.py
 week-12-method-preliminary-results/sprint-risk-prediction/src/data/planning_snapshot.py
@@ -217,6 +229,16 @@ week-12-method-preliminary-results/sprint-risk-prediction/src/features.py
 week-12-method-preliminary-results/sprint-risk-prediction/src/labels.py
 week-12-method-preliminary-results/sprint-risk-prediction/src/leakage_case_studies.py
 week-12-method-preliminary-results/sprint-risk-prediction/tests/__init__.py
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/__init__.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_features.cpython-313-pytest-9.0.2.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_fixed_cold_start.cpython-313-pytest-9.0.2.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_labels.cpython-313-pytest-9.0.2.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_leakage_case_studies.cpython-313-pytest-9.0.2.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_leakage_case_studies.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_load_koralage.cpython-313.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_no_leakage.cpython-313-pytest-9.0.2.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_planning_snapshot.cpython-313-pytest-9.0.2.pyc
+week-12-method-preliminary-results/sprint-risk-prediction/tests/__pycache__/test_scope_decomposition.cpython-313.pyc
 week-12-method-preliminary-results/sprint-risk-prediction/tests/test_features.py
 week-12-method-preliminary-results/sprint-risk-prediction/tests/test_fixed_cold_start.py
 week-12-method-preliminary-results/sprint-risk-prediction/tests/test_labels.py
@@ -225,11 +247,16 @@ week-12-method-preliminary-results/sprint-risk-prediction/tests/test_load_korala
 week-12-method-preliminary-results/sprint-risk-prediction/tests/test_no_leakage.py
 week-12-method-preliminary-results/sprint-risk-prediction/tests/test_planning_snapshot.py
 week-12-method-preliminary-results/sprint-risk-prediction/tests/test_scope_decomposition.py
-week-14-full-results-analysis/Week_14_Full_Results_Analysis.docx
+week-14-full-results-analysis/Week_14_Full_Results_Analysis (1).docx
+week-16-article-artifact-presentation/Predicting Late Sprint Closure and Unfinished Committed Scope from Reconstructed Jira Histories.pdf
 week-16-article-artifact-presentation/README.docx
+week-16-article-artifact-presentation/README.txt
 week-16-article-artifact-presentation/calibration_reliability.pdf
+week-16-article-artifact-presentation/calibration_reliability.png
 week-16-article-artifact-presentation/dataflow_timing.pdf
+week-16-article-artifact-presentation/dataflow_timing_clean.png
 week-16-article-artifact-presentation/lopo_auc_by_project.pdf
+week-16-article-artifact-presentation/lopo_auc_by_project.png
 week-16-article-artifact-presentation/sprint_risk_paper.pdf
 week-16-article-artifact-presentation/sprint_risk_paper.tex
 week-16-article-artifact-presentation/sprint_risk_presentation.pptx

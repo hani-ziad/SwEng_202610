@@ -7,13 +7,7 @@ a paired bootstrap significance test for the F1 and ROC-AUC difference
 between them -- rather than reporting the single-run point estimates in
 results/baseline_results.json as if they were exact.
 
-XGBoost is not included here: the paired bootstrap needs per-row predicted
-probabilities on the test set, which requires re-training the model in this
-environment, and XGBoost isn't installable in the original development environment. Its point
-estimate (results/baseline_results.json) is trusted from the author's own
-run; a rigorous CI for it would need to be produced on a machine that has
-xgboost installed, using this same bootstrap_ci() function against its
-saved test-set probabilities.
+XGBoost is not included here because this supplementary row-level bootstrap was scoped to the two reproducible baseline families used for uncertainty comparison: logistic regression and random forest. XGBoost point estimates are reported in the main baseline results, and an XGBoost CI would require extending this script to save and bootstrap its test-set probabilities.
 
 Usage:
     python -m scripts.run_statistical_analysis

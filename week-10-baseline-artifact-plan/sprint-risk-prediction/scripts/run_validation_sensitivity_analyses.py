@@ -257,7 +257,7 @@ def main():
     analyses=[]
     print("stage scope"); analyses.append(("scope_only_baselines", scope_and_baselines(frames)))
     print("stage lopo"); analyses.append(("lopo_with_denominators", lopo_denominators_from_existing(frames)))
-    print("stage uncertainty"); analyses.append(("cluster_uncertainty", cluster_uncertainty(frames, n_boot=100)))
+    print("stage uncertainty"); analyses.append(("cluster_uncertainty", cluster_uncertainty(frames, n_boot=2000)))
     print("stage rolling"); analyses.append(("rolling_temporal_splits", rolling_splits(frames)))
     print("stage coverage"); cov, issue_cov = coverage_by_project(frames)
     analyses.append(("reconstruction_coverage_by_project", cov))

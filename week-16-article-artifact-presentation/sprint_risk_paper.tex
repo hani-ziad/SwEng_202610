@@ -26,7 +26,7 @@
 \thispagestyle{empty}
 
 \begin{abstract}
-Repository data are useful at Sprint Planning only if the features reflect what was known at that time. We examine two repository-derived outcomes in eight TAWOS projects: late sprint closure and unfinished scope that was committed when the sprint began. Sprint membership and story points are reconstructed from Jira change history, with a documented static fallback when no relevant history is recorded. After removing nonclosed and invalid sprint rows and one genuine cold start per project, 2,602 sprints remain. Late closure is only moderately discriminable: random forest reaches 0.705 area under the receiver operating characteristic curve on the main time-ordered split, with a project-cluster 95\% interval of 0.604--0.783. For nonempty sprints, a simple scope-only logistic model reaches 0.885 on this measure, compared with 0.852 for random forest. The simpler model therefore captures most of the useful spillover ranking signal. Provenance matters: when the analysis is restricted to the much smaller subset in which every committed item has observed Sprint and Story Points history, the random-forest area under the receiver operating characteristic curve falls to 0.652 on 110 test sprints. Results are also reported across multiple temporal cut points and held-out projects. The evidence supports cautious retrospective ranking of these two outcomes, not a deployment-ready Scrum decision system.
+Repository data are useful at Sprint Planning only if the features reflect what was known at that time. We examine two repository-derived outcomes in eight TAWOS projects: late sprint closure and unfinished scope that was committed when the sprint began. Sprint membership and story points are reconstructed from Jira change history, with a documented static fallback when no relevant history is recorded. After removing nonclosed and invalid sprint rows and one genuine cold start per project, 2,602 sprints remain. Late closure is only moderately discriminable: random forest reaches 0.705 area under the receiver operating characteristic curve on the main time-ordered split, with a project-cluster 95\% interval of 0.596--0.786. For nonempty sprints, a simple scope-only logistic model reaches 0.885 on this measure, compared with 0.852 for random forest. The simpler model therefore captures most of the useful spillover ranking signal. Provenance matters: when the analysis is restricted to the much smaller subset in which every committed item has observed Sprint and Story Points history, the random-forest area under the receiver operating characteristic curve falls to 0.652 on 110 test sprints. Results are also reported across multiple temporal cut points and held-out projects. The evidence supports cautious retrospective ranking of these two outcomes, not a deployment-ready Scrum decision system.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -272,15 +272,15 @@ Spillover, nonempty & Random forest & 511 & 482 & .943 & .875 & .852 & .990 & .1
 \toprule
 Outcome & Model & F1 interval & AUC interval\\
 \midrule
-Late closure & RF & [.317,.688] & [.604,.783]\\
-Spillover & Scope LR & [.482,.823] & [.820,.922]\\
-Spillover & RF & [.804,.923] & [.797,.914]\\
+Late closure & RF & [.297,.685] & [.596,.786]\\
+Spillover & Scope LR & [.508,.826] & [.818,.922]\\
+Spillover & RF & [.809,.927] & [.774,.911]\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Uncertainty and alternative time splits}
-Project-level resampling gives a 95\% AUC interval of 0.604--0.783 for the late-closure random forest. For nonempty spillover, the interval is 0.820--0.922 for scope-only logistic regression and 0.797--0.914 for random forest. The intervals overlap, so the 0.033 AUC gap on the main split is not strong evidence that one model will always outperform the other.
+Project-level resampling gives a 95\% AUC interval of 0.596--0.786 for the late-closure random forest. For nonempty spillover, the interval is 0.818--0.922 for scope-only logistic regression and 0.774--0.911 for random forest. The intervals overlap, so the 0.033 AUC gap on the main split is not strong evidence that one model will always outperform the other.
 
 The forward splits are consistent with that picture. Late-closure random-forest AUC varies from 0.669 at 50/50 to 0.711 at 80/20. For nonempty spillover, random forest stays between 0.846 and 0.856, while scope-only logistic regression ranges from 0.865 to 0.887. The result is therefore not specific to the 70/30 split.
 

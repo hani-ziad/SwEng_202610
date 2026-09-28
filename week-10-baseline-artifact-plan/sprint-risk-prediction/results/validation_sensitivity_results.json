@@ -677,14 +677,14 @@
       "roc_auc": 0.7051904546823247,
       "pr_auc": 0.4575168854573402,
       "brier": 0.2231695374686279,
-      "f1_cluster_ci_low": 0.3174705882352941,
-      "f1_cluster_ci_high": 0.687644072677592,
-      "roc_auc_cluster_ci_low": 0.6044956142997968,
-      "roc_auc_cluster_ci_high": 0.7825885226441939,
-      "pr_auc_cluster_ci_low": 0.2894742887618777,
-      "pr_auc_cluster_ci_high": 0.6938993409423801,
-      "brier_cluster_ci_low": 0.1919213427373331,
-      "brier_cluster_ci_high": 0.26138233199904726
+      "f1_cluster_ci_low": 0.29723447937733655,
+      "f1_cluster_ci_high": 0.6848072562358276,
+      "roc_auc_cluster_ci_low": 0.5959856524876564,
+      "roc_auc_cluster_ci_high": 0.7857396821832126,
+      "pr_auc_cluster_ci_low": 0.2828219351083807,
+      "pr_auc_cluster_ci_high": 0.6933874786520096,
+      "brier_cluster_ci_low": 0.1896153642841211,
+      "brier_cluster_ci_high": 0.2639127441973349
     },
     {
       "label": "label_spillover",
@@ -699,14 +699,14 @@
       "roc_auc": 0.8523393904707398,
       "pr_auc": 0.9896891844642914,
       "brier": 0.13582106546179407,
-      "f1_cluster_ci_low": 0.8035103223469757,
-      "f1_cluster_ci_high": 0.923176867219917,
-      "roc_auc_cluster_ci_low": 0.7972498736097068,
-      "roc_auc_cluster_ci_high": 0.9142807689447089,
-      "pr_auc_cluster_ci_low": 0.9844046451773145,
-      "pr_auc_cluster_ci_high": 0.9943180622247548,
-      "brier_cluster_ci_low": 0.09473350432979781,
-      "brier_cluster_ci_high": 0.18966270244005254
+      "f1_cluster_ci_low": 0.8092594278579465,
+      "f1_cluster_ci_high": 0.9273197798218918,
+      "roc_auc_cluster_ci_low": 0.7740687872127741,
+      "roc_auc_cluster_ci_high": 0.9111992097553884,
+      "pr_auc_cluster_ci_low": 0.9834963585887577,
+      "pr_auc_cluster_ci_high": 0.9952112652303813,
+      "brier_cluster_ci_low": 0.08867558934893555,
+      "brier_cluster_ci_high": 0.18126521789112598
     },
     {
       "label": "label_spillover",
@@ -721,14 +721,14 @@
       "roc_auc": 0.8849978537702103,
       "pr_auc": 0.9924792756087113,
       "brier": 0.22963623892663212,
-      "f1_cluster_ci_low": 0.48171336474088766,
-      "f1_cluster_ci_high": 0.8226811623638719,
-      "roc_auc_cluster_ci_low": 0.8202056162201153,
-      "roc_auc_cluster_ci_high": 0.9216580761950737,
-      "pr_auc_cluster_ci_low": 0.9856597116755174,
-      "pr_auc_cluster_ci_high": 0.9952579370643996,
-      "brier_cluster_ci_low": 0.154040655648172,
-      "brier_cluster_ci_high": 0.31967328932183625
+      "f1_cluster_ci_low": 0.5082104177053903,
+      "f1_cluster_ci_high": 0.8263074645200593,
+      "roc_auc_cluster_ci_low": 0.8176770207080828,
+      "roc_auc_cluster_ci_high": 0.9218695859329455,
+      "pr_auc_cluster_ci_low": 0.986862581106579,
+      "pr_auc_cluster_ci_high": 0.9955107058495493,
+      "brier_cluster_ci_low": 0.15208592130764442,
+      "brier_cluster_ci_high": 0.3164128820761736
     }
   ],
   "rolling_temporal_splits": [

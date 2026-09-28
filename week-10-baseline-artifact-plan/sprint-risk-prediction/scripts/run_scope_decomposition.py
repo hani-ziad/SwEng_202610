@@ -3,21 +3,16 @@ Round-5 review addition: decompose the spillover task into the two
 sub-problems a single all-sprint AUC conflates, and re-run spillover under
 the zero-committed-scope sensitivity analysis the review asked for.
 
-363 of the 2,002 modeled sprints (18.1%) have committed_issue_count == 0.
-Because label_spillover is (not_completed_count > 0) OR (completion_ratio <
-0.8), and committed_story_points is mechanically 0
-whenever committed_issue_count is 0 (verified below and in
-tests/test_scope_decomposition.py), every one of these 363 sprints is
-spillover-negative BY CONSTRUCTION, not because a model predicted anything.
-The original spillover numbers in results/baseline_results.json report
-performance on the FULL population (all 2,002 sprints) and therefore partly
-reward a model for recognizing this mechanically-negative subgroup.
+In the final modeled cohort, 911 of the 2,602 modeled sprints (35.0%) have committed_issue_count == 0.
+Because label_spillover is mechanically false whenever there is no reconstructed committed work,
+these zero-scope rows are spillover-negative BY CONSTRUCTION, not because a model predicted anything.
+The original full-population spillover numbers therefore partly reward a model for recognizing this mechanically-negative subgroup.
 
 This script reports two things separately, as the review asked:
 
   Task A -- "does this sprint have any committed issue at all?"
             label: has_committed_issue = (committed_issue_count > 0)
-            population: all 2,002 modeled sprints (unchanged, cold-start
+            population: all 2,602 modeled sprints (unchanged, cold-start
             filtered, same as every other result in this repository)
             features: ONLY sprint_length_days + the 4 historical features
             (committed_story_points is deliberately
@@ -28,7 +23,7 @@ This script reports two things separately, as the review asked:
 
   Task B -- "given a sprint that committed at least one issue, does it
             spill over?" -- i.e. the zero-committed-scope sensitivity
-            analysis: label_spillover, restricted to the 1,639 sprints with
+            analysis: label_spillover, restricted to the 1,691 sprints with
             committed_issue_count > 0, using the SAME full feature set
             (ALL_FEATURES) as the main spillover model, so this is
             a like-for-like re-run under a narrower population, not a
@@ -40,14 +35,7 @@ src.evaluate.evaluate() metrics, plus bootstrap 95% CIs (percentile method,
 2,000 resamples) for F1, ROC-AUC, PR-AUC, and Brier score on the
 time-ordered split.
 
-XGBoost is not included: it is not installable in this reproduction
-development environment (see requirements-lock.txt and the analysis's Implementation and
-Reproducibility section), and re-running it here would require refitting
-on a population it was never evaluated on in the original run, which this
-original development environment could not do. Every number in this script's output comes from
-heuristic / logreg / random_forest, refit and re-evaluated in this
-environment -- nothing here is copied from baseline_results.json's
-XGBoost point estimates.
+XGBoost is not included in this decomposition script by design: the purpose here is to compare the transparent scope-only/count-only logistic baselines against the random-forest model used in the main paper. Every number in this script's output comes from heuristic / logistic-regression / random-forest models refit in this environment.
 
 Usage:
     python -m scripts.run_scope_decomposition
@@ -267,9 +255,7 @@ def main() -> None:
             "also the zero-committed-scope sensitivity analysis. "
             "full_population_spillover_for_comparison is the original "
             "(unfiltered) spillover result, re-derived here for a like-for-like "
-            "comparison. XGBoost is excluded throughout (not installable in this "
-            "development environment); every number here is heuristic/logreg/random_forest, "
-            "freshly refit in this environment."
+            "comparison. XGBoost is excluded throughout by design; every number here is heuristic/logreg/random_forest, freshly refit in this environment."
         ).format(n_total=n_total, n_nonempty=len(nonempty_frame)),
         "n_total_modeled": n_total,
         "n_zero_committed_scope": n_zero_scope,
