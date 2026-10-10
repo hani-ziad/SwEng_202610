@@ -5,3 +5,7 @@ data/processed/*.csv
 data/processed/*.parquet
 .venv/
 *.egg-info/
+*.log
+*.aux
+*.out
+*.synctex.gz

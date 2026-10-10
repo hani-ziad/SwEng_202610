@@ -1,0 +1,37 @@
+model,algorithm,output_unit,group,mean_abs_attribution,share_of_total
+spillover,random_forest,probability of any spillover,scope,0.03995972644306742,0.16413361322002598
+spillover,random_forest,probability of any spillover,sprint length,0.0032519478335191775,0.013357297344840527
+spillover,random_forest,probability of any spillover,parallel sprints,0.0011605986862821749,0.004767131130122071
+spillover,random_forest,probability of any spillover,recent history,0.037634696271777776,0.15458360783139924
+spillover,random_forest,probability of any spillover,past lateness,0.0019485437023970833,0.008003596292062352
+spillover,random_forest,probability of any spillover,progress so far,0.08294437182055626,0.340692008053901
+spillover,random_forest,probability of any spillover,time pressure,0.054981682671454195,0.2258359363555727
+spillover,random_forest,probability of any spillover,scope change,0.010476605354812908,0.04303240397843216
+spillover,random_forest,probability of any spillover,project,0.011100346523206423,0.04559440579364402
+carry_share,gradient_boosting,share of scope carried over,scope,0.013678099692162852,0.04498441279041939
+carry_share,gradient_boosting,share of scope carried over,sprint length,0.004673781933319546,0.015371092513773414
+carry_share,gradient_boosting,share of scope carried over,parallel sprints,0.006378549739356861,0.020977717733981466
+carry_share,gradient_boosting,share of scope carried over,recent history,0.03164289283177551,0.10406686492007217
+carry_share,gradient_boosting,share of scope carried over,past lateness,0.005619320008065047,0.018480769736537117
+carry_share,gradient_boosting,share of scope carried over,progress so far,0.18391170059919468,0.6048471675844321
+carry_share,gradient_boosting,share of scope carried over,time pressure,0.015608946694747359,0.051334565264390064
+carry_share,gradient_boosting,share of scope carried over,scope change,0.019007415174680294,0.06251141821890735
+carry_share,gradient_boosting,share of scope carried over,project,0.023542386378252865,0.07742599123748692
+late_closure,random_forest,probability of closing >1 day late,scope,0.010557340042558615,0.061071891453972287
+late_closure,random_forest,probability of closing >1 day late,sprint length,0.01574131678743161,0.0910600573922243
+late_closure,random_forest,probability of closing >1 day late,parallel sprints,0.0017794051506627847,0.010293467651495648
+late_closure,random_forest,probability of closing >1 day late,recent history,0.020813348446984806,0.12040064561943388
+late_closure,random_forest,probability of closing >1 day late,past lateness,0.06372295059183623,0.3686232617291256
+late_closure,random_forest,probability of closing >1 day late,progress so far,0.01083061819088046,0.06265274547058777
+late_closure,random_forest,probability of closing >1 day late,time pressure,0.0157993325713752,0.09139566594943065
+late_closure,random_forest,probability of closing >1 day late,scope change,0.005099470694035987,0.02949931701010183
+late_closure,random_forest,probability of closing >1 day late,project,0.02852363314235553,0.16500294772362797
+late_days,gb_median,days late (median model),scope,0.03166229380662494,0.015753297867480205
+late_days,gb_median,days late (median model),sprint length,0.9494082436839559,0.4723697831856126
+late_days,gb_median,days late (median model),parallel sprints,0.008707387122876074,0.0043322844463475705
+late_days,gb_median,days late (median model),recent history,0.22994076451179798,0.11440501996960652
+late_days,gb_median,days late (median model),past lateness,0.3480642650374523,0.17317633642238767
+late_days,gb_median,days late (median model),progress so far,0.061743282358261195,0.03071983111034448
+late_days,gb_median,days late (median model),time pressure,0.05223224434677391,0.025987697180346783
+late_days,gb_median,days late (median model),scope change,0.05925549575203253,0.029482054603121
+late_days,gb_median,days late (median model),project,0.26886954573689564,0.1337736952147531

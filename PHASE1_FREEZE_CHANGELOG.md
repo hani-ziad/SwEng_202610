@@ -26,3 +26,9 @@ This cleaned package prepares the sprint-risk prediction project for a Phase 1 f
 - Exported the modified PowerPoint deck to PDF and rendered all slides for visual QA.
 - Compiled the edited Python scripts successfully.
 - Ran core unit tests: 14 pytest tests passed, and 10 additional leakage/load/scope tests were executed directly and passed.
+
+## Added after the freeze (no result changes)
+- Phase 1 now has a `README.md` for the CSBP711 Assignment 1 submission: data source, licence, data problems, results, explanation and ablation, how to run it, contributions and AI use.
+- New script `scripts/run_assignment_comparison.py` and three new files in `results/` (`assignment_comparison.csv`, `assignment_ablation.csv`, `assignment_summary.json`). They add training time, model size and a feature-group ablation. The metrics match the saved Phase 1 numbers exactly, and no existing result file was changed.
+- Phase 2 and Phase 3 were added next to Phase 1. They import it and do not change it.
+- Root README, the reproduction guide (new Phase 2 and 3 sections) and the assignment deck (training time and model size on slide 4, the ablation on slide 5, the data source on slide 1) were updated.

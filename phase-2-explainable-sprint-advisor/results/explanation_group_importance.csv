@@ -1,0 +1,36 @@
+model,outcome,algorithm,output_unit,group,mean_abs_attribution,share_of_total
+spillover,spillover,random_forest,probability of any spillover,scope,0.10713761767338184,0.40530564499405564
+spillover,spillover,random_forest,probability of any spillover,sprint length,0.005225430030524231,0.019767998718708855
+spillover,spillover,random_forest,probability of any spillover,parallel sprints,0.0029389807429307277,0.011118274902005735
+spillover,spillover,random_forest,probability of any spillover,recent history,0.03256985252814791,0.1232129794646532
+spillover,spillover,random_forest,probability of any spillover,capacity,0.09695311280851787,0.36677727930103776
+spillover,spillover,random_forest,probability of any spillover,past lateness,0.006618780698408425,0.025039096801842808
+spillover,spillover,random_forest,probability of any spillover,project,0.01289406289253057,0.04877872581769588
+issues_done,spillover,gradient_boosting,issues completed,scope,3.678722582974956,0.7135665466087194
+issues_done,spillover,gradient_boosting,issues completed,sprint length,0.14016595887314934,0.02718817115704587
+issues_done,spillover,gradient_boosting,issues completed,parallel sprints,0.08892123960232046,0.01724816711019339
+issues_done,spillover,gradient_boosting,issues completed,recent history,0.6399530328939999,0.1241325121354106
+issues_done,spillover,gradient_boosting,issues completed,capacity,0.31103829305412234,0.06033249739049755
+issues_done,spillover,gradient_boosting,issues completed,past lateness,0.10593945000753863,0.02054921125103525
+issues_done,spillover,gradient_boosting,issues completed,project,0.19066169688732357,0.03698289434709791
+carry_share,spillover,gradient_boosting,share of scope carried over,scope,0.023025523862612363,0.11653215531631711
+carry_share,spillover,gradient_boosting,share of scope carried over,sprint length,0.017328760748276165,0.08770084237850262
+carry_share,spillover,gradient_boosting,share of scope carried over,parallel sprints,0.020385938286074032,0.10317321511538059
+carry_share,spillover,gradient_boosting,share of scope carried over,recent history,0.06257821461150825,0.3167082872050125
+carry_share,spillover,gradient_boosting,share of scope carried over,capacity,0.024285829663819637,0.12291056182939605
+carry_share,spillover,gradient_boosting,share of scope carried over,past lateness,0.013801558538804208,0.06984967520598691
+carry_share,spillover,gradient_boosting,share of scope carried over,project,0.036183619022948414,0.18312526294940423
+late_closure,late closure,random_forest,probability of closing >1 day late,scope,0.015748384765872824,0.09044707118504741
+late_closure,late closure,random_forest,probability of closing >1 day late,sprint length,0.021836846661061653,0.12541469196828728
+late_closure,late closure,random_forest,probability of closing >1 day late,parallel sprints,0.0027991632887787903,0.016076323064406338
+late_closure,late closure,random_forest,probability of closing >1 day late,recent history,0.007825042930589183,0.04494125749980214
+late_closure,late closure,random_forest,probability of closing >1 day late,capacity,0.021359540748196338,0.12267339992343416
+late_closure,late closure,random_forest,probability of closing >1 day late,past lateness,0.06620852392459627,0.3802527792845033
+late_closure,late closure,random_forest,probability of closing >1 day late,project,0.03833963115505469,0.22019447707451933
+late_days,late closure,gb_median,days late (median model),scope,0.11367935881130488,0.07052692931180711
+late_days,late closure,gb_median,days late (median model),sprint length,0.3525337525771273,0.21871273121185686
+late_days,late closure,gb_median,days late (median model),parallel sprints,0.02687243919482423,0.016671721580300922
+late_days,late closure,gb_median,days late (median model),recent history,0.19174024161768496,0.11895607617954386
+late_days,late closure,gb_median,days late (median model),capacity,0.0874840981896169,0.054275330837921014
+late_days,late closure,gb_median,days late (median model),past lateness,0.4153006302142385,0.2576534429516487
+late_days,late closure,gb_median,days late (median model),project,0.42424696306241705,0.2632037679269215

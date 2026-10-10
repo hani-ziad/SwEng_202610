@@ -1,0 +1,27 @@
+{
+  "n_sprints_full": 2602,
+  "n_sprints_nonempty": 1691,
+  "n_bootstrap_resamples": 2000,
+  "tasks": {
+    "carry_share": {
+      "population": "nonempty",
+      "primary_baseline": "train_median"
+    },
+    "issues_done": {
+      "population": "nonempty",
+      "primary_baseline": "scope_x_rate"
+    },
+    "spillover": {
+      "population": "nonempty",
+      "primary_baseline": "scope_only_logreg"
+    },
+    "late_days": {
+      "population": "full",
+      "primary_baseline": "train_median"
+    },
+    "late_closure": {
+      "population": "full",
+      "primary_baseline": "scope_only_logreg"
+    }
+  }
+}

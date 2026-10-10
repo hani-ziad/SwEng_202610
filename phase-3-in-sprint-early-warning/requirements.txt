@@ -1,0 +1,7 @@
+# Phase 3 needs only the base scientific stack (same as Phase 2; no xgboost, no shap).
+numpy>=2.3
+pandas>=2.2
+scikit-learn>=1.8
+scipy>=1.17
+matplotlib>=3.10
+pytest>=9.0   # optional: experiments/run_tests.py works without it
