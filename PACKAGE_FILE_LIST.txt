@@ -1,10 +1,38 @@
 ./.gitignore
 ./CSBP711 Datasets Algorithm Comparison.pdf
 ./CSBP711 Datasets Algorithm Comparison.pptx
+./Claude outputs/CCECE_2027_Submission_Sheet.md
 ./PACKAGE_FILE_LIST.txt
 ./PHASE1_FREEZE_CHANGELOG.md
 ./README.md
+./REPRODUCE.docx
+./Research_Proposal_3phases.docx
+./Research_Proposal_3phases.pdf
+./Research_Proposal_3phases_v3_fill_in.docx
 ./What I changed in the GitHub code - Maryam.docx
+./canadian-ai-2027-paper/CanadianAI_2027_Grounding_AI_Scrum_Master.tex
+./canadian-ai-2027-paper/CanadianAI_2027_Grounding_AI_Scrum_Master_8page_long_draft.tex
+./canadian-ai-2027-paper/CanadianAI_2027_Grounding_AI_Scrum_Master_IEEE.tex
+./ccece-2027-paper/CCECE_2027_Sprint_Risk_Prediction.docx
+./ccece-2027-paper/CCECE_2027_Sprint_Risk_Prediction.pdf
+./ccece-2027-paper/CCECE_2027_Sprint_Risk_Prediction.tex
+./ccece-2027-paper/CCECE_2027_Sprint_Risk_Prediction_humanized.pdf
+./ccece-2027-paper/CCECE_2027_Sprint_Risk_Prediction_humanized.tex
+./ccece-2027-paper/fig1_pipeline.png
+./ccece-2027-paper/fig2_shapley.png
+./ccece-2027-paper/verify_numbers.py
+./external-validation/README.md
+./external-validation/convert_mariadb.py
+./external-validation/data/pull/mariadb_mxs_mcol.json
+./external-validation/data/raw/mariadb/tawos_change_log.csv
+./external-validation/data/raw/mariadb/tawos_issue.csv
+./external-validation/data/raw/mariadb/tawos_sprint.csv
+./external-validation/pull_mariadb_browser.js
+./external-validation/results/cohort_description.json
+./external-validation/results/external_validation_results.csv
+./external-validation/results/mariadb_modeling_frame.csv
+./external-validation/results_log.txt
+./external-validation/run_external.py
 ./guides/AI-Basics-and-Reproduction-Guide.docx
 ./guides/Beginner_Learning_Guide.docx
 ./guides/Full Project Walkthrough.docx
@@ -12,6 +40,20 @@
 ./guides/README.docx
 ./guides/Rebuild_From_Scratch_Manual.docx
 ./guides/Understanding the TAWOS Pipeline.docx
+./originality/Proposal/ai-writing-report.pdf
+./originality/Proposal/grading-report.pdf
+./originality/Proposal/original-file.docx
+./originality/Proposal/similarity-report.pdf
+./originality/analysis/ai-writing-report.pdf
+./originality/analysis/grading-report.pdf
+./originality/analysis/original-file.docx
+./originality/analysis/similarity-report.pdf
+./originality/conference/ai-writing-report.pdf
+./originality/conference/grading-report.pdf
+./originality/conference/original-file.pdf
+./originality/conference/similarity-report.pdf
+./papper review slides/Software_Architecture_Challenges_for_ML_Systems_with_solutions.pptx
+./phase-2-explainable-sprint-advisor/Phase_2_Changes.docx
 ./phase-2-explainable-sprint-advisor/README.md
 ./phase-2-explainable-sprint-advisor/experiments/__init__.py
 ./phase-2-explainable-sprint-advisor/experiments/make_figure.py
@@ -44,6 +86,7 @@
 ./phase-2-explainable-sprint-advisor/tests/test_advisor.py
 ./phase-2-explainable-sprint-advisor/tests/test_data.py
 ./phase-2-explainable-sprint-advisor/tests/test_shapley.py
+./phase-3-in-sprint-early-warning/Phase_3_Changes.docx
 ./phase-3-in-sprint-early-warning/README.md
 ./phase-3-in-sprint-early-warning/experiments/__init__.py
 ./phase-3-in-sprint-early-warning/experiments/make_figure.py
@@ -282,5 +325,17 @@
 ./week-12-method-preliminary-results/sprint-risk-prediction/tests/test_planning_snapshot.py
 ./week-12-method-preliminary-results/sprint-risk-prediction/tests/test_scope_decomposition.py
 ./week-14-full-results-analysis/Week_14_Full_Results_Analysis (1).docx
+./week-16-article-artifact-presentation/Predicting Late Sprint Closure and Unfinished Committed Scope from Reconstructed Jira Histories.pdf
+./week-16-article-artifact-presentation/README.docx
 ./week-16-article-artifact-presentation/README.md
+./week-16-article-artifact-presentation/README.txt
+./week-16-article-artifact-presentation/calibration_reliability.pdf
+./week-16-article-artifact-presentation/calibration_reliability.png
+./week-16-article-artifact-presentation/dataflow_timing.pdf
+./week-16-article-artifact-presentation/dataflow_timing_clean.png
+./week-16-article-artifact-presentation/lopo_auc_by_project.pdf
+./week-16-article-artifact-presentation/lopo_auc_by_project.png
+./week-16-article-artifact-presentation/sprint_risk_paper.pdf
+./week-16-article-artifact-presentation/sprint_risk_paper.tex
 ./week-16-article-artifact-presentation/sprint_risk_paper_revised.tex
+./week-16-article-artifact-presentation/sprint_risk_presentation.pptx

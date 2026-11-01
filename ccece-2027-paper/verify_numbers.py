@@ -4,7 +4,11 @@ import json, sys
 import pandas as pd
 import numpy as np
 
-R = "/tmp/claude-0/-home-claude/131be80c-7ada-5b2c-82df-acc9b8eb4727/scratchpad/allphases"
+import os
+from pathlib import Path
+# Repo root (the folder holding week-12-..., phase-2-..., phase-3-..., external-validation).
+# Override with the SPRINT_RISK_ROOT environment variable if the paper folder is moved.
+R = os.environ.get("SPRINT_RISK_ROOT", str(Path(__file__).resolve().parents[1]))
 P1 = f"{R}/week-12-method-preliminary-results/sprint-risk-prediction/results"
 P2 = f"{R}/phase-2-explainable-sprint-advisor/results"
 P3 = f"{R}/phase-3-in-sprint-early-warning/results"
@@ -320,4 +324,29 @@ for task, cp, n, pos in [("spillover", .25, 507, 478), ("spillover", .5, 501, 47
 r = mb[(mb.task == "carry_share") & (mb.feature_set == "strict") & (mb.protocol == "time_ordered") & (mb.model == "gb_median") & (mb.baseline == "train_median")].iloc[0]; check("T2 row14 -.031", -.031, r.delta)
 r = mb[(mb.task == "late_days") & (mb.feature_set == "strict") & (mb.protocol == "time_ordered") & (mb.model == "gb_median") & (mb.baseline == "train_median")].iloc[0]; check("T2 row15 -.18", -.18, r.delta, .005); check("row15 lo -.34", -.34, r.ci_low, .005); check("row15 hi .03", .03, r.ci_high, .005)
 check("late positives 1006", 1006, frame.label_delay.sum(), 0); check("spill positives 1575", 1575, frame[frame.committed_issue_count > 0].label_spillover.sum(), 0)
+# ---------- external check on MariaDB (Section IV-D, Table II row 16) ----------
+E = f"{R}/external-validation/results"
+ev = pd.read_csv(f"{E}/external_validation_results.csv")
+def evr(arm, task, model, comp=None):
+    r = ev[(ev.arm == arm) & (ev.task == task) & (ev.model == model)]
+    if comp is not None: r = r[r.comparator == comp]
+    assert len(r) == 1, (arm, task, model, comp); return r.iloc[0]
+T = "Transfer TAWOS->MariaDB"
+r = evr(T, "Late closure", "GB, strict, no SP")
+check("MDB row16 n 391", 391, r.n, 0); check("MDB row16 pos 106", 106, r.pos, 0)
+check("MDB row16 GB .710", .710, r.auc); check("MDB GB lo .637", .637, r.auc_lo); check("MDB GB hi .773", .773, r.auc_hi)
+check("MDB row16 diff .134", .134, r["diff"]); check("MDB diff lo .034", .034, r.diff_lo); check("MDB diff hi .223", .223, r.diff_hi)
+check("MDB scope-only .576", .576, r.comp_auc)
+check("MDB RF .716", .716, evr(T, "Late closure", "RF, strict, no SP").auc)
+check("TAWOS no-SP GB late .751", .751, evr("TAWOS, no SP (reference)", "Late closure", "GB, strict, no SP").auc)
+check("MDB within RF .750", .750, evr("MariaDB", "Late closure", "RF, strict").auc)
+check("MDB project rate .745", .745, evr("MariaDB", "Late closure", "GB, strict", "Project rate").comp_auc)
+r = evr("MariaDB", "Late closure, 50%", "GB, strict + progress")
+check("MDB 50% gain +.019", .019, r["diff"]); check("MDB 50% lo -.050", -.050, r.diff_lo); check("MDB 50% hi .089", .089, r.diff_hi)
+desc = json.load(open(f"{E}/cohort_description.json")); m = [d for d in desc if d["source"] == "MariaDB"][0]
+check("MDB sprints 391", 391, m["modeled_sprints"], 0)
+check("MDB spill 99%", 99, 100 * m["spillover_rate_nonempty"], 0.5)
+mf = pd.read_csv(f"{E}/mariadb_modeling_frame.csv"); lr = mf.groupby("project").label_delay.mean()
+check("MDB ColumnStore late 54%", 54, 100 * lr["MariaDB ColumnStore"], 0.5); check("MDB MaxScale late 15%", 15, 100 * lr["MariaDB MaxScale"], 0.5)
+check("MDB first year 2016", 2016, int(m["first_start"][:4]), 0); check("MDB last year 2026", 2026, int(m["last_start"][:4]), 0)
 print("FAILS:", fails)
