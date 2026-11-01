@@ -29,6 +29,7 @@
 ./external-validation/data/raw/mariadb/tawos_sprint.csv
 ./external-validation/pull_mariadb_browser.js
 ./external-validation/results/cohort_description.json
+./external-validation/results/environment_versions.json
 ./external-validation/results/external_validation_results.csv
 ./external-validation/results/mariadb_modeling_frame.csv
 ./external-validation/results_log.txt

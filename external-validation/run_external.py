@@ -214,6 +214,11 @@ def main():
     res.to_csv(RESULTS / "external_validation_results.csv", index=False)
     desc = [describe("TAWOS", t_base, t_audit), describe("MariaDB", m_base, m_audit)]
     (RESULTS / "cohort_description.json").write_text(json.dumps(desc, indent=2))
+    import platform, sklearn, scipy
+    env = {"python": platform.python_version(), "platform": platform.platform(), "numpy": np.__version__,
+           "pandas": pd.__version__, "scikit_learn": sklearn.__version__, "scipy": scipy.__version__}
+    (RESULTS / "environment_versions.json").write_text(json.dumps(env, indent=2))
+    print("environment:", env)
     m_base.to_csv(RESULTS / "mariadb_modeling_frame.csv", index=False)
     pd.set_option("display.width", 250)
     print(json.dumps(desc, indent=1))

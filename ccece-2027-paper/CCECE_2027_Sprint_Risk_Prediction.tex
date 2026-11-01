@@ -245,7 +245,7 @@ What this study contributes is a protocol more than a tool, and under it reconst
 
 What can a team actually do with this? Three narrow things. At planning, the scores rank sprints by risk, so a team knows which ones to watch; they are rankings, not calibrated odds, and any alert threshold has to be set locally for the cost of a false alarm. During the sprint, the 25\% and 50\% checkpoints flag likely spillover earlier and better than counting open issues. The issue-count intervals are honest but widen for large sprints. We have not shown that acting on a score improves delivery, or that cutting scope causes a lower carry share; that needs a prospective or controlled study.
 
-Every result runs off a fixed seed (42) on a laptop CPU, under Python 3.13 with scikit-learn 1.8, pandas 2.2 and XGBoost 3.1. The artifact at \url{https://github.com/hani-ziad/SwEng_202610} holds the data export, the reconstruction and modelling code, 50 automated tests, and every result file behind the numbers above. Next is a silent prospective deployment that scores sprints without steering the team.
+Every result runs off a fixed seed (42) on a CPU, under Python 3.13 with scikit-learn 1.8, pandas 2.2 and XGBoost 3.1; the MariaDB check used scikit-learn 1.9. The artifact at \url{https://github.com/hani-ziad/SwEng_202610} holds the data export, the reconstruction and modelling code, 50 automated tests, and every result file behind the numbers above. Next is a silent prospective deployment that scores sprints without steering the team.
 
 \begin{thebibliography}{18}
 \bibitem{r1} M. Choetkiertikul, H. K. Dam, T. Tran, T. Pham, A. Ghose, and T. Menzies, ``A deep learning model for estimating story points,'' IEEE Trans. Softw. Eng., vol. 45, no. 7, pp. 637--656, Jul. 2019.

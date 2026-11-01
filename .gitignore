@@ -9,3 +9,4 @@ data/processed/*.parquet
 *.aux
 *.out
 *.synctex.gz
+.vscode/

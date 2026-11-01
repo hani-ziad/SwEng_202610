@@ -17,6 +17,8 @@ The frozen Phase 1-3 pipeline, run once on a second Jira source that is not in T
 
 Intervals are 95% sprint-level bootstraps (2,000 paired resamples, seed 42). Two projects are too few for the paper's project-cluster bootstrap.
 
+Environment: the recorded results come from a run on Hani's laptop (Windows 11, Python 3.14, scikit-learn 1.9.0, pandas 3.0; see `results/environment_versions.json`). A separate Linux run with scikit-learn 1.9.1 gave identical numbers. The TAWOS phases were produced with scikit-learn 1.8; under 1.9 their random-forest and logistic-regression results are unchanged, and gradient-boosting results move by at most about .01.
+
 ## Results
 
 | Arm | Task | n (pos.) | Model | AUC [95% CI] | vs comparator |
@@ -30,7 +32,7 @@ Intervals are 95% sprint-level bootstraps (2,000 paired resamples, seed 42). Two
 
 Regression (MAE, time split): issues completed 2.64 vs scope × rate 3.18; carry share .169 vs train median .200; days late 3.22 vs 3.31.
 
-TAWOS sanity rows reproduce the paper: late closure GB .751 (vs project rate .640, scope-only .530), spillover scope-only LR .885 and all-sprint RF .986. A few secondary rows drift by up to .01 (for example GB strict spillover .817 vs .812) because this run used scikit-learn 1.9.1. Your local environment should reproduce the paper exactly.
+TAWOS sanity rows reproduce the paper: late closure GB .751 (vs project rate .640, scope-only .530), spillover scope-only LR .885 and all-sprint RF .986. A few gradient-boosting rows drift by up to .01 (for example GB strict spillover .817 vs .812) because scikit-learn 1.9 replaced the 1.8 used for the paper's TAWOS results.
 
 ## What it means
 
@@ -54,6 +56,7 @@ TAWOS sanity rows reproduce the paper: late closure GB .751 (vs project rate .64
 - `results/external_validation_results.csv`: every row, with intervals.
 - `results/cohort_description.json`: cohort and reconstruction audit for both sources.
 - `results/mariadb_modeling_frame.csv`: the modeled MariaDB sprints.
-- `results_log.txt`: console output.
+- `results/environment_versions.json`: Python and library versions of the recorded run.
+- `results_log.txt`: console output from the Linux run (same numbers).
 
 Rerun with `python convert_mariadb.py data/pull/mariadb_mxs_mcol.json data/raw/mariadb`, then `python run_external.py` from this folder. This folder must sit next to the week-12, phase-2 and phase-3 folders. It takes about 5 minutes.
