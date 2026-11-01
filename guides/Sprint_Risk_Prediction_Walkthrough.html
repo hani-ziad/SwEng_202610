@@ -1,0 +1,726 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sprint Risk Prediction Walkthrough</title>
+</head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column with full-width "board" figures; sticky section nav on wide screens. */
+:root{
+  --bg:#f7f8fa; --bg2:#ffffff; --fg:#17212b; --fg2:#4f5b67; --line:#d8dee6;
+  --accent:#0b6e8f; --accent-soft:#dcefF5; --warn:#b4500f; --warn-soft:#fbe9dc;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --grid:#e3e8ee;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#121a21; --bg2:#1b2530; --fg:#e8edf2; --fg2:#a7b3bf; --line:#2f3d4b;
+  --accent:#5cc0e0; --accent-soft:#143847; --warn:#f0a06a; --warn-soft:#3d2615;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --grid:#2a3641; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#121a21; --bg2:#1b2530; --fg:#e8edf2; --fg2:#a7b3bf; --line:#2f3d4b;
+  --accent:#5cc0e0; --accent-soft:#143847; --warn:#f0a06a; --warn-soft:#3d2615;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --grid:#2a3641; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,6vw,60px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;margin-bottom:10px}
+h3{font-size:20px;font-weight:700;margin:26px 0 8px}
+p{margin:0 0 14px;max-width:68ch}
+ul{max-width:68ch;padding-left:22px}
+li{margin-bottom:6px}
+a{color:var(--accent)}
+code,.mono{font-family:var(--mono);font-size:.88em}
+.wrap{max-width:1180px;margin:0 auto}
+.grid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.nav{display:none}}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-top:24px;font-size:14px}
+.nav a{display:block;color:var(--fg2);text-decoration:none;padding:5px 0 5px 12px;border-left:2px solid var(--line)}
+.nav a.on{color:var(--accent);border-color:var(--accent);font-weight:600}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px}
+section{padding:44px 0 12px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+.hero{padding:56px 0 24px}
+.lede{font-size:21px;color:var(--fg2);max-width:62ch}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 8px}
+.stat{flex:1 1 150px;min-width:0;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.stat b{display:block;font-family:var(--display);font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--fg2)}
+.fig{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:18px 18px 12px;margin:18px 0 22px;min-width:0}
+.fig .cap{font-size:14px;color:var(--fg2);margin-top:8px;max-width:none}
+.fig svg{display:block;width:100%;height:auto;max-width:100%}
+.fig .svgwrap{overflow-x:auto}
+.note{background:var(--accent-soft);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 6px 6px 0;margin:14px 0 18px;max-width:72ch}
+.warnbox{background:var(--warn-soft);border-left:3px solid var(--warn);padding:12px 16px;border-radius:0 6px 6px 0;margin:14px 0 18px;max-width:72ch}
+.btn{font:600 14px var(--body);background:var(--accent);color:#fff;border:0;border-radius:5px;padding:8px 16px;cursor:pointer}
+:root[data-theme="dark"] .btn, .btn.dk{color:#0b1a22}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn:focus-visible,.nav a:focus-visible{outline:2px solid var(--s4);outline-offset:2px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.toolbar .status{font-size:14px;color:var(--fg2);font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--fg2);margin:4px 0 6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.two>*{min-width:0}
+table{border-collapse:collapse;font-size:15px;width:100%}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2)}
+td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
+.tablewrap{overflow-x:auto;margin:12px 0 18px}
+.steps{list-style:none;padding:0;margin:14px 0;max-width:none;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;margin:0}
+.steps .k{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font:700 15px var(--display);display:grid;place-items:center}
+.phase{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.phase>div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--bg2);min-width:0;position:relative;overflow:hidden}
+.phase>div::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent);animation:fill 9s linear infinite}
+.phase>div:nth-child(2)::after{animation-delay:2.25s}.phase>div:nth-child(3)::after{animation-delay:4.5s}.phase>div:nth-child(4)::after{animation-delay:6.75s}
+@keyframes fill{0%{width:0}25%{width:100%}26%{width:100%;opacity:0}100%{width:0;opacity:0}}
+.phase b{font-family:var(--display);font-size:17px;display:block;margin-bottom:4px}
+.phase small{color:var(--fg2);font-size:14px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:13px var(--body);padding:5px 9px;border-radius:4px;transform:translate(-50%,-125%);white-space:nowrap;opacity:0;transition:opacity .12s}
+.relpos{position:relative}
+.gl dt{font-weight:600;margin-top:10px}.gl dd{margin:0 0 4px;color:var(--fg2);max-width:68ch}
+.timeline{list-style:none;padding:0;margin:14px 0;max-width:none;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 16px 20px;margin:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:var(--display)}
+.timeline small{color:var(--fg2);display:block}
+.tldr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--s3);border-radius:0 8px 8px 0;padding:12px 16px;margin:4px 0 20px;max-width:76ch}
+.tldr b{font:600 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--s3);padding-top:3px;white-space:nowrap}
+.tldr p{margin:0;max-width:none}
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:14px 0 18px}
+.pipe div{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:14px;position:relative;min-width:0}
+.pipe div b{display:block;font-family:var(--display);font-size:15px;margin-bottom:2px}
+.pipe div::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--fg2);font-size:16px}
+.pipe div:last-child::after{content:""}
+.auc .tally{font:600 15px var(--mono);color:var(--accent)}
+/* board animation */
+.board{position:relative;height:300px;border-radius:6px;background:var(--bg);border:1px dashed var(--line);overflow:hidden}
+.col{position:absolute;top:0;bottom:0;width:33.33%;border-right:1px dashed var(--line);padding:10px}
+.col:nth-child(1){left:0}.col:nth-child(2){left:33.33%}.col:nth-child(3){left:66.66%;border-right:0}
+.col h4{margin:0 0 6px;font:600 13px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
+.chip{position:absolute;width:26%;height:36px;border-radius:5px;background:var(--bg2);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 10px;font:600 14px var(--body);transition:left .7s cubic-bezier(.4,0,.2,1),top .7s cubic-bezier(.4,0,.2,1),opacity .4s}
+.chip .sp{font:600 12px var(--mono);background:var(--accent-soft);color:var(--accent);border-radius:10px;padding:1px 7px;transition:background .3s}
+.chip.hl{outline:2px solid var(--s2)}
+.chip.gone{opacity:.25}
+.clock{font:600 14px var(--mono);color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<div class="grid">
+<nav class="nav" aria-label="Sections">
+  <a href="#start">Start here</a>
+  <a href="#question">The question</a>
+  <a href="#data">The data</a>
+  <a href="#rebuild">Rebuilding day one</a>
+  <a href="#features">The features</a>
+  <a href="#scoring">Scoring a model</a>
+  <a href="#parallel">The second leak</a>
+  <a href="#phase1">Phase 1: planning time</a>
+  <a href="#phase2">Phase 2: explain</a>
+  <a href="#phase3">Phase 3: in-sprint</a>
+  <a href="#leakage">Leakage case studies</a>
+  <a href="#transfer">Across projects</a>
+  <a href="#mariadb">Outside check</a>
+  <a href="#meaning">What it means</a>
+  <a href="#journey">The journey</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Hani AbuSharkh, Maryam Hanif, Rafat Damseh · HCT and UAEU · 2026</div>
+  <h1>Can Jira tell you a sprint is in trouble before it starts?</h1>
+  <p class="lede">A walkthrough of the sprint-risk prediction project: how we rebuilt what a team knew on the first day of each sprint, what the models learned, where the data misleads you, and how the result held up on a project outside the training data.</p>
+  <div class="stats">
+    <div class="stat"><b>8</b><span>open-source Jira projects (TAWOS)</span></div>
+    <div class="stat"><b>2,602</b><span>sprints rebuilt at their start</span></div>
+    <div class="stat"><b>3</b><span>phases plus an outside check</span></div>
+    <div class="stat"><b>391</b><span>MariaDB sprints the model never saw</span></div>
+  </div>
+  <div class="phase" aria-label="Project phases">
+    <div><b>Phase 1</b><small>Which sprints are risky, using only what was known at planning time?</small></div>
+    <div><b>Phase 2</b><small>How much, and why? Strict history, Shapley explanations, an advisor.</small></div>
+    <div><b>Phase 3</b><small>Does watching the sprint run (25%, 50%, 75%) improve the warning?</small></div>
+    <div><b>Outside check</b><small>Does it still work on MariaDB, a Jira the model never trained on?</small></div>
+  </div>
+</header>
+
+<section id="start">
+  <div class="eyebrow">1 · Start here</div>
+  <h2>If you have never seen this project, read this first</h2>
+  <div class="tldr"><b>In short</b><p>We taught a computer to look at a software team's plan on the first day of a sprint and say how likely the sprint is to run over. The hard part was making sure the computer only saw what the team could have seen that morning.</p></div>
+  <h3>How to read this page</h3>
+  <p>Every section opens with an "In short" box. Read only those and you have the whole story in five minutes. The full page takes about half an hour. Figures with a <strong>Play</strong>, <strong>Draw</strong> or <strong>Show</strong> button are animated: press them. Any word you don't know is in the glossary at the end.</p>
+  <h3>Scrum in one minute</h3>
+  <p>A Scrum team keeps a <strong>backlog</strong>, a list of work items called <strong>issues</strong>. Every one to four weeks it starts a <strong>sprint</strong>: at a planning meeting it picks the issues it commits to finish and, often, gives each a size estimate in <strong>story points</strong>. Then it works. At the planned end the team closes the sprint and anything unfinished rolls over.</p>
+  <h3>Jira in one minute</h3>
+  <p>Jira is the tool most teams use to run this. Each issue has fields (status, sprint, story points, assignee). Jira also keeps a <strong>change log</strong>: every time a field changes, it records from what, to what, and when. That change log is the raw material of this whole project.</p>
+  <h3>What "predicting" means here</h3>
+  <p>A <strong>model</strong> is a formula learned from past sprints. You give it a handful of numbers about a new sprint (its <strong>features</strong>) and it returns a risk score. To learn the formula the model is shown old sprints together with how they ended (their <strong>labels</strong>). To check it honestly, it is then tested on sprints it never saw during learning.</p>
+  <div class="pipe" aria-label="Pipeline">
+    <div><b>Jira change log</b>every field change, with a timestamp</div>
+    <div><b>Day-one state</b>the board as it was when each sprint began</div>
+    <div><b>Features</b>a dozen numbers per sprint</div>
+    <div><b>Model</b>a formula learned from older sprints</div>
+    <div><b>Risk score</b>checked against what really happened</div>
+  </div>
+  <div class="note"><strong>The one rule that runs through everything:</strong> no hindsight. Nothing recorded after the moment of prediction may reach the model. Most of this project is about the ways that rule is easy to break by accident, and what breaking it costs.</div>
+</section>
+
+<section id="question">
+  <div class="eyebrow">2 · The question</div>
+  <h2>Two ways a sprint misses its boundary</h2>
+  <div class="tldr"><b>In short</b><p>A sprint can fail in two recorded ways: work left unfinished (spillover) or the sprint closed late in Jira (late closure). We ask whether either can be predicted on day one, and whether watching the sprint helps.</p></div>
+  <p>Scrum teams plan a sprint, commit to a set of issues, and run for one to four weeks. Jira records two things when that goes wrong, and neither requires anyone's opinion.</p>
+  <div class="two">
+    <div class="fig">
+      <h3 style="margin-top:0">Spillover</h3>
+      <p>At least one issue that was committed at the start is still unresolved at the planned end. Work rolled into the next sprint.</p>
+      <svg viewBox="0 0 320 90" role="img" aria-label="Spillover illustration">
+        <rect x="10" y="20" width="300" height="50" rx="6" fill="none" stroke="var(--line)"/>
+        <rect x="20" y="30" width="60" height="30" rx="4" fill="var(--s3)"/>
+        <rect x="90" y="30" width="60" height="30" rx="4" fill="var(--s3)"/>
+        <rect x="160" y="30" width="60" height="30" rx="4" fill="var(--s3)"/>
+        <rect x="230" y="30" width="60" height="30" rx="4" fill="var(--s2)"/>
+        <text x="260" y="50" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">open</text>
+        <text x="310" y="14" text-anchor="end" font-size="11" fill="var(--fg2)">planned end</text>
+        <line x1="305" y1="18" x2="305" y2="72" stroke="var(--fg2)" stroke-dasharray="3 3"/>
+      </svg>
+    </div>
+    <div class="fig">
+      <h3 style="margin-top:0">Late closure</h3>
+      <p>Jira's "complete sprint" timestamp lands more than one day after the planned end. An administrative event, not a verdict on the team.</p>
+      <svg viewBox="0 0 320 90" role="img" aria-label="Late closure illustration">
+        <rect x="10" y="20" width="220" height="50" rx="6" fill="var(--accent-soft)" stroke="var(--line)"/>
+        <rect x="230" y="20" width="70" height="50" rx="6" fill="var(--warn-soft)" stroke="var(--warn)" stroke-dasharray="4 3"/>
+        <line x1="230" y1="12" x2="230" y2="78" stroke="var(--fg2)" stroke-dasharray="3 3"/>
+        <text x="230" y="9" text-anchor="middle" font-size="11" fill="var(--fg2)">planned end</text>
+        <text x="265" y="50" text-anchor="middle" font-size="12" fill="var(--fg)" font-weight="600">+6 days</text>
+        <text x="300" y="86" text-anchor="end" font-size="11" fill="var(--fg2)">closed in Jira</text>
+      </svg>
+    </div>
+  </div>
+  <p>The research question is simple to state: <strong>can either outcome be ranked from what was known on the first day of the sprint, and does watching the sprint unfold add anything?</strong> The rule that makes it hard: every feature must be rebuilt only from events timestamped at or before the moment of prediction. No hindsight.</p>
+  <div class="note">Both labels are very common. 38.7% of modelled sprints closed late, and 93.1% of sprints with committed work spilled over. So the useful question for spillover is not "will any work spill?" but "which sprints carry the most unfinished work?"</div>
+</section>
+
+<section id="data">
+  <div class="eyebrow">3 · The data</div>
+  <h2>TAWOS, and how 2,657 sprint rows became 2,602</h2>
+  <div class="tldr"><b>In short</b><p>Eight open-source projects from the public TAWOS dataset, 2,602 sprints after removing ones that were still running, broken, or had no history. A third of them committed no work at all.</p></div>
+  <p>TAWOS is a public dataset of 44 open-source Jira projects with their full issue history (Tawosi et al., MSR 2022). We kept the eight projects with at least 30 sprint records: Apache Mesos, Appcelerator Studio, Atlassian Confluence Cloud and Server, LSST Data Management, Mule, Titanium SDK and Titanium Mobile.</p>
+  <div class="fig relpos">
+    <div class="legend"><i style="background:var(--s1)"></i>kept <i style="background:var(--line)"></i>removed</div>
+    <div class="svgwrap"><svg id="funnel" viewBox="0 0 760 230" role="img" aria-label="Sprint cohort funnel from 2,657 rows to 1,691 nonempty sprints"></svg></div>
+    <div class="tip" id="tip-funnel"></div>
+    <p class="cap">Three cuts, each for a stated reason. Sprints still open have no outcome yet; three closed rows end before they begin; each project's first sprint has no history to learn from. A third of what remains committed no issues at all, which matters later.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>145,309</b><span>issues in the eight projects</span></div>
+    <div class="stat"><b>88,364</b><span>change events on the Sprint and Story Points fields</span></div>
+    <div class="stat"><b>20,603</b><span>issue-sprint commitments rebuilt at sprint start</span></div>
+    <div class="stat"><b>73.5%</b><span>of issues carry no story points at all</span></div>
+  </div>
+</section>
+
+<section id="rebuild">
+  <div class="eyebrow">4 · Rebuilding day one</div>
+  <h2>A Jira export is not a snapshot of planning day</h2>
+  <div class="tldr"><b>In short</b><p>Today's Jira export shows the sprint as it ended, not as it began. We rewind the change log to rebuild each sprint's first morning, and we log every place where Jira recorded nothing and we had to fall back on today's value.</p></div>
+  <p>This is the core idea of the whole project. When you export Jira today, each issue carries its <em>current</em> sprint and its <em>current</em> estimate. But issues get added mid-sprint, pulled out, re-estimated. If you train a model on today's export, you feed it information the team did not have when the sprint began, and the model looks better than it is.</p>
+  <p>The fix is to replay the change log backwards. Press play to watch one sprint being rewound from today's export to the state on its first morning.</p>
+  <div class="fig relpos">
+    <div class="toolbar">
+      <button class="btn" id="replayBtn">Rewind to sprint start</button>
+      <button class="btn ghost" id="replayReset">Reset to today</button>
+      <span class="status" id="replayStatus">Showing: today's export (what a naive model would see)</span>
+    </div>
+    <div class="board" id="board">
+      <div class="col"><h4>Backlog</h4></div>
+      <div class="col"><h4>Sprint 12 <span class="clock" id="clock">day 14</span></h4></div>
+      <div class="col"><h4>Sprint 13</h4></div>
+    </div>
+    <p class="cap" id="replayCap">Today Sprint 12 shows five issues: A, B, C (5 points), D, E. The change log says otherwise.</p>
+  </div>
+  <ol class="steps">
+    <li><span class="k">1</span><div><strong>Start from the latest recorded state</strong> of each issue's Sprint and Story Points fields.</div></li>
+    <li><span class="k">2</span><div><strong>Walk the change events backwards</strong> past the sprint's start timestamp, undoing each one.</div></li>
+    <li><span class="k">3</span><div><strong>Count an issue as committed</strong> only if, at that moment, it existed, belonged to the sprint, and was not yet resolved.</div></li>
+    <li><span class="k">4</span><div><strong>Log every fallback.</strong> When an issue has no recorded change for a field, we use the static value and record that we did.</div></li>
+  </ol>
+  <div class="warnbox"><strong>The data has a ceiling.</strong> 7.2% of commitments lean on the static sprint link and 45.1% on static story points, because Jira never recorded a change. On the 110 test sprints whose scope has fully recorded history, the headline spillover score drops from 0.885 to 0.772. The paper reports that plainly instead of hiding it.</div>
+</section>
+
+<section id="features">
+  <div class="eyebrow">5 · The features</div>
+  <h2>What the model is allowed to know on day one</h2>
+  <div class="tldr"><b>In short</b><p>The model sees about a dozen numbers per sprint: how much was committed, how long the sprint is, how the team did in its recent sprints, how busy it already is, and which project it is.</p></div>
+  <p>A machine-learning model does not read Jira. It reads a short list of numbers per sprint, called features. Everything below is computed from the rebuilt day-one state, and the rule from section 4 applies to each one: it must be knowable on the morning the sprint starts.</p>
+  <div class="fig">
+    <h3 style="margin-top:0">One sprint, as the model sees it</h3>
+    <p class="cap" style="margin-bottom:10px">A made-up but typical sprint, with every planning-time feature filled in. The last column says which feature set carries it.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Group</th><th>Feature</th><th>Plain meaning</th><th>Example</th><th>Set</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="2"><strong>Scope</strong></td><td>Committed issues</td><td>How many issues were on the board at the start</td><td class="n">14</td><td>both</td></tr>
+        <tr><td>Committed story points</td><td>Their estimated size, added up (0 where no estimate exists)</td><td class="n">31</td><td>both</td></tr>
+        <tr><td><strong>Sprint length</strong></td><td>Planned days</td><td>Planned end minus start</td><td class="n">14</td><td>both</td></tr>
+        <tr><td rowspan="4"><strong>Recent history</strong></td><td>Average completion ratio, last 3</td><td>Share of committed issues the team finished in its recent sprints</td><td class="n">0.72</td><td>both*</td></tr>
+        <tr><td>Last carryover</td><td>Issues left unfinished at the end of the most recent sprint</td><td class="n">4</td><td>both*</td></tr>
+        <tr><td>Average points delivered, last 3</td><td>Story points finished per recent sprint</td><td class="n">22.3</td><td>both*</td></tr>
+        <tr><td>Sprints of history available</td><td>How many finished sprints the average rests on (0 to 3)</td><td class="n">3</td><td>strict</td></tr>
+        <tr><td rowspan="3"><strong>Capacity</strong></td><td>Average issues completed, last 3</td><td>What the team usually clears</td><td class="n">10.3</td><td>strict</td></tr>
+        <tr><td>Average issues committed, last 3</td><td>What the team usually takes on</td><td class="n">13.7</td><td>strict</td></tr>
+        <tr><td>Scope to capacity</td><td>This sprint's commitment divided by what the team usually clears</td><td class="n">1.36</td><td>strict</td></tr>
+        <tr><td rowspan="2"><strong>Past lateness</strong></td><td>Average days late, last 3</td><td>How late the team's recent sprints closed</td><td class="n">2.1</td><td>strict</td></tr>
+        <tr><td>Share of late sprints, last 3</td><td>How often they closed more than a day late</td><td class="n">0.67</td><td>strict</td></tr>
+        <tr><td><strong>Parallel sprints</strong></td><td>Other sprints open at the start</td><td>How many of the project's sprints were already running</td><td class="n">1</td><td>strict</td></tr>
+        <tr><td><strong>Project</strong></td><td>Project identity</td><td>Which of the eight projects this is, as eight yes/no flags</td><td class="n">Mule</td><td>both</td></tr>
+      </tbody>
+    </table></div>
+    <p class="cap">* The three starred features exist in both sets, but they are computed differently. <strong>Legacy</strong> (Phase 1) averages the three sprints that <em>started</em> most recently before this one. <strong>Strict</strong> (Phase 2) averages the three most recent sprints whose <em>outcome was already known</em> at this sprint's start. Section 7 shows why that difference matters.</p>
+  </div>
+  <h3>Three things the feature list tells you</h3>
+  <ul>
+    <li><strong>Scope is what the team chose.</strong> Everything else is what the team is. The models have to work out which matters for which outcome; Phase 2 answers that.</li>
+    <li><strong>Nothing from inside the sprint.</strong> No burndown, no issues done so far. Those come in Phase 3, as a separate "progress" group, and are only used at in-sprint checkpoints.</li>
+    <li><strong>Story points are weak in this data.</strong> 73.5% of issues have none, so the point features often read zero. The MariaDB check later drops them entirely.</li>
+  </ul>
+  <div class="note"><strong>Labels, the thing being predicted,</strong> are never features. Spillover (any committed issue unresolved at the planned end) and late closure (closed more than a day after the planned end) are computed from what happened afterwards, and the model only sees them during training.</div>
+</section>
+
+<section id="scoring">
+  <div class="eyebrow">6 · Scoring a model</div>
+  <h2>How we tell a good model from a lucky one</h2>
+  <div class="tldr"><b>In short</b><p>Models are compared with one number, ROC-AUC, which asks how well the model <em>ranks</em> risky sprints above safe ones. They are always tested on sprints they never trained on, and every headline number comes with a comparison to a simple rule.</p></div>
+  <h3>ROC-AUC, the headline number</h3>
+  <p>Pick one sprint that did run over and one that did not, at random. Did the model give the risky one the higher score? Do that for every possible pair and count the share of times it got the order right. That share is the <strong>ROC-AUC</strong>. 0.5 means the model is no better than a coin toss, 1.0 means it never gets a pair wrong. Try it below.</p>
+  <div class="fig relpos auc">
+    <div class="toolbar">
+      <button class="btn" id="aucOne">Draw a random pair</button>
+      <button class="btn ghost" id="aucMany">Draw 100 pairs</button>
+      <button class="btn ghost" id="aucReset">Reset</button>
+      <span class="status" id="aucStatus">Twelve example sprints, sorted by the model's risk score</span>
+    </div>
+    <div class="legend"><i style="background:var(--s2)"></i>closed late <i style="background:var(--s3)"></i>closed on time</div>
+    <div class="svgwrap"><svg id="aucChart" viewBox="0 0 760 140" role="img" aria-label="Twelve sprints on a risk-score line, risky ones in orange, safe ones in green"></svg></div>
+    <p class="cap"><span class="tally" id="aucTally">Pairs drawn: 0</span>. The exact AUC of this little example is <strong>0.806</strong>: of the 36 possible pairs, the model orders 29 correctly. After enough random pairs the tally settles near that.</p>
+  </div>
+  <p>Why not accuracy or F1? Because the labels are lopsided. 93% of sprints with work spill over, so a model that says "yes" to everything already scores F1 0.971 on spillover. AUC is unmoved by that; it only cares about the ordering. F1 still appears in the leakage section, where its sensitivity is the point.</p>
+  <h3>The predictors lined up</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Predictor</th><th>What it does</th><th>Why it is there</th></tr></thead>
+    <tbody>
+      <tr><td>Always positive</td><td>Says every sprint is at risk</td><td>Shows how misleading precision and F1 are when 93% of sprints spill</td></tr>
+      <tr><td>Project base rate</td><td>Predicts each project's own historical rate</td><td>The bar a model must clear to prove it learned something beyond "which team"</td></tr>
+      <tr><td>Scope-only logistic regression</td><td>A straight-line model on three numbers: committed issues, points, sprint length</td><td>Tests whether scope alone explains the outcome</td></tr>
+      <tr><td>Logistic regression, all features</td><td>A straight-line model on every feature</td><td>The simplest learned model; easy to read</td></tr>
+      <tr><td>Random forest</td><td>300 small decision trees voting (depth 5)</td><td>Captures interactions, hard to overfit at this size</td></tr>
+      <tr><td>Gradient boosting</td><td>Trees built one after another, each correcting the last</td><td>Usually the strongest tabular model; XGBoost and scikit-learn versions</td></tr>
+    </tbody>
+  </table></div>
+  <p>No hyperparameter search, the 0.5 threshold fixed before any result was seen, random seed 42 throughout. The settings were chosen once and never tuned to the test data.</p>
+  <h3>How a model is tested without cheating</h3>
+  <div class="two">
+    <div class="fig" style="margin:0">
+      <h3 style="margin-top:0">Time-ordered split</h3>
+      <svg viewBox="0 0 320 110" role="img" aria-label="Time-ordered split: first 70 percent of each project's sprints train, the last 30 percent test">
+        <text x="0" y="14" font-size="11" fill="var(--fg2)">each project, sprints in start order</text>
+        <rect x="0" y="24" width="224" height="26" rx="4" fill="var(--s1)"/><rect x="228" y="24" width="92" height="26" rx="4" fill="var(--s2)"/>
+        <text x="112" y="41" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">train: first 70%</text>
+        <text x="274" y="41" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">test: last 30%</text>
+        <text x="0" y="74" font-size="12" fill="var(--fg)">1,816 training sprints, 786 test sprints</text>
+        <text x="0" y="94" font-size="12" fill="var(--fg2)">Never trains on a sprint's future.</text>
+      </svg>
+    </div>
+    <div class="fig" style="margin:0">
+      <h3 style="margin-top:0">Leave one project out (LOPO)</h3>
+      <svg viewBox="0 0 320 110" role="img" aria-label="Leave-one-project-out: train on seven projects, test on the eighth, repeated eight times">
+        <text x="0" y="14" font-size="11" fill="var(--fg2)">eight projects, one held out at a time</text>
+        <g id="lopoBoxes"></g>
+        <text x="0" y="74" font-size="12" fill="var(--fg)">Repeated 8 times, every project gets a turn</text>
+        <text x="0" y="94" font-size="12" fill="var(--fg2)">Asks whether a rule learned elsewhere carries over.</text>
+      </svg>
+    </div>
+  </div>
+  <p style="margin-top:14px">Uncertainty comes from a <strong>cluster bootstrap</strong>: the eight projects are resampled 2,000 times and the model is re-scored each time, which gives a 95% interval for every difference between two models. Eight projects make those intervals wide, and the paper says so.</p>
+</section>
+
+<section id="parallel">
+  <div class="eyebrow">7 · The second leak</div>
+  <h2>Projects run several sprints at once</h2>
+  <div class="tldr"><b>In short</b><p>Teams run sprints in parallel, so "the previous sprint" was often still open when the next began. Features that summarised it were reading the future. Fixing that made the models better, not worse.</p></div>
+  <p>A natural feature is "how did the previous sprint go?" But in 71% of our sprints, the previous sprint had not reached its planned end when the next one started. Its outcome was not known yet. A feature that reads it is reading the future.</p>
+  <div class="fig relpos">
+    <div class="toolbar">
+      <button class="btn" id="parBtn">Show the problem</button>
+      <span class="status" id="parStatus">Two overlapping sprints of one project</span>
+    </div>
+    <div class="svgwrap"><svg id="gantt" viewBox="0 0 760 170" role="img" aria-label="Two overlapping sprints; the second starts before the first has finished"></svg></div>
+    <p class="cap"><strong>Legacy</strong> history features (Phase 1) summarised the immediately preceding sprints whether or not they had finished. <strong>Strict</strong> features (Phase 2) use only sprints whose outcome was already known at the start. Both are reported; the paper's headline numbers use strict.</p>
+  </div>
+  <div class="fig relpos">
+    <h3 style="margin-top:0">What fixing it changed: late-closure AUC, legacy vs strict</h3>
+    <div class="legend"><i style="background:var(--line)"></i>legacy <i style="background:var(--s1)"></i>strict</div>
+    <div class="svgwrap"><svg id="strictChart" viewBox="0 0 760 210" role="img" aria-label="Late-closure AUC before and after the strict history fix"></svg></div>
+    <div class="tip" id="tip-strict"></div>
+    <p class="cap">Across projects (leave-one-project-out) the lift is largest: logistic regression 0.542 to 0.629, random forest 0.600 to 0.642. The legacy features were less informative than they looked, and had no business being called "known at planning time".</p>
+  </div>
+</section>
+
+<section id="phase1">
+  <div class="eyebrow">8 · Phase 1</div>
+  <h2>Planning-time prediction: what the models learned</h2>
+  <div class="tldr"><b>In short</b><p>Spillover is about how much the team took on: three numbers about scope rank sprints at AUC 0.885 and nothing richer beats them. Late closure is about team habits: scope alone is a coin toss, and history gets to 0.751.</p></div>
+  <p>With the features from section 5 and the scoring rules from section 6, Phase 1 asks the first question: using only what was known at planning time, can a model rank sprints by risk better than a simple rule?</p>
+  <div class="fig relpos">
+    <h3 style="margin-top:0">Time-ordered split: train on each project's first 70% of sprints, test on the rest</h3>
+    <div class="legend"><i style="background:var(--s1)"></i>late closure (786 test sprints) <i style="background:var(--s2)"></i>spillover, nonempty sprints (511 test sprints)</div>
+    <div class="svgwrap"><svg id="p1chart" viewBox="0 0 760 300" role="img" aria-label="Planning-time ROC-AUC by model and outcome"></svg></div>
+    <div class="tip" id="tip-p1"></div>
+    <p class="cap">The two outcomes behave in opposite ways. For spillover, a three-variable logistic regression on scope alone (0.885) beats every richer model. For late closure, scope alone is a coin toss (0.530) and gradient boosting on team history reaches 0.751.</p>
+  </div>
+  <h3>The zero-scope trap</h3>
+  <p>A third of sprints committed nothing. They cannot spill over, so a model gets them right for free. Keep them in and the spillover forest scores 0.986; score only sprints with real work and the same model scores 0.852. A study that keeps them looks about 0.13 AUC stronger than it is. Every spillover number in the paper is on nonempty sprints.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Headline</th><th>Model</th><th>Result</th><th>Compared with</th></tr></thead>
+    <tbody>
+      <tr><td>Late closure, time split</td><td>Gradient boosting, strict</td><td class="n">AUC .751</td><td>Project base rate .640, scope-only .530</td></tr>
+      <tr><td>Spillover, nonempty, time split</td><td>Logistic regression, scope only</td><td class="n">AUC .885 [.818, .922]</td><td>Gradient boosting .812</td></tr>
+      <tr><td>Spillover, all sprints (inflated)</td><td>Random forest, legacy</td><td class="n">AUC .986</td><td>Same model on nonempty .852</td></tr>
+      <tr><td>Spillover, fully recorded history</td><td>Logistic regression, scope only</td><td class="n">AUC .772</td><td>110 test sprints, SE about .05</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="phase2">
+  <div class="eyebrow">9 · Phase 2</div>
+  <h2>Explaining each outcome, and predicting how much</h2>
+  <div class="tldr"><b>In short</b><p>Shapley values show which features drive each prediction: scope and capacity for spillover, past lateness and project identity for late closure. Predicting exact numbers works for issues completed and little else.</p></div>
+  <p>Phase 2 asked two more things. First, <em>why</em> does a model score a sprint as risky? We computed exact Shapley values over seven feature groups: for each sprint, every combination of groups is scored and the credit is shared out fairly. Second, can we predict numbers rather than yes/no: how many issues get done, what share carries over, how many days late?</p>
+  <div class="fig relpos">
+    <h3 style="margin-top:0">Share of model attribution by feature group (random forest, strict features, 150 test sprints)</h3>
+    <div class="two">
+      <div><div class="legend"><i style="background:var(--s1)"></i>late closure</div><svg id="shapLate" viewBox="0 0 360 200" role="img" aria-label="Shapley shares for late closure"></svg></div>
+      <div><div class="legend"><i style="background:var(--s2)"></i>spillover</div><svg id="shapSpill" viewBox="0 0 360 200" role="img" aria-label="Shapley shares for spillover"></svg></div>
+    </div>
+    <div class="tip" id="tip-shap"></div>
+    <p class="cap">Spillover is a work outcome: how much was taken on, against how much the team usually clears. Late closure is a habit outcome: past lateness and project identity carry 60% of it, and committed scope only 9%.</p>
+  </div>
+  <h3>Numeric targets</h3>
+  <p>Issues completed is mostly arithmetic: multiply committed issues by the team's recent completion rate and you are within 2.1 issues on average; the best learned model manages 1.96. Carry share is nearly unpredictable at planning time. Days late improves only from 2.66 to 2.48 days of error.</p>
+  <h3>The advisor, and what it is not</h3>
+  <p>Phase 2 wraps the fitted models into an advisor: for a planned sprint it returns both probabilities, the expected issues completed with an 80% interval, and a what-if table across alternative scopes. The intervals cover 84% of outcomes and are a third tighter than the baseline, but they under-cover large sprints (70% coverage at 13 or more issues).</p>
+  <div class="warnbox"><strong>The what-if table is not advice.</strong> Sprints planned heaviest relative to capacity carry over only 3.2 percentage points more than the lightest, and the interval crosses zero. A model's expectation says nothing about cause. The paper says this in four places so that nobody deploys it as a scope-cutting tool.</div>
+</section>
+
+<section id="phase3">
+  <div class="eyebrow">10 · Phase 3</div>
+  <h2>In-sprint early warning: does watching help?</h2>
+  <div class="tldr"><b>In short</b><p>Once the sprint is running, progress information makes spillover much easier to predict (0.83 to 0.96 by mid-sprint). It does nothing for late closure, which is about when someone clicks the button, not about the work.</p></div>
+  <p>Phase 3 rebuilds the sprint state at 25%, 50%, 75% and 100% of the planned duration, again only from events timestamped at or before that point: issues done and remaining, the gap between work finished and time elapsed, issues added or dropped since the start. Press play to see how the prediction changes as a sprint runs.</p>
+  <div class="fig relpos">
+    <div class="toolbar">
+      <button class="btn" id="cpBtn">Play the sprint</button>
+      <span class="status" id="cpStatus">At planning time: spillover AUC 0.830, late closure 0.751</span>
+    </div>
+    <div class="legend"><i style="background:var(--s2)"></i>spillover, model with progress <i style="background:var(--s1)"></i>late closure, model with progress <i style="background:var(--s4)"></i>spillover, learning-free rule (share of work still open)</div>
+    <div class="svgwrap"><svg id="cpChart" viewBox="0 0 760 300" role="img" aria-label="ROC-AUC at each in-sprint checkpoint"></svg></div>
+    <div class="tip" id="tip-cp"></div>
+    <p class="cap">Spillover becomes much more predictable once the sprint is running: 0.830 at planning, 0.926 a quarter of the way in, 0.957 at halfway. Late closure barely moves. Of 24 paired comparisons with the same model without progress, 22 intervals include zero. Whether somebody clicks "complete sprint" on time is not about how the work is going.</p>
+  </div>
+  <p>A plain rule, "share of committed work still open", reaches 0.667, 0.767 and 0.802 at the three checkpoints. The model is worth 0.10 to 0.26 AUC over it, because it also uses time pressure, scope and history. For carry share the rule "one minus the share done" is as good as the model from halfway on.</p>
+</section>
+
+<section id="leakage">
+  <div class="eyebrow">11 · Leakage case studies</div>
+  <h2>Two mistakes we reproduced on purpose</h2>
+  <div class="tldr"><b>In short</b><p>Two common mistakes, made on purpose, inflate results by up to 0.24 F1. Each hits one outcome and barely touches the other, so leakage has to be checked per task.</p></div>
+  <p>To show how much hindsight inflates a result, we made two common mistakes on our own data and measured the damage at the fixed threshold.</p>
+  <div class="fig relpos">
+    <div class="legend"><i style="background:var(--line)"></i>done correctly <i style="background:var(--s2)"></i>with the mistake</div>
+    <div class="svgwrap"><svg id="leakChart" viewBox="0 0 760 220" role="img" aria-label="F1 before and after two leakage mistakes"></svg></div>
+    <div class="tip" id="tip-leak"></div>
+    <p class="cap"><strong>Mistake 1:</strong> feed in the sprint's own completion ratio, which is only known once the sprint is over. Spillover F1 jumps from 0.756 to 0.991 because the feature restates the label. <strong>Mistake 2:</strong> run SMOTE oversampling on the whole pool before splitting. Late-closure F1 inflates from 0.457 to 0.646 as synthetic copies of test sprints leak into training. Each mistake hits one label and barely touches the other, so a leakage audit has to be run per task.</p>
+  </div>
+</section>
+
+<section id="transfer">
+  <div class="eyebrow">12 · Across projects</div>
+  <h2>Leave one project out</h2>
+  <div class="tldr"><b>In short</b><p>Train on seven projects and test on the eighth, and performance swings far more by project than by model. The numbers are evidence about these projects, not a general benchmark.</p></div>
+  <p>The time split tests whether a model learned on a project's past works on its future. Leave-one-project-out (LOPO) asks a harder question: train on seven projects, test on the eighth. It is the project, far more than the model, that moves performance.</p>
+  <div class="fig relpos">
+    <div class="legend"><i style="background:var(--s1)"></i>late closure <i style="background:var(--s2)"></i>spillover, nonempty</div>
+    <div class="svgwrap"><svg id="lopoChart" viewBox="0 0 760 170" role="img" aria-label="Range of per-project AUC under leave-one-project-out"></svg></div>
+    <div class="tip" id="tip-lopo"></div>
+    <p class="cap">Late closure runs from 0.531 on Titanium Mobile to 0.780 on Appcelerator Studio (pooled 0.600 with legacy features, 0.642 strict). Spillover from 0.706 on Confluence Cloud, where 267 of 464 sprints commit nothing, to 0.950 on Appcelerator. Concept drift is part of why: Titanium SDK's late rate drops from 71% in training to 33% in test.</p>
+  </div>
+</section>
+
+<section id="mariadb">
+  <div class="eyebrow">13 · Outside check</div>
+  <h2>Does it hold on a Jira the model never saw?</h2>
+  <div class="tldr"><b>In short</b><p>Run once, unchanged, on two MariaDB projects the model never saw, late closure still ranks at 0.71. Spillover could not be tested there because nearly every MariaDB sprint spills.</p></div>
+  <p>LOPO never leaves TAWOS. So on 1 November 2026 we ran the frozen pipeline once on MariaDB's public Jira: the MaxScale and ColumnStore projects, 391 sprints from 2016 to 2026, pulled through the REST API and converted to the TAWOS table layout. No model, label, feature or reconstruction code was changed. MariaDB records no story points, so that run drops the point features on both sides.</p>
+  <div class="fig relpos">
+    <h3 style="margin-top:0">Late closure on MariaDB, 391 sprints, 106 late</h3>
+    <div class="svgwrap"><svg id="mdbChart" viewBox="0 0 760 230" role="img" aria-label="Late-closure AUC on MariaDB under three settings"></svg></div>
+    <div class="tip" id="tip-mdb"></div>
+    <p class="cap">Trained on TAWOS alone, with no project identity and no story points, gradient boosting ranks MariaDB late closures at 0.710 (interval 0.637 to 0.773) and the random forest at 0.716, against 0.576 for scope alone. That sits between the paper's LOPO (0.642) and time-split (0.751) numbers, so the late-closure result is not a TAWOS artifact.</p>
+  </div>
+  <div class="two">
+    <div class="warnbox"><strong>Two honest caveats.</strong> Within MariaDB, the two projects close late at such different rates (54% and 15%) that knowing the project alone scores 0.745, as good as the best model. And spillover cannot be tested there: 99% of MariaDB sprints spill over, leaving three negatives.</div>
+    <div class="note"><strong>Replicated:</strong> progress still adds almost nothing for late closure at mid-sprint (+0.019, interval crossing zero), and the zero-scope inflation is smaller because only 10% of MariaDB sprints are empty, against 35% in TAWOS.</div>
+  </div>
+</section>
+
+<section id="meaning">
+  <div class="eyebrow">14 · What it means</div>
+  <h2>A protocol more than a tool</h2>
+  <div class="tldr"><b>In short</b><p>The contribution is a careful way of working with Jira history, not a tool to deploy. Four habits carry over to any similar study.</p></div>
+  <p>The contribution is the way of working with Jira history, not a risk score to deploy. Four lessons travel to any team or researcher doing this kind of work.</p>
+  <ol class="steps">
+    <li><span class="k">1</span><div><strong>Rebuild the sprint-start state</strong> from the change log. A present-day export carries hindsight.</div></li>
+    <li><span class="k">2</span><div><strong>Drop the sprints that commit nothing</strong> before scoring spillover, or your AUC is inflated by free answers.</div></li>
+    <li><span class="k">3</span><div><strong>Honour parallel-sprint timing.</strong> Only use history whose outcome was known when the sprint began.</div></li>
+    <li><span class="k">4</span><div><strong>Audit for leakage one label at a time.</strong> The same mistake costs 0.24 F1 on one outcome and 0.01 on the other.</div></li>
+  </ol>
+  <h3>What a team can actually do with this</h3>
+  <p>At planning, the scores rank sprints by risk, so a team knows which ones to watch; they are rankings, not calibrated odds. During the sprint, the 25% and 50% checkpoints flag likely spillover earlier and better than counting open issues. Late closure is driven by habits, not by the work, so no in-sprint signal helps it.</p>
+  <h3>Limits, in the paper's own words</h3>
+  <ul>
+    <li>Jira's completion timestamp marks when a sprint was closed, not when its work was done.</li>
+    <li>What was never recorded cannot be recovered; the story-point fallback caps the spillover estimate.</li>
+    <li>Eight projects give wide intervals; the bootstrap over projects is exploratory, not confirmatory.</li>
+    <li>Every project is open-source, and the MariaDB check adds one outside source, two projects, and no test of spillover.</li>
+  </ul>
+</section>
+
+<section id="journey">
+  <div class="eyebrow">15 · The journey</div>
+  <h2>How the project unfolded</h2>
+  <div class="tldr"><b>In short</b><p>Sixteen weeks of coursework produced the pipeline; October and November 2026 added the reviews, the second paper and the outside check.</p></div>
+  <ul class="timeline">
+    <li><b>Week 8 · Proposal</b><small>Question, baselines and TAWOS named as the dataset. Project selection rule: at least 30 closed sprints.</small></li>
+    <li><b>Week 10 · Baseline artifact</b><small>Pipeline built on a small substitute dataset (four projects, 238 sprints) because the sandbox could not reach TAWOS. Delay prediction near chance. Leakage case studies reproduced.</small></li>
+    <li><b>Week 12 · Real TAWOS data</b><small>MySQL dump loaded, eight projects exported, change-log reconstruction added. 2,602 modelled sprints. Late closure becomes learnable (AUC 0.64 to 0.67).</small></li>
+    <li><b>Week 14 · Full results</b><small>Cluster bootstrap over projects (2,000 resamples), provenance audit, zero-scope decomposition, calibration.</small></li>
+    <li><b>Week 16 · Article and freeze</b><small>Phase 1 frozen. Phases 2 and 3 added beside it; they import Phase 1 and do not change it. 50 automated tests.</small></li>
+    <li><b>October 2026 · Reviews</b><small>Four rounds of pre-review edits on the CCECE paper: headline table with intervals, provenance made central, novelty bounded, caveats de-duplicated. A second paper, a position piece on grounding AI Scrum Master agents, drafted for Canadian AI 2027.</small></li>
+    <li><b>1 November 2026 · Outside check</b><small>MariaDB MaxScale and ColumnStore pulled from the public Jira, run through the frozen pipeline, added to the paper as row 16 and a new subsection. Repository updated.</small></li>
+  </ul>
+  <h3>Reproducing it</h3>
+  <p>Everything is in the public repository <a href="https://github.com/hani-ziad/SwEng_202610">github.com/hani-ziad/SwEng_202610</a>: the TAWOS export for the eight projects, the MariaDB pull and its converted tables, all code, 50 tests, every result file, and <code>verify_numbers.py</code>, which checks all 319 numbers in the paper against those files. Each phase runs on a laptop CPU in minutes with seed 42.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Folder</th><th>What is in it</th></tr></thead>
+    <tbody>
+      <tr><td><code>week-12-method-preliminary-results/sprint-risk-prediction</code></td><td>Phase 1: loaders, change-log reconstruction, labels, features, baselines, tests, TAWOS CSVs</td></tr>
+      <tr><td><code>phase-2-explainable-sprint-advisor</code></td><td>Strict history features, both outcome families, exact Shapley, the advisor</td></tr>
+      <tr><td><code>phase-3-in-sprint-early-warning</code></td><td>Checkpoint state reconstruction and progress features</td></tr>
+      <tr><td><code>external-validation</code></td><td>MariaDB browser pull, converter, runner, results</td></tr>
+      <tr><td><code>ccece-2027-paper</code> · <code>canadian-ai-2027-paper</code></td><td>The two papers (LaTeX, PDF) and the number checker</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="glossary">
+  <div class="eyebrow">16 · Glossary</div>
+  <h2>Terms used above</h2>
+  <dl class="gl">
+    <dt>Scrum</dt><dd>A way of running software work in short fixed cycles with a committed plan for each.</dd>
+    <dt>Backlog and issue</dt><dd>The backlog is the team's list of work; each item is an issue (a story, task or bug).</dd>
+    <dt>Model</dt><dd>A formula learned from past sprints that turns a sprint's features into a risk score.</dd>
+    <dt>Feature</dt><dd>One of the numbers the model is given about a sprint. Section 5 lists them.</dd>
+    <dt>Label</dt><dd>The outcome being predicted (spilled over, closed late). Known only after the sprint ends.</dd>
+    <dt>Training and test sprints</dt><dd>Sprints the model learns from, and sprints it is scored on but never saw while learning.</dd>
+    <dt>Baseline</dt><dd>A simple rule (always yes, the project's own rate, scope only) that a learned model must beat to be worth anything.</dd>
+    <dt>Logistic regression</dt><dd>A straight-line model: each feature adds or subtracts a fixed amount from the score.</dd>
+    <dt>Random forest and gradient boosting</dt><dd>Models built from many small decision trees; the forest lets trees vote, boosting builds each tree to fix the last one's mistakes.</dd>
+    <dt>Sprint</dt><dd>A fixed time box, usually one to four weeks, in which a Scrum team commits to a set of issues.</dd>
+    <dt>Committed scope</dt><dd>The issues (and their story points) attached to a sprint on its first day, as rebuilt from the change log.</dd>
+    <dt>Story points</dt><dd>A team's relative estimate of an issue's size. 73.5% of TAWOS issues have none; MariaDB uses none at all.</dd>
+    <dt>Change log</dt><dd>Jira's record of every field change on an issue, with a timestamp. It is what lets us rewind.</dd>
+    <dt>Static fallback</dt><dd>Using today's value of a field because no change was ever recorded for it. Logged, because it can carry hindsight.</dd>
+    <dt>ROC-AUC</dt><dd>How often the model ranks a random positive above a random negative. 0.5 is chance, 1.0 is perfect.</dd>
+    <dt>F1</dt><dd>The balance of precision and recall at a fixed threshold. Easily inflated when nearly everything is positive.</dd>
+    <dt>Time-ordered split</dt><dd>Train on each project's first 70% of sprints, test on its last 30%. Never trains on the future.</dd>
+    <dt>LOPO</dt><dd>Leave-one-project-out: train on seven projects, test on the eighth, repeated for each.</dd>
+    <dt>Cluster bootstrap</dt><dd>Resampling the eight projects 2,000 times to put an interval around a difference between models.</dd>
+    <dt>Shapley values</dt><dd>A fair way to split a model's prediction among its inputs, computed exactly here over seven feature groups.</dd>
+    <dt>Leakage</dt><dd>Any way information from after the prediction moment reaches the model. The project's central concern.</dd>
+    <dt>Strict vs legacy history</dt><dd>Strict uses only earlier sprints whose outcome was already known; legacy used the immediately preceding sprints regardless.</dd>
+  </dl>
+</section>
+</main>
+</div>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS='http://www.w3.org/2000/svg';
+function el(n,a,t){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e;}
+function tipBind(svg,tip,node,text){node.addEventListener('mousemove',e=>{const r=svg.closest('.relpos').getBoundingClientRect();tip.textContent=text;tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';tip.style.opacity=1;});node.addEventListener('mouseleave',()=>tip.style.opacity=0);}
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- funnel ---------- */
+(function(){
+  const svg=$('#funnel'),tip=$('#tip-funnel');
+  const rows=[['Sprint rows in export',2657,'kept'],['Still FUTURE or ACTIVE',44,'cut'],['Close before they begin',3,'cut'],['First sprint per project (cold start)',8,'cut'],['Modelled sprints',2602,'kept'],['  of which commit no issues',911,'zero'],['  of which carry real scope',1691,'kept']];
+  const max=2657,x0=270,w=460,rh=24,gap=6;
+  rows.forEach((r,i)=>{const y=12+i*(rh+gap);const bw=Math.max(2,w*r[1]/max);
+    const fill=r[2]==='kept'?'var(--s1)':r[2]==='zero'?'var(--s4)':'var(--line)';
+    svg.appendChild(el('text',{x:x0-10,y:y+16,'text-anchor':'end','font-size':13,fill:'var(--fg)'},r[0].trim()));
+    const rect=el('rect',{x:x0,y,width:bw,height:rh,rx:4,fill});svg.appendChild(rect);
+    svg.appendChild(el('text',{x:x0+bw+8,y:y+16,'font-size':13,fill:'var(--fg2)','font-family':'var(--mono)'},r[1].toLocaleString()));
+    tipBind(svg,tip,rect,`${r[0].trim()}: ${r[1].toLocaleString()} sprints`);
+  });
+})();
+
+/* ---------- bar chart helper (grouped) ---------- */
+function groupedBars(svgSel,tipSel,cats,series,opts){
+  const svg=$(svgSel),tip=$(tipSel);const W=760,H=+svg.getAttribute('viewBox').split(' ')[3];
+  const m={l:46,r:16,t:16,b:opts.labelH||54};const pw=W-m.l-m.r,ph=H-m.t-m.b;
+  const ymax=opts.ymax||1,ymin=opts.ymin||0;const y=v=>m.t+ph-(v-ymin)/(ymax-ymin)*ph;
+  for(let v=ymin;v<=ymax+1e-9;v+=opts.step||0.1){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:'var(--grid)'}));svg.appendChild(el('text',{x:m.l-8,y:y(v)+4,'text-anchor':'end','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
+  if(opts.ref){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(opts.ref),y2:y(opts.ref),stroke:'var(--fg2)','stroke-dasharray':'4 4'}));svg.appendChild(el('text',{x:W-m.r,y:y(opts.ref)-4,'text-anchor':'end','font-size':11,fill:'var(--fg2)'},opts.refLabel||''));}
+  const gw=pw/cats.length,bw=Math.min(34,(gw-16)/series.length-2);
+  cats.forEach((c,i)=>{const gx=m.l+i*gw+gw/2;
+    series.forEach((s,j)=>{const v=s.values[i];if(v==null)return;const x=gx-(series.length*(bw+2))/2+j*(bw+2);
+      const rect=el('rect',{x,y:y(v),width:bw,height:y(ymin)-y(v),rx:4,fill:s.color});svg.appendChild(rect);
+      svg.appendChild(el('text',{x:x+bw/2,y:y(v)-5,'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(3).replace(/^0/,'')));
+      tipBind(svg,tip,rect,`${s.name}, ${c}: ${v.toFixed(3)}`);});
+    const lines=c.split('\n');lines.forEach((ln,k)=>svg.appendChild(el('text',{x:gx,y:y(ymin)+16+k*14,'text-anchor':'middle','font-size':12,fill:'var(--fg)'},ln)));});
+}
+
+groupedBars('#strictChart','#tip-strict',['Logistic regression\nLOPO','Random forest\nLOPO','Logistic regression\ntime split','Gradient boosting\ntime split'],
+ [{name:'legacy',color:'var(--line)',values:[.542,.600,.636,.726]},{name:'strict',color:'var(--s1)',values:[.629,.642,.680,.751]}],{ymin:.4,ymax:.8,step:.1,labelH:44});
+
+groupedBars('#p1chart','#tip-p1',['Scope-only\nlogistic regression','Project\nbase rate','Logistic\nregression','Random\nforest','Gradient\nboosting'],
+ [{name:'late closure',color:'var(--s1)',values:[.530,.640,.680,.715,.751]},{name:'spillover, nonempty',color:'var(--s2)',values:[.885,null,.827,.840,.812]}],{ymin:.4,ymax:1,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
+
+groupedBars('#leakChart','#tip-leak',['Spillover F1\n(own completion ratio as a feature)','Late closure F1\n(SMOTE before the split)'],
+ [{name:'correct',color:'var(--line)',values:[.756,.457]},{name:'with the mistake',color:'var(--s2)',values:[.991,.646]}],{ymin:0,ymax:1,step:.2,labelH:44});
+
+groupedBars('#mdbChart','#tip-mdb',['Scope only\n(no learning to speak of)','Gradient boosting\ntrained on TAWOS only','Random forest\ntrained on TAWOS only','Random forest\ntrained within MariaDB','Project rate alone\nwithin MariaDB'],
+ [{name:'late closure AUC',color:'var(--s1)',values:[.576,.710,.716,.750,.745]}],{ymin:.4,ymax:.9,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
+
+/* ---------- shapley horizontal bars ---------- */
+function hbars(sel,data,color){const svg=$(sel),tip=$('#tip-shap');const W=360,rh=22,gap=6;const x0=130,w=180;
+  data.forEach((d,i)=>{const y=10+i*(rh+gap);svg.appendChild(el('text',{x:x0-8,y:y+15,'text-anchor':'end','font-size':12,fill:'var(--fg)'},d[0]));
+    const r=el('rect',{x:x0,y,width:w*d[1]/50,height:rh,rx:4,fill:color});svg.appendChild(r);
+    svg.appendChild(el('text',{x:x0+w*d[1]/50+6,y:y+15,'font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},d[1]+'%'));
+    tipBind(svg,tip,r,`${d[0]}: ${d[1]}% of attribution`);});}
+hbars('#shapLate',[['past lateness',38],['project identity',22],['sprint length',13],['capacity',12],['committed scope',9],['other groups',6]],'var(--s1)');
+hbars('#shapSpill',[['committed scope',41],['capacity',37],['recent history',12],['other groups',10]],'var(--s2)');
+
+/* ---------- LOPO range ---------- */
+(function(){const svg=$('#lopoChart'),tip=$('#tip-lopo');const W=760,m={l:150,r:30};const pw=W-m.l-m.r;const x=v=>m.l+(v-.4)/.6*pw;
+  for(let v=.4;v<=1.001;v+=.1){svg.appendChild(el('line',{x1:x(v),x2:x(v),y1:20,y2:135,stroke:'var(--grid)'}));svg.appendChild(el('text',{x:x(v),y:152,'text-anchor':'middle','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
+  const rows=[['Late closure',.531,.780,.600,'var(--s1)','Titanium Mobile','Appcelerator Studio'],['Spillover, nonempty',.706,.950,.815,'var(--s2)','Confluence Cloud','Appcelerator Studio']];
+  rows.forEach((r,i)=>{const y=50+i*50;svg.appendChild(el('text',{x:m.l-12,y:y+5,'text-anchor':'end','font-size':13,fill:'var(--fg)'},r[0]));
+    const ln=el('line',{x1:x(r[1]),x2:x(r[2]),y1:y,y2:y,stroke:r[4],'stroke-width':6,'stroke-linecap':'round'});svg.appendChild(ln);
+    [[r[1],r[5]],[r[2],r[6]]].forEach(([v,name],k)=>{const c=el('circle',{cx:x(v),cy:y,r:7,fill:r[4],stroke:'var(--bg2)','stroke-width':2});svg.appendChild(c);
+      svg.appendChild(el('text',{x:x(v),y:y-14,'text-anchor':k?'end':'start','font-size':11,fill:'var(--fg2)'},`${name} ${v.toFixed(3).slice(1)}`));tipBind(svg,tip,c,`${name}: ${v.toFixed(3)}`);});
+    const p=el('circle',{cx:x(r[3]),cy:y,r:5,fill:'var(--bg2)',stroke:r[4],'stroke-width':2});svg.appendChild(p);tipBind(svg,tip,p,`pooled (legacy features): ${r[3].toFixed(3)}`);
+    svg.appendChild(el('text',{x:x(r[3]),y:y+22,'text-anchor':'middle','font-size':11,fill:'var(--fg2)'},'pooled '+r[3].toFixed(3).slice(1)));});
+})();
+
+/* ---------- checkpoint chart with play ---------- */
+(function(){const svg=$('#cpChart'),tip=$('#tip-cp');const W=760,H=300,m={l:46,r:20,t:16,b:40};const pw=W-m.l-m.r,ph=H-m.t-m.b;
+  const xs=[0,.25,.5,.75,1];const x=f=>m.l+f*pw,y=v=>m.t+ph-(v-.4)/.6*ph;
+  for(let v=.4;v<=1.001;v+=.1){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:'var(--grid)'}));svg.appendChild(el('text',{x:m.l-8,y:y(v)+4,'text-anchor':'end','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
+  ['planning','25%','50%','75%','100%'].forEach((l,i)=>svg.appendChild(el('text',{x:x(xs[i]),y:H-14,'text-anchor':'middle','font-size':12,fill:'var(--fg)'},l)));
+  const series=[{n:'spillover, model with progress',c:'var(--s2)',v:[.830,.926,.957,.953,null]},{n:'late closure, model with progress',c:'var(--s1)',v:[.751,.754,.760,.749,.704]},{n:'spillover, learning-free rule',c:'var(--s4)',v:[null,.667,.767,.802,null]}];
+  const dots=[];
+  series.forEach(s=>{let d='';s.v.forEach((v,i)=>{if(v==null)return;d+=(d?'L':'M')+x(xs[i])+' '+y(v)+' ';});
+    const p=el('path',{d,fill:'none',stroke:s.c,'stroke-width':2});svg.appendChild(p);const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=0;p.dataset.len=L;
+    s.v.forEach((v,i)=>{if(v==null)return;const c=el('circle',{cx:x(xs[i]),cy:y(v),r:5,fill:s.c,stroke:'var(--bg2)','stroke-width':2});svg.appendChild(c);tipBind(svg,tip,c,`${s.n} at ${['planning','25%','50%','75%','100%'][i]}: ${v.toFixed(3)}`);dots.push({c,i});
+      svg.appendChild(el('text',{x:x(xs[i]),y:y(v)+(s.c==='var(--s1)'?18:-10),'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(3).slice(1)));});
+    s.path=p;});
+  const cursor=el('line',{x1:x(0),x2:x(0),y1:m.t,y2:m.t+ph,stroke:'var(--accent)','stroke-width':2,opacity:0});svg.appendChild(cursor);
+  const msgs=['At planning time: spillover AUC 0.830, late closure 0.751','25% in: spillover 0.926 (+0.10), late closure 0.754 (no change)','Halfway: spillover 0.957 (+0.12), late closure 0.760','75% in: spillover 0.953, late closure 0.749','Planned end: spillover is settled by the state; late closure 0.704 and still no model beats "always late"'];
+  let timer=null;$('#cpBtn').addEventListener('click',()=>{if(timer)return;
+    let f=0;cursor.setAttribute('opacity',1);series.forEach(s=>{s.path.style.strokeDashoffset=s.path.dataset.len;});dots.forEach(d=>d.c.setAttribute('opacity',0));
+    const t0=performance.now(),dur=reduced?0:5000;
+    function step(now){f=Math.min(1,(now-t0)/(dur||1));cursor.setAttribute('x1',x(f));cursor.setAttribute('x2',x(f));
+      series.forEach(s=>{const first=s.v.findIndex(v=>v!=null),last=s.v.length-1-[...s.v].reverse().findIndex(v=>v!=null);const span=xs[last]-xs[first];const prog=Math.max(0,Math.min(1,(f-xs[first])/span));s.path.style.strokeDashoffset=s.path.dataset.len*(1-prog);});
+      dots.forEach(d=>{if(xs[d.i]<=f+1e-6)d.c.setAttribute('opacity',1);});
+      const k=xs.findLastIndex(v=>v<=f+1e-6);$('#cpStatus').textContent=msgs[k];
+      if(f<1)timer=requestAnimationFrame(step);else{timer=null;cursor.setAttribute('opacity',0);}}
+    timer=requestAnimationFrame(step);});
+})();
+
+/* ---------- gantt / parallel sprint animation ---------- */
+(function(){const svg=$('#gantt');const W=760,m={l:110,r:30};const pw=W-m.l-m.r;const x=d=>m.l+d/24*pw;
+  for(let d=0;d<=24;d+=4){svg.appendChild(el('line',{x1:x(d),x2:x(d),y1:20,y2:120,stroke:'var(--grid)'}));svg.appendChild(el('text',{x:x(d),y:140,'text-anchor':'middle','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},'day '+d));}
+  svg.appendChild(el('text',{x:m.l-12,y:50,'text-anchor':'end','font-size':13,fill:'var(--fg)'},'Sprint 11'));
+  svg.appendChild(el('text',{x:m.l-12,y:95,'text-anchor':'end','font-size':13,fill:'var(--fg)'},'Sprint 12'));
+  const s11=el('rect',{x:x(0),y:36,width:x(14)-x(0),height:24,rx:4,fill:'var(--s1)'});svg.appendChild(s11);
+  const s11late=el('rect',{x:x(14),y:36,width:x(17)-x(14),height:24,rx:4,fill:'var(--warn)',opacity:0});svg.appendChild(s11late);
+  const s12=el('rect',{x:x(10),y:81,width:x(24)-x(10),height:24,rx:4,fill:'var(--s3)'});svg.appendChild(s12);
+  const startLine=el('line',{x1:x(10),x2:x(10),y1:24,y2:112,stroke:'var(--accent)','stroke-width':2,'stroke-dasharray':'5 4'});svg.appendChild(startLine);
+  const lbl=el('text',{x:x(10)+6,y:30,'font-size':12,fill:'var(--accent)','font-weight':600},'Sprint 12 starts here');svg.appendChild(lbl);
+  const q=el('text',{x:x(12),y:53,'text-anchor':'middle','font-size':12,fill:'#fff','font-weight':600,opacity:0},'still running');svg.appendChild(q);
+  const msg=el('text',{x:x(17)+8,y:53,'font-size':12,fill:'var(--warn)','font-weight':600,opacity:0},'closes 3 days late: unknown on day 10');svg.appendChild(msg);
+  let on=false;$('#parBtn').addEventListener('click',()=>{on=!on;[q,msg,s11late].forEach(e=>e.setAttribute('opacity',on?1:0));
+    $('#parStatus').textContent=on?'On day 10 Sprint 11 is still open. Its lateness and completion ratio do not exist yet. A legacy feature reads them anyway.':'Two overlapping sprints of one project';
+    $('#parBtn').textContent=on?'Hide':'Show the problem';});
+})();
+
+/* ---------- board replay ---------- */
+(function(){const board=$('#board');const colX={0:3,1:36.5,2:70};
+  const chips={A:{col:1,row:0,sp:2},B:{col:1,row:1,sp:3},C:{col:1,row:2,sp:5},D:{col:1,row:3,sp:1},E:{col:1,row:4,sp:2},F:{col:2,row:0,sp:3},G:{col:0,row:0,sp:null},H:{col:0,row:1,sp:null}};
+  const els={};for(const k in chips){const c=chips[k];const d=document.createElement('div');d.className='chip';d.innerHTML=`<span>${k}</span><span class="sp">${c.sp==null?'no pts':c.sp+' pt'}</span>`;board.appendChild(d);els[k]=d;place(k);}
+  function place(k){const c=chips[k];els[k].style.left=colX[c.col]+'%';els[k].style.top=(34+c.row*44)+'px';}
+  const today=JSON.parse(JSON.stringify(chips));
+  const events=[
+    {day:9,text:'Day 9: E was added to Sprint 12 mid-sprint. Rewinding puts it back in the backlog. It was never committed.',do:()=>{chips.E.col=0;chips.E.row=2;}},
+    {day:5,text:'Day 5: F was moved out of Sprint 12 into Sprint 13. On day one it was committed, so it comes back.',do:()=>{chips.F.col=1;chips.F.row=4;}},
+    {day:3,text:'Day 3: C was re-estimated from 3 to 5 points. On day one it was 3.',do:()=>{chips.C.sp=3;}},
+    {day:0,text:'Day 0, sprint start. Committed scope was A, B, C (3 pt), D, F: five issues, 11 points. Today\'s export said A, B, C (5 pt), D, E: five issues, 13 points, with two of the five wrong.',do:()=>{}}];
+  let running=false;
+  function render(k){place(k);els[k].querySelector('.sp').textContent=chips[k].sp==null?'no pts':chips[k].sp+' pt';}
+  $('#replayBtn').addEventListener('click',async()=>{if(running)return;running=true;let i=0;
+    for(const ev of events){i++;$('#clock').textContent='day '+ev.day;$('#replayStatus').textContent=`Rewinding: event ${i} of ${events.length}`;$('#replayCap').textContent=ev.text;
+      const before=JSON.parse(JSON.stringify(chips));ev.do();for(const k in chips){if(JSON.stringify(chips[k])!==JSON.stringify(before[k])){els[k].classList.add('hl');render(k);}}
+      await new Promise(r=>setTimeout(r,reduced?50:1600));for(const k in chips)els[k].classList.remove('hl');}
+    $('#replayStatus').textContent='Showing: the rebuilt sprint-start state (what the models actually see)';running=false;});
+  $('#replayReset').addEventListener('click',()=>{if(running)return;for(const k in today){chips[k]=JSON.parse(JSON.stringify(today[k]));render(k);}$('#clock').textContent='day 14';$('#replayStatus').textContent="Showing: today's export (what a naive model would see)";$('#replayCap').textContent="Today Sprint 12 shows five issues: A, B, C (5 points), D, E. The change log says otherwise.";});
+})();
+
+/* ---------- AUC demo ---------- */
+(function(){const svg=document.getElementById('aucChart');if(!svg)return;const tally=document.getElementById('aucTally');
+  const pts=[{s:.08,y:0},{s:.15,y:0},{s:.22,y:1},{s:.30,y:0},{s:.38,y:0},{s:.45,y:1},{s:.52,y:0},{s:.60,y:1},{s:.68,y:0},{s:.77,y:1},{s:.86,y:1},{s:.94,y:1}];
+  const W=760,m={l:40,r:40};const x=v=>m.l+v*(W-m.l-m.r);
+  svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:70,y2:70,stroke:'var(--line)','stroke-width':2}));
+  svg.appendChild(el('text',{x:m.l,y:120,'font-size':12,fill:'var(--fg2)'},'low risk score'));svg.appendChild(el('text',{x:W-m.r,y:120,'text-anchor':'end','font-size':12,fill:'var(--fg2)'},'high risk score'));
+  const dots=pts.map((p,i)=>{const c=el('circle',{cx:x(p.s),cy:70,r:11,fill:p.y?'var(--s2)':'var(--s3)',stroke:'var(--bg2)','stroke-width':2});svg.appendChild(c);svg.appendChild(el('text',{x:x(p.s),y:74,'text-anchor':'middle','font-size':10,fill:'#fff','font-weight':600},String(i+1)));return c;});
+  const arc=el('path',{d:'',fill:'none',stroke:'var(--accent)','stroke-width':2,opacity:0});svg.appendChild(arc);
+  const verdict=el('text',{x:W/2,y:28,'text-anchor':'middle','font-size':14,fill:'var(--fg)','font-weight':600},'');svg.appendChild(verdict);
+  const pos=pts.map((p,i)=>p.y?i:-1).filter(i=>i>=0),neg=pts.map((p,i)=>p.y?-1:i).filter(i=>i>=0);let n=0,ok=0;
+  function draw(show){const a=pos[Math.floor(Math.random()*pos.length)],b=neg[Math.floor(Math.random()*neg.length)];const right=pts[a].s>pts[b].s;n++;if(right)ok++;
+    if(show){dots.forEach(d=>d.setAttribute('stroke','var(--bg2)'));[a,b].forEach(i=>dots[i].setAttribute('stroke','var(--accent)'));const xa=x(pts[a].s),xb=x(pts[b].s);arc.setAttribute('d','M'+xa+' 58 Q'+((xa+xb)/2)+' 20 '+xb+' 58');arc.setAttribute('opacity',1);
+      verdict.textContent=right?('Sprint '+(a+1)+' (late) scored above sprint '+(b+1)+' (on time): correct'):('Sprint '+(a+1)+' (late) scored below sprint '+(b+1)+' (on time): wrong');verdict.setAttribute('fill',right?'var(--s3)':'var(--s2)');}
+    tally.textContent='Pairs drawn: '+n+', ordered correctly: '+ok+' ('+(n?(ok/n).toFixed(3):'0.000')+')';}
+  document.getElementById('aucOne').addEventListener('click',()=>draw(true));
+  document.getElementById('aucMany').addEventListener('click',()=>{for(let k=0;k<100;k++)draw(k===99);});
+  document.getElementById('aucReset').addEventListener('click',()=>{n=ok=0;tally.textContent='Pairs drawn: 0';arc.setAttribute('opacity',0);verdict.textContent='';dots.forEach(d=>d.setAttribute('stroke','var(--bg2)'));});
+})();
+
+/* ---------- LOPO boxes ---------- */
+(function(){const g=document.getElementById('lopoBoxes');if(!g)return;for(let i=0;i<8;i++){const r=el('rect',{x:i*40,y:24,width:36,height:26,rx:4,fill:i===5?'var(--s2)':'var(--s1)'});g.appendChild(r);g.appendChild(el('text',{x:i*40+18,y:41,'text-anchor':'middle','font-size':11,fill:'#fff','font-weight':600},i===5?'test':'train'));}})();
+
+/* ---------- nav highlight ---------- */
+(function(){const links=[...document.querySelectorAll('.nav a')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  function upd(){let cur=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<140)cur=i;});links.forEach((a,i)=>a.classList.toggle('on',i===cur));}
+  addEventListener('scroll',upd,{passive:true});upd();})();
+})();
+</script>
+</body></html>
