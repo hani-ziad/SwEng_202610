@@ -96,6 +96,11 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
 .pipe div::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--fg2);font-size:16px}
 .pipe div:last-child::after{content:""}
 .auc .tally{font:600 15px var(--mono);color:var(--accent)}
+.feat td.y{color:var(--s3);font-weight:600}
+.feat td.no{color:var(--fg2)}
+.feat tr.grp td{background:var(--bg);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
+.feat tr.tot td{font-weight:600;border-top:2px solid var(--line)}
+.small{font-size:14px;color:var(--fg2)}
 /* board animation */
 .board{position:relative;height:300px;border-radius:6px;background:var(--bg);border:1px dashed var(--line);overflow:hidden}
 .col{position:absolute;top:0;bottom:0;width:33.33%;border-right:1px dashed var(--line);padding:10px}
@@ -118,7 +123,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <a href="#rebuild">Rebuilding day one</a>
   <a href="#features">The features</a>
   <a href="#scoring">Scoring a model</a>
-  <a href="#parallel">The second leak</a>
+  <a href="#parallel">Overlapping sprints</a>
   <a href="#phase1">Phase 1: planning time</a>
   <a href="#phase2">Phase 2: explain</a>
   <a href="#phase3">Phase 3: in-sprint</a>
@@ -143,8 +148,8 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   </div>
   <div class="phase" aria-label="Project phases">
     <div><b>Phase 1</b><small>Which sprints are risky, using only what was known at planning time?</small></div>
-    <div><b>Phase 2</b><small>How much, and why? Strict history, Shapley explanations, an advisor.</small></div>
-    <div><b>Phase 3</b><small>Does watching the sprint run (25%, 50%, 75%) improve the warning?</small></div>
+    <div><b>Phase 2</b><small>Fix a hidden flaw in the features, explain each prediction, and predict amounts as well as yes/no.</small></div>
+    <div><b>Phase 3</b><small>Does checking again while the sprint runs (at 25%, 50%, 75% and 100% of its length) improve the warning?</small></div>
     <div><b>Outside check</b><small>Does it still work on MariaDB, a Jira the model never trained on?</small></div>
   </div>
 </header>
@@ -175,7 +180,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">2 · The question</div>
   <h2>Two ways a sprint misses its boundary</h2>
   <div class="tldr"><b>In short</b><p>A sprint can fail in two recorded ways: work left unfinished (spillover) or the sprint closed late in Jira (late closure). We ask whether either can be predicted on day one, and whether watching the sprint helps.</p></div>
-  <p>Scrum teams plan a sprint, commit to a set of issues, and run for one to four weeks. Jira records two things when that goes wrong, and neither requires anyone's opinion.</p>
+  <p>When a sprint goes wrong, Jira records it in two ways. Both can be read straight from the data, with no one having to judge the team.</p>
   <div class="two">
     <div class="fig">
       <h3 style="margin-top:0">Spillover</h3>
@@ -193,7 +198,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
     </div>
     <div class="fig">
       <h3 style="margin-top:0">Late closure</h3>
-      <p>Jira's "complete sprint" timestamp lands more than one day after the planned end. An administrative event, not a verdict on the team.</p>
+      <p>Someone presses "Complete sprint" in Jira more than one day after the planned end date. This is about when the sprint was formally closed, which is not the same as when the work was done.</p>
       <svg viewBox="0 0 320 90" role="img" aria-label="Late closure illustration">
         <rect x="10" y="20" width="220" height="50" rx="6" fill="var(--accent-soft)" stroke="var(--line)"/>
         <rect x="230" y="20" width="70" height="50" rx="6" fill="var(--warn-soft)" stroke="var(--warn)" stroke-dasharray="4 3"/>
@@ -204,25 +209,25 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
       </svg>
     </div>
   </div>
-  <p>The research question is simple to state: <strong>can either outcome be ranked from what was known on the first day of the sprint, and does watching the sprint unfold add anything?</strong> The rule that makes it hard: every feature must be rebuilt only from events timestamped at or before the moment of prediction. No hindsight.</p>
-  <div class="note">Both labels are very common. 38.7% of modelled sprints closed late, and 93.1% of sprints with committed work spilled over. So the useful question for spillover is not "will any work spill?" but "which sprints carry the most unfinished work?"</div>
+  <p>The research question has two parts: <strong>on the first day of a sprint, can we tell which sprints are most likely to spill over or close late? And once the sprint is running, does watching its progress help?</strong> What makes this hard is the no-hindsight rule from section 1: the prediction may only use information that existed at that moment.</p>
+  <div class="note">Both outcomes are common. 38.7% of sprints closed late, and 93.1% of sprints that had work in them spilled over. Because almost every sprint spills a little, the useful question for spillover is not "will anything be left over?" but "which sprints are most at risk?"</div>
 </section>
 
 <section id="data">
   <div class="eyebrow">3 · The data</div>
   <h2>TAWOS, and how 2,657 sprint rows became 2,602</h2>
   <div class="tldr"><b>In short</b><p>Eight open-source projects from the public TAWOS dataset, 2,602 sprints after removing ones that were still running, broken, or had no history. A third of them committed no work at all.</p></div>
-  <p>TAWOS is a public dataset of 44 open-source Jira projects with their full issue history (Tawosi et al., MSR 2022). We kept the eight projects with at least 30 sprint records: Apache Mesos, Appcelerator Studio, Atlassian Confluence Cloud and Server, LSST Data Management, Mule, Titanium SDK and Titanium Mobile.</p>
+  <p>TAWOS is a free research dataset that copies the Jira data, including the full change log, of 44 open-source software projects (published by Tawosi and colleagues in 2022). We kept the eight projects that ran at least 30 sprints, so each has enough history to learn from: Apache Mesos, Appcelerator Studio, Atlassian Confluence Cloud and Server, LSST Data Management, Mule, Titanium SDK and Titanium Mobile.</p>
   <div class="fig relpos">
     <div class="legend"><i style="background:var(--s1)"></i>kept <i style="background:var(--line)"></i>removed</div>
     <div class="svgwrap"><svg id="funnel" viewBox="0 0 760 230" role="img" aria-label="Sprint cohort funnel from 2,657 rows to 1,691 nonempty sprints"></svg></div>
     <div class="tip" id="tip-funnel"></div>
-    <p class="cap">Three cuts, each for a stated reason. Sprints still open have no outcome yet; three closed rows end before they begin; each project's first sprint has no history to learn from. A third of what remains committed no issues at all, which matters later.</p>
+    <p class="cap">Three kinds of sprint were removed. Sprints that were still open (or not yet started) have no outcome to predict. Three sprints had dates that make no sense (they end before they start). And each project's very first sprint has no earlier sprints to learn the team's habits from. Of the 2,602 that remain, about a third had no issues in them at all on day one; section 8 explains why that matters.</p>
   </div>
   <div class="stats">
     <div class="stat"><b>145,309</b><span>issues in the eight projects</span></div>
-    <div class="stat"><b>88,364</b><span>change events on the Sprint and Story Points fields</span></div>
-    <div class="stat"><b>20,603</b><span>issue-sprint commitments rebuilt at sprint start</span></div>
+    <div class="stat"><b>88,364</b><span>recorded changes to an issue's sprint or story points</span></div>
+    <div class="stat"><b>20,603</b><span>issue-to-sprint commitments rebuilt at sprint start (one issue on one sprint's day-one board)</span></div>
     <div class="stat"><b>73.5%</b><span>of issues carry no story points at all</span></div>
   </div>
 </section>
@@ -231,8 +236,8 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">4 · Rebuilding day one</div>
   <h2>A Jira export is not a snapshot of planning day</h2>
   <div class="tldr"><b>In short</b><p>Today's Jira export shows the sprint as it ended, not as it began. We rewind the change log to rebuild each sprint's first morning, and we log every place where Jira recorded nothing and we had to fall back on today's value.</p></div>
-  <p>This is the core idea of the whole project. When you export Jira today, each issue carries its <em>current</em> sprint and its <em>current</em> estimate. But issues get added mid-sprint, pulled out, re-estimated. If you train a model on today's export, you feed it information the team did not have when the sprint began, and the model looks better than it is.</p>
-  <p>The fix is to replay the change log backwards. Press play to watch one sprint being rewound from today's export to the state on its first morning.</p>
+  <p>This is the core idea of the whole project. When you download Jira data today, each issue shows the sprint it is in <em>now</em> and its estimate <em>now</em>. But during a sprint, issues get added, moved out to a later sprint, and re-estimated. A model trained on today's download is told things the team did not know when the sprint began, and so it looks more accurate than it really is.</p>
+  <p>The fix is to play the change log backwards, like rewinding a video, until we reach the morning the sprint started. Press the button to watch it happen for one sprint.</p>
   <div class="fig relpos">
     <div class="toolbar">
       <button class="btn" id="replayBtn">Rewind to sprint start</button>
@@ -247,48 +252,63 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
     <p class="cap" id="replayCap">Today Sprint 12 shows five issues: A, B, C (5 points), D, E. The change log says otherwise.</p>
   </div>
   <ol class="steps">
-    <li><span class="k">1</span><div><strong>Start from the latest recorded state</strong> of each issue's Sprint and Story Points fields.</div></li>
-    <li><span class="k">2</span><div><strong>Walk the change events backwards</strong> past the sprint's start timestamp, undoing each one.</div></li>
+    <li><span class="k">1</span><div><strong>Start from today:</strong> each issue's current sprint and current story points.</div></li>
+    <li><span class="k">2</span><div><strong>Undo changes one by one, newest first,</strong> until we reach the moment the sprint started.</div></li>
     <li><span class="k">3</span><div><strong>Count an issue as committed</strong> only if, at that moment, it existed, belonged to the sprint, and was not yet resolved.</div></li>
-    <li><span class="k">4</span><div><strong>Log every fallback.</strong> When an issue has no recorded change for a field, we use the static value and record that we did.</div></li>
+    <li><span class="k">4</span><div><strong>Note every gap.</strong> If Jira never recorded a change for an issue, we have no history to rewind, so we use today's value and write down that we did.</div></li>
   </ol>
-  <div class="warnbox"><strong>The data has a ceiling.</strong> 7.2% of commitments lean on the static sprint link and 45.1% on static story points, because Jira never recorded a change. On the 110 test sprints whose scope has fully recorded history, the headline spillover score drops from 0.885 to 0.772. The paper reports that plainly instead of hiding it.</div>
+  <div class="warnbox"><strong>The rewind is not perfect.</strong> For 7.2% of issues we had to assume today's sprint was the original one, and for 45.1% we had to assume today's story points were the original estimate, because Jira never recorded a change. Those guesses could carry a little hindsight. Section 8 shows what happens to the results when we keep only sprints with a complete history: they get somewhat weaker, and the paper says so.</div>
 </section>
 
 <section id="features">
   <div class="eyebrow">5 · The features</div>
   <h2>What the model is allowed to know on day one</h2>
   <div class="tldr"><b>In short</b><p>The model sees about a dozen numbers per sprint: how much was committed, how long the sprint is, how the team did in its recent sprints, how busy it already is, and which project it is.</p></div>
-  <p>A machine-learning model does not read Jira. It reads a short list of numbers per sprint, called features. Everything below is computed from the rebuilt day-one state, and the rule from section 4 applies to each one: it must be knowable on the morning the sprint starts.</p>
-  <div class="fig">
-    <h3 style="margin-top:0">One sprint, as the model sees it</h3>
-    <p class="cap" style="margin-bottom:10px">A made-up but typical sprint, with every planning-time feature filled in. The last column says which feature set carries it.</p>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Group</th><th>Feature</th><th>Plain meaning</th><th>Example</th><th>Set</th></tr></thead>
-      <tbody>
-        <tr><td rowspan="2"><strong>Scope</strong></td><td>Committed issues</td><td>How many issues were on the board at the start</td><td class="n">14</td><td>both</td></tr>
-        <tr><td>Committed story points</td><td>Their estimated size, added up (0 where no estimate exists)</td><td class="n">31</td><td>both</td></tr>
-        <tr><td><strong>Sprint length</strong></td><td>Planned days</td><td>Planned end minus start</td><td class="n">14</td><td>both</td></tr>
-        <tr><td rowspan="4"><strong>Recent history</strong></td><td>Average completion ratio, last 3</td><td>Share of committed issues the team finished in its recent sprints</td><td class="n">0.72</td><td>both*</td></tr>
-        <tr><td>Last carryover</td><td>Issues left unfinished at the end of the most recent sprint</td><td class="n">4</td><td>both*</td></tr>
-        <tr><td>Average points delivered, last 3</td><td>Story points finished per recent sprint</td><td class="n">22.3</td><td>both*</td></tr>
-        <tr><td>Sprints of history available</td><td>How many finished sprints the average rests on (0 to 3)</td><td class="n">3</td><td>strict</td></tr>
-        <tr><td rowspan="3"><strong>Capacity</strong></td><td>Average issues completed, last 3</td><td>What the team usually clears</td><td class="n">10.3</td><td>strict</td></tr>
-        <tr><td>Average issues committed, last 3</td><td>What the team usually takes on</td><td class="n">13.7</td><td>strict</td></tr>
-        <tr><td>Scope to capacity</td><td>This sprint's commitment divided by what the team usually clears</td><td class="n">1.36</td><td>strict</td></tr>
-        <tr><td rowspan="2"><strong>Past lateness</strong></td><td>Average days late, last 3</td><td>How late the team's recent sprints closed</td><td class="n">2.1</td><td>strict</td></tr>
-        <tr><td>Share of late sprints, last 3</td><td>How often they closed more than a day late</td><td class="n">0.67</td><td>strict</td></tr>
-        <tr><td><strong>Parallel sprints</strong></td><td>Other sprints open at the start</td><td>How many of the project's sprints were already running</td><td class="n">1</td><td>strict</td></tr>
-        <tr><td><strong>Project</strong></td><td>Project identity</td><td>Which of the eight projects this is, as eight yes/no flags</td><td class="n">Mule</td><td>both</td></tr>
-      </tbody>
-    </table></div>
-    <p class="cap">* The three starred features exist in both sets, but they are computed differently. <strong>Legacy</strong> (Phase 1) averages the three sprints that <em>started</em> most recently before this one. <strong>Strict</strong> (Phase 2) averages the three most recent sprints whose <em>outcome was already known</em> at this sprint's start. Section 7 shows why that difference matters.</p>
-  </div>
-  <h3>Three things the feature list tells you</h3>
+  <p>A machine-learning model does not read Jira screens. For every sprint it is given a short list of numbers, called <strong>features</strong>, and it learns which numbers go with sprints that ran over. Some features are copied straight from the sprint (how many issues it has). Most are <em>computed</em> from the team's earlier sprints (how much it usually finishes). All of them are taken from the rebuilt day-one state of section 4, so each one is something the team could have known on the morning the sprint started.</p>
+  <h3>The features, and which models use them</h3>
+  <p>The project has two versions of the feature list. <strong>Phase 1</strong> used the first version (called <em>legacy</em> in the paper). <strong>Phase 2, Phase 3 and every headline result in the paper</strong> use the corrected version (called <em>strict</em>). Section 7 explains what was wrong with the first one.</p>
+  <div class="tablewrap"><table class="feat">
+    <thead><tr><th>Feature</th><th>What it measures</th><th>Phase 1<br>(legacy)</th><th>Phase 2, 3 and paper<br>(strict)</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="4">About this sprint</td></tr>
+      <tr><td>Committed issues</td><td>Number of issues on the sprint at its start</td><td class="y">used</td><td class="y">used</td></tr>
+      <tr><td>Committed story points</td><td>Their size estimates added up (0 where no estimate exists)</td><td class="y">used</td><td class="y">used</td></tr>
+      <tr><td>Sprint length</td><td>Planned end minus start, in days</td><td class="y">used</td><td class="y">used</td></tr>
+      <tr><td>Other sprints already open</td><td>How many sprints of the same project were running when this one started</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr><td>Project</td><td>Which of the eight projects this sprint belongs to</td><td class="y">used</td><td class="y">used</td></tr>
+      <tr class="grp"><td colspan="4">About the team's recent sprints</td></tr>
+      <tr><td>Average completion ratio</td><td>Share of committed issues the team finished, averaged over its last 3 sprints</td><td class="y">used</td><td class="y">used*</td></tr>
+      <tr><td>Last carryover</td><td>Issues left unfinished at the end of the team's most recent sprint</td><td class="y">used</td><td class="y">used*</td></tr>
+      <tr><td>Average points delivered</td><td>Story points finished per sprint, averaged over the last 3</td><td class="y">used</td><td class="y">used*</td></tr>
+      <tr><td>Previous sprint's completion ratio</td><td>Share of committed issues finished in the single most recent sprint</td><td class="y">used</td><td class="no">not used</td></tr>
+      <tr><td>Sprints of history available</td><td>How many finished sprints the averages above are based on (0 to 3)</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr><td>Average issues completed</td><td>Issues the team usually finishes per sprint (last 3)</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr><td>Average issues committed</td><td>Issues the team usually takes on per sprint (last 3)</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr><td>Scope to capacity</td><td>This sprint's committed issues divided by what the team usually finishes</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr><td>Average days late</td><td>How many days late the team's last 3 sprints closed</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr><td>Share of late sprints</td><td>How many of the last 3 sprints closed more than a day late</td><td class="no">not used</td><td class="y">used</td></tr>
+      <tr class="tot"><td colspan="2">Total</td><td>7 numbers + project</td><td>13 numbers + project</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">* Same feature name in both versions, but computed differently. Phase 1 averaged the 3 sprints that <em>started</em> most recently, even if they were still running. The strict version averages the 3 most recent sprints that had <em>already finished</em> when this sprint began.</p>
+  <h3>Which model gets which features</h3>
   <ul>
-    <li><strong>Scope is what the team chose.</strong> Everything else is what the team is. The models have to work out which matters for which outcome; Phase 2 answers that.</li>
+    <li><strong>Scope-only baseline:</strong> just the first three (committed issues, committed story points, sprint length). It tests whether the size of the commitment alone explains the outcome.</li>
+    <li><strong>Logistic regression, random forest, gradient boosting:</strong> the whole list for their phase (legacy in Phase 1, strict from Phase 2 on). When a model is tested on a project it never trained on (leave-one-project-out, see section 6), the project feature is removed, because the model cannot know anything about that project.</li>
+    <li><strong>MariaDB outside check:</strong> the strict list without the two story-point features, because MariaDB records no story points.</li>
+    <li><strong>Phase 3 in-sprint models:</strong> the strict list plus a "progress" group measured during the sprint (share done so far, issues remaining, issues added or removed since the start, time left). Section 10 lists them.</li>
+  </ul>
+  <div class="fig">
+    <h3 style="margin-top:0">Example: one sprint turned into features</h3>
+    <p class="small" style="margin-top:0">A made-up sprint to show what the numbers look like. Not real data.</p>
+    <p style="max-width:none">On the morning it starts, a two-week Mule sprint has <strong>14 issues worth 31 points</strong>. One other Mule sprint is still running. Over the team's last three finished sprints it finished about <strong>10 issues</strong> each time out of about <strong>14 committed</strong> (72%), left <strong>4</strong> unfinished last time, and closed two of those three sprints late, on average <strong>2.1 days</strong> late.</p>
+    <p style="max-width:none">So the strict feature list for this sprint reads: committed issues <span class="mono">14</span>, points <span class="mono">31</span>, length <span class="mono">14</span> days, other sprints open <span class="mono">1</span>, project <span class="mono">Mule</span>, completion ratio <span class="mono">0.72</span>, last carryover <span class="mono">4</span>, points delivered <span class="mono">22.3</span>, history available <span class="mono">3</span>, issues completed <span class="mono">10.3</span>, issues committed <span class="mono">13.7</span>, scope to capacity <span class="mono">1.36</span> (14 ÷ 10.3), days late <span class="mono">2.1</span>, share late <span class="mono">0.67</span>. The model turns those numbers into one risk score.</p>
+  </div>
+  <h3>Three things to notice</h3>
+  <ul>
+    <li><strong>Two kinds of feature.</strong> The first three describe the plan the team made for this sprint (how much, how long). The rest describe the team itself (how it usually performs). Section 9 shows which kind matters for which outcome.</li>
     <li><strong>Nothing from inside the sprint.</strong> No burndown, no issues done so far. Those come in Phase 3, as a separate "progress" group, and are only used at in-sprint checkpoints.</li>
-    <li><strong>Story points are weak in this data.</strong> 73.5% of issues have none, so the point features often read zero. The MariaDB check later drops them entirely.</li>
+    <li><strong>Story points are weak in this data.</strong> 73.5% of issues have none, so the point features often read zero. The MariaDB check drops them entirely.</li>
   </ul>
   <div class="note"><strong>Labels, the thing being predicted,</strong> are never features. Spillover (any committed issue unresolved at the planned end) and late closure (closed more than a day after the planned end) are computed from what happened afterwards, and the model only sees them during training.</div>
 </section>
@@ -308,22 +328,22 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
     </div>
     <div class="legend"><i style="background:var(--s2)"></i>closed late <i style="background:var(--s3)"></i>closed on time</div>
     <div class="svgwrap"><svg id="aucChart" viewBox="0 0 760 140" role="img" aria-label="Twelve sprints on a risk-score line, risky ones in orange, safe ones in green"></svg></div>
-    <p class="cap"><span class="tally" id="aucTally">Pairs drawn: 0</span>. The exact AUC of this little example is <strong>0.806</strong>: of the 36 possible pairs, the model orders 29 correctly. After enough random pairs the tally settles near that.</p>
+    <p class="cap"><span class="tally" id="aucTally">Pairs drawn: 0</span>. The exact AUC of this little example is <strong>0.806</strong>: of the 36 possible pairs of one late and one on-time sprint (6 late × 6 on time), the model orders 29 correctly. After enough random pairs the tally settles near that.</p>
   </div>
-  <p>Why not accuracy or F1? Because the labels are lopsided. 93% of sprints with work spill over, so a model that says "yes" to everything already scores F1 0.971 on spillover. AUC is unmoved by that; it only cares about the ordering. F1 still appears in the leakage section, where its sensitivity is the point.</p>
+  <p>Why not simply count how many yes/no calls are right (accuracy), or use <strong>F1</strong>, a common score that balances how many risky sprints are caught against how many false alarms are raised? Because the outcomes are lopsided. In the test sprints 94% of sprints with work spilled over, so a rule that says "yes" to everything already scores F1 0.971 on spillover. AUC is unmoved by that; it only cares about the ordering. F1 still appears in the leakage section, where its sensitivity is the point.</p>
   <h3>The predictors lined up</h3>
   <div class="tablewrap"><table>
     <thead><tr><th>Predictor</th><th>What it does</th><th>Why it is there</th></tr></thead>
     <tbody>
-      <tr><td>Always positive</td><td>Says every sprint is at risk</td><td>Shows how misleading precision and F1 are when 93% of sprints spill</td></tr>
-      <tr><td>Project base rate</td><td>Predicts each project's own historical rate</td><td>The bar a model must clear to prove it learned something beyond "which team"</td></tr>
-      <tr><td>Scope-only logistic regression</td><td>A straight-line model on three numbers: committed issues, points, sprint length</td><td>Tests whether scope alone explains the outcome</td></tr>
-      <tr><td>Logistic regression, all features</td><td>A straight-line model on every feature</td><td>The simplest learned model; easy to read</td></tr>
-      <tr><td>Random forest</td><td>300 small decision trees voting (depth 5)</td><td>Captures interactions, hard to overfit at this size</td></tr>
-      <tr><td>Gradient boosting</td><td>Trees built one after another, each correcting the last</td><td>Usually the strongest tabular model; XGBoost and scikit-learn versions</td></tr>
+      <tr><td>Always yes</td><td>Says every sprint is at risk</td><td>Shows how a useless rule can still look good when 93% of sprints spill</td></tr>
+      <tr><td>Each project's own rate</td><td>Gives every sprint its project's usual rate (if a project closed 40% of past sprints late, every new sprint gets 40%)</td><td>A model must beat this to show it learned more than "which team is it"</td></tr>
+      <tr><td>Size only (scope-only logistic regression)</td><td>A simple model given just three numbers: committed issues, committed points, sprint length</td><td>Tests whether the size of the sprint alone explains the outcome</td></tr>
+      <tr><td>Logistic regression</td><td>Adds up each feature times a learned weight, then turns the total into a score</td><td>The simplest learned model, and the easiest to inspect</td></tr>
+      <tr><td>Random forest</td><td>300 small decision trees (flowcharts of yes/no questions), each trained a little differently, that vote</td><td>Can pick up combinations of features; stable on small data</td></tr>
+      <tr><td>Gradient boosting</td><td>Decision trees built one after another, each one fixing the mistakes of those before</td><td>Usually the strongest model for table-shaped data like this</td></tr>
     </tbody>
   </table></div>
-  <p>No hyperparameter search, the 0.5 threshold fixed before any result was seen, random seed 42 throughout. The settings were chosen once and never tuned to the test data.</p>
+  <p>Every model's settings were chosen once, before any result was seen, and never adjusted to make the test scores look better. Random choices inside the models use a fixed starting point (seed 42), so anyone rerunning the code gets the same numbers.</p>
   <h3>How a model is tested without cheating</h3>
   <div class="two">
     <div class="fig" style="margin:0">
@@ -347,118 +367,124 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
       </svg>
     </div>
   </div>
-  <p style="margin-top:14px">Uncertainty comes from a <strong>cluster bootstrap</strong>: the eight projects are resampled 2,000 times and the model is re-scored each time, which gives a 95% interval for every difference between two models. Eight projects make those intervals wide, and the paper says so.</p>
+  <p style="margin-top:14px">To show how certain each number is, we use a <strong>cluster bootstrap</strong>: the eight projects are drawn again at random (some twice, some not at all) 2,000 times, and the models are re-scored each time. The middle 95% of those 2,000 results is a 95% interval, around a single score or around the difference between two models. Eight projects make those intervals wide, and the paper says so. On this page these intervals are written as a <strong>likely range</strong>, for example "0.885 (likely range 0.818 to 0.922)".</p>
 </section>
 
 <section id="parallel">
-  <div class="eyebrow">7 · The second leak</div>
+  <div class="eyebrow">7 · Overlapping sprints</div>
   <h2>Projects run several sprints at once</h2>
   <div class="tldr"><b>In short</b><p>Teams run sprints in parallel, so "the previous sprint" was often still open when the next began. Features that summarised it were reading the future. Fixing that made the models better, not worse.</p></div>
-  <p>A natural feature is "how did the previous sprint go?" But in 71% of our sprints, the previous sprint had not reached its planned end when the next one started. Its outcome was not known yet. A feature that reads it is reading the future.</p>
+  <p>Section 5 described features like "how did the team's last few sprints go?" That sounds safe, but it hides a trap. Many projects run two or more sprints at the same time (for different sub-teams). In 71% of our sprints, the sprint just before had <em>not finished yet</em> when the new one started. Nobody knew how it would end. A feature that uses its result is quietly using the future. Press the button to see an example.</p>
   <div class="fig relpos">
     <div class="toolbar">
       <button class="btn" id="parBtn">Show the problem</button>
       <span class="status" id="parStatus">Two overlapping sprints of one project</span>
     </div>
     <div class="svgwrap"><svg id="gantt" viewBox="0 0 760 170" role="img" aria-label="Two overlapping sprints; the second starts before the first has finished"></svg></div>
-    <p class="cap"><strong>Legacy</strong> history features (Phase 1) summarised the immediately preceding sprints whether or not they had finished. <strong>Strict</strong> features (Phase 2) use only sprints whose outcome was already known at the start. Both are reported; the paper's headline numbers use strict.</p>
+    <p class="cap">Phase 1's history features (the <strong>legacy</strong> version) used the most recent sprints even when they were still running, like Sprint 11 here. Phase 2 rebuilt them (the <strong>strict</strong> version) to use only sprints that had already finished. Both versions are reported so the difference can be measured; all the paper's main results use strict.</p>
   </div>
   <div class="fig relpos">
     <h3 style="margin-top:0">What fixing it changed: late-closure AUC, legacy vs strict</h3>
     <div class="legend"><i style="background:var(--line)"></i>legacy <i style="background:var(--s1)"></i>strict</div>
     <div class="svgwrap"><svg id="strictChart" viewBox="0 0 760 210" role="img" aria-label="Late-closure AUC before and after the strict history fix"></svg></div>
     <div class="tip" id="tip-strict"></div>
-    <p class="cap">Across projects (leave-one-project-out) the lift is largest: logistic regression 0.542 to 0.629, random forest 0.600 to 0.642. The legacy features were less informative than they looked, and had no business being called "known at planning time".</p>
+    <p class="cap">Higher is better (0.5 is a coin toss; see section 6). You might expect that removing future information would make the models worse. The opposite happened: every model improved, most of all when tested on a project it had never seen (logistic regression went from 0.542 to 0.629). Why? A sprint that is still running has only partial results, so its "completion ratio" mostly reflects how far along it happened to be, not how good the team is. Those numbers described the team badly, so removing them helped.</p>
   </div>
 </section>
 
 <section id="phase1">
   <div class="eyebrow">8 · Phase 1</div>
-  <h2>Planning-time prediction: what the models learned</h2>
-  <div class="tldr"><b>In short</b><p>Spillover is about how much the team took on: three numbers about scope rank sprints at AUC 0.885 and nothing richer beats them. Late closure is about team habits: scope alone is a coin toss, and history gets to 0.751.</p></div>
-  <p>With the features from section 5 and the scoring rules from section 6, Phase 1 asks the first question: using only what was known at planning time, can a model rank sprints by risk better than a simple rule?</p>
+  <h2>Predicting on day one: what the models learned</h2>
+  <div class="tldr"><b>In short</b><p>Spillover depends on how much the team took on: three simple numbers about the sprint's size give the best ranking (0.885). Late closure depends on team habits: the sprint's size tells you almost nothing, while the team's history gets to 0.751.</p></div>
+  <p>With the features from section 5 and the scoring rules from section 6, Phase 1 asks the first question: using only what was known on day one, can a model rank sprints by risk better than a simple rule?</p>
+  <div class="note"><strong>Which numbers are shown here.</strong> Phase 1 first ran with the legacy features. After the overlapping-sprint flaw (section 7) was found in Phase 2, the same day-one models were rerun with the corrected strict features, and those are the numbers below and in the paper. For comparison, Phase 1's original legacy features gave late closure 0.705 (random forest).</div>
   <div class="fig relpos">
     <h3 style="margin-top:0">Time-ordered split: train on each project's first 70% of sprints, test on the rest</h3>
-    <div class="legend"><i style="background:var(--s1)"></i>late closure (786 test sprints) <i style="background:var(--s2)"></i>spillover, nonempty sprints (511 test sprints)</div>
+    <div class="legend"><i style="background:var(--s1)"></i>late closure (786 test sprints) <i style="background:var(--s2)"></i>spillover, sprints with work (511 test sprints)</div>
     <div class="svgwrap"><svg id="p1chart" viewBox="0 0 760 300" role="img" aria-label="Planning-time ROC-AUC by model and outcome"></svg></div>
     <div class="tip" id="tip-p1"></div>
-    <p class="cap">The two outcomes behave in opposite ways. For spillover, a three-variable logistic regression on scope alone (0.885) beats every richer model. For late closure, scope alone is a coin toss (0.530) and gradient boosting on team history reaches 0.751.</p>
+    <p class="cap">How to read this: each pair of bars is one model; taller means better ranking. The two outcomes behave in opposite ways. For <strong>spillover</strong> (orange), the simplest model, which only looks at how much was committed and how long the sprint is, scores best (0.885). Adding team history does not help. For <strong>late closure</strong> (blue), the amount of work tells you almost nothing (0.530, close to a coin toss), but team history does: gradient boosting reaches 0.751.</p>
   </div>
-  <h3>The zero-scope trap</h3>
-  <p>A third of sprints committed nothing. They cannot spill over, so a model gets them right for free. Keep them in and the spillover forest scores 0.986; score only sprints with real work and the same model scores 0.852. A study that keeps them looks about 0.13 AUC stronger than it is. Every spillover number in the paper is on nonempty sprints.</p>
+  <h3>The empty-sprint trap</h3>
+  <p>About a third of sprints had no issues in them on day one. An empty sprint cannot spill over, and the model easily learns "no issues means no spillover", so it gets all of them right for free. That makes the score look much better than it is. With empty sprints included, the random forest scores 0.986; on sprints that actually had work, the same model scores 0.852. So every spillover number on this page, and in the paper, counts only sprints with work in them (called <em>nonempty</em> sprints).</p>
   <div class="tablewrap"><table>
-    <thead><tr><th>Headline</th><th>Model</th><th>Result</th><th>Compared with</th></tr></thead>
+    <thead><tr><th>Result</th><th>Model</th><th>Score (AUC)</th><th>Compared with</th></tr></thead>
     <tbody>
-      <tr><td>Late closure, time split</td><td>Gradient boosting, strict</td><td class="n">AUC .751</td><td>Project base rate .640, scope-only .530</td></tr>
-      <tr><td>Spillover, nonempty, time split</td><td>Logistic regression, scope only</td><td class="n">AUC .885 [.818, .922]</td><td>Gradient boosting .812</td></tr>
-      <tr><td>Spillover, all sprints (inflated)</td><td>Random forest, legacy</td><td class="n">AUC .986</td><td>Same model on nonempty .852</td></tr>
-      <tr><td>Spillover, fully recorded history</td><td>Logistic regression, scope only</td><td class="n">AUC .772</td><td>110 test sprints, SE about .05</td></tr>
+      <tr><td>Late closure, time split</td><td>Gradient boosting, strict features</td><td class="n">.751</td><td>Each project's own late rate .640; scope only .530</td></tr>
+      <tr><td>Spillover, sprints with work, time split</td><td>Logistic regression, scope only</td><td class="n">.885 (likely range .818 to .922)</td><td>Gradient boosting .812</td></tr>
+      <tr><td>Spillover, empty sprints included (misleading)</td><td>Random forest, legacy features</td><td class="n">.986</td><td>Same model, sprints with work only: .852</td></tr>
+      <tr><td>Spillover, only sprints with complete change history</td><td>Logistic regression, scope only</td><td class="n">.772 (likely range about .67 to .88)</td><td>Only 110 test sprints, so less certain</td></tr>
     </tbody>
   </table></div>
+  <p class="small">"Likely range" is the 95% interval from section 6: if the study were repeated with a different mix of projects, the score would fall inside this range 95 times out of 100. The last row is the check promised in section 4: with only fully recorded sprints the score drops from .885 to .772, but the two ranges overlap, so with this little data we cannot tell a real drop from chance.</p>
 </section>
 
 <section id="phase2">
   <div class="eyebrow">9 · Phase 2</div>
   <h2>Explaining each outcome, and predicting how much</h2>
-  <div class="tldr"><b>In short</b><p>Shapley values show which features drive each prediction: scope and capacity for spillover, past lateness and project identity for late closure. Predicting exact numbers works for issues completed and little else.</p></div>
-  <p>Phase 2 asked two more things. First, <em>why</em> does a model score a sprint as risky? We computed exact Shapley values over seven feature groups: for each sprint, every combination of groups is scored and the credit is shared out fairly. Second, can we predict numbers rather than yes/no: how many issues get done, what share carries over, how many days late?</p>
+  <div class="tldr"><b>In short</b><p>We measured which features drive each prediction: workload for spillover, and past lateness and the project for late closure. We also tried predicting amounts (how many issues get done, how late); that only works well for issues done.</p></div>
+  <p>Phase 2 asked two more questions. First, <em>why</em> does a model call a sprint risky? To answer that we used <strong>Shapley values</strong>, a method borrowed from game theory. Think of the features as players on a team and the risk score as the team's result: Shapley values work out how much each player contributed, by trying the model with every possible combination of features switched on and off. That is slow, so it was done on a random sample of 150 test sprints, using seven groups of features rather than each feature alone. Second, can the models predict amounts instead of yes or no: how many issues get finished, what share of the work is left over, and how many days late the sprint closes?</p>
   <div class="fig relpos">
-    <h3 style="margin-top:0">Share of model attribution by feature group (random forest, strict features, 150 test sprints)</h3>
+    <h3 style="margin-top:0">How much each group of features drives the prediction (random forest, a random sample of 150 test sprints)</h3>
     <div class="two">
       <div><div class="legend"><i style="background:var(--s1)"></i>late closure</div><svg id="shapLate" viewBox="0 0 360 200" role="img" aria-label="Shapley shares for late closure"></svg></div>
       <div><div class="legend"><i style="background:var(--s2)"></i>spillover</div><svg id="shapSpill" viewBox="0 0 360 200" role="img" aria-label="Shapley shares for spillover"></svg></div>
     </div>
     <div class="tip" id="tip-shap"></div>
-    <p class="cap">Spillover is a work outcome: how much was taken on, against how much the team usually clears. Late closure is a habit outcome: past lateness and project identity carry 60% of it, and committed scope only 9%.</p>
+    <p class="cap">Each bar shows how much of the model's decision comes from that group of features. <strong>Spillover is about workload:</strong> the size of this sprint (41% of the decision) and the team's usual capacity (37%) together make up most of it. <strong>Late closure is about habit:</strong> whether the team was late before (38%) and which project it is (22%) matter most; the amount of work only 9%.</p>
   </div>
   <h3>Numeric targets</h3>
-  <p>Issues completed is mostly arithmetic: multiply committed issues by the team's recent completion rate and you are within 2.1 issues on average; the best learned model manages 1.96. Carry share is nearly unpredictable at planning time. Days late improves only from 2.66 to 2.48 days of error.</p>
+  <ul>
+    <li><strong>Issues finished:</strong> a simple sum does almost as well as any model. Take the committed issues and multiply by the share the team usually finishes; that is off by 2.1 issues on average. The best model is off by 1.96.</li>
+    <li><strong>Share of work left over</strong> (called <em>carry share</em> in the paper): almost impossible to predict on day one. The best model is only slightly better than always guessing the typical value.</li>
+    <li><strong>Days late:</strong> the best model is off by 2.48 days on average, against 2.66 for always guessing the typical value. A small gain.</li>
+  </ul>
   <h3>The advisor, and what it is not</h3>
-  <p>Phase 2 wraps the fitted models into an advisor: for a planned sprint it returns both probabilities, the expected issues completed with an 80% interval, and a what-if table across alternative scopes. The intervals cover 84% of outcomes and are a third tighter than the baseline, but they under-cover large sprints (70% coverage at 13 or more issues).</p>
-  <div class="warnbox"><strong>The what-if table is not advice.</strong> Sprints planned heaviest relative to capacity carry over only 3.2 percentage points more than the lightest, and the interval crosses zero. A model's expectation says nothing about cause. The paper says this in four places so that nobody deploys it as a scope-cutting tool.</div>
+  <p>Phase 2 packages the trained models into a small <strong>advisor</strong>. Give it a planned sprint and it returns: the chance of spillover and of late closure; the expected number of issues finished, with a range that should contain the real number 8 times out of 10; and a "what if" table showing how the predictions change if you commit to more or fewer issues. The ranges work well overall (they contain the real number 84% of the time), but for big sprints of 13 or more issues they are too narrow (only 70%).</p>
+  <div class="warnbox"><strong>The what-if table is not advice.</strong> It tempts you to read "commit fewer issues and you will spill less". But when we looked at what really happened, the most overloaded quarter of sprints left only 3.2 percentage points more work unfinished than the lightest quarter, too small to be sure it is real. This does not contradict "spillover is about workload". Spillover only asks whether <em>at least one</em> issue is left over, and a bigger sprint simply has more chances for that to happen. The <em>share</em> of work left over barely changes with load. And a model noticing that two things go together does not mean changing one will change the other. The paper repeats this so nobody uses the advisor to cut sprint plans.</div>
 </section>
 
 <section id="phase3">
   <div class="eyebrow">10 · Phase 3</div>
   <h2>In-sprint early warning: does watching help?</h2>
   <div class="tldr"><b>In short</b><p>Once the sprint is running, progress information makes spillover much easier to predict (0.83 to 0.96 by mid-sprint). It does nothing for late closure, which is about when someone clicks the button, not about the work.</p></div>
-  <p>Phase 3 rebuilds the sprint state at 25%, 50%, 75% and 100% of the planned duration, again only from events timestamped at or before that point: issues done and remaining, the gap between work finished and time elapsed, issues added or dropped since the start. Press play to see how the prediction changes as a sprint runs.</p>
+  <p>Phases 1 and 2 predict on day one. Phase 3 asks: what if we check again while the sprint is running? We rebuild the sprint at four <strong>checkpoints</strong>, a quarter, half, three quarters and all of the way through its planned length, using the same rewind method. At each checkpoint the model gets the day-one features plus a set of <strong>progress features</strong>: how many committed issues are done, how many remain, whether work is behind schedule (share done compared with share of time used), how fast the team is finishing issues, and how many issues were added or removed since the start. Press play to see how the score changes as the sprint runs.</p>
   <div class="fig relpos">
     <div class="toolbar">
       <button class="btn" id="cpBtn">Play the sprint</button>
-      <span class="status" id="cpStatus">At planning time: spillover AUC 0.830, late closure 0.751</span>
+      <span class="status" id="cpStatus">Day one: spillover 0.830, late closure 0.751</span>
     </div>
-    <div class="legend"><i style="background:var(--s2)"></i>spillover, model with progress <i style="background:var(--s1)"></i>late closure, model with progress <i style="background:var(--s4)"></i>spillover, learning-free rule (share of work still open)</div>
+    <div class="legend"><i style="background:var(--s2)"></i>spillover, model with progress <i style="background:var(--s1)"></i>late closure, model with progress <i style="background:var(--s4)"></i>spillover, simple rule (share of work still open)</div>
     <div class="svgwrap"><svg id="cpChart" viewBox="0 0 760 300" role="img" aria-label="ROC-AUC at each in-sprint checkpoint"></svg></div>
     <div class="tip" id="tip-cp"></div>
-    <p class="cap">Spillover becomes much more predictable once the sprint is running: 0.830 at planning, 0.926 a quarter of the way in, 0.957 at halfway. Late closure barely moves. Of 24 paired comparisons with the same model without progress, 22 intervals include zero. Whether somebody clicks "complete sprint" on time is not about how the work is going.</p>
+    <p class="cap">The day-one points here are gradient boosting with the strict features, scored only on sprints still open at the first checkpoint, so spillover starts at 0.830 rather than section 8's 0.885 (that was the size-only model). Spillover (orange) becomes much easier to predict once the sprint is running: 0.830 on day one, 0.926 a quarter of the way in, 0.957 at halfway. Late closure (blue) stays flat. There is no spillover point at 100%: at the planned end, whether anything is left unfinished is already known, so there is nothing to predict. We tested this 24 different ways (different models, checkpoints and test methods) and in 22 of them the progress features made no clear difference. Whether someone presses "Complete sprint" on time does not depend on how the work is going.</p>
   </div>
-  <p>A plain rule, "share of committed work still open", reaches 0.667, 0.767 and 0.802 at the three checkpoints. The model is worth 0.10 to 0.26 AUC over it, because it also uses time pressure, scope and history. For carry share the rule "one minus the share done" is as good as the model from halfway on.</p>
+  <p>Is the model really needed, or would a simple rule do? The yellow line is the rule "the more committed work is still open, the higher the risk". For spillover it scores 0.667, 0.767 and 0.802 at the 25%, 50% and 75% checkpoints, well below the model, which also knows how much time is left, how big the sprint is and how the team usually performs. For predicting <em>how much</em> work will be left over, though, the simple rule is as good as the model from halfway on.</p>
 </section>
 
 <section id="leakage">
   <div class="eyebrow">11 · Leakage case studies</div>
   <h2>Two mistakes we reproduced on purpose</h2>
-  <div class="tldr"><b>In short</b><p>Two common mistakes, made on purpose, inflate results by up to 0.24 F1. Each hits one outcome and barely touches the other, so leakage has to be checked per task.</p></div>
-  <p>To show how much hindsight inflates a result, we made two common mistakes on our own data and measured the damage at the fixed threshold.</p>
+  <div class="tldr"><b>In short</b><p>We made two common mistakes on purpose to show how much they inflate results. Each makes one outcome look far better than it is and barely changes the other, so each outcome has to be checked on its own.</p></div>
+  <p><strong>Leakage</strong> means information from after the prediction moment sneaking into a model. It makes results look better than they will be in real use. To show how big the effect can be, we deliberately made two mistakes that are common in published work and measured how much they inflate the score. Here the score is <strong>F1</strong> (section 6), which balances catching the risky sprints against raising false alarms (1.0 is perfect). It is used here because that is how these mistakes are usually reported.</p>
   <div class="fig relpos">
     <div class="legend"><i style="background:var(--line)"></i>done correctly <i style="background:var(--s2)"></i>with the mistake</div>
     <div class="svgwrap"><svg id="leakChart" viewBox="0 0 760 220" role="img" aria-label="F1 before and after two leakage mistakes"></svg></div>
     <div class="tip" id="tip-leak"></div>
-    <p class="cap"><strong>Mistake 1:</strong> feed in the sprint's own completion ratio, which is only known once the sprint is over. Spillover F1 jumps from 0.756 to 0.991 because the feature restates the label. <strong>Mistake 2:</strong> run SMOTE oversampling on the whole pool before splitting. Late-closure F1 inflates from 0.457 to 0.646 as synthetic copies of test sprints leak into training. Each mistake hits one label and barely touches the other, so a leakage audit has to be run per task.</p>
+    <p class="cap"><strong>Mistake 1: using an answer as a clue.</strong> Give the model the share of work the sprint finished. That is only known after the sprint ends, and it practically <em>is</em> the spillover answer. F1 jumps from 0.756 to 0.991, a near-perfect score that would vanish in real use. <strong>Mistake 2: mixing test data into training.</strong> SMOTE is a common technique that creates extra, made-up examples of the rarer outcome. If you run it before separating training and test sprints, the made-up examples are partly copied from test sprints, so the model has effectively seen the test. Late-closure F1 rises from 0.457 to 0.646. Notice that each mistake mainly inflates one outcome. Mistake 1 barely moves late closure (0.463 to 0.473, +0.01), because finishing the work is not what decides when someone closes the sprint. Mistake 2 leaves spillover unchanged (0.972), because with 94% of sprints spilling there is almost nothing rare to make up. That is why leakage has to be checked separately for each thing you predict.</p>
   </div>
 </section>
 
 <section id="transfer">
   <div class="eyebrow">12 · Across projects</div>
   <h2>Leave one project out</h2>
-  <div class="tldr"><b>In short</b><p>Train on seven projects and test on the eighth, and performance swings far more by project than by model. The numbers are evidence about these projects, not a general benchmark.</p></div>
-  <p>The time split tests whether a model learned on a project's past works on its future. Leave-one-project-out (LOPO) asks a harder question: train on seven projects, test on the eighth. It is the project, far more than the model, that moves performance.</p>
+  <div class="tldr"><b>In short</b><p>When a model is tested on a project it never trained on, the score depends far more on which project it is than on which model is used. Results describe these eight projects, not every team.</p></div>
+  <p>Section 6 introduced the two ways we test. The time split asks whether a model trained on a project's earlier sprints works on its later ones. Leave-one-project-out asks a harder question: does a model trained on seven projects work on the eighth, a project it has never seen? The chart shows the range of scores across the eight projects.</p>
   <div class="fig relpos">
-    <div class="legend"><i style="background:var(--s1)"></i>late closure <i style="background:var(--s2)"></i>spillover, nonempty</div>
+    <div class="legend"><i style="background:var(--s1)"></i>late closure <i style="background:var(--s2)"></i>spillover (sprints with work)</div>
     <div class="svgwrap"><svg id="lopoChart" viewBox="0 0 760 170" role="img" aria-label="Range of per-project AUC under leave-one-project-out"></svg></div>
     <div class="tip" id="tip-lopo"></div>
-    <p class="cap">Late closure runs from 0.531 on Titanium Mobile to 0.780 on Appcelerator Studio (pooled 0.600 with legacy features, 0.642 strict). Spillover from 0.706 on Confluence Cloud, where 267 of 464 sprints commit nothing, to 0.950 on Appcelerator. Concept drift is part of why: Titanium SDK's late rate drops from 71% in training to 33% in test.</p>
+    <p class="cap">Each line runs from the worst project to the best; the hollow dot is the result for all eight together. Late closure ranges from 0.531 (Titanium Mobile, barely better than a coin toss) to 0.780 (Appcelerator Studio). Spillover ranges from 0.706 (Confluence Cloud, where 267 of its 464 sprints were empty, leaving only 197 to test on) to 0.950. So <strong>which project you test on matters more than which model you use.</strong> Teams also change over time: Titanium SDK closed 71% of its sprints late in its early years and only 33% later on, so a model trained on the early years is partly out of date.</p>
   </div>
 </section>
 
@@ -466,16 +492,16 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">13 · Outside check</div>
   <h2>Does it hold on a Jira the model never saw?</h2>
   <div class="tldr"><b>In short</b><p>Run once, unchanged, on two MariaDB projects the model never saw, late closure still ranks at 0.71. Spillover could not be tested there because nearly every MariaDB sprint spills.</p></div>
-  <p>LOPO never leaves TAWOS. So on 1 November 2026 we ran the frozen pipeline once on MariaDB's public Jira: the MaxScale and ColumnStore projects, 391 sprints from 2016 to 2026, pulled through the REST API and converted to the TAWOS table layout. No model, label, feature or reconstruction code was changed. MariaDB records no story points, so that run drops the point features on both sides.</p>
+  <p>Every test so far used projects from the same dataset, TAWOS. A fair question is whether the results only hold there. So we took two projects from a completely different source: <strong>MariaDB</strong>, a popular open-source database whose Jira is public. Its MaxScale and ColumnStore projects give 391 sprints from 2016 to 2026. We downloaded them, put them in the same format as TAWOS, and ran the code exactly as it was, without changing or re-tuning anything. One adjustment was unavoidable: MariaDB does not use story points, so the two story-point features were left out, both when training on TAWOS and when testing on MariaDB.</p>
   <div class="fig relpos">
     <h3 style="margin-top:0">Late closure on MariaDB, 391 sprints, 106 late</h3>
     <div class="svgwrap"><svg id="mdbChart" viewBox="0 0 760 230" role="img" aria-label="Late-closure AUC on MariaDB under three settings"></svg></div>
     <div class="tip" id="tip-mdb"></div>
-    <p class="cap">Trained on TAWOS alone, with no project identity and no story points, gradient boosting ranks MariaDB late closures at 0.710 (interval 0.637 to 0.773) and the random forest at 0.716, against 0.576 for scope alone. That sits between the paper's LOPO (0.642) and time-split (0.751) numbers, so the late-closure result is not a TAWOS artifact.</p>
+    <p class="cap">The two middle bars are the key result. Models trained only on TAWOS, knowing nothing about MariaDB, rank MariaDB's late sprints well: gradient boosting scores 0.710 (likely range 0.637 to 0.773) and the random forest 0.716. That is clearly better than the amount of work alone (0.576), and in the same zone as inside TAWOS: 0.642 when testing on an unseen TAWOS project (section 7, random forest) and 0.751 on later sprints of a known project (section 8). So the late-closure finding is not a quirk of one dataset.</p>
   </div>
   <div class="two">
-    <div class="warnbox"><strong>Two honest caveats.</strong> Within MariaDB, the two projects close late at such different rates (54% and 15%) that knowing the project alone scores 0.745, as good as the best model. And spillover cannot be tested there: 99% of MariaDB sprints spill over, leaving three negatives.</div>
-    <div class="note"><strong>Replicated:</strong> progress still adds almost nothing for late closure at mid-sprint (+0.019, interval crossing zero), and the zero-scope inflation is smaller because only 10% of MariaDB sprints are empty, against 35% in TAWOS.</div>
+    <div class="warnbox"><strong>Two limits.</strong> First, the two MariaDB projects are very different (one closes 54% of its sprints late, the other 15%), so simply knowing which project a sprint belongs to already scores 0.745, about as well as the best model trained inside MariaDB (the right two bars). That rule needs MariaDB's own past late rates; the TAWOS-trained models never had them, which is what makes their 0.71 meaningful. Second, spillover could not be tested: 99% of MariaDB sprints left something unfinished, so there were only three sprints that did not spill, too few to measure anything.</div>
+    <div class="note"><strong>Also confirmed on MariaDB:</strong> watching the sprint's progress still does not help predict late closure (the halfway checkpoint adds only 0.019, too small to be real). And only 10% of MariaDB sprints were empty, against 35% in TAWOS, so the empty-sprint trap from section 8 depends on the data and must be checked each time.</div>
   </div>
 </section>
 
@@ -483,20 +509,20 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">14 · What it means</div>
   <h2>A protocol more than a tool</h2>
   <div class="tldr"><b>In short</b><p>The contribution is a careful way of working with Jira history, not a tool to deploy. Four habits carry over to any similar study.</p></div>
-  <p>The contribution is the way of working with Jira history, not a risk score to deploy. Four lessons travel to any team or researcher doing this kind of work.</p>
+  <p>The main result is not a product you can switch on tomorrow. It is a careful method for using Jira history, and four lessons that apply to anyone, researcher or team, who tries to learn from it.</p>
   <ol class="steps">
     <li><span class="k">1</span><div><strong>Rebuild the sprint-start state</strong> from the change log. A present-day export carries hindsight.</div></li>
-    <li><span class="k">2</span><div><strong>Drop the sprints that commit nothing</strong> before scoring spillover, or your AUC is inflated by free answers.</div></li>
-    <li><span class="k">3</span><div><strong>Honour parallel-sprint timing.</strong> Only use history whose outcome was known when the sprint began.</div></li>
-    <li><span class="k">4</span><div><strong>Audit for leakage one label at a time.</strong> The same mistake costs 0.24 F1 on one outcome and 0.01 on the other.</div></li>
+    <li><span class="k">2</span><div><strong>Leave out empty sprints</strong> when measuring spillover, or the score is inflated by easy answers.</div></li>
+    <li><span class="k">3</span><div><strong>Watch out for sprints that overlap.</strong> Only use history from sprints that had already finished.</div></li>
+    <li><span class="k">4</span><div><strong>Check for leakage separately for each outcome.</strong> The same mistake inflated one outcome by 0.24 and the other by only 0.01.</div></li>
   </ol>
   <h3>What a team can actually do with this</h3>
-  <p>At planning, the scores rank sprints by risk, so a team knows which ones to watch; they are rankings, not calibrated odds. During the sprint, the 25% and 50% checkpoints flag likely spillover earlier and better than counting open issues. Late closure is driven by habits, not by the work, so no in-sprint signal helps it.</p>
-  <h3>Limits, in the paper's own words</h3>
+  <p>At planning, the scores can put sprints in order of risk, so a team or Scrum Master knows which ones to keep an eye on. Treat them as an order, not as exact chances ("70% likely"), because the probabilities are not reliable across projects. During the sprint, the quarter-way and halfway checks spot likely spillover earlier and better than just counting open issues. Late closure comes from team habits, so the way to improve it is a team conversation about closing sprints on time, not a prediction.</p>
+  <h3>Limits</h3>
   <ul>
     <li>Jira's completion timestamp marks when a sprint was closed, not when its work was done.</li>
-    <li>What was never recorded cannot be recovered; the story-point fallback caps the spillover estimate.</li>
-    <li>Eight projects give wide intervals; the bootstrap over projects is exploratory, not confirmatory.</li>
+    <li>What Jira never recorded cannot be recovered, and the gaps in story-point history limit how far the spillover result can be trusted.</li>
+    <li>Eight projects is a small sample, so many of the likely ranges are wide.</li>
     <li>Every project is open-source, and the MariaDB check adds one outside source, two projects, and no test of spillover.</li>
   </ul>
 </section>
@@ -504,25 +530,25 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
 <section id="journey">
   <div class="eyebrow">15 · The journey</div>
   <h2>How the project unfolded</h2>
-  <div class="tldr"><b>In short</b><p>Sixteen weeks of coursework produced the pipeline; October and November 2026 added the reviews, the second paper and the outside check.</p></div>
+  <div class="tldr"><b>In short</b><p>The project grew over a 16-week course, then into two conference papers and the outside check in October and November 2026.</p></div>
   <ul class="timeline">
     <li><b>Week 8 · Proposal</b><small>Question, baselines and TAWOS named as the dataset. Project selection rule: at least 30 closed sprints.</small></li>
-    <li><b>Week 10 · Baseline artifact</b><small>Pipeline built on a small substitute dataset (four projects, 238 sprints) because the sandbox could not reach TAWOS. Delay prediction near chance. Leakage case studies reproduced.</small></li>
-    <li><b>Week 12 · Real TAWOS data</b><small>MySQL dump loaded, eight projects exported, change-log reconstruction added. 2,602 modelled sprints. Late closure becomes learnable (AUC 0.64 to 0.67).</small></li>
-    <li><b>Week 14 · Full results</b><small>Cluster bootstrap over projects (2,000 resamples), provenance audit, zero-scope decomposition, calibration.</small></li>
-    <li><b>Week 16 · Article and freeze</b><small>Phase 1 frozen. Phases 2 and 3 added beside it; they import Phase 1 and do not change it. 50 automated tests.</small></li>
-    <li><b>October 2026 · Reviews</b><small>Four rounds of pre-review edits on the CCECE paper: headline table with intervals, provenance made central, novelty bounded, caveats de-duplicated. A second paper, a position piece on grounding AI Scrum Master agents, drafted for Canadian AI 2027.</small></li>
-    <li><b>1 November 2026 · Outside check</b><small>MariaDB MaxScale and ColumnStore pulled from the public Jira, run through the frozen pipeline, added to the paper as row 16 and a new subsection. Repository updated.</small></li>
+    <li><b>Week 10 · First working version</b><small>Code built and tested on a small stand-in dataset (four projects, 238 sprints) while access to TAWOS was sorted out. Late closure looked unpredictable on that small data. The two leakage mistakes were reproduced.</small></li>
+    <li><b>Week 12 · Real TAWOS data</b><small>The full TAWOS database loaded, eight projects selected, and the change-log rewind added. 2,602 sprints. With real data, late closure turned out to be predictable after all (scores 0.64 to 0.67).</small></li>
+    <li><b>Week 14 · Full results</b><small>Likely ranges for every result, a check of how much each result depends on gaps in the change log, the empty-sprint analysis, and a check of whether predicted chances match what happened.</small></li>
+    <li><b>Week 16 · Article and freeze</b><small>Phase 1 locked so its results can't change. Phases 2 and 3 were built on top of it without editing it. 50 automated tests check the code.</small></li>
+    <li><b>October 2026 · Papers</b><small>The work written up for the IEEE CCECE 2027 conference and improved over four rounds of feedback. A second, shorter paper drafted for Canadian AI 2027, arguing that AI "Scrum Master" assistants should base their advice on tested models like these.</small></li>
+    <li><b>1 November 2026 · Outside check</b><small>Two MariaDB projects tested with the unchanged code (section 13) and added to the paper. Code and data updated on GitHub.</small></li>
   </ul>
   <h3>Reproducing it</h3>
-  <p>Everything is in the public repository <a href="https://github.com/hani-ziad/SwEng_202610">github.com/hani-ziad/SwEng_202610</a>: the TAWOS export for the eight projects, the MariaDB pull and its converted tables, all code, 50 tests, every result file, and <code>verify_numbers.py</code>, which checks all 319 numbers in the paper against those files. Each phase runs on a laptop CPU in minutes with seed 42.</p>
+  <p>Everything is public at <a href="https://github.com/hani-ziad/SwEng_202610">github.com/hani-ziad/SwEng_202610</a>: the data for the eight TAWOS projects and the two MariaDB projects, all the code, the tests, every result file, and a script (<code>verify_numbers.py</code>) that checks all 319 numbers in the paper against those results. Each phase runs on an ordinary laptop in a few minutes, and gives the same numbers every time.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Folder</th><th>What is in it</th></tr></thead>
     <tbody>
-      <tr><td><code>week-12-method-preliminary-results/sprint-risk-prediction</code></td><td>Phase 1: loaders, change-log reconstruction, labels, features, baselines, tests, TAWOS CSVs</td></tr>
-      <tr><td><code>phase-2-explainable-sprint-advisor</code></td><td>Strict history features, both outcome families, exact Shapley, the advisor</td></tr>
-      <tr><td><code>phase-3-in-sprint-early-warning</code></td><td>Checkpoint state reconstruction and progress features</td></tr>
-      <tr><td><code>external-validation</code></td><td>MariaDB browser pull, converter, runner, results</td></tr>
+      <tr><td><code>week-12-method-preliminary-results/sprint-risk-prediction</code></td><td>Phase 1: reading the data, the change-log rewind, outcomes, features, simple baselines, tests, and the TAWOS data files</td></tr>
+      <tr><td><code>phase-2-explainable-sprint-advisor</code></td><td>Phase 2: the corrected (strict) features, predicting amounts, Shapley explanations, the advisor</td></tr>
+      <tr><td><code>phase-3-in-sprint-early-warning</code></td><td>Phase 3: rebuilding sprints at the checkpoints, and the progress features</td></tr>
+      <tr><td><code>external-validation</code></td><td>The MariaDB check: downloaded data, conversion to the TAWOS format, the run script and its results</td></tr>
       <tr><td><code>ccece-2027-paper</code> · <code>canadian-ai-2027-paper</code></td><td>The two papers (LaTeX, PDF) and the number checker</td></tr>
     </tbody>
   </table></div>
@@ -545,15 +571,19 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
     <dt>Committed scope</dt><dd>The issues (and their story points) attached to a sprint on its first day, as rebuilt from the change log.</dd>
     <dt>Story points</dt><dd>A team's relative estimate of an issue's size. 73.5% of TAWOS issues have none; MariaDB uses none at all.</dd>
     <dt>Change log</dt><dd>Jira's record of every field change on an issue, with a timestamp. It is what lets us rewind.</dd>
-    <dt>Static fallback</dt><dd>Using today's value of a field because no change was ever recorded for it. Logged, because it can carry hindsight.</dd>
-    <dt>ROC-AUC</dt><dd>How often the model ranks a random positive above a random negative. 0.5 is chance, 1.0 is perfect.</dd>
-    <dt>F1</dt><dd>The balance of precision and recall at a fixed threshold. Easily inflated when nearly everything is positive.</dd>
+    <dt>Fallback</dt><dd>Using today's value of a field because Jira never recorded a change to it, so there is nothing to rewind. Noted for every issue, because it can carry hindsight.</dd>
+    <dt>ROC-AUC (or just AUC)</dt><dd>Pick one sprint that ran over and one that did not: how often does the model give the first a higher risk score? 0.5 is a coin toss, 1.0 is perfect. Section 6 has a demo.</dd>
+    <dt>F1</dt><dd>A score for yes/no calls that balances catching the risky sprints against raising false alarms. 1.0 is perfect. Easily inflated when nearly every sprint is risky.</dd>
     <dt>Time-ordered split</dt><dd>Train on each project's first 70% of sprints, test on its last 30%. Never trains on the future.</dd>
     <dt>LOPO</dt><dd>Leave-one-project-out: train on seven projects, test on the eighth, repeated for each.</dd>
-    <dt>Cluster bootstrap</dt><dd>Resampling the eight projects 2,000 times to put an interval around a difference between models.</dd>
+    <dt>Likely range (95% interval)</dt><dd>The range a score would fall in 95 times out of 100 if the study were repeated with a different mix of projects. Computed by re-scoring the models 2,000 times on reshuffled projects (a "cluster bootstrap"). For MariaDB, with only two projects, sprints are reshuffled instead.</dd>
     <dt>Shapley values</dt><dd>A fair way to split a model's prediction among its inputs, computed exactly here over seven feature groups.</dd>
     <dt>Leakage</dt><dd>Any way information from after the prediction moment reaches the model. The project's central concern.</dd>
-    <dt>Strict vs legacy history</dt><dd>Strict uses only earlier sprints whose outcome was already known; legacy used the immediately preceding sprints regardless.</dd>
+    <dt>Strict vs legacy features</dt><dd>Two versions of the team-history features. Legacy (Phase 1) used the most recent sprints even if they were still running; strict (Phase 2 on) uses only sprints that had already finished.</dd>
+    <dt>Spillover and late closure</dt><dd>The two outcomes predicted: work left unfinished at the planned end, and the sprint closed in Jira more than a day late.</dd>
+    <dt>Nonempty sprint</dt><dd>A sprint that had at least one issue in it on day one. Spillover is only measured on these.</dd>
+    <dt>Checkpoint</dt><dd>A moment inside a running sprint (25%, 50%, 75% or 100% of its planned length) at which Phase 3 makes a new prediction.</dd>
+    <dt>SMOTE</dt><dd>A technique that creates made-up examples of the rarer outcome to balance the training data. Safe only if done after the test sprints are set aside.</dd>
   </dl>
 </section>
 </main>
@@ -602,13 +632,13 @@ function groupedBars(svgSel,tipSel,cats,series,opts){
 groupedBars('#strictChart','#tip-strict',['Logistic regression\nLOPO','Random forest\nLOPO','Logistic regression\ntime split','Gradient boosting\ntime split'],
  [{name:'legacy',color:'var(--line)',values:[.542,.600,.636,.726]},{name:'strict',color:'var(--s1)',values:[.629,.642,.680,.751]}],{ymin:.4,ymax:.8,step:.1,labelH:44});
 
-groupedBars('#p1chart','#tip-p1',['Scope-only\nlogistic regression','Project\nbase rate','Logistic\nregression','Random\nforest','Gradient\nboosting'],
- [{name:'late closure',color:'var(--s1)',values:[.530,.640,.680,.715,.751]},{name:'spillover, nonempty',color:'var(--s2)',values:[.885,null,.827,.840,.812]}],{ymin:.4,ymax:1,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
+groupedBars('#p1chart','#tip-p1',['Size only\n(3 numbers)','Each project\'s\nown rate','Logistic\nregression','Random\nforest','Gradient\nboosting'],
+ [{name:'late closure',color:'var(--s1)',values:[.530,.640,.680,.715,.751]},{name:'spillover',color:'var(--s2)',values:[.885,null,.827,.840,.812]}],{ymin:.4,ymax:1,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
 
 groupedBars('#leakChart','#tip-leak',['Spillover F1\n(own completion ratio as a feature)','Late closure F1\n(SMOTE before the split)'],
  [{name:'correct',color:'var(--line)',values:[.756,.457]},{name:'with the mistake',color:'var(--s2)',values:[.991,.646]}],{ymin:0,ymax:1,step:.2,labelH:44});
 
-groupedBars('#mdbChart','#tip-mdb',['Scope only\n(no learning to speak of)','Gradient boosting\ntrained on TAWOS only','Random forest\ntrained on TAWOS only','Random forest\ntrained within MariaDB','Project rate alone\nwithin MariaDB'],
+groupedBars('#mdbChart','#tip-mdb',['Amount of work only\n(trained on TAWOS)','Gradient boosting\ntrained on TAWOS only','Random forest\ntrained on TAWOS only','Random forest\ntrained within MariaDB','Project rate alone\nwithin MariaDB'],
  [{name:'late closure AUC',color:'var(--s1)',values:[.576,.710,.716,.750,.745]}],{ymin:.4,ymax:.9,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
 
 /* ---------- shapley horizontal bars ---------- */
@@ -623,13 +653,13 @@ hbars('#shapSpill',[['committed scope',41],['capacity',37],['recent history',12]
 /* ---------- LOPO range ---------- */
 (function(){const svg=$('#lopoChart'),tip=$('#tip-lopo');const W=760,m={l:150,r:30};const pw=W-m.l-m.r;const x=v=>m.l+(v-.4)/.6*pw;
   for(let v=.4;v<=1.001;v+=.1){svg.appendChild(el('line',{x1:x(v),x2:x(v),y1:20,y2:135,stroke:'var(--grid)'}));svg.appendChild(el('text',{x:x(v),y:152,'text-anchor':'middle','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
-  const rows=[['Late closure',.531,.780,.600,'var(--s1)','Titanium Mobile','Appcelerator Studio'],['Spillover, nonempty',.706,.950,.815,'var(--s2)','Confluence Cloud','Appcelerator Studio']];
+  const rows=[['Late closure',.531,.780,.600,'var(--s1)','Titanium Mobile','Appcelerator Studio'],['Spillover',.706,.950,.815,'var(--s2)','Confluence Cloud','Appcelerator Studio']];
   rows.forEach((r,i)=>{const y=50+i*50;svg.appendChild(el('text',{x:m.l-12,y:y+5,'text-anchor':'end','font-size':13,fill:'var(--fg)'},r[0]));
     const ln=el('line',{x1:x(r[1]),x2:x(r[2]),y1:y,y2:y,stroke:r[4],'stroke-width':6,'stroke-linecap':'round'});svg.appendChild(ln);
     [[r[1],r[5]],[r[2],r[6]]].forEach(([v,name],k)=>{const c=el('circle',{cx:x(v),cy:y,r:7,fill:r[4],stroke:'var(--bg2)','stroke-width':2});svg.appendChild(c);
       svg.appendChild(el('text',{x:x(v),y:y-14,'text-anchor':k?'end':'start','font-size':11,fill:'var(--fg2)'},`${name} ${v.toFixed(3).slice(1)}`));tipBind(svg,tip,c,`${name}: ${v.toFixed(3)}`);});
     const p=el('circle',{cx:x(r[3]),cy:y,r:5,fill:'var(--bg2)',stroke:r[4],'stroke-width':2});svg.appendChild(p);tipBind(svg,tip,p,`pooled (legacy features): ${r[3].toFixed(3)}`);
-    svg.appendChild(el('text',{x:x(r[3]),y:y+22,'text-anchor':'middle','font-size':11,fill:'var(--fg2)'},'pooled '+r[3].toFixed(3).slice(1)));});
+    svg.appendChild(el('text',{x:x(r[3]),y:y+22,'text-anchor':'middle','font-size':11,fill:'var(--fg2)'},'all 8 together '+r[3].toFixed(3).slice(1)));});
 })();
 
 /* ---------- checkpoint chart with play ---------- */
@@ -645,7 +675,7 @@ hbars('#shapSpill',[['committed scope',41],['capacity',37],['recent history',12]
       svg.appendChild(el('text',{x:x(xs[i]),y:y(v)+(s.c==='var(--s1)'?18:-10),'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(3).slice(1)));});
     s.path=p;});
   const cursor=el('line',{x1:x(0),x2:x(0),y1:m.t,y2:m.t+ph,stroke:'var(--accent)','stroke-width':2,opacity:0});svg.appendChild(cursor);
-  const msgs=['At planning time: spillover AUC 0.830, late closure 0.751','25% in: spillover 0.926 (+0.10), late closure 0.754 (no change)','Halfway: spillover 0.957 (+0.12), late closure 0.760','75% in: spillover 0.953, late closure 0.749','Planned end: spillover is settled by the state; late closure 0.704 and still no model beats "always late"'];
+  const msgs=['Day one: spillover 0.830, late closure 0.751','25% in: spillover 0.926 (+0.10), late closure 0.754 (no change)','Halfway: spillover 0.957 (+0.12), late closure 0.760','75% in: spillover 0.953, late closure 0.749','Planned end: spillover is settled by the state; late closure 0.704 and still no model beats "always late"'];
   let timer=null;$('#cpBtn').addEventListener('click',()=>{if(timer)return;
     let f=0;cursor.setAttribute('opacity',1);series.forEach(s=>{s.path.style.strokeDashoffset=s.path.dataset.len;});dots.forEach(d=>d.c.setAttribute('opacity',0));
     const t0=performance.now(),dur=reduced?0:5000;
