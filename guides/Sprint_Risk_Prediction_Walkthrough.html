@@ -95,12 +95,23 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
 .pipe div b{display:block;font-family:var(--display);font-size:15px;margin-bottom:2px}
 .pipe div::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--fg2);font-size:16px}
 .pipe div:last-child::after{content:""}
-.auc .tally{font:600 15px var(--mono);color:var(--accent)}
+.aucsum{font-size:15px;margin:6px 0 2px;line-height:1.7}
+.aucsum .mono{font-size:14px}
+.aucsum b.big{font-family:var(--display);font-size:20px;color:var(--accent)}
 .feat td.y{color:var(--s3);font-weight:600}
 .feat td.no{color:var(--fg2)}
 .feat tr.grp td{background:var(--bg);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
 .feat tr.tot td{font-weight:600;border-top:2px solid var(--line)}
 .small{font-size:14px;color:var(--fg2)}
+.scale{display:flex;gap:4px;margin:10px 0 16px;max-width:760px}
+.scale>div{min-width:0;border-top:6px solid var(--s1);padding-top:6px;font-size:13px;color:var(--fg2)}
+.scale>div:nth-child(1){border-color:var(--line)}.scale>div:nth-child(2){border-color:color-mix(in srgb,var(--s1) 55%,var(--line))}
+.scale>div:nth-child(3){border-color:var(--s1)}.scale>div:nth-child(4){border-color:var(--s3)}
+.scale b{display:block;color:var(--fg);font:700 15px var(--display)}
+@media (max-width:640px){.scale{flex-wrap:wrap}.scale>div{flex:1 1 45%!important}}
+details.more{border:1px solid var(--line);border-radius:8px;background:var(--bg2);padding:12px 16px;margin:14px 0}
+details.more summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2px}
 /* board animation */
 .board{position:relative;height:300px;border-radius:6px;background:var(--bg);border:1px dashed var(--line);overflow:hidden}
 .col{position:absolute;top:0;bottom:0;width:33.33%;border-right:1px dashed var(--line);padding:10px}
@@ -122,7 +133,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <a href="#data">The data</a>
   <a href="#rebuild">Rebuilding day one</a>
   <a href="#features">The features</a>
-  <a href="#scoring">Scoring a model</a>
+  <a href="#scoring">Reading the scores</a>
   <a href="#parallel">Overlapping sprints</a>
   <a href="#phase1">Phase 1: planning time</a>
   <a href="#phase2">Phase 2: explain</a>
@@ -159,13 +170,14 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <h2>If you have never seen this project, read this first</h2>
   <div class="tldr"><b>In short</b><p>We taught a computer to look at a software team's plan on the first day of a sprint and say how likely the sprint is to run over. The hard part was making sure the computer only saw what the team could have seen that morning.</p></div>
   <h3>How to read this page</h3>
-  <p>Every section opens with an "In short" box. Read only those and you have the whole story in five minutes. The full page takes about half an hour. Figures with a <strong>Play</strong>, <strong>Draw</strong> or <strong>Show</strong> button are animated: press them. Any word you don't know is in the glossary at the end.</p>
+  <p>Every section opens with an "In short" box. Read only those and you have the whole story in five minutes. The full page takes about half an hour. Figures with a <strong>Play</strong> or <strong>Show</strong> button are animated: press them. Any word you don't know is in the glossary at the end.</p>
   <h3>Scrum in one minute</h3>
   <p>A Scrum team keeps a <strong>backlog</strong>, a list of work items called <strong>issues</strong>. Every one to four weeks it starts a <strong>sprint</strong>: at a planning meeting it picks the issues it commits to finish and, often, gives each a size estimate in <strong>story points</strong>. Then it works. At the planned end the team closes the sprint and anything unfinished rolls over.</p>
   <h3>Jira in one minute</h3>
   <p>Jira is the tool most teams use to run this. Each issue has fields (status, sprint, story points, assignee). Jira also keeps a <strong>change log</strong>: every time a field changes, it records from what, to what, and when. That change log is the raw material of this whole project.</p>
   <h3>What "predicting" means here</h3>
   <p>A <strong>model</strong> is a formula learned from past sprints. You give it a handful of numbers about a new sprint (its <strong>features</strong>) and it returns a risk score. To learn the formula the model is shown old sprints together with how they ended (their <strong>labels</strong>). To check it honestly, it is then tested on sprints it never saw during learning.</p>
+  <p><strong>One model, one outcome.</strong> The project predicts two different things, spillover and late closure (section 2 explains both). A model only ever predicts one of them. So every type of model is trained twice, once for each outcome, and every result on this page says which outcome it is about. In the results charts, <span style="color:var(--s1);font-weight:600">blue</span> is late closure and <span style="color:var(--s2);font-weight:600">orange</span> is spillover.</p>
   <div class="pipe" aria-label="Pipeline">
     <div><b>Jira change log</b>every field change, with a timestamp</div>
     <div><b>Day-one state</b>the board as it was when each sprint began</div>
@@ -216,14 +228,26 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
 <section id="data">
   <div class="eyebrow">3 · The data</div>
   <h2>TAWOS, and how 2,657 sprint rows became 2,602</h2>
-  <div class="tldr"><b>In short</b><p>Eight open-source projects from the public TAWOS dataset, 2,602 sprints after removing ones that were still running, broken, or had no history. A third of them committed no work at all.</p></div>
+  <div class="tldr"><b>In short</b><p>Eight open-source projects from the public TAWOS dataset. Of 2,657 sprints, 55 were removed (still running, broken dates, or no history), leaving 2,602 for late closure. For spillover, the 911 sprints with no work in them are also left out, leaving 1,691.</p></div>
   <p>TAWOS is a free research dataset that copies the Jira data, including the full change log, of 44 open-source software projects (published by Tawosi and colleagues in 2022). We kept the eight projects that ran at least 30 sprints, so each has enough history to learn from: Apache Mesos, Appcelerator Studio, Atlassian Confluence Cloud and Server, LSST Data Management, Mule, Titanium SDK and Titanium Mobile.</p>
   <div class="fig relpos">
     <div class="legend"><i style="background:var(--s1)"></i>kept <i style="background:var(--line)"></i>removed</div>
     <div class="svgwrap"><svg id="funnel" viewBox="0 0 760 230" role="img" aria-label="Sprint cohort funnel from 2,657 rows to 1,691 nonempty sprints"></svg></div>
     <div class="tip" id="tip-funnel"></div>
-    <p class="cap">Three kinds of sprint were removed. Sprints that were still open (or not yet started) have no outcome to predict. Three sprints had dates that make no sense (they end before they start). And each project's very first sprint has no earlier sprints to learn the team's habits from. Of the 2,602 that remain, about a third had no issues in them at all on day one; section 8 explains why that matters.</p>
   </div>
+  <h3>Which sprints were removed, and why</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Removed</th><th>How many</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Sprints still running or not started yet</td><td class="n">44</td><td>They have no outcome yet, so there is nothing to predict or check.</td></tr>
+      <tr><td>Sprints with impossible dates</td><td class="n">3</td><td>They end before they start: a data error.</td></tr>
+      <tr><td>Each project's very first sprint</td><td class="n">8</td><td>There are no earlier sprints to compute the team-history features from.</td></tr>
+      <tr class="tot"><td>Left for <strong>late closure</strong></td><td class="n">2,602</td><td>Every one of these sprints was closed, so "late or not" can be checked.</td></tr>
+      <tr><td>Sprints with no issues in them on day one</td><td class="n">911</td><td>Removed <strong>for spillover only</strong>. A sprint with no committed work cannot leave work unfinished, so it would be a free correct answer and make the scores look better than they are (section 8 shows by how much). These sprints stay in the late-closure data, because an empty sprint can still be closed late.</td></tr>
+      <tr class="tot"><td>Left for <strong>spillover</strong></td><td class="n">1,691</td><td>Sprints that had at least one committed issue.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">The funnel chart above shows the same steps.</p>
   <div class="stats">
     <div class="stat"><b>145,309</b><span>issues in the eight projects</span></div>
     <div class="stat"><b>88,364</b><span>recorded changes to an issue's sprint or story points</span></div>
@@ -264,7 +288,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">5 · The features</div>
   <h2>What the model is allowed to know on day one</h2>
   <div class="tldr"><b>In short</b><p>The model sees about a dozen numbers per sprint: how much was committed, how long the sprint is, how the team did in its recent sprints, how busy it already is, and which project it is.</p></div>
-  <p>A machine-learning model does not read Jira screens. For every sprint it is given a short list of numbers, called <strong>features</strong>, and it learns which numbers go with sprints that ran over. Some features are copied straight from the sprint (how many issues it has). Most are <em>computed</em> from the team's earlier sprints (how much it usually finishes). All of them are taken from the rebuilt day-one state of section 4, so each one is something the team could have known on the morning the sprint started.</p>
+  <p>A machine-learning model does not read Jira screens. For every sprint it is given a short list of numbers, called <strong>features</strong>, and it learns which numbers go with sprints that closed late or left work unfinished. Some features are copied straight from the sprint (how many issues it has). Most are <em>computed</em> from the team's earlier sprints (how much it usually finishes). All of them are taken from the rebuilt day-one state of section 4, so each one is something the team could have known on the morning the sprint started.</p>
   <h3>The features, and which models use them</h3>
   <p>The project has two versions of the feature list. <strong>Phase 1</strong> used the first version (called <em>legacy</em> in the paper). <strong>Phase 2, Phase 3 and every headline result in the paper</strong> use the corrected version (called <em>strict</em>). Section 7 explains what was wrong with the first one.</p>
   <div class="tablewrap"><table class="feat">
@@ -294,7 +318,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <h3>Which model gets which features</h3>
   <ul>
     <li><strong>Scope-only baseline:</strong> just the first three (committed issues, committed story points, sprint length). It tests whether the size of the commitment alone explains the outcome.</li>
-    <li><strong>Logistic regression, random forest, gradient boosting:</strong> the whole list for their phase (legacy in Phase 1, strict from Phase 2 on). When a model is tested on a project it never trained on (leave-one-project-out, see section 6), the project feature is removed, because the model cannot know anything about that project.</li>
+    <li><strong>Logistic regression, random forest, gradient boosting:</strong> the whole list for their phase (legacy in Phase 1, strict from Phase 2 on). When a model is tested on a project it never trained on (section 8 explains this test), the project feature is removed, because the model cannot know anything about that project.</li>
     <li><strong>MariaDB outside check:</strong> the strict list without the two story-point features, because MariaDB records no story points.</li>
     <li><strong>Phase 3 in-sprint models:</strong> the strict list plus a "progress" group measured during the sprint (share done so far, issues remaining, issues added or removed since the start, time left). Section 10 lists them.</li>
   </ul>
@@ -314,29 +338,109 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
 </section>
 
 <section id="scoring">
-  <div class="eyebrow">6 · Scoring a model</div>
-  <h2>How we tell a good model from a lucky one</h2>
-  <div class="tldr"><b>In short</b><p>Models are compared with one number, ROC-AUC, which asks how well the model <em>ranks</em> risky sprints above safe ones. They are always tested on sprints they never trained on, and every headline number comes with a comparison to a simple rule.</p></div>
-  <h3>ROC-AUC, the headline number</h3>
-  <p>Pick one sprint that did run over and one that did not, at random. Did the model give the risky one the higher score? Do that for every possible pair and count the share of times it got the order right. That share is the <strong>ROC-AUC</strong>. 0.5 means the model is no better than a coin toss, 1.0 means it never gets a pair wrong. Try it below.</p>
-  <div class="fig relpos auc">
-    <div class="toolbar">
-      <button class="btn" id="aucOne">Draw a random pair</button>
-      <button class="btn ghost" id="aucMany">Draw 100 pairs</button>
-      <button class="btn ghost" id="aucReset">Reset</button>
-      <span class="status" id="aucStatus">Twelve example sprints, sorted by the model's risk score</span>
-    </div>
-    <div class="legend"><i style="background:var(--s2)"></i>closed late <i style="background:var(--s3)"></i>closed on time</div>
-    <div class="svgwrap"><svg id="aucChart" viewBox="0 0 760 140" role="img" aria-label="Twelve sprints on a risk-score line, risky ones in orange, safe ones in green"></svg></div>
-    <p class="cap"><span class="tally" id="aucTally">Pairs drawn: 0</span>. The exact AUC of this little example is <strong>0.806</strong>: of the 36 possible pairs of one late and one on-time sprint (6 late × 6 on time), the model orders 29 correctly. After enough random pairs the tally settles near that.</p>
+  <div class="eyebrow">6 · Reading the scores</div>
+  <h2>What a score of 0.75 means</h2>
+  <div class="tldr"><b>In short</b><p>Most results on this page are a score between 0.5 and 1.0. Higher means the model is better at telling risky sprints from safe ones; 0.5 is no better than a coin toss. (The few results measured differently say so where they appear.)</p></div>
+  <p>Each model gives every sprint a <strong>risk score</strong>. To judge the model, we take the sprints it was tested on and ask one question: <strong>did it give the risky sprints higher scores than the safe ones?</strong></p>
+  <div class="fig">
+    <h3 style="margin-top:0">A tiny example</h3>
+    <div class="tablewrap" style="margin:6px 0 10px"><table style="max-width:520px">
+      <thead><tr><th>Sprint</th><th>What really happened</th><th>Model's risk score</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>closed late</td><td class="n">0.8</td></tr>
+        <tr><td>B</td><td>closed on time</td><td class="n">0.3</td></tr>
+      </tbody>
+    </table></div>
+    <p style="max-width:none;margin:0">The late sprint got the higher score, so the model got this pair <strong>right</strong>. Now repeat that check for every possible pair of one late and one on-time sprint. The share of pairs it gets right is the score. Its full name is <strong>ROC-AUC</strong>, usually shortened to <strong>AUC</strong>.</p>
   </div>
-  <p>Why not simply count how many yes/no calls are right (accuracy), or use <strong>F1</strong>, a common score that balances how many risky sprints are caught against how many false alarms are raised? Because the outcomes are lopsided. In the test sprints 94% of sprints with work spilled over, so a rule that says "yes" to everything already scores F1 0.971 on spillover. AUC is unmoved by that; it only cares about the ordering. F1 still appears in the leakage section, where its sensitivity is the point.</p>
-  <h3>The predictors lined up</h3>
+  <h3>How to read the numbers</h3>
+  <div class="scale" aria-label="Score scale">
+    <div style="flex:0 0 40%"><b>0.5</b><span>coin toss: the model has learned nothing useful</span></div>
+    <div style="flex:0 0 30%"><b>0.70 to 0.85</b><span>useful, with clear mistakes</span></div>
+    <div style="flex:0 0 20%"><b>0.85+</b><span>strong</span></div>
+    <div style="flex:0 0 10%"><b>1.0</b><span>perfect</span></div>
+  </div>
+  <p>The same score is used for both outcomes. A late-closure model is scored on late versus on-time sprints; a spillover model on sprints that left work unfinished versus sprints that finished everything.</p>
+  <p>Some results also show a <strong>likely range</strong>, for example "0.885 (likely range 0.818 to 0.922)". That means: with a different mix of projects, the score would most likely land somewhere in that range. A wide range means the result is less certain.</p>
+  <details class="more">
+    <summary>See how the score is calculated, step by step (optional)</summary>
+  <div class="relpos auc" style="padding-top:12px">
+        <p class="small" style="margin-top:0">An invented example of twelve late-closure predictions, not the project's data. Spillover is scored exactly the same way.</p>
+    <ol class="steps" style="margin-top:0">
+      <li><span class="k">1</span><div><strong>Line the sprints up by score.</strong> Twelve invented sprints, each given a risk score by an imaginary late-closure model, placed from the lowest risk score on the left to the highest on the right.</div></li>
+      <li><span class="k">2</span><div><strong>Colour them by what really happened.</strong> <span style="color:var(--s1);font-weight:600">Blue</span> closed late, <span style="color:var(--s3);font-weight:600">green</span> closed on time. A good model pushes the blue ones to the right.</div></li>
+      <li><span class="k">3</span><div><strong>Count.</strong> For each blue (late) sprint, count how many green sprints sit to its left. Each of those is a pair the model got right: it gave the late sprint a higher score than the on-time one. Add the counts up and divide by the most possible.</div></li>
+    </ol>
+    <div class="toolbar">
+      <span class="status" style="font-weight:600;color:var(--fg)">Show:</span>
+      <button class="btn" id="aucThis" aria-pressed="true">A decent model</button>
+      <button class="btn ghost" id="aucPerfect" aria-pressed="false">A perfect model</button>
+      <button class="btn ghost" id="aucUseless" aria-pressed="false">A useless model</button>
+    </div>
+    <div class="svgwrap"><svg id="aucChart" viewBox="0 0 760 120" role="img" aria-label="Twelve sprints on a risk-score line, late ones in blue, on-time ones in green, with the count of green sprints to the left of each orange one"></svg></div>
+    <div class="aucsum" id="aucSum"></div>
+    <p class="cap" id="aucCap"></p>
+  </div>
+  </details>
+</section>
+
+<section id="parallel">
+  <div class="eyebrow">7 · Overlapping sprints</div>
+  <h2>"Previous" does not mean "finished"</h2>
+  <div class="tldr"><b>In short</b><p>In these projects several sprints run at the same time, so the sprints just before a new one are often still running when it starts. Phase 1 used their final results anyway, which on that first day did not exist yet. Phase 2 fixed the rule so only sprints that had really finished are used.</p></div>
+  <p>Section 5 listed features such as "how did the team do in its last three sprints?" That sounds safe: surely the sprints before this one are finished? In these projects, often not. Many projects run two or more sprints at the same time, for different sub-teams, so a new sprint usually starts while earlier ones are still going. In 71% of our sprints, the sprint just before had <em>not finished yet</em> when the new one started.</p>
+
+  <div class="fig relpos">
+    <h3 style="margin-top:0">One project's sprints, the day Sprint 12 starts</h3>
+    <div class="toolbar">
+      <span class="status" style="font-weight:600;color:var(--fg)">Which three sprints does each version use?</span>
+      <button class="btn ghost" id="parLegacy" aria-pressed="false">Phase 1 (legacy) rule</button>
+      <button class="btn ghost" id="parStrict" aria-pressed="false">Phase 2 (strict) rule</button>
+    </div>
+    <div class="legend"><i style="background:var(--accent-soft);outline:1px solid var(--accent)"></i>finished by day 30 <i style="background:var(--warn-soft);outline:1px solid var(--warn)"></i>still running on day 30 <i style="background:var(--s4)"></i>the three sprints the rule picks</div>
+    <div class="svgwrap"><svg id="gantt" viewBox="0 0 760 300" role="img" aria-label="Six overlapping sprints of one project; Sprint 12 starts on day 30 while Sprints 10 and 11 are still running"></svg></div>
+    <p class="status" id="parStatus" style="font-size:15px;min-height:3em;margin:8px 0 0">Press a button to see which three earlier sprints each version uses for Sprint 12.</p>
+  </div>
+
+  <div class="two">
+    <div class="fig" style="margin:0;border-top:4px solid var(--warn)">
+      <h3 style="margin-top:0">Phase 1 rule (legacy)</h3>
+      <p style="max-width:none"><strong>"Use the three sprints that <em>started</em> most recently before this one."</strong></p>
+      <p style="max-width:none">For Sprint 12 that is Sprints 9, 10 and 11. But Sprints 10 and 11 are still running on day 30. Their results are only known later, so on Sprint 12's first day those numbers did not exist. <strong>The feature uses information from the future.</strong></p>
+    </div>
+    <div class="fig" style="margin:0;border-top:4px solid var(--accent)">
+      <h3 style="margin-top:0">Phase 2 rule (strict)</h3>
+      <p style="max-width:none"><strong>"Use the three most recent sprints that had <em>finished</em> before this one started."</strong></p>
+      <p style="max-width:none">For Sprint 12 that is Sprints 7, 8 and 9. It skips 10 and 11 and goes further back. Every number it uses was really known on day 30. <strong>No information from the future.</strong></p>
+    </div>
+  </div>
+
+  <h3>How could Phase 1 use results that did not exist yet?</h3>
+  <p>Because the data is historical. It was downloaded years later, when every sprint's final result was already recorded. Phase 1's code simply took the final results of the three sprints that started before, without checking whether they had finished by the time the new sprint began. A real team on day 30 could never have had those numbers. The same applies to two Phase 1 features that use only the single sprint just before (its carryover and completion ratio): here that is Sprint 11, which is still running.</p>
+
+  <div class="fig relpos">
+    <h3 style="margin-top:0">What the change did to the late-closure scores</h3>
+    <div class="legend"><i style="background:var(--line)"></i>Phase 1 features (legacy) <i style="background:var(--s1)"></i>Phase 2 features (strict)</div>
+    <div class="svgwrap"><svg id="strictChart" viewBox="0 0 760 210" role="img" aria-label="Late-closure AUC with legacy and strict features"></svg></div>
+    <div class="tip" id="tip-strict"></div>
+    <p class="cap">Higher is better (0.5 is a coin toss; see section 6). "Unseen project" means the model was tested on a project it never trained on; "later sprints" means it was trained on a project's earlier sprints and tested on its later ones (section 8 explains both).</p>
+    <p class="cap">Every model scored higher with the strict features, most of all on unseen projects (logistic regression 0.542 to 0.629). That can seem odd, since the fix takes information away. The reason is that Phase 2 did two things at once: it fixed the rule above, <em>and</em> it added features Phase 1 did not have (the team's past lateness, its usual capacity, and how many sprints were already open; section 5 lists them). Past lateness is the strongest signal for late closure (section 9). So the higher scores mostly come from the new features, and the fixed rule makes sure none of them uses the future. The paper's main numbers, such as 0.751, all use the strict features.</p>
+  </div>
+</section>
+
+<section id="phase1">
+  <div class="eyebrow">8 · Phase 1</div>
+  <h2>Predicting on day one: what the models learned</h2>
+  <div class="tldr"><b>In short</b><p>Spillover depends on how much the team took on: three simple numbers about the sprint's size give the best ranking (0.885). Late closure depends on team habits: the sprint's size tells you almost nothing, while the team's history gets to 0.751.</p></div>
+  <p>With the features from section 5, Phase 1 asks the first question: using only what was known on day one, can a model rank sprints by risk better than a simple rule?</p>
+  <div class="note"><strong>Which numbers are shown here.</strong> Phase 1 first ran with the legacy features. After the overlapping-sprint flaw (section 7) was found in Phase 2, the same day-one models were rerun with the corrected strict features, and those are the numbers below and in the paper. For comparison, Phase 1's original legacy features gave late closure 0.705 (random forest).</div>
+  <h3>What is being compared</h3>
+  <p>Each predictor below is built twice: once to predict spillover and once to predict late closure. The first two are simple rules, not real models; a model is only worth having if it beats them.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Predictor</th><th>What it does</th><th>Why it is there</th></tr></thead>
     <tbody>
-      <tr><td>Always yes</td><td>Says every sprint is at risk</td><td>Shows how a useless rule can still look good when 93% of sprints spill</td></tr>
-      <tr><td>Each project's own rate</td><td>Gives every sprint its project's usual rate (if a project closed 40% of past sprints late, every new sprint gets 40%)</td><td>A model must beat this to show it learned more than "which team is it"</td></tr>
+      <tr><td>Always yes</td><td>Says every sprint will spill over, or every sprint will close late</td><td>Shows how a rule that knows nothing can still be "right" most of the time when nearly every sprint spills</td></tr>
+      <tr><td>Each project's own rate</td><td>Gives every sprint its project's usual rate (for late closure: if a project closed 40% of its past sprints late, every new sprint of that project gets 40%)</td><td>A model must beat this to show it learned more than "which team is it"</td></tr>
       <tr><td>Size only (scope-only logistic regression)</td><td>A simple model given just three numbers: committed issues, committed points, sprint length</td><td>Tests whether the size of the sprint alone explains the outcome</td></tr>
       <tr><td>Logistic regression</td><td>Adds up each feature times a learned weight, then turns the total into a score</td><td>The simplest learned model, and the easiest to inspect</td></tr>
       <tr><td>Random forest</td><td>300 small decision trees (flowcharts of yes/no questions), each trained a little differently, that vote</td><td>Can pick up combinations of features; stable on small data</td></tr>
@@ -344,21 +448,23 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
     </tbody>
   </table></div>
   <p>Every model's settings were chosen once, before any result was seen, and never adjusted to make the test scores look better. Random choices inside the models use a fixed starting point (seed 42), so anyone rerunning the code gets the same numbers.</p>
-  <h3>How a model is tested without cheating</h3>
+  <h3>How the models are tested</h3>
+  <p>A model is never scored on sprints it learned from. Two kinds of test are used:</p>
   <div class="two">
     <div class="fig" style="margin:0">
-      <h3 style="margin-top:0">Time-ordered split</h3>
-      <svg viewBox="0 0 320 110" role="img" aria-label="Time-ordered split: first 70 percent of each project's sprints train, the last 30 percent test">
+      <h3 style="margin-top:0">Test 1: later sprints (time split)</h3>
+      <svg viewBox="0 0 320 128" role="img" aria-label="Time-ordered split: first 70 percent of each project's sprints train, the last 30 percent test">
         <text x="0" y="14" font-size="11" fill="var(--fg2)">each project, sprints in start order</text>
-        <rect x="0" y="24" width="224" height="26" rx="4" fill="var(--s1)"/><rect x="228" y="24" width="92" height="26" rx="4" fill="var(--s2)"/>
-        <text x="112" y="41" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">train: first 70%</text>
-        <text x="274" y="41" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">test: last 30%</text>
-        <text x="0" y="74" font-size="12" fill="var(--fg)">1,816 training sprints, 786 test sprints</text>
-        <text x="0" y="94" font-size="12" fill="var(--fg2)">Never trains on a sprint's future.</text>
+        <rect x="0" y="24" width="224" height="26" rx="4" fill="var(--accent-soft)" stroke="var(--accent)"/><rect x="228" y="24" width="92" height="26" rx="4" fill="var(--warn-soft)" stroke="var(--warn)"/>
+        <text x="112" y="41" text-anchor="middle" font-size="12" fill="var(--fg)" font-weight="600">train: first 70%</text>
+        <text x="274" y="41" text-anchor="middle" font-size="12" fill="var(--fg)" font-weight="600">test: last 30%</text>
+        <text x="0" y="72" font-size="12" fill="var(--s1)" font-weight="600">Late closure: 1,816 train, 786 test</text>
+        <text x="0" y="90" font-size="12" fill="var(--s2)" font-weight="600">Spillover (sprints with work): 1,180 train, 511 test</text>
+        <text x="0" y="112" font-size="12" fill="var(--fg2)">Never trains on a sprint's future.</text>
       </svg>
     </div>
     <div class="fig" style="margin:0">
-      <h3 style="margin-top:0">Leave one project out (LOPO)</h3>
+      <h3 style="margin-top:0">Test 2: an unseen project (leave one project out)</h3>
       <svg viewBox="0 0 320 110" role="img" aria-label="Leave-one-project-out: train on seven projects, test on the eighth, repeated eight times">
         <text x="0" y="14" font-size="11" fill="var(--fg2)">eight projects, one held out at a time</text>
         <g id="lopoBoxes"></g>
@@ -367,46 +473,17 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
       </svg>
     </div>
   </div>
-  <p style="margin-top:14px">To show how certain each number is, we use a <strong>cluster bootstrap</strong>: the eight projects are drawn again at random (some twice, some not at all) 2,000 times, and the models are re-scored each time. The middle 95% of those 2,000 results is a 95% interval, around a single score or around the difference between two models. Eight projects make those intervals wide, and the paper says so. On this page these intervals are written as a <strong>likely range</strong>, for example "0.885 (likely range 0.818 to 0.922)".</p>
-</section>
-
-<section id="parallel">
-  <div class="eyebrow">7 · Overlapping sprints</div>
-  <h2>Projects run several sprints at once</h2>
-  <div class="tldr"><b>In short</b><p>Teams run sprints in parallel, so "the previous sprint" was often still open when the next began. Features that summarised it were reading the future. Fixing that made the models better, not worse.</p></div>
-  <p>Section 5 described features like "how did the team's last few sprints go?" That sounds safe, but it hides a trap. Many projects run two or more sprints at the same time (for different sub-teams). In 71% of our sprints, the sprint just before had <em>not finished yet</em> when the new one started. Nobody knew how it would end. A feature that uses its result is quietly using the future. Press the button to see an example.</p>
+  <p style="margin-top:14px">The likely ranges come from re-running the scoring 2,000 times on reshuffled projects (some drawn twice, some left out). With only eight projects these ranges are wide, and the paper says so.</p>
+  <h3>The results</h3>
   <div class="fig relpos">
-    <div class="toolbar">
-      <button class="btn" id="parBtn">Show the problem</button>
-      <span class="status" id="parStatus">Two overlapping sprints of one project</span>
-    </div>
-    <div class="svgwrap"><svg id="gantt" viewBox="0 0 760 170" role="img" aria-label="Two overlapping sprints; the second starts before the first has finished"></svg></div>
-    <p class="cap">Phase 1's history features (the <strong>legacy</strong> version) used the most recent sprints even when they were still running, like Sprint 11 here. Phase 2 rebuilt them (the <strong>strict</strong> version) to use only sprints that had already finished. Both versions are reported so the difference can be measured; all the paper's main results use strict.</p>
-  </div>
-  <div class="fig relpos">
-    <h3 style="margin-top:0">What fixing it changed: late-closure AUC, legacy vs strict</h3>
-    <div class="legend"><i style="background:var(--line)"></i>legacy <i style="background:var(--s1)"></i>strict</div>
-    <div class="svgwrap"><svg id="strictChart" viewBox="0 0 760 210" role="img" aria-label="Late-closure AUC before and after the strict history fix"></svg></div>
-    <div class="tip" id="tip-strict"></div>
-    <p class="cap">Higher is better (0.5 is a coin toss; see section 6). You might expect that removing future information would make the models worse. The opposite happened: every model improved, most of all when tested on a project it had never seen (logistic regression went from 0.542 to 0.629). Why? A sprint that is still running has only partial results, so its "completion ratio" mostly reflects how far along it happened to be, not how good the team is. Those numbers described the team badly, so removing them helped.</p>
-  </div>
-</section>
-
-<section id="phase1">
-  <div class="eyebrow">8 · Phase 1</div>
-  <h2>Predicting on day one: what the models learned</h2>
-  <div class="tldr"><b>In short</b><p>Spillover depends on how much the team took on: three simple numbers about the sprint's size give the best ranking (0.885). Late closure depends on team habits: the sprint's size tells you almost nothing, while the team's history gets to 0.751.</p></div>
-  <p>With the features from section 5 and the scoring rules from section 6, Phase 1 asks the first question: using only what was known on day one, can a model rank sprints by risk better than a simple rule?</p>
-  <div class="note"><strong>Which numbers are shown here.</strong> Phase 1 first ran with the legacy features. After the overlapping-sprint flaw (section 7) was found in Phase 2, the same day-one models were rerun with the corrected strict features, and those are the numbers below and in the paper. For comparison, Phase 1's original legacy features gave late closure 0.705 (random forest).</div>
-  <div class="fig relpos">
-    <h3 style="margin-top:0">Time-ordered split: train on each project's first 70% of sprints, test on the rest</h3>
-    <div class="legend"><i style="background:var(--s1)"></i>late closure (786 test sprints) <i style="background:var(--s2)"></i>spillover, sprints with work (511 test sprints)</div>
+    <h3 style="margin-top:0">Scores on Test 1 (later sprints)</h3>
+    <div class="legend"><i style="background:var(--s1)"></i>late closure (786 test sprints) <i style="background:var(--s2)"></i>spillover, sprints with work (511 test sprints) <span>- - - dashed line: 0.5, a coin toss</span></div>
     <div class="svgwrap"><svg id="p1chart" viewBox="0 0 760 300" role="img" aria-label="Planning-time ROC-AUC by model and outcome"></svg></div>
     <div class="tip" id="tip-p1"></div>
     <p class="cap">How to read this: each pair of bars is one model; taller means better ranking. The two outcomes behave in opposite ways. For <strong>spillover</strong> (orange), the simplest model, which only looks at how much was committed and how long the sprint is, scores best (0.885). Adding team history does not help. For <strong>late closure</strong> (blue), the amount of work tells you almost nothing (0.530, close to a coin toss), but team history does: gradient boosting reaches 0.751.</p>
   </div>
   <h3>The empty-sprint trap</h3>
-  <p>About a third of sprints had no issues in them on day one. An empty sprint cannot spill over, and the model easily learns "no issues means no spillover", so it gets all of them right for free. That makes the score look much better than it is. With empty sprints included, the random forest scores 0.986; on sprints that actually had work, the same model scores 0.852. So every spillover number on this page, and in the paper, counts only sprints with work in them (called <em>nonempty</em> sprints).</p>
+  <p>As section 3 explained, about a third of sprints (911) had no issues in them on day one, and they are left out of the spillover scores. Here is why that matters. An empty sprint cannot spill over, and the model easily learns "no issues means no spillover", so it gets all of them right for free. That makes the score look much better than it is. With empty sprints included, the random forest scores 0.986; on sprints that actually had work, the same model scores 0.852. So every spillover number on this page, and in the paper, counts only sprints with work in them (called <em>nonempty</em> sprints).</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Result</th><th>Model</th><th>Score (AUC)</th><th>Compared with</th></tr></thead>
     <tbody>
@@ -466,7 +543,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">11 · Leakage case studies</div>
   <h2>Two mistakes we reproduced on purpose</h2>
   <div class="tldr"><b>In short</b><p>We made two common mistakes on purpose to show how much they inflate results. Each makes one outcome look far better than it is and barely changes the other, so each outcome has to be checked on its own.</p></div>
-  <p><strong>Leakage</strong> means information from after the prediction moment sneaking into a model. It makes results look better than they will be in real use. To show how big the effect can be, we deliberately made two mistakes that are common in published work and measured how much they inflate the score. Here the score is <strong>F1</strong> (section 6), which balances catching the risky sprints against raising false alarms (1.0 is perfect). It is used here because that is how these mistakes are usually reported.</p>
+  <p><strong>Leakage</strong> means information from after the prediction moment sneaking into a model. It makes results look better than they will be in real use. To show how big the effect can be, we deliberately made two mistakes that are common in published work and measured how much they inflate the score. Here the score is not AUC but <strong>F1</strong>, the score most published studies use. F1 judges the model's final yes/no calls: it balances how many risky sprints are caught against how many false alarms are raised (1.0 is perfect). It is easy to fool. For spillover, where 94% of test sprints spill, a rule that says "yes" to every sprint scores F1 0.971 without looking at anything. That is why the rest of this page uses AUC, and why F1 is the right score to show how big these mistakes look in published work.</p>
   <div class="fig relpos">
     <div class="legend"><i style="background:var(--line)"></i>done correctly <i style="background:var(--s2)"></i>with the mistake</div>
     <div class="svgwrap"><svg id="leakChart" viewBox="0 0 760 220" role="img" aria-label="F1 before and after two leakage mistakes"></svg></div>
@@ -479,7 +556,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">12 · Across projects</div>
   <h2>Leave one project out</h2>
   <div class="tldr"><b>In short</b><p>When a model is tested on a project it never trained on, the score depends far more on which project it is than on which model is used. Results describe these eight projects, not every team.</p></div>
-  <p>Section 6 introduced the two ways we test. The time split asks whether a model trained on a project's earlier sprints works on its later ones. Leave-one-project-out asks a harder question: does a model trained on seven projects work on the eighth, a project it has never seen? The chart shows the range of scores across the eight projects.</p>
+  <p>Section 8 introduced the two tests. Test 1 (the time split) asks whether a model trained on a project's earlier sprints works on its later ones. Test 2 (leave one project out) asks a harder question: does a model trained on seven projects work on the eighth, a project it has never seen? The chart shows the range of scores across the eight projects.</p>
   <div class="fig relpos">
     <div class="legend"><i style="background:var(--s1)"></i>late closure <i style="background:var(--s2)"></i>spillover (sprints with work)</div>
     <div class="svgwrap"><svg id="lopoChart" viewBox="0 0 760 170" role="img" aria-label="Range of per-project AUC under leave-one-project-out"></svg></div>
@@ -492,9 +569,10 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
   <div class="eyebrow">13 · Outside check</div>
   <h2>Does it hold on a Jira the model never saw?</h2>
   <div class="tldr"><b>In short</b><p>Run once, unchanged, on two MariaDB projects the model never saw, late closure still ranks at 0.71. Spillover could not be tested there because nearly every MariaDB sprint spills.</p></div>
-  <p>Every test so far used projects from the same dataset, TAWOS. A fair question is whether the results only hold there. So we took two projects from a completely different source: <strong>MariaDB</strong>, a popular open-source database whose Jira is public. Its MaxScale and ColumnStore projects give 391 sprints from 2016 to 2026. We downloaded them, put them in the same format as TAWOS, and ran the code exactly as it was, without changing or re-tuning anything. One adjustment was unavoidable: MariaDB does not use story points, so the two story-point features were left out, both when training on TAWOS and when testing on MariaDB.</p>
+  <p>Every test so far used projects from the same dataset, TAWOS. A fair question is whether the results only hold there. So we took two projects from a completely different source: <strong>MariaDB</strong>, a popular open-source database whose Jira is public. Its MaxScale and ColumnStore projects give 391 sprints from 2016 to 2026. We downloaded them, put them in the same format as TAWOS, and ran the code exactly as it was, without changing or re-tuning anything. One adjustment was unavoidable: MariaDB does not use story points, so the two story-point features were left out, both when training on TAWOS and when testing on MariaDB. The same removal rules as section 3 were applied, plus one more: 5 sprints that belonged to other MariaDB teams' boards were dropped, because most of their work was outside these two projects and could not be seen.</p>
   <div class="fig relpos">
     <h3 style="margin-top:0">Late closure on MariaDB, 391 sprints, 106 late</h3>
+    <div class="legend"><i style="background:var(--s1)"></i>late closure score <span>- - - dashed line: 0.5, a coin toss</span></div>
     <div class="svgwrap"><svg id="mdbChart" viewBox="0 0 760 230" role="img" aria-label="Late-closure AUC on MariaDB under three settings"></svg></div>
     <div class="tip" id="tip-mdb"></div>
     <p class="cap">The two middle bars are the key result. Models trained only on TAWOS, knowing nothing about MariaDB, rank MariaDB's late sprints well: gradient boosting scores 0.710 (likely range 0.637 to 0.773) and the random forest 0.716. That is clearly better than the amount of work alone (0.576), and in the same zone as inside TAWOS: 0.642 when testing on an unseen TAWOS project (section 7, random forest) and 0.751 on later sprints of a known project (section 8). So the late-closure finding is not a quirk of one dataset.</p>
@@ -572,7 +650,7 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
     <dt>Story points</dt><dd>A team's relative estimate of an issue's size. 73.5% of TAWOS issues have none; MariaDB uses none at all.</dd>
     <dt>Change log</dt><dd>Jira's record of every field change on an issue, with a timestamp. It is what lets us rewind.</dd>
     <dt>Fallback</dt><dd>Using today's value of a field because Jira never recorded a change to it, so there is nothing to rewind. Noted for every issue, because it can carry hindsight.</dd>
-    <dt>ROC-AUC (or just AUC)</dt><dd>Pick one sprint that ran over and one that did not: how often does the model give the first a higher risk score? 0.5 is a coin toss, 1.0 is perfect. Section 6 has a demo.</dd>
+    <dt>ROC-AUC (or just AUC)</dt><dd>Pick one sprint that ran over and one that did not: how often does the model give the first a higher risk score? 0.5 is a coin toss, 1.0 is perfect. Section 6 explains it.</dd>
     <dt>F1</dt><dd>A score for yes/no calls that balances catching the risky sprints against raising false alarms. 1.0 is perfect. Easily inflated when nearly every sprint is risky.</dd>
     <dt>Time-ordered split</dt><dd>Train on each project's first 70% of sprints, test on its last 30%. Never trains on the future.</dd>
     <dt>LOPO</dt><dd>Leave-one-project-out: train on seven projects, test on the eighth, repeated for each.</dd>
@@ -619,7 +697,7 @@ function groupedBars(svgSel,tipSel,cats,series,opts){
   const m={l:46,r:16,t:16,b:opts.labelH||54};const pw=W-m.l-m.r,ph=H-m.t-m.b;
   const ymax=opts.ymax||1,ymin=opts.ymin||0;const y=v=>m.t+ph-(v-ymin)/(ymax-ymin)*ph;
   for(let v=ymin;v<=ymax+1e-9;v+=opts.step||0.1){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:'var(--grid)'}));svg.appendChild(el('text',{x:m.l-8,y:y(v)+4,'text-anchor':'end','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
-  if(opts.ref){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(opts.ref),y2:y(opts.ref),stroke:'var(--fg2)','stroke-dasharray':'4 4'}));svg.appendChild(el('text',{x:W-m.r,y:y(opts.ref)-4,'text-anchor':'end','font-size':11,fill:'var(--fg2)'},opts.refLabel||''));}
+  if(opts.ref){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(opts.ref),y2:y(opts.ref),stroke:'var(--fg2)','stroke-dasharray':'4 4'}));}
   const gw=pw/cats.length,bw=Math.min(34,(gw-16)/series.length-2);
   cats.forEach((c,i)=>{const gx=m.l+i*gw+gw/2;
     series.forEach((s,j)=>{const v=s.values[i];if(v==null)return;const x=gx-(series.length*(bw+2))/2+j*(bw+2);
@@ -629,8 +707,8 @@ function groupedBars(svgSel,tipSel,cats,series,opts){
     const lines=c.split('\n');lines.forEach((ln,k)=>svg.appendChild(el('text',{x:gx,y:y(ymin)+16+k*14,'text-anchor':'middle','font-size':12,fill:'var(--fg)'},ln)));});
 }
 
-groupedBars('#strictChart','#tip-strict',['Logistic regression\nLOPO','Random forest\nLOPO','Logistic regression\ntime split','Gradient boosting\ntime split'],
- [{name:'legacy',color:'var(--line)',values:[.542,.600,.636,.726]},{name:'strict',color:'var(--s1)',values:[.629,.642,.680,.751]}],{ymin:.4,ymax:.8,step:.1,labelH:44});
+groupedBars('#strictChart','#tip-strict',['Logistic regression\nunseen project','Random forest\nunseen project','Logistic regression\nlater sprints','Gradient boosting\nlater sprints'],
+ [{name:'Phase 1 (legacy)',color:'var(--line)',values:[.542,.600,.636,.726]},{name:'Phase 2 (strict)',color:'var(--s1)',values:[.629,.642,.680,.751]}],{ymin:.4,ymax:.8,step:.1,labelH:44});
 
 groupedBars('#p1chart','#tip-p1',['Size only\n(3 numbers)','Each project\'s\nown rate','Logistic\nregression','Random\nforest','Gradient\nboosting'],
  [{name:'late closure',color:'var(--s1)',values:[.530,.640,.680,.715,.751]},{name:'spillover',color:'var(--s2)',values:[.885,null,.827,.840,.812]}],{ymin:.4,ymax:1,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
@@ -688,20 +766,31 @@ hbars('#shapSpill',[['committed scope',41],['capacity',37],['recent history',12]
 })();
 
 /* ---------- gantt / parallel sprint animation ---------- */
-(function(){const svg=$('#gantt');const W=760,m={l:110,r:30};const pw=W-m.l-m.r;const x=d=>m.l+d/24*pw;
-  for(let d=0;d<=24;d+=4){svg.appendChild(el('line',{x1:x(d),x2:x(d),y1:20,y2:120,stroke:'var(--grid)'}));svg.appendChild(el('text',{x:x(d),y:140,'text-anchor':'middle','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},'day '+d));}
-  svg.appendChild(el('text',{x:m.l-12,y:50,'text-anchor':'end','font-size':13,fill:'var(--fg)'},'Sprint 11'));
-  svg.appendChild(el('text',{x:m.l-12,y:95,'text-anchor':'end','font-size':13,fill:'var(--fg)'},'Sprint 12'));
-  const s11=el('rect',{x:x(0),y:36,width:x(14)-x(0),height:24,rx:4,fill:'var(--s1)'});svg.appendChild(s11);
-  const s11late=el('rect',{x:x(14),y:36,width:x(17)-x(14),height:24,rx:4,fill:'var(--warn)',opacity:0});svg.appendChild(s11late);
-  const s12=el('rect',{x:x(10),y:81,width:x(24)-x(10),height:24,rx:4,fill:'var(--s3)'});svg.appendChild(s12);
-  const startLine=el('line',{x1:x(10),x2:x(10),y1:24,y2:112,stroke:'var(--accent)','stroke-width':2,'stroke-dasharray':'5 4'});svg.appendChild(startLine);
-  const lbl=el('text',{x:x(10)+6,y:30,'font-size':12,fill:'var(--accent)','font-weight':600},'Sprint 12 starts here');svg.appendChild(lbl);
-  const q=el('text',{x:x(12),y:53,'text-anchor':'middle','font-size':12,fill:'#fff','font-weight':600,opacity:0},'still running');svg.appendChild(q);
-  const msg=el('text',{x:x(17)+8,y:53,'font-size':12,fill:'var(--warn)','font-weight':600,opacity:0},'closes 3 days late: unknown on day 10');svg.appendChild(msg);
-  let on=false;$('#parBtn').addEventListener('click',()=>{on=!on;[q,msg,s11late].forEach(e=>e.setAttribute('opacity',on?1:0));
-    $('#parStatus').textContent=on?'On day 10 Sprint 11 is still open. Its lateness and completion ratio do not exist yet. A legacy feature reads them anyway.':'Two overlapping sprints of one project';
-    $('#parBtn').textContent=on?'Hide':'Show the problem';});
+(function(){const svg=$('#gantt');if(!svg)return;const W=760,m={l:84,r:20,t:34};const D=48;const pw=W-m.l-m.r;const x=d=>m.l+d/D*pw;
+  const T=30;
+  const sp=[{n:7,s:2,e:16},{n:8,s:8,e:22},{n:9,s:13,e:27},{n:10,s:18,e:32},{n:11,s:24,e:38},{n:12,s:30,e:44}];
+  const rowH=36,y0=m.t+8;const yOf=i=>y0+i*rowH;
+  for(let d=0;d<=D;d+=5){svg.appendChild(el('line',{x1:x(d),x2:x(d),y1:m.t,y2:yOf(sp.length)+2,stroke:'var(--grid)'}));svg.appendChild(el('text',{x:x(d),y:yOf(sp.length)+18,'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},'day '+d));}
+  const bars={};
+  sp.forEach((p,i)=>{const y=yOf(i);
+    svg.appendChild(el('text',{x:m.l-10,y:y+17,'text-anchor':'end','font-size':13,fill:'var(--fg)','font-weight':p.n===12?700:400},'Sprint '+p.n));
+    const g=el('g',{});svg.appendChild(g);
+    if(p.n===12){g.appendChild(el('rect',{x:x(p.s),y,width:x(p.e)-x(p.s),height:24,rx:4,fill:'var(--bg)',stroke:'var(--fg)','stroke-width':1.5,'stroke-dasharray':'5 3'}));
+      g.appendChild(el('text',{x:x(p.s)+8,y:y+16,'font-size':12,fill:'var(--fg)','font-weight':600},'new sprint: needs a prediction'));}
+    else if(p.e<=T){g.appendChild(el('rect',{x:x(p.s),y,width:x(p.e)-x(p.s),height:24,rx:4,fill:'var(--accent-soft)',stroke:'var(--accent)'}));
+      g.appendChild(el('text',{x:x(p.s)+8,y:y+16,'font-size':12,fill:'var(--fg)'},'finished day '+p.e+', result known'));}
+    else{g.appendChild(el('rect',{x:x(p.s),y,width:x(T)-x(p.s),height:24,rx:4,fill:'var(--warn-soft)',stroke:'var(--warn)'}));
+      g.appendChild(el('rect',{x:x(T),y,width:x(p.e)-x(T),height:24,rx:4,fill:'none',stroke:'var(--warn)','stroke-dasharray':'4 3'}));
+      g.appendChild(el('text',{x:x(p.s)+8,y:y+16,'font-size':12,fill:'var(--fg)'},'still running'));
+      g.appendChild(el('text',{x:x(p.e)+10,y:y+16,'font-size':12,fill:'var(--warn)','font-weight':600},'known only on day '+p.e));}
+    const hl=el('rect',{x:x(p.s)-4,y:y-4,width:x(p.e)-x(p.s)+8,height:32,rx:6,fill:'none',stroke:'var(--s4)','stroke-width':3,opacity:0});svg.appendChild(hl);bars[p.n]=hl;});
+  svg.appendChild(el('line',{x1:x(T),x2:x(T),y1:m.t-14,y2:yOf(sp.length)+2,stroke:'var(--fg)','stroke-width':2}));
+  svg.appendChild(el('text',{x:x(T),y:m.t-18,'text-anchor':'middle','font-size':12,fill:'var(--fg)','font-weight':700},'day 30: Sprint 12 starts, prediction is made'));
+  const st=$('#parStatus'),bL=$('#parLegacy'),bS=$('#parStrict');
+  function pick(which){const sel=which==='legacy'?[9,10,11]:[7,8,9];for(const n in bars)bars[n].setAttribute('opacity',sel.includes(+n)?1:0);
+    bL.className=which==='legacy'?'btn':'btn ghost';bS.className=which==='strict'?'btn':'btn ghost';bL.setAttribute('aria-pressed',which==='legacy');bS.setAttribute('aria-pressed',which==='strict');
+    st.innerHTML=which==='legacy'?'<strong>Phase 1 picks Sprints 9, 10 and 11</strong>, the three that started most recently. Sprints 10 and 11 are still running on day 30, so their results are not known yet. Two of the three numbers come from the future.':'<strong>Phase 2 picks Sprints 7, 8 and 9</strong>, the three most recent that had finished by day 30. Sprints 10 and 11 are skipped because their results are not known yet. Everything used was known on day 30.';}
+  bL.addEventListener('click',()=>pick('legacy'));bS.addEventListener('click',()=>pick('strict'));
 })();
 
 /* ---------- board replay ---------- */
@@ -726,26 +815,38 @@ hbars('#shapSpill',[['committed scope',41],['capacity',37],['recent history',12]
 })();
 
 /* ---------- AUC demo ---------- */
-(function(){const svg=document.getElementById('aucChart');if(!svg)return;const tally=document.getElementById('aucTally');
-  const pts=[{s:.08,y:0},{s:.15,y:0},{s:.22,y:1},{s:.30,y:0},{s:.38,y:0},{s:.45,y:1},{s:.52,y:0},{s:.60,y:1},{s:.68,y:0},{s:.77,y:1},{s:.86,y:1},{s:.94,y:1}];
-  const W=760,m={l:40,r:40};const x=v=>m.l+v*(W-m.l-m.r);
-  svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:70,y2:70,stroke:'var(--line)','stroke-width':2}));
-  svg.appendChild(el('text',{x:m.l,y:120,'font-size':12,fill:'var(--fg2)'},'low risk score'));svg.appendChild(el('text',{x:W-m.r,y:120,'text-anchor':'end','font-size':12,fill:'var(--fg2)'},'high risk score'));
-  const dots=pts.map((p,i)=>{const c=el('circle',{cx:x(p.s),cy:70,r:11,fill:p.y?'var(--s2)':'var(--s3)',stroke:'var(--bg2)','stroke-width':2});svg.appendChild(c);svg.appendChild(el('text',{x:x(p.s),y:74,'text-anchor':'middle','font-size':10,fill:'#fff','font-weight':600},String(i+1)));return c;});
-  const arc=el('path',{d:'',fill:'none',stroke:'var(--accent)','stroke-width':2,opacity:0});svg.appendChild(arc);
-  const verdict=el('text',{x:W/2,y:28,'text-anchor':'middle','font-size':14,fill:'var(--fg)','font-weight':600},'');svg.appendChild(verdict);
-  const pos=pts.map((p,i)=>p.y?i:-1).filter(i=>i>=0),neg=pts.map((p,i)=>p.y?-1:i).filter(i=>i>=0);let n=0,ok=0;
-  function draw(show){const a=pos[Math.floor(Math.random()*pos.length)],b=neg[Math.floor(Math.random()*neg.length)];const right=pts[a].s>pts[b].s;n++;if(right)ok++;
-    if(show){dots.forEach(d=>d.setAttribute('stroke','var(--bg2)'));[a,b].forEach(i=>dots[i].setAttribute('stroke','var(--accent)'));const xa=x(pts[a].s),xb=x(pts[b].s);arc.setAttribute('d','M'+xa+' 58 Q'+((xa+xb)/2)+' 20 '+xb+' 58');arc.setAttribute('opacity',1);
-      verdict.textContent=right?('Sprint '+(a+1)+' (late) scored above sprint '+(b+1)+' (on time): correct'):('Sprint '+(a+1)+' (late) scored below sprint '+(b+1)+' (on time): wrong');verdict.setAttribute('fill',right?'var(--s3)':'var(--s2)');}
-    tally.textContent='Pairs drawn: '+n+', ordered correctly: '+ok+' ('+(n?(ok/n).toFixed(3):'0.000')+')';}
-  document.getElementById('aucOne').addEventListener('click',()=>draw(true));
-  document.getElementById('aucMany').addEventListener('click',()=>{for(let k=0;k<100;k++)draw(k===99);});
-  document.getElementById('aucReset').addEventListener('click',()=>{n=ok=0;tally.textContent='Pairs drawn: 0';arc.setAttribute('opacity',0);verdict.textContent='';dots.forEach(d=>d.setAttribute('stroke','var(--bg2)'));});
+(function(){const svg=document.getElementById('aucChart');if(!svg)return;
+  // y=1 late (orange), y=0 on time (green). Order = left to right by risk score.
+  const layouts={
+    this:{order:[0,0,1,0,0,1,0,1,0,1,1,1],cap:'A decent model mostly gives late sprints higher scores, but makes some mistakes: sprint 3 closed late yet got a low score, and sprint 9 closed on time yet got a high one. Its AUC of 0.806 is in the same range as the better real models in this project.'},
+    perfect:{order:[0,0,0,0,0,0,1,1,1,1,1,1],cap:'A perfect model puts every late sprint above every on-time sprint. Each blue sprint has all 6 greens to its left, so the count is 36 out of 36.'},
+    useless:{order:[1,0,0,1,1,0,0,1,1,0,0,1],cap:'A useless model scores sprints no better than random, so late and on-time sprints are mixed evenly. It gets about half the pairs right, which is what a coin toss would do.'}};
+  const W=760,m={l:50,r:50};const step=(W-m.l-m.r)/11;const x=i=>m.l+i*step;
+  svg.appendChild(el('line',{x1:m.l-20,x2:W-m.r+20,y1:70,y2:70,stroke:'var(--line)','stroke-width':2}));
+  svg.appendChild(el('text',{x:m.l-20,y:112,'font-size':12,fill:'var(--fg2)'},'← low risk score'));
+  svg.appendChild(el('text',{x:W-m.r+20,y:112,'text-anchor':'end','font-size':12,fill:'var(--fg2)'},'high risk score →'));
+  const g=el('g',{});svg.appendChild(g);
+  const sum=document.getElementById('aucSum'),cap=document.getElementById('aucCap');
+  const btns={this:document.getElementById('aucThis'),perfect:document.getElementById('aucPerfect'),useless:document.getElementById('aucUseless')};
+  function show(key){const o=layouts[key].order;g.innerHTML='';let greens=0,total=0;const parts=[];
+    o.forEach((y,i)=>{const cx=x(i);
+      g.appendChild(el('circle',{cx,cy:70,r:13,fill:y?'var(--s1)':'var(--s3)',stroke:'var(--bg2)','stroke-width':2}));
+      g.appendChild(el('text',{x:cx,y:74,'text-anchor':'middle','font-size':11,fill:'#fff','font-weight':700},String(i+1)));
+      if(y){total+=greens;parts.push(greens);
+        g.appendChild(el('text',{x:cx,y:42,'text-anchor':'middle','font-size':13,fill:'var(--fg)','font-weight':700},String(greens)));
+      }
+      else greens++;});
+    g.appendChild(el('text',{x:m.l-20,y:20,'font-size':11,fill:'var(--fg2)'},'number above each blue (late) sprint = green sprints to its left'));
+    const auc=total/36;
+    sum.innerHTML='<span class="mono">'+parts.join(' + ')+' = <b>'+total+'</b></span> correct pairs out of <span class="mono">6 late × 6 on time = 36</span> &nbsp;→&nbsp; AUC = '+total+' ÷ 36 = <b class="big">'+auc.toFixed(3)+'</b>';
+    cap.textContent=layouts[key].cap;
+    for(const k in btns){const on=k===key;btns[k].className=on?'btn':'btn ghost';btns[k].setAttribute('aria-pressed',on);}}
+  for(const k in btns)btns[k].addEventListener('click',()=>show(k));
+  show('this');
 })();
 
 /* ---------- LOPO boxes ---------- */
-(function(){const g=document.getElementById('lopoBoxes');if(!g)return;for(let i=0;i<8;i++){const r=el('rect',{x:i*40,y:24,width:36,height:26,rx:4,fill:i===5?'var(--s2)':'var(--s1)'});g.appendChild(r);g.appendChild(el('text',{x:i*40+18,y:41,'text-anchor':'middle','font-size':11,fill:'#fff','font-weight':600},i===5?'test':'train'));}})();
+(function(){const g=document.getElementById('lopoBoxes');if(!g)return;for(let i=0;i<8;i++){const r=el('rect',{x:i*40,y:24,width:36,height:26,rx:4,fill:i===5?'var(--warn-soft)':'var(--accent-soft)',stroke:i===5?'var(--warn)':'var(--accent)'});g.appendChild(r);g.appendChild(el('text',{x:i*40+18,y:41,'text-anchor':'middle','font-size':11,fill:'var(--fg)','font-weight':600},i===5?'test':'train'));}})();
 
 /* ---------- nav highlight ---------- */
 (function(){const links=[...document.querySelectorAll('.nav a')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
