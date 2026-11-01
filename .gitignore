@@ -10,3 +10,4 @@ data/processed/*.parquet
 *.out
 *.synctex.gz
 .vscode/
+data/raw/agile_scrum_sprint_velocity/

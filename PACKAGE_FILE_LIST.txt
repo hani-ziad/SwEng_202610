@@ -112,30 +112,7 @@
 ./week-10-baseline-artifact-plan/checkpoint-summary.docx
 ./week-10-baseline-artifact-plan/sprint-risk-prediction/.gitignore
 ./week-10-baseline-artifact-plan/sprint-risk-prediction/README.docx
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/1. Issues Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/2. Issue Summary Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/3. Sprint Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues 554.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues summery 568.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Sprints 41.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/1. Issues Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/2. Issue Summary Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/3. Sprint Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Issue Summary 370.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Sprint 96.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/Mesos Stories 176.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/1. Issues Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/2. Issue Summary Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/3. Sprint Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues 1992.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues Summary 2861.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Sprints 67.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/1. Issues Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/2. Issue Summary Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/3. Sprint Terminology
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues 824.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues Summary 929.csv
-./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Sprints 36.csv
+./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/KORALAGE_DATA_REMOVED.md
 ./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/tawos/tawos_change_log.csv
 ./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/tawos/tawos_issue.csv
 ./week-10-baseline-artifact-plan/sprint-risk-prediction/data/raw/tawos/tawos_sprint.csv
@@ -219,30 +196,7 @@
 ./week-12-method-preliminary-results/sprint-risk-prediction/.gitignore
 ./week-12-method-preliminary-results/sprint-risk-prediction/README.docx
 ./week-12-method-preliminary-results/sprint-risk-prediction/README.md
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/1. Issues Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/2. Issue Summary Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/3. Sprint Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues 554.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Issues summery 568.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Aurora Project/Aurora Sprints 41.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/1. Issues Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/2. Issue Summary Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/3. Sprint Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Issue Summary 370.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/MESO Sprint 96.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Meso Project/Mesos Stories 176.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/1. Issues Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/2. Issue Summary Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/3. Sprint Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues 1992.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Issues Summary 2861.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for Spring XD Project by Randula/Spring XD Sprints 67.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/1. Issues Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/2. Issue Summary Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/3. Sprint Terminology
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues 824.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Issues Summary 929.csv
-./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/agile_scrum_sprint_velocity/Finalized Datasets for UserGrid/Usergrid Sprints 36.csv
+./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/KORALAGE_DATA_REMOVED.md
 ./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/tawos/tawos_change_log.csv
 ./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/tawos/tawos_issue.csv
 ./week-12-method-preliminary-results/sprint-risk-prediction/data/raw/tawos/tawos_sprint.csv

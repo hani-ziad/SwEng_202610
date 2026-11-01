@@ -10,6 +10,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 import traceback
+import unittest
 from pathlib import Path
 
 TESTS_DIR = Path(__file__).resolve().parents[1] / "tests"
@@ -28,10 +29,13 @@ def discover_test_functions():
 
 
 def main() -> int:
-    passed, failed = 0, []
+    passed, skipped, failed = 0, 0, []
     for full_name, fn in discover_test_functions():
         try:
             fn()
+        except unittest.SkipTest as exc:
+            skipped += 1
+            print(f"SKIP  {full_name}: {exc}")
         except Exception:
             failed.append((full_name, traceback.format_exc()))
             print(f"FAIL  {full_name}")
@@ -39,7 +43,7 @@ def main() -> int:
             passed += 1
             print(f"PASS  {full_name}")
 
-    print(f"\n{passed} passed, {len(failed)} failed")
+    print(f"\n{passed} passed, {skipped} skipped, {len(failed)} failed")
     for name, tb in failed:
         print(f"\n--- {name} ---\n{tb}")
     return 0 if not failed else 1
