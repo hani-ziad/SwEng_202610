@@ -1,6 +1,6 @@
 # Sprint-risk prediction on TAWOS, Phases 1 to 4, with external checks on MariaDB and MongoDB
 
-One project in three phases, built on the TAWOS Jira dataset: 8 open-source projects, 2,602 sprints we can model, 1,691 of them with committed scope. The two things we predict never change. Spillover means a committed issue is unfinished at the planned end. Late closure means the sprint closes more than a day after its planned end. Data: https://rdr.ucl.ac.uk/articles/dataset/The_TAWOS_dataset/21308124 (Apache 2.0, research use).
+One project in four phases, built on the TAWOS Jira dataset: 8 open-source projects, 2,602 sprints we can model, 1,691 of them with committed scope. The two things we predict never change. Spillover means a committed issue is unfinished at the planned end. Late closure means the sprint closes more than a day after its planned end. Data: https://rdr.ucl.ac.uk/articles/dataset/The_TAWOS_dataset/21308124 (Apache 2.0, research use).
 
 | Phase | Question | Folder | Main result |
 |---|---|---|---|
@@ -18,12 +18,13 @@ All phases use the same setup: sprint scope rebuilt from the change log, a per-p
 - `phase-2-explainable-sprint-advisor` and `phase-3-in-sprint-early-warning`: each has a README, requirements, tests and results.
 - `week-08-proposal`, `week-10-baseline-artifact-plan`, `week-14-full-results-analysis`: the proposal, checkpoints and analysis.
 - `week-16-article-artifact-presentation`: revised conference paper (LaTeX source). Compile with `pdflatex` or upload to Overleaf; requires `IEEEtran.cls`.
-- `ccece-2027-paper`: the IEEE CCECE 2027 submission, "Reconstructing Sprint-Start Jira State for Leakage-Aware Outcome Prediction" (LaTeX, PDF, Word copy, both figures). `verify_numbers.py` checks every number in the paper against the result files in this repo, including the MariaDB check.
+- `ccece-2027-paper`: the IEEE CCECE 2027 submission, "Reconstructing Sprint-Start Jira State for Leakage-Aware Outcome Prediction" (LaTeX, PDF, Word copy, both figures). `verify_numbers.py` checks every number in the paper against the result files in this repo, including the MariaDB, MongoDB and Phase 4 figures (359 checks).
 - `phase-4-fixes`: Phase 4. Three experiments, each with its own script, results and figure, plus the MongoDB pull and a general Jira converter. See its README.
 - `external-validation`: the MariaDB external check. It holds the browser pull script, the raw pull (`data/pull`), the same data in the TAWOS CSV layout (`data/raw/mariadb`), the converter, the runner and the results. See its README.
-- `canadian-ai-2027-paper`: the Canadian AI 2027 position paper "Grounding the AI Scrum Master: Evidence Before Autonomy" (6-page PMLR version, plus an 8-page draft and an IEEE-format copy).
+- `ccece-2027-ai-scrum-master`: the second CCECE 2027 submission, "Grounding the AI Scrum Master: A Sprint-Replay Test and Pilot" (LaTeX, PDF), with the sprint-replay pilot: code, prompts, the agents' raw answers and results. See its README.
+- `canadian-ai-2027-paper`: the earlier Canadian AI 2027 version of that position paper (6-page PMLR format, plus an 8-page draft and an IEEE-format copy), kept as a backup venue.
 - `Claude outputs`: the CCECE submission sheet (title, authors, abstract, track).
-- `guides`: learning and reproduction guides. `AI-Basics-and-Reproduction-Guide.docx` covers all three phases.
+- `guides`: learning and reproduction guides. `Sprint_Risk_Prediction_Walkthrough.html` walks through all four phases and the outside checks; `AI-Basics-and-Reproduction-Guide.docx` covers the first three.
 - `CSBP711 Datasets Algorithm Comparison.pptx` and `.pdf`: the 5-slide Assignment 1 deck.
 
 ## Running it

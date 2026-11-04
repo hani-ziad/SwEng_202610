@@ -380,4 +380,23 @@ pj = pd.read_csv(f"{F4}/e3_external_projects.csv")
 check("P4 MongoDB sprints 526", 526, pj[pj.instance == "mongodb"].sprints.sum(), 0)
 lt = pj[pj.project.isin(lg.index)].late_rate
 check("P4 late rate min 7%", 7, 100 * lt.min(), 0.5); check("P4 late rate max 59%", 59, 100 * lt.max(), 0.5)
+# ---------- review pass (Nov 2026): figures added or made explicit in the text ----------
+r = mb[(mb.task == "spillover") & (mb.feature_set == "strict") & (mb.protocol == "time_ordered") & (mb.model == "random_forest") & (mb.baseline == "scope_only_logreg")].iloc[0]
+check("RF vs scope-only spill delta -.045", -.045, r.delta); check("RF spill CI lo -.088", -.088, r.ci_low); check("RF spill CI hi .010", .010, r.ci_high)
+ckf = pd.read_csv(f"{P3}/phase3_checkpoint_frame.csv")
+op = ckf.groupby("checkpoint").open_at_checkpoint.mean()
+check("open at 25% 98.6%", 98.6, 100 * op[0.25], 0.05); check("open at 75% 96.2%", 96.2, 100 * op[0.75], 0.05); check("open at 100% 65.5%", 65.5, 100 * op[1.0], 0.05)
+A, n1, n0 = .772, 94, 16
+Q1, Q2 = A / (2 - A), 2 * A * A / (1 + A)
+se = np.sqrt((A * (1 - A) + (n1 - 1) * (Q1 - A * A) + (n0 - 1) * (Q2 - A * A)) / (n1 * n0))
+check("Hanley-McNeil SE .054", .054, se, .0006); check("HM range lo .67", .67, A - 1.96 * se, .005); check("HM range hi .88", .88, A + 1.96 * se, .005)
+check("Confluence Cloud nonempty 197", 197, flow.loc[flow.project == "Atlassian Confluence Cloud", "nonempty"].item(), 0)
+cr = pd.read_csv(f"{P3}/checkpoint_model_results.csv")
+q = cr[(cr.task == "late_closure") & (cr.protocol == "time_ordered") & (cr.feature_set == "planning") & (cr.model == "gradient_boosting")].set_index("checkpoint").roc_auc
+check("late planning-only 25% .751", .751, q[0.25]); check("late planning-only 75% .751", .751, q[0.75])
+assert abs(q[0.25] - q[0.75]) < 0.001 and abs(q[0.5] - q[0.75]) < 0.001, "planning-only late AUCs differ beyond the fourth decimal"
+ins = pd.read_csv(f"{P3}/checkpoint_model_bootstrap.csv")
+for m in ("logreg", "random_forest"):
+    r = ins[(ins.task == "spillover") & (ins.checkpoint == 0.25) & (ins.protocol == "lopo") & (ins.model == m) & (ins.versus == "planning_same_algo")].iloc[0]
+    check(f"LOPO 25% {m} gain includes zero", 1, int(r.ci_low < 0 < r.ci_high), 0)
 print("FAILS:", fails)
