@@ -1,0 +1,9 @@
+task,model,auc_mean,auc_std,auc_count,sensitivity_mean,sensitivity_std,sensitivity_count,specificity_mean,specificity_std,specificity_count,f1_mean,f1_std,f1_count
+Late closure,Gradient boosting,0.62,0.09,8,0.498,0.279,8,0.727,0.217,8,0.482,0.237,8
+Late closure,Logistic regression,0.572,0.127,8,0.446,0.324,8,0.721,0.174,8,0.422,0.305,8
+Late closure,Random forest,0.635,0.088,8,0.468,0.322,8,0.702,0.209,8,0.436,0.289,8
+Late closure,Scope-only LR (baseline),0.362,0.118,8,0.147,0.203,8,0.808,0.211,8,0.158,0.219,8
+Spillover,Gradient boosting,0.734,0.078,4,0.313,0.151,4,0.917,0.096,4,0.452,0.158,4
+Spillover,Logistic regression,0.751,0.068,4,0.44,0.204,4,0.958,0.083,4,0.583,0.194,4
+Spillover,Random forest,0.741,0.1,4,0.474,0.188,4,0.885,0.079,4,0.607,0.171,4
+Spillover,Scope-only LR (baseline),0.742,0.133,4,0.498,0.261,4,0.802,0.318,4,0.599,0.215,4

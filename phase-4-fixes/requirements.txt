@@ -1,0 +1,6 @@
+# Phase 4 needs the same base scientific stack as Phases 2 and 3.
+numpy>=2.3
+pandas>=2.2
+scikit-learn>=1.8
+scipy>=1.17
+matplotlib>=3.10

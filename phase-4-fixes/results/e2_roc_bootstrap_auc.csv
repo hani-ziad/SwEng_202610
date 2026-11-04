@@ -1,0 +1,5 @@
+task,model,auc,ci_low,ci_high,n_test,n_pos
+late_closure,Gradient boosting,0.751,0.711,0.791,786,246
+late_closure,Scope-only LR (baseline),0.53,0.484,0.574,786,246
+spillover,Gradient boosting,0.817,0.746,0.886,511,482
+spillover,Scope-only LR (baseline),0.885,0.841,0.924,511,482

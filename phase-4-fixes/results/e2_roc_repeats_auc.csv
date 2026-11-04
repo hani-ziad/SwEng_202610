@@ -1,0 +1,5 @@
+task,scheme,auc_mean,auc_sd
+late_closure,A. Random 70/30 (shuffled),0.765,0.017
+late_closure,C. Time-ordered (leak-safe),0.696,0.054
+spillover,A. Random 70/30 (shuffled),0.813,0.016
+spillover,C. Time-ordered (leak-safe),0.806,0.028

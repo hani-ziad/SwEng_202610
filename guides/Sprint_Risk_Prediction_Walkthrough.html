@@ -72,11 +72,11 @@ td.n{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
 .steps{list-style:none;padding:0;margin:14px 0;max-width:none;display:grid;gap:10px}
 .steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;margin:0}
 .steps .k{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font:700 15px var(--display);display:grid;place-items:center}
-.phase{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.phase{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0}
 .phase>div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--bg2);min-width:0;position:relative;overflow:hidden}
 .phase>div::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent);animation:fill 9s linear infinite}
-.phase>div:nth-child(2)::after{animation-delay:2.25s}.phase>div:nth-child(3)::after{animation-delay:4.5s}.phase>div:nth-child(4)::after{animation-delay:6.75s}
-@keyframes fill{0%{width:0}25%{width:100%}26%{width:100%;opacity:0}100%{width:0;opacity:0}}
+.phase>div:nth-child(2)::after{animation-delay:1.8s}.phase>div:nth-child(3)::after{animation-delay:3.6s}.phase>div:nth-child(4)::after{animation-delay:5.4s}.phase>div:nth-child(5)::after{animation-delay:7.2s}
+@keyframes fill{0%{width:0}20%{width:100%}21%{width:100%;opacity:0}100%{width:0;opacity:0}}
 .phase b{font-family:var(--display);font-size:17px;display:block;margin-bottom:4px}
 .phase small{color:var(--fg2);font-size:14px}
 .tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:13px var(--body);padding:5px 9px;border-radius:4px;transform:translate(-50%,-125%);white-space:nowrap;opacity:0;transition:opacity .12s}
@@ -141,6 +141,7 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
   <a href="#leakage">Leakage case studies</a>
   <a href="#transfer">Across projects</a>
   <a href="#mariadb">Outside check</a>
+  <a href="#phase4">Phase 4 re-tests</a>
   <a href="#meaning">What it means</a>
   <a href="#journey">The journey</a>
   <a href="#glossary">Glossary</a>
@@ -150,18 +151,19 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
 <header class="hero">
   <div class="eyebrow">Hani AbuSharkh, Maryam Hanif, Rafat Damseh · HCT and UAEU · 2026</div>
   <h1>Can Jira tell you a sprint is in trouble before it starts?</h1>
-  <p class="lede">A walkthrough of the sprint-risk prediction project: how we rebuilt what a team knew on the first day of each sprint, what the models learned, where the data misleads you, and how the result held up on a project outside the training data.</p>
+  <p class="lede">A walkthrough of the sprint-risk prediction project: how we rebuilt what a team knew on the first day of each sprint, what the models learned, where the data misleads you, how the result held up on ten projects outside the training data, and what changed after an expert review.</p>
   <div class="stats">
     <div class="stat"><b>8</b><span>open-source Jira projects (TAWOS)</span></div>
     <div class="stat"><b>2,602</b><span>sprints rebuilt at their start</span></div>
-    <div class="stat"><b>3</b><span>phases plus an outside check</span></div>
-    <div class="stat"><b>391</b><span>MariaDB sprints the model never saw</span></div>
+    <div class="stat"><b>4</b><span>phases plus outside checks</span></div>
+    <div class="stat"><b>10</b><span>outside projects (MariaDB, MongoDB) the model never saw</span></div>
   </div>
   <div class="phase" aria-label="Project phases">
     <div><b>Phase 1</b><small>Which sprints are risky, using only what was known at planning time?</small></div>
     <div><b>Phase 2</b><small>Fix a hidden flaw in the features, explain each prediction, and predict amounts as well as yes/no.</small></div>
     <div><b>Phase 3</b><small>Does checking again while the sprint runs (at 25%, 50%, 75% and 100% of its length) improve the warning?</small></div>
     <div><b>Outside check</b><small>Does it still work on MariaDB, a Jira the model never trained on?</small></div>
+    <div><b>Phase 4</b><small>After an expert review: repeat every test, draw ROC curves with uncertainty, and test on ten outside projects.</small></div>
   </div>
 </header>
 
@@ -581,18 +583,92 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
     <div class="warnbox"><strong>Two limits.</strong> First, the two MariaDB projects are very different (one closes 54% of its sprints late, the other 15%), so simply knowing which project a sprint belongs to already scores 0.745, about as well as the best model trained inside MariaDB (the right two bars). That rule needs MariaDB's own past late rates; the TAWOS-trained models never had them, which is what makes their 0.71 meaningful. Second, spillover could not be tested: 99% of MariaDB sprints left something unfinished, so there were only three sprints that did not spill, too few to measure anything.</div>
     <div class="note"><strong>Also confirmed on MariaDB:</strong> watching the sprint's progress still does not help predict late closure (the halfway checkpoint adds only 0.019, too small to be real). And only 10% of MariaDB sprints were empty, against 35% in TAWOS, so the empty-sprint trap from section 8 depends on the data and must be checked each time.</div>
   </div>
+  <p>Phase 4 (next section) widens this outside check from two projects to ten, by adding eight MongoDB projects.</p>
+</section>
+
+<section id="phase4">
+  <div class="eyebrow">14 · Phase 4</div>
+  <h2>Phase 4: testing it the way a reviewer asked</h2>
+  <div class="tldr"><b>In short</b><p>After Phase 3, a professor reviewed the work and asked for tougher testing: repeat every split and report the spread, draw ROC curves with uncertainty, and test on about ten projects the model never saw. Phase 4 does all three. Shuffling sprints makes late closure look better than it really is. On ten new projects late closure still works, but weakly. Spillover still comes down to how much work was committed.</p></div>
+  <p>Phases 1 to 3 were not changed. Phase 4 takes their models and features and tests them again, one experiment at a time. Here is what the professor asked for and what we did.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Suggestion</th><th>What Phase 4 does</th></tr></thead>
+    <tbody>
+      <tr><td>Shuffle the sprints, split 70/30, repeat 5 times, report mean ± standard deviation</td><td>Part 1, "Random 70/30"</td></tr>
+      <tr><td>Random cross-validation</td><td>Part 1, "Random 5-fold CV", repeated 5 times</td></tr>
+      <tr><td>Show ROC curves, one for late closure and one for spillover, as a range</td><td>Part 2</td></tr>
+      <tr><td>Test on about 10 outside projects, with sensitivity, specificity and F1 for each</td><td>Part 3: 2 MariaDB and 8 MongoDB projects</td></tr>
+      <tr><td>One experiment at a time, documented</td><td>One script, one results file and one figure per part</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>First, four new words</h3>
+  <p>So far every score on this page was an AUC, which only asks whether risky sprints get higher scores than safe ones. A real tool has to say yes or no. To do that you pick a <strong>threshold</strong>: every sprint scored above it is flagged as risky. Then three numbers describe the result:</p>
+  <ul>
+    <li><strong>Sensitivity:</strong> of the sprints that really ran into trouble, how many were flagged? (Missed ones are the cost.)</li>
+    <li><strong>Specificity:</strong> of the sprints that went fine, how many were left alone? (False alarms are the cost.)</li>
+    <li><strong>F1:</strong> one number that balances catching the risky sprints against raising false alarms.</li>
+  </ul>
+  <p>A strict threshold flags few sprints: high specificity, low sensitivity. A lenient one does the opposite. We set the threshold from the training sprints only, at the point where sensitivity plus specificity is highest, and never adjusted it on the sprints being tested.</p>
+
+  <h3>Part 1: repeat every split five times</h3>
+  <p>One train/test split gives one number, and you can't tell how lucky it was. So every test was run five times, three different ways:</p>
+  <ul>
+    <li><strong>Random 70/30:</strong> shuffle all sprints, train on 70%, test on 30%, with a different shuffle each time. This is what the professor asked for.</li>
+    <li><strong>Random 5-fold CV:</strong> shuffle, cut into five parts, test on each part in turn, and repeat with five different shuffles.</li>
+    <li><strong>Time order:</strong> for each project, keep the sprints in order. Train on the first 40, 50, 60, 70 or 80% and test on the next 20%. The model never learns from a sprint that came after the ones it is tested on, so this keeps the no-hindsight rule from section 1.</li>
+  </ul>
+  <div class="fig relpos">
+    <div class="legend"><i style="background:var(--s1)"></i>late closure <i style="background:var(--s2)"></i>spillover (sprints with work) <span>whisker: ± 1 standard deviation over 5 repeats</span></div>
+    <div class="svgwrap"><svg id="p4Rep" viewBox="0 0 760 260" role="img" aria-label="Gradient boosting AUC, mean and standard deviation over five repeats, for three ways of splitting"></svg></div>
+    <div class="tip" id="tip-p4rep"></div>
+    <p class="cap">Gradient boosting, average AUC over 5 repeats. For late closure, shuffling gives 0.765 ± 0.017 and 0.754 ± 0.005, but keeping time order gives 0.696 ± 0.054. Shuffling lets the model learn a team's later habits and then test on its earlier sprints, which can never happen in real use, so it flatters the result. For spillover all three ways agree (0.81 to 0.84), and the amount-of-work baseline still matches the learned models, as in section 8.</p>
+  </div>
+  <div class="note"><strong>Why time order scores lower:</strong> part of the gap is simply less training data. Its five repeats learn from 40% up to 80% of each project's history, and the score climbs with it: 0.62, 0.66, 0.71, 0.75, 0.74. With 70% or more, it is back at the 0.751 of section 8. So the honest headline stays the time-ordered number, and the shuffled numbers are the optimistic comparison.</div>
+
+  <h3>Part 2: ROC curves, drawn as a range</h3>
+  <p>An <strong>ROC curve</strong> shows every possible threshold at once. Start strict and slowly lower the threshold. Each step flags more sprints: the curve moves up when it catches another risky sprint (sensitivity) and right when it raises another false alarm (1 minus specificity). A model that guesses runs along the diagonal. A good one rises steeply on the left. The AUC is the area under this curve. The shaded band shows how much the curve moves, so you see a range instead of a single line.</p>
+  <div class="fig relpos">
+    <div class="toolbar">
+      <button class="btn" id="rocRep" aria-pressed="true">Over 5 repeats</button>
+      <button class="btn ghost" id="rocBoot" aria-pressed="false">Section 8's split, 95% band</button>
+    </div>
+    <div class="legend" id="rocLegend"></div>
+    <div class="svgwrap"><svg id="p4Roc" viewBox="0 0 760 380" role="img" aria-label="ROC curves with uncertainty bands for late closure and spillover"></svg></div>
+    <p class="cap" id="rocCap"></p>
+  </div>
+
+  <h3>Part 3: ten projects the model never saw</h3>
+  <p>Section 13 tested two MariaDB projects. The professor asked for about ten, so we added eight more from <strong>MongoDB</strong>, another open-source database company with a public Jira: Compass, WiredTiger, the Shell, the Database Tools, and the Java, C, C++ and PHP drivers. We downloaded 47,038 issues, kept the 17,773 that were ever in a sprint, and converted them to the TAWOS format with the same rules as MariaDB. The models were trained once on all of TAWOS and then tested on each project on its own, with no project name and no story points. When a project had fewer than 5 sprints on one side (for example, almost every sprint spilled over), the scores could not be measured and are marked as such.</p>
+  <div class="fig relpos">
+    <div class="toolbar">
+      <button class="btn" id="extLate" aria-pressed="true">Late closure</button>
+      <button class="btn ghost" id="extSpill" aria-pressed="false">Spillover</button>
+    </div>
+    <div class="legend" id="extLegend"></div>
+    <div class="svgwrap"><svg id="p4Ext" viewBox="0 0 760 360" role="img" aria-label="AUC with 95% interval for each of ten external projects"></svg></div>
+    <div class="tip" id="tip-p4ext"></div>
+    <p class="cap" id="extCap"></p>
+  </div>
+  <div class="tablewrap"><table id="extTable"></table></div>
+  <div class="two">
+    <div class="warnbox"><strong>The threshold does not travel.</strong> Sensitivity swings from 0.11 to 0.86 between projects, because late-closure rates differ so much (7% of Compass sprints close late, 54% of ColumnStore's). A threshold that suits TAWOS suits some teams and not others. A real tool would need a short calibration on each new team.</div>
+    <div class="note"><strong>Still to do:</strong> Phase 4 re-tests the day-one models (Phases 1 and 2). The in-sprint models of Phase 3 have not yet had the repeated splits or the ten-project test.</div>
+  </div>
 </section>
 
 <section id="meaning">
-  <div class="eyebrow">14 · What it means</div>
+  <div class="eyebrow">15 · What it means</div>
   <h2>A protocol more than a tool</h2>
-  <div class="tldr"><b>In short</b><p>The contribution is a careful way of working with Jira history, not a tool to deploy. Four habits carry over to any similar study.</p></div>
-  <p>The main result is not a product you can switch on tomorrow. It is a careful method for using Jira history, and four lessons that apply to anyone, researcher or team, who tries to learn from it.</p>
+  <div class="tldr"><b>In short</b><p>The contribution is a careful way of working with Jira history, not a tool to deploy. Six habits carry over to any similar study.</p></div>
+  <p>The main result is not a product you can switch on tomorrow. It is a careful method for using Jira history, and six lessons that apply to anyone, researcher or team, who tries to learn from it.</p>
   <ol class="steps">
     <li><span class="k">1</span><div><strong>Rebuild the sprint-start state</strong> from the change log. A present-day export carries hindsight.</div></li>
     <li><span class="k">2</span><div><strong>Leave out empty sprints</strong> when measuring spillover, or the score is inflated by easy answers.</div></li>
     <li><span class="k">3</span><div><strong>Watch out for sprints that overlap.</strong> Only use history from sprints that had already finished.</div></li>
     <li><span class="k">4</span><div><strong>Check for leakage separately for each outcome.</strong> The same mistake inflated one outcome by 0.24 and the other by only 0.01.</div></li>
+    <li><span class="k">5</span><div><strong>Keep time order when you test, and repeat the test.</strong> Shuffling sprints made late closure look 0.07 better than it is (section 14).</div></li>
+    <li><span class="k">6</span><div><strong>Test on teams the model never saw, and expect to re-set the threshold.</strong> The ranking carried over to ten outside projects; the yes/no cut-off did not.</div></li>
   </ol>
   <h3>What a team can actually do with this</h3>
   <p>At planning, the scores can put sprints in order of risk, so a team or Scrum Master knows which ones to keep an eye on. Treat them as an order, not as exact chances ("70% likely"), because the probabilities are not reliable across projects. During the sprint, the quarter-way and halfway checks spot likely spillover earlier and better than just counting open issues. Late closure comes from team habits, so the way to improve it is a team conversation about closing sprints on time, not a prediction.</p>
@@ -601,14 +677,14 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
     <li>Jira's completion timestamp marks when a sprint was closed, not when its work was done.</li>
     <li>What Jira never recorded cannot be recovered, and the gaps in story-point history limit how far the spillover result can be trusted.</li>
     <li>Eight projects is a small sample, so many of the likely ranges are wide.</li>
-    <li>Every project is open-source, and the MariaDB check adds one outside source, two projects, and no test of spillover.</li>
+    <li>Every project is open-source. The outside checks add two sources (MariaDB and MongoDB) and ten projects, but spillover could be measured in only four of them, and the in-sprint models of Phase 3 have had only one outside test (late closure at halfway, on MariaDB).</li>
   </ul>
 </section>
 
 <section id="journey">
-  <div class="eyebrow">15 · The journey</div>
+  <div class="eyebrow">16 · The journey</div>
   <h2>How the project unfolded</h2>
-  <div class="tldr"><b>In short</b><p>The project grew over a 16-week course, then into two conference papers and the outside check in October and November 2026.</p></div>
+  <div class="tldr"><b>In short</b><p>The project grew over a 16-week course, then into two conference papers, the outside checks and Phase 4 in October and November 2026.</p></div>
   <ul class="timeline">
     <li><b>Week 8 · Proposal</b><small>Question, baselines and TAWOS named as the dataset. Project selection rule: at least 30 closed sprints.</small></li>
     <li><b>Week 10 · First working version</b><small>Code built and tested on a small stand-in dataset (four projects, 238 sprints) while access to TAWOS was sorted out. Late closure looked unpredictable on that small data. The two leakage mistakes were reproduced.</small></li>
@@ -617,9 +693,10 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
     <li><b>Week 16 · Article and freeze</b><small>Phase 1 locked so its results can't change. Phases 2 and 3 were built on top of it without editing it. 50 automated tests check the code.</small></li>
     <li><b>October 2026 · Papers</b><small>The work written up for the IEEE CCECE 2027 conference and improved over four rounds of feedback. A second, shorter paper drafted for Canadian AI 2027, arguing that AI "Scrum Master" assistants should base their advice on tested models like these.</small></li>
     <li><b>1 November 2026 · Outside check</b><small>Two MariaDB projects tested with the unchanged code (section 13) and added to the paper. Code and data updated on GitHub.</small></li>
+    <li><b>4 November 2026 · Phase 4</b><small>A professor's review asked for repeated tests with spreads, ROC curves with uncertainty and about ten outside projects. All done in a new folder without touching Phases 1 to 3, including eight MongoDB projects downloaded from its public Jira (section 14).</small></li>
   </ul>
   <h3>Reproducing it</h3>
-  <p>Everything is public at <a href="https://github.com/hani-ziad/SwEng_202610">github.com/hani-ziad/SwEng_202610</a>: the data for the eight TAWOS projects and the two MariaDB projects, all the code, the tests, every result file, and a script (<code>verify_numbers.py</code>) that checks all 319 numbers in the paper against those results. Each phase runs on an ordinary laptop in a few minutes, and gives the same numbers every time.</p>
+  <p>Everything is public at <a href="https://github.com/hani-ziad/SwEng_202610">github.com/hani-ziad/SwEng_202610</a>: the data for the eight TAWOS projects and the ten outside projects, all the code, the tests, every result file, and a script (<code>verify_numbers.py</code>) that checks all 319 numbers in the paper against those results. Each phase runs on an ordinary laptop in a few minutes, and gives the same numbers every time.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Folder</th><th>What is in it</th></tr></thead>
     <tbody>
@@ -627,13 +704,14 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
       <tr><td><code>phase-2-explainable-sprint-advisor</code></td><td>Phase 2: the corrected (strict) features, predicting amounts, Shapley explanations, the advisor</td></tr>
       <tr><td><code>phase-3-in-sprint-early-warning</code></td><td>Phase 3: rebuilding sprints at the checkpoints, and the progress features</td></tr>
       <tr><td><code>external-validation</code></td><td>The MariaDB check: downloaded data, conversion to the TAWOS format, the run script and its results</td></tr>
+      <tr><td><code>phase-4-fixes</code></td><td>Phase 4: repeated splits, ROC curves with bands, the ten outside projects (MariaDB and MongoDB data, the general Jira converter) and every result</td></tr>
       <tr><td><code>ccece-2027-paper</code> · <code>canadian-ai-2027-paper</code></td><td>The two papers (LaTeX, PDF) and the number checker</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <section id="glossary">
-  <div class="eyebrow">16 · Glossary</div>
+  <div class="eyebrow">17 · Glossary</div>
   <h2>Terms used above</h2>
   <dl class="gl">
     <dt>Scrum</dt><dd>A way of running software work in short fixed cycles with a committed plan for each.</dd>
@@ -651,6 +729,11 @@ details.more summary:focus-visible{outline:2px solid var(--s4);outline-offset:2p
     <dt>Change log</dt><dd>Jira's record of every field change on an issue, with a timestamp. It is what lets us rewind.</dd>
     <dt>Fallback</dt><dd>Using today's value of a field because Jira never recorded a change to it, so there is nothing to rewind. Noted for every issue, because it can carry hindsight.</dd>
     <dt>ROC-AUC (or just AUC)</dt><dd>Pick one sprint that ran over and one that did not: how often does the model give the first a higher risk score? 0.5 is a coin toss, 1.0 is perfect. Section 6 explains it.</dd>
+    <dt>Threshold</dt><dd>The cut-off that turns a risk score into a yes/no call: sprints scored above it are flagged. In Phase 4 it is set on the training sprints only.</dd>
+    <dt>Sensitivity and specificity</dt><dd>Sensitivity: of the sprints that really ran into trouble, the share that were flagged. Specificity: of the sprints that went fine, the share that were left alone.</dd>
+    <dt>ROC curve</dt><dd>A plot of sensitivity against false alarms (1 minus specificity) for every possible threshold. The area under it is the AUC.</dd>
+    <dt>Shuffled split and cross-validation</dt><dd>Splitting sprints into training and test at random, ignoring time. Cross-validation cuts the data into parts and tests on each part in turn. Both can let a model learn from a team's future.</dd>
+    <dt>Mean ± standard deviation</dt><dd>The average of several repeats of a test, and how much the repeats differ from that average.</dd>
     <dt>F1</dt><dd>A score for yes/no calls that balances catching the risky sprints against raising false alarms. 1.0 is perfect. Easily inflated when nearly every sprint is risky.</dd>
     <dt>Time-ordered split</dt><dd>Train on each project's first 70% of sprints, test on its last 30%. Never trains on the future.</dd>
     <dt>LOPO</dt><dd>Leave-one-project-out: train on seven projects, test on the eighth, repeated for each.</dd>
@@ -718,6 +801,77 @@ groupedBars('#leakChart','#tip-leak',['Spillover F1\n(own completion ratio as a 
 
 groupedBars('#mdbChart','#tip-mdb',['Amount of work only\n(trained on TAWOS)','Gradient boosting\ntrained on TAWOS only','Random forest\ntrained on TAWOS only','Random forest\ntrained within MariaDB','Project rate alone\nwithin MariaDB'],
  [{name:'late closure AUC',color:'var(--s1)',values:[.576,.710,.716,.750,.745]}],{ymin:.4,ymax:.9,step:.1,ref:.5,refLabel:'coin toss',labelH:44});
+
+
+/* ---------- Phase 4: repeated splits ---------- */
+(function(){
+  const svg=$('#p4Rep'),tip=$('#tip-p4rep');const W=760,H=260,m={l:46,r:16,t:16,b:44};const pw=W-m.l-m.r,ph=H-m.t-m.b;
+  const ymin=.5,ymax=.9;const y=v=>m.t+ph-(v-ymin)/(ymax-ymin)*ph;
+  for(let v=ymin;v<=ymax+1e-9;v+=.1){svg.appendChild(el('line',{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:'var(--grid)'}));svg.appendChild(el('text',{x:m.l-8,y:y(v)+4,'text-anchor':'end','font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
+  const cats=['Random 70/30\n(shuffled)','Random 5-fold CV\n(shuffled)','Time order\n(no hindsight)'];
+  const ser=[{name:'late closure',color:'var(--s1)',m:[.765,.754,.696],sd:[.017,.005,.054]},{name:'spillover',color:'var(--s2)',m:[.813,.836,.806],sd:[.016,.007,.028]}];
+  const gw=pw/cats.length,bw=40;
+  cats.forEach((c,i)=>{const gx=m.l+i*gw+gw/2;
+    ser.forEach((s,j)=>{const x=gx-(2*(bw+6))/2+j*(bw+6);const v=s.m[i],sd=s.sd[i];
+      const r=el('rect',{x,y:y(v),width:bw,height:y(ymin)-y(v),rx:4,fill:s.color});svg.appendChild(r);
+      const cx=x+bw/2;svg.appendChild(el('line',{x1:cx,x2:cx,y1:y(v+sd),y2:y(v-sd),stroke:'var(--fg)','stroke-width':1.5}));
+      [v+sd,v-sd].forEach(t=>svg.appendChild(el('line',{x1:cx-6,x2:cx+6,y1:y(t),y2:y(t),stroke:'var(--fg)','stroke-width':1.5})));
+      svg.appendChild(el('text',{x:cx,y:y(v+sd)-6,'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(3).replace(/^0/,'')));
+      tipBind(svg,tip,r,`${s.name}, ${c.replace('\n',' ')}: ${v.toFixed(3)} ± ${sd.toFixed(3)}`);});
+    c.split('\n').forEach((ln,k)=>svg.appendChild(el('text',{x:gx,y:y(ymin)+16+k*14,'text-anchor':'middle','font-size':12,fill:'var(--fg)'},ln)));});
+})();
+
+/* ---------- Phase 4: ROC curves with bands ---------- */
+(function(){
+  const D={"grid":[0.0,0.025,0.05,0.075,0.1,0.125,0.15,0.175,0.2,0.225,0.25,0.275,0.3,0.325,0.35,0.375,0.4,0.425,0.45,0.475,0.5,0.525,0.55,0.575,0.6,0.625,0.65,0.675,0.7,0.725,0.75,0.775,0.8,0.825,0.85,0.875,0.9,0.925,0.95,0.975,1.0],"rep":{"late_closure":{"shuffled":{"m":[0.0,0.214,0.319,0.4,0.451,0.493,0.538,0.574,0.599,0.626,0.652,0.674,0.693,0.716,0.73,0.742,0.761,0.777,0.793,0.813,0.823,0.835,0.85,0.862,0.877,0.887,0.895,0.907,0.917,0.927,0.935,0.946,0.954,0.96,0.969,0.975,0.979,0.986,0.991,0.997,1.0],"lo":[0.0,0.165,0.269,0.354,0.404,0.45,0.501,0.549,0.569,0.599,0.63,0.655,0.665,0.69,0.706,0.713,0.738,0.752,0.772,0.786,0.798,0.812,0.831,0.843,0.862,0.867,0.872,0.887,0.897,0.914,0.921,0.936,0.945,0.949,0.958,0.963,0.972,0.981,0.986,0.994,1.0],"hi":[0.0,0.263,0.37,0.446,0.498,0.537,0.576,0.6,0.628,0.653,0.674,0.693,0.721,0.742,0.754,0.772,0.784,0.802,0.813,0.839,0.847,0.858,0.87,0.881,0.892,0.906,0.919,0.927,0.938,0.941,0.95,0.956,0.963,0.972,0.98,0.987,0.987,0.992,0.995,0.999,1.0]},"time":{"m":[0.0,0.163,0.227,0.299,0.354,0.407,0.441,0.47,0.509,0.535,0.57,0.594,0.617,0.631,0.647,0.659,0.678,0.69,0.701,0.723,0.728,0.748,0.764,0.782,0.802,0.821,0.831,0.846,0.859,0.869,0.88,0.893,0.904,0.915,0.923,0.942,0.949,0.966,0.978,0.989,1.0],"lo":[0.0,0.056,0.103,0.167,0.24,0.315,0.358,0.378,0.429,0.456,0.494,0.515,0.541,0.557,0.581,0.595,0.609,0.62,0.623,0.65,0.658,0.677,0.695,0.724,0.74,0.768,0.781,0.801,0.823,0.833,0.847,0.862,0.87,0.884,0.891,0.914,0.922,0.94,0.965,0.978,1.0],"hi":[0.0,0.27,0.351,0.431,0.469,0.5,0.523,0.562,0.588,0.615,0.645,0.673,0.692,0.705,0.714,0.722,0.747,0.761,0.779,0.795,0.797,0.818,0.833,0.839,0.864,0.873,0.88,0.892,0.895,0.906,0.913,0.924,0.939,0.945,0.955,0.971,0.975,0.992,0.992,1.0,1.0]}},"spillover":{"shuffled":{"m":[0.0,0.356,0.436,0.463,0.493,0.556,0.598,0.629,0.694,0.694,0.717,0.742,0.779,0.797,0.808,0.823,0.842,0.842,0.849,0.862,0.873,0.886,0.9,0.903,0.909,0.909,0.915,0.929,0.935,0.94,0.955,0.963,0.967,0.967,0.976,0.979,0.986,0.99,0.995,1.0,1.0],"lo":[0.0,0.274,0.315,0.348,0.393,0.482,0.539,0.584,0.671,0.671,0.704,0.731,0.745,0.762,0.775,0.786,0.815,0.815,0.827,0.834,0.846,0.854,0.864,0.87,0.879,0.879,0.882,0.908,0.914,0.922,0.936,0.942,0.948,0.948,0.964,0.967,0.979,0.984,0.989,0.999,1.0],"hi":[0.0,0.437,0.558,0.578,0.593,0.63,0.657,0.674,0.717,0.717,0.729,0.753,0.813,0.831,0.841,0.859,0.869,0.869,0.872,0.889,0.899,0.918,0.936,0.936,0.939,0.939,0.947,0.95,0.956,0.959,0.975,0.984,0.987,0.987,0.989,0.99,0.993,0.995,1.0,1.0,1.0]},"time":{"m":[0.0,0.386,0.448,0.491,0.518,0.519,0.631,0.655,0.672,0.68,0.68,0.701,0.769,0.789,0.819,0.821,0.835,0.835,0.837,0.859,0.862,0.862,0.88,0.883,0.904,0.905,0.907,0.923,0.935,0.935,0.945,0.945,0.953,0.953,0.957,0.967,0.977,0.978,0.999,0.999,1.0],"lo":[0.0,0.311,0.352,0.425,0.453,0.455,0.536,0.583,0.59,0.597,0.597,0.604,0.694,0.724,0.757,0.763,0.768,0.768,0.768,0.811,0.811,0.811,0.848,0.847,0.865,0.865,0.869,0.881,0.897,0.897,0.914,0.914,0.92,0.92,0.92,0.926,0.947,0.947,0.997,0.997,1.0],"hi":[0.0,0.46,0.543,0.557,0.582,0.583,0.726,0.728,0.754,0.764,0.764,0.799,0.844,0.854,0.881,0.879,0.903,0.903,0.907,0.906,0.913,0.913,0.912,0.919,0.942,0.946,0.945,0.964,0.972,0.972,0.977,0.977,0.987,0.987,0.995,1.0,1.0,1.0,1.0,1.0,1.0]}}},"boot":{"late_closure":{"gb":{"m":[0.0,0.203,0.346,0.431,0.447,0.512,0.545,0.598,0.634,0.663,0.675,0.679,0.691,0.703,0.711,0.728,0.744,0.752,0.764,0.789,0.793,0.801,0.805,0.821,0.833,0.837,0.858,0.87,0.882,0.907,0.919,0.923,0.931,0.939,0.951,0.972,0.976,0.976,0.988,0.988,1.0],"lo":[0.0,0.071,0.262,0.335,0.383,0.412,0.465,0.512,0.555,0.584,0.608,0.62,0.631,0.64,0.65,0.664,0.68,0.693,0.705,0.726,0.738,0.748,0.756,0.766,0.78,0.792,0.802,0.821,0.837,0.856,0.876,0.889,0.897,0.905,0.917,0.933,0.951,0.956,0.968,0.974,1.0],"hi":[0.0,0.336,0.433,0.492,0.537,0.591,0.639,0.671,0.702,0.722,0.734,0.742,0.753,0.763,0.777,0.789,0.801,0.811,0.826,0.835,0.842,0.851,0.858,0.871,0.88,0.89,0.904,0.915,0.93,0.943,0.952,0.957,0.963,0.969,0.98,0.988,0.992,0.996,1.0,1.0,1.0],"auc":0.751},"scope":{"m":[0.0,0.073,0.134,0.171,0.191,0.232,0.248,0.276,0.297,0.313,0.317,0.329,0.354,0.362,0.374,0.384,0.411,0.435,0.435,0.443,0.443,0.455,0.477,0.492,0.537,0.585,0.642,0.711,0.764,0.785,0.813,0.825,0.862,0.882,0.902,0.931,0.939,0.963,0.967,0.972,1.0],"lo":[0.0,0.021,0.078,0.114,0.137,0.16,0.189,0.207,0.229,0.245,0.257,0.267,0.284,0.302,0.313,0.322,0.336,0.358,0.372,0.378,0.383,0.388,0.405,0.424,0.447,0.474,0.519,0.573,0.65,0.715,0.747,0.771,0.799,0.833,0.851,0.881,0.903,0.924,0.941,0.951,1.0],"hi":[0.0,0.13,0.188,0.219,0.252,0.287,0.311,0.336,0.356,0.367,0.378,0.398,0.414,0.427,0.437,0.457,0.477,0.492,0.498,0.502,0.512,0.529,0.55,0.582,0.634,0.7,0.764,0.802,0.824,0.845,0.867,0.894,0.912,0.925,0.949,0.96,0.971,0.984,0.988,0.996,1.0],"auc":0.53}},"spillover":{"gb":{"m":[0.0,0.309,0.38,0.595,0.595,0.6,0.6,0.616,0.616,0.633,0.745,0.745,0.745,0.772,0.801,0.801,0.838,0.855,0.861,0.861,0.876,0.902,0.902,0.917,0.925,0.929,0.929,0.946,0.946,0.952,0.952,0.971,0.992,0.992,0.994,0.998,0.998,0.998,0.998,0.998,1.0],"lo":[0.0,0.271,0.28,0.291,0.309,0.355,0.372,0.526,0.565,0.569,0.578,0.584,0.594,0.601,0.611,0.63,0.663,0.726,0.737,0.745,0.768,0.784,0.798,0.814,0.839,0.848,0.854,0.866,0.885,0.902,0.912,0.918,0.927,0.93,0.94,0.949,0.958,0.973,0.99,0.994,1.0],"hi":[0.0,0.619,0.641,0.657,0.737,0.761,0.775,0.804,0.824,0.849,0.861,0.868,0.881,0.89,0.906,0.921,0.926,0.932,0.939,0.943,0.951,0.955,0.959,0.963,0.971,0.986,0.992,0.994,0.996,0.998,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0],"auc":0.817},"scope":{"m":[0.0,0.573,0.666,0.72,0.72,0.763,0.801,0.832,0.832,0.849,0.849,0.849,0.88,0.886,0.888,0.888,0.892,0.905,0.905,0.905,0.909,0.915,0.915,0.916,0.917,0.921,0.923,0.923,0.925,0.969,0.969,0.969,0.975,0.975,0.979,0.979,0.983,0.983,0.988,0.988,1.0],"lo":[0.0,0.533,0.541,0.552,0.575,0.64,0.659,0.69,0.703,0.731,0.759,0.778,0.797,0.81,0.822,0.83,0.84,0.85,0.857,0.867,0.873,0.877,0.88,0.884,0.888,0.891,0.892,0.895,0.898,0.9,0.903,0.905,0.91,0.915,0.923,0.94,0.96,0.965,0.969,0.975,1.0],"hi":[0.0,0.773,0.837,0.851,0.868,0.877,0.887,0.897,0.903,0.906,0.911,0.916,0.922,0.924,0.925,0.929,0.932,0.933,0.935,0.937,0.94,0.942,0.951,0.967,0.973,0.977,0.981,0.983,0.984,0.986,0.988,0.988,0.99,0.992,0.992,0.994,0.994,0.996,0.996,0.996,1.0],"auc":0.885}}}};const svg=$('#p4Roc');const S=290,top=24,panels=[{x:70,task:'late_closure',title:'Late closure',color:'var(--s1)'},{x:450,task:'spillover',title:'Spillover (sprints with work)',color:'var(--s2)'}];
+  const btnR=$('#rocRep'),btnB=$('#rocBoot');
+  function draw(mode){svg.innerHTML='';
+    panels.forEach(p=>{const X=v=>p.x+v*S,Y=v=>top+S-v*S;
+      for(let v=0;v<=1.001;v+=.25){svg.appendChild(el('line',{x1:X(v),x2:X(v),y1:Y(0),y2:Y(1),stroke:'var(--grid)'}));svg.appendChild(el('line',{x1:X(0),x2:X(1),y1:Y(v),y2:Y(v),stroke:'var(--grid)'}));
+        svg.appendChild(el('text',{x:X(v),y:Y(0)+16,'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(2).replace(/^0/,'').replace(/^1.00$/,'1')));
+        svg.appendChild(el('text',{x:X(0)-6,y:Y(v)+4,'text-anchor':'end','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(2).replace(/^0/,'').replace(/^1.00$/,'1')));}
+      svg.appendChild(el('line',{x1:X(0),y1:Y(0),x2:X(1),y2:Y(1),stroke:'var(--fg2)','stroke-dasharray':'4 4'}));
+      svg.appendChild(el('text',{x:X(.5),y:top-8,'text-anchor':'middle','font-size':13,'font-weight':600,fill:'var(--fg)'},p.title));
+      svg.appendChild(el('text',{x:X(.5),y:Y(0)+34,'text-anchor':'middle','font-size':12,fill:'var(--fg2)'},'false alarms (1 − specificity)'));
+      svg.appendChild(el('text',{x:p.x-40,y:Y(.5),'text-anchor':'middle','font-size':12,fill:'var(--fg2)',transform:`rotate(-90 ${p.x-40} ${Y(.5)})`},'risky sprints caught (sensitivity)'));
+      const curves=mode==='rep'?[[D.rep[p.task].time,p.color,'0'],[D.rep[p.task].shuffled,'var(--fg2)','6 4']]:[[D.boot[p.task].gb,p.color,'0'],[D.boot[p.task].scope,'var(--fg2)','6 4']];
+      curves.forEach(([c,col,dash])=>{
+        let band='M'+D.grid.map((g,i)=>X(g)+' '+Y(c.hi[i])).join(' L')+' L'+D.grid.map((g,i)=>X(g)+' '+Y(c.lo[i])).reverse().join(' L')+'Z';
+        svg.appendChild(el('path',{d:band,fill:col,'fill-opacity':.16,stroke:'none'}));
+        svg.appendChild(el('path',{d:'M'+D.grid.map((g,i)=>X(g)+' '+Y(c.m[i])).join(' L'),fill:'none',stroke:col,'stroke-width':2.5,'stroke-dasharray':dash}));});
+    });
+    const rep=mode==='rep';btnR.className=rep?'btn':'btn ghost';btnB.className=rep?'btn ghost':'btn';btnR.setAttribute('aria-pressed',rep);btnB.setAttribute('aria-pressed',!rep);
+    $('#rocLegend').innerHTML=rep?'<span>solid: time order (no hindsight) · dashed grey: shuffled 70/30 · band: ± 1 standard deviation over 5 repeats</span>':'<span>solid: gradient boosting · dashed grey: amount of work only · band: 95% range from 2,000 resamples of the test sprints</span>';
+    $('#rocCap').textContent=rep?'Late closure: the shuffled curve (AUC 0.765 ± 0.017) sits above the time-ordered one (0.696 ± 0.054), and the time-ordered band is much wider, because the repeats with less training data do worse. Spillover: the two curves almost overlap (0.813 and 0.806), so shuffling makes little difference there.':'The split used in section 8 (last 30% of each project). Late closure: gradient boosting 0.751 (0.711 to 0.791) against 0.530 for the amount of work alone, which is close to the diagonal. Spillover: the amount of work alone (0.885) is at least as good as gradient boosting (0.817), and both bands are wide because only 29 test sprints finished everything.';}
+  btnR.addEventListener('click',()=>draw('rep'));btnB.addEventListener('click',()=>draw('boot'));draw('rep');
+})();
+
+/* ---------- Phase 4: external projects ---------- */
+(function(){
+  const E=[{"task":"Late closure","project":"MariaDB ColumnStore","n":122,"n_pos":66,"n_neg":56,"auc":0.699,"sensitivity":0.636,"specificity":0.661,"f1":0.661,"auc_lo":0.607,"auc_hi":0.796,"ok":true},{"task":"Late closure","project":"MariaDB MaxScale","n":269,"n_pos":40,"n_neg":229,"auc":0.592,"sensitivity":0.3,"specificity":0.873,"f1":0.296,"auc_lo":0.484,"auc_hi":0.702,"ok":true},{"task":"Late closure","project":"MongoDB C Driver","n":36,"n_pos":33,"n_neg":3,"auc":0.596,"sensitivity":0.909,"specificity":0.0,"f1":0.909,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Late closure","project":"MongoDB C++ Driver","n":29,"n_pos":17,"n_neg":12,"auc":0.623,"sensitivity":0.824,"specificity":0.333,"f1":0.718,"auc_lo":0.409,"auc_hi":0.829,"ok":true},{"task":"Late closure","project":"MongoDB Compass","n":127,"n_pos":9,"n_neg":118,"auc":0.481,"sensitivity":0.111,"specificity":0.949,"f1":0.125,"auc_lo":0.268,"auc_hi":0.693,"ok":true},{"task":"Late closure","project":"MongoDB Database Tools","n":43,"n_pos":21,"n_neg":22,"auc":0.567,"sensitivity":0.857,"specificity":0.5,"f1":0.72,"auc_lo":0.381,"auc_hi":0.747,"ok":true},{"task":"Late closure","project":"MongoDB Java Driver","n":27,"n_pos":24,"n_neg":3,"auc":0.514,"sensitivity":0.792,"specificity":0.0,"f1":0.826,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Late closure","project":"MongoDB PHP Driver","n":32,"n_pos":13,"n_neg":19,"auc":0.781,"sensitivity":0.615,"specificity":0.789,"f1":0.64,"auc_lo":0.6,"auc_hi":0.937,"ok":true},{"task":"Late closure","project":"MongoDB Shell","n":21,"n_pos":7,"n_neg":14,"auc":0.582,"sensitivity":0.429,"specificity":0.786,"f1":0.462,"auc_lo":0.269,"auc_hi":0.911,"ok":true},{"task":"Late closure","project":"WiredTiger","n":211,"n_pos":24,"n_neg":187,"auc":0.635,"sensitivity":0.208,"specificity":0.925,"f1":0.233,"auc_lo":0.499,"auc_hi":0.763,"ok":true},{"task":"Spillover","project":"MariaDB ColumnStore","n":106,"n_pos":106,"n_neg":0,"auc":null,"sensitivity":0.925,"specificity":null,"f1":0.961,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Spillover","project":"MariaDB MaxScale","n":245,"n_pos":242,"n_neg":3,"auc":0.879,"sensitivity":0.81,"specificity":0.667,"f1":0.893,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Spillover","project":"MongoDB C Driver","n":28,"n_pos":27,"n_neg":1,"auc":0.926,"sensitivity":0.704,"specificity":1.0,"f1":0.826,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Spillover","project":"MongoDB C++ Driver","n":25,"n_pos":19,"n_neg":6,"auc":0.816,"sensitivity":0.526,"specificity":0.833,"f1":0.667,"auc_lo":0.595,"auc_hi":0.988,"ok":true},{"task":"Spillover","project":"MongoDB Compass","n":125,"n_pos":123,"n_neg":2,"auc":0.882,"sensitivity":0.74,"specificity":1.0,"f1":0.85,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Spillover","project":"MongoDB Database Tools","n":23,"n_pos":15,"n_neg":8,"auc":0.663,"sensitivity":0.2,"specificity":1.0,"f1":0.333,"auc_lo":0.348,"auc_hi":0.929,"ok":true},{"task":"Spillover","project":"MongoDB Java Driver","n":22,"n_pos":20,"n_neg":2,"auc":0.525,"sensitivity":0.5,"specificity":1.0,"f1":0.667,"auc_lo":null,"auc_hi":null,"ok":false},{"task":"Spillover","project":"MongoDB PHP Driver","n":25,"n_pos":16,"n_neg":9,"auc":0.674,"sensitivity":0.312,"specificity":1.0,"f1":0.476,"auc_lo":0.456,"auc_hi":0.868,"ok":true},{"task":"Spillover","project":"MongoDB Shell","n":20,"n_pos":14,"n_neg":6,"auc":0.786,"sensitivity":0.214,"specificity":0.833,"f1":0.333,"auc_lo":0.471,"auc_hi":1.0,"ok":true},{"task":"Spillover","project":"WiredTiger","n":205,"n_pos":203,"n_neg":2,"auc":0.99,"sensitivity":0.906,"specificity":1.0,"f1":0.951,"auc_lo":null,"auc_hi":null,"ok":false}];const svg=$('#p4Ext'),tip=$('#tip-p4ext');const bL=$('#extLate'),bS=$('#extSpill');
+  const projects=[...new Set(E.map(r=>r.project))].sort();
+  const f3=v=>v==null?'n/a':v.toFixed(3).replace(/^0/,'');
+  function draw(task){svg.innerHTML='';const rows=E.filter(r=>r.task===task);const col=task==='Late closure'?'var(--s1)':'var(--s2)';
+    const x0=200,x1=600,top=16,rh=32;const X=v=>x0+(v-.2)/(.8)*(x1-x0);
+    for(let v=.2;v<=1.001;v+=.1){svg.appendChild(el('line',{x1:X(v),x2:X(v),y1:top,y2:top+projects.length*rh,stroke:'var(--grid)'}));svg.appendChild(el('text',{x:X(v),y:top+projects.length*rh+16,'text-anchor':'middle','font-size':11,fill:'var(--fg2)','font-family':'var(--mono)'},v.toFixed(1)));}
+    svg.appendChild(el('line',{x1:X(.5),x2:X(.5),y1:top,y2:top+projects.length*rh,stroke:'var(--fg2)','stroke-dasharray':'4 4'}));
+    const ok=rows.filter(r=>r.ok);const mean=ok.reduce((a,r)=>a+r.auc,0)/ok.length;
+    svg.appendChild(el('line',{x1:X(mean),x2:X(mean),y1:top,y2:top+projects.length*rh,stroke:col,'stroke-dasharray':'2 3','stroke-width':2}));
+    svg.appendChild(el('text',{x:X(.6),y:top+projects.length*rh+34,'text-anchor':'middle','font-size':12,fill:'var(--fg2)'},'AUC with 95% range (0.5 = coin toss)'));
+    projects.forEach((p,i)=>{const r=rows.find(q=>q.project===p);const yy=top+i*rh+rh/2;
+      svg.appendChild(el('text',{x:x0-12,y:yy+4,'text-anchor':'end','font-size':13,fill:'var(--fg)'},p));
+      if(r.ok){svg.appendChild(el('line',{x1:X(r.auc_lo),x2:X(r.auc_hi),y1:yy,y2:yy,stroke:col,'stroke-width':2}));
+        const c=el('circle',{cx:X(r.auc),cy:yy,r:6,fill:col});svg.appendChild(c);
+        svg.appendChild(el('text',{x:x1+12,y:yy+4,'font-size':12,fill:'var(--fg2)','font-family':'var(--mono)'},`${f3(r.auc)}  n=${r.n}`));
+        tipBind(svg,tip,c,`${p}: AUC ${f3(r.auc)} (${f3(r.auc_lo)} to ${f3(r.auc_hi)}), ${r.n_pos} ${task==='Late closure'?'late':'spilled'}, ${r.n_neg} ${task==='Late closure'?'on time':'finished'}`);}
+      else{svg.appendChild(el('rect',{x:X(.3),y:yy-10,width:X(.9)-X(.3),height:20,rx:4,fill:'var(--bg2)'}));
+        svg.appendChild(el('text',{x:X(.6),y:yy+4,'text-anchor':'middle','font-size':12,fill:'var(--fg2)','font-style':'italic'},`too few to measure: ${r.n_pos} ${task==='Late closure'?'late':'spilled'}, ${r.n_neg} ${task==='Late closure'?'on time':'finished'}`));}});
+    const late=task==='Late closure';bL.className=late?'btn':'btn ghost';bS.className=late?'btn ghost':'btn';bL.setAttribute('aria-pressed',late);bS.setAttribute('aria-pressed',!late);
+    $('#extLegend').innerHTML=`<i style="background:${col}"></i>${task.toLowerCase()}, gradient boosting trained on TAWOS only <span>dotted line: average over the ${ok.length} projects that can be measured</span>`;
+    $('#extCap').textContent=late?`Late closure can be measured in 8 of the 10 projects. The average AUC is ${mean.toFixed(3)}, and the model beats chance in 7 of them (Compass is the exception). It also beats the amount-of-work rule in every project; that rule is below chance on these teams. Inside TAWOS the same model scores 0.751, so it carries over to new teams, but weaker.`:`Spillover can be measured in only 4 projects, because in the other six almost every sprint left something unfinished. Where it can be measured the average AUC is ${mean.toFixed(3)}, and the amount-of-work rule does as well (0.742), just like inside TAWOS.`;
+    const t=$('#extTable');t.innerHTML=`<thead><tr><th>Project</th><th>Sprints (${late?'late / on time':'spilled / finished'})</th><th>AUC</th><th>Sensitivity</th><th>Specificity</th><th>F1</th></tr></thead><tbody>`+projects.map(p=>{const r=rows.find(q=>q.project===p);return r.ok?`<tr><td>${p}</td><td>${r.n} (${r.n_pos} / ${r.n_neg})</td><td>${f3(r.auc)}</td><td>${f3(r.sensitivity)}</td><td>${f3(r.specificity)}</td><td>${f3(r.f1)}</td></tr>`:`<tr><td>${p}</td><td>${r.n} (${r.n_pos} / ${r.n_neg})</td><td colspan="4"><em>too few on one side to measure</em></td></tr>`;}).join('')+'</tbody>';}
+  bL.addEventListener('click',()=>draw('Late closure'));bS.addEventListener('click',()=>draw('Spillover'));draw('Late closure');
+})();
 
 /* ---------- shapley horizontal bars ---------- */
 function hbars(sel,data,color){const svg=$(sel),tip=$('#tip-shap');const W=360,rh=22,gap=6;const x0=130,w=180;
@@ -854,4 +1008,5 @@ hbars('#shapSpill',[['committed scope',41],['capacity',37],['recent history',12]
   addEventListener('scroll',upd,{passive:true});upd();})();
 })();
 </script>
+
 </body></html>
