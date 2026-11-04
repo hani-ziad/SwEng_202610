@@ -11,3 +11,4 @@ data/processed/*.parquet
 *.synctex.gz
 .vscode/
 data/raw/agile_scrum_sprint_velocity/
+guides/Sprint_Risk_Prediction_Walkthrough.html
