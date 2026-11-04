@@ -349,4 +349,35 @@ check("MDB spill 99%", 99, 100 * m["spillover_rate_nonempty"], 0.5)
 mf = pd.read_csv(f"{E}/mariadb_modeling_frame.csv"); lr = mf.groupby("project").label_delay.mean()
 check("MDB ColumnStore late 54%", 54, 100 * lr["MariaDB ColumnStore"], 0.5); check("MDB MaxScale late 15%", 15, 100 * lr["MariaDB MaxScale"], 0.5)
 check("MDB first year 2016", 2016, int(m["first_start"][:4]), 0); check("MDB last year 2026", 2026, int(m["last_start"][:4]), 0)
+# ---------- Phase 4: repeated splits and ten outside projects (Table II rows 17-18, Sections IV-B, IV-D, V) ----------
+F4 = f"{R}/phase-4-fixes/results"
+e1 = pd.read_csv(f"{F4}/e1_summary.csv")
+def e1v(task, scheme, model, col):
+    r = e1[(e1.task == task) & (e1.scheme.str.startswith(scheme)) & (e1.model == model)]
+    assert len(r) == 1, (task, scheme, model); return r[col].item()
+GB = "Gradient boosting"
+check("P4 time x5 late GB .696", .696, e1v("late_closure", "C.", GB, "auc_mean")); check("P4 time x5 late SD .054", .054, e1v("late_closure", "C.", GB, "auc_std"))
+check("P4 shuffled 70/30 late GB .765", .765, e1v("late_closure", "A.", GB, "auc_mean")); check("P4 shuffled 70/30 late SD .017", .017, e1v("late_closure", "A.", GB, "auc_std"))
+check("P4 shuffling adds .07", .07, e1v("late_closure", "A.", GB, "auc_mean") - e1v("late_closure", "C.", GB, "auc_mean"), .005)
+check("P4 time x5 spill GB .806", .806, e1v("spillover", "C.", GB, "auc_mean")); check("P4 time x5 spill SD .028", .028, e1v("spillover", "C.", GB, "auc_std"))
+check("P4 shuffled 70/30 spill GB .813", .813, e1v("spillover", "A.", GB, "auc_mean"))
+rep = pd.read_csv(f"{F4}/e1_repeats.csv")
+tl = rep[(rep.task == "late_closure") & rep.scheme.str.startswith("C.") & (rep.model == GB)].sort_values("repeat")
+check("P4 time repeat 1 (40% train) .62", .62, tl.auc.iloc[0], .005); check("P4 time repeat 4 (70% train) .75", .75, tl.auc.iloc[3], .005)
+check("P4 time test sprints ~520", 520, tl.n.mean(), 5); check("P4 time test late ~177", 177, tl.n_pos.mean(), 1)
+e3 = pd.read_csv(f"{F4}/e3_external_per_project.csv")
+lg = e3[(e3.task == "Late closure") & (e3.model == GB) & e3.interpretable].set_index("project")
+ls = e3[(e3.task == "Late closure") & (e3.model == "Scope-only LR (baseline)") & e3.interpretable].set_index("project")
+check("P4 outside late testable 8", 8, len(lg), 0); check("P4 outside late GB mean .620", .620, lg.auc.mean())
+check("P4 outside late GB SD .090", .090, lg.auc.std(), .001)
+check("P4 above chance in 7", 7, (lg.auc > .5).sum(), 0); check("P4 above scope-only in 8", 8, (lg.auc > ls.loc[lg.index].auc).sum(), 0)
+check("P4 scope-only mean .362", .362, ls.auc.mean())
+check("P4 sensitivity min .11", .11, lg.sensitivity.min(), .005); check("P4 sensitivity max .86", .86, lg.sensitivity.max(), .005)
+sg = e3[(e3.task == "Spillover") & (e3.model == GB) & e3.interpretable]
+ss = e3[(e3.task == "Spillover") & (e3.model == "Scope-only LR (baseline)") & e3.interpretable]
+check("P4 outside spill testable 4", 4, len(sg), 0); check("P4 outside spill GB .734", .734, sg.auc.mean()); check("P4 outside spill scope .742", .742, ss.auc.mean())
+pj = pd.read_csv(f"{F4}/e3_external_projects.csv")
+check("P4 MongoDB sprints 526", 526, pj[pj.instance == "mongodb"].sprints.sum(), 0)
+lt = pj[pj.project.isin(lg.index)].late_rate
+check("P4 late rate min 7%", 7, 100 * lt.min(), 0.5); check("P4 late rate max 59%", 59, 100 * lt.max(), 0.5)
 print("FAILS:", fails)
