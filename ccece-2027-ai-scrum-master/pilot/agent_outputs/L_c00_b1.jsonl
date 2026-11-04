@@ -1,0 +1,20 @@
+{"id": "S27", "warn": true, "p_late": 0.75, "message": "Heads-up: our last three sprints all closed late (about 3 days on average) and we finished very little of what we committed. Let's agree now who owns this bug and check on it mid-sprint so we close on time."}
+{"id": "S01", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S18", "warn": true, "p_late": 0.85, "message": "Early warning: all of our last three sprints closed late (about 9 days on average), and we've committed 13 issues / 73 SP while we usually finish one or two. Let's cut scope or split the 20 SP and 10 SP stories now rather than slip again."}
+{"id": "S23", "warn": false, "p_late": 0.35, "message": ""}
+{"id": "S08", "warn": false, "p_late": 0.12, "message": ""}
+{"id": "S35", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S09", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S15", "warn": false, "p_late": 0.38, "message": ""}
+{"id": "S33", "warn": false, "p_late": 0.12, "message": ""}
+{"id": "S34", "warn": true, "p_late": 0.5, "message": "Heads-up: we've committed 45 issues / 255 SP in an 11-day sprint, far more than we've been finishing. Let's agree on a must-do subset now and plan to close the sprint on its end date, carrying the rest over."}
+{"id": "S12", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S26", "warn": true, "p_late": 0.6, "message": "Heads-up: two of our last three sprints closed late and we carried 37 issues over last time. Let's plan to close this one on its end date and move unfinished work to the backlog."}
+{"id": "S24", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S16", "warn": false, "p_late": 0.12, "message": ""}
+{"id": "S14", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S20", "warn": true, "p_late": 0.85, "message": "Early warning: our last three sprints all closed late, by about 13 days on average, and we've committed 12 issues / 40 SP while recently finishing about one. Let's trim scope now and commit to closing on the planned end date."}
+{"id": "S39", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S40", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S37", "warn": true, "p_late": 0.65, "message": "Heads-up: two of our last three sprints closed late and we carried 33 issues over last time. Let's check that the 18 stories (94 SP) are realistic and plan to close on the end date, carrying over whatever isn't done."}
+{"id": "S11", "warn": false, "p_late": 0.08, "message": ""}

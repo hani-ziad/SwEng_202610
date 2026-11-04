@@ -1,0 +1,20 @@
+{"id": "S39", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S08", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S01", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S29", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S28", "warn": true, "p_late": 0.85, "message": "Halfway through and nothing is resolved yet, the 8 SP bug is still open and two more bugs were added. Recent sprints have all closed well past their end date, so let's agree today what can really finish and plan the close on time."}
+{"id": "S31", "warn": true, "p_late": 0.65, "message": "We're at the midpoint with 0 of 3 committed items done, and two of the last three sprints closed late. Can we check whether the 8 SP bug will fit, and agree a plan to close on the planned date?"}
+{"id": "S12", "warn": false, "p_late": 0.35, "message": ""}
+{"id": "S36", "warn": true, "p_late": 0.65, "message": "Halfway in, both committed bugs are still open and one more has been added. Recent sprints have closed about 10 days late on average, so let's agree now what will finish and close the sprint on its end date."}
+{"id": "S24", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S07", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S09", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S38", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S26", "warn": true, "p_late": 0.55, "message": "43 issues have been added since the start and only 4 are resolved at the midpoint. Two of the last three sprints closed late, so let's trim the scope now and plan to close on the end date."}
+{"id": "S25", "warn": true, "p_late": 0.7, "message": "Halfway through, 4 of 42 committed issues (about 247 SP) are done, and recent sprints have closed late by about 5.6 days on average. Let's re-scope today and agree what gets moved out so the sprint can close on time."}
+{"id": "S35", "warn": false, "p_late": 0.25, "message": ""}
+{"id": "S05", "warn": true, "p_late": 0.85, "message": "At the midpoint only 2 of 11 committed stories are done, and 25 more issues have been added. Every one of the last three sprints closed late (about 11 days on average), so let's cut scope now and plan to close on the end date."}
+{"id": "S03", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S13", "warn": true, "p_late": 0.7, "message": "Halfway through, 6 of 40 committed issues (around 293 SP) are done, and recent sprints have closed about 11 days late. Let's re-plan scope now so the sprint can close on its planned date."}
+{"id": "S04", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S16", "warn": false, "p_late": 0.1, "message": ""}

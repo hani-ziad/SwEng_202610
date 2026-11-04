@@ -1,0 +1,20 @@
+{
+ "test_auc_c0": 0.7513587774766637,
+ "test_auc_c50": 0.7571195844283585,
+ "n_test_c0": 786,
+ "n_test_c50": 775,
+ "threshold_c0": 0.37462968873948865,
+ "threshold_c50": 0.37415797764013276,
+ "eligible_test_sprints": 472,
+ "eligible_late": 134,
+ "sample_projects": {
+  "Lsstcorp Data management": 11,
+  "The Titanium SDK": 8,
+  "Atlassian Confluence Cloud": 7,
+  "Mule": 6,
+  "Atlassian Confluence Server": 5,
+  "Appcelerator Studio": 1,
+  "Apache Mesos": 1,
+  "Titanium Mobile Platform": 1
+ }
+}

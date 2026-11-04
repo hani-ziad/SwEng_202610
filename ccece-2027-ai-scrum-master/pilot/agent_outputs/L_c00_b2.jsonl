@@ -1,0 +1,20 @@
+{"id": "S03", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S05", "warn": true, "p_late": 0.8, "message": "Heads-up: each of our last three sprints closed late, by about 11 days on average, and we finished only about 6% of what we committed. Let's agree now on what we can really finish and close the sprint on its planned date."}
+{"id": "S30", "warn": true, "p_late": 0.6, "message": "Two of our last three sprints closed late, and we're starting this one with 29 issues while we usually finish about 9. Let's trim the scope or agree now that the sprint closes on its planned date."}
+{"id": "S28", "warn": true, "p_late": 0.8, "message": "All three of our last sprints closed late, by about 3 weeks on average. Even with a single 8-point bug in this one, let's set a firm close date now and close the sprint on time, even if the bug isn't finished."}
+{"id": "S06", "warn": false, "p_late": 0.4, "message": ""}
+{"id": "S32", "warn": false, "p_late": 0.1, "message": ""}
+{"id": "S10", "warn": true, "p_late": 0.65, "message": "We've committed 41 issues (254 SP) while we usually finish about 16, and two of our last three sprints closed late. Let's cut the scope now and plan to close on the planned date."}
+{"id": "S21", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S02", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S04", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S31", "warn": true, "p_late": 0.6, "message": "Two of our last three sprints closed about 5 days late. Let's agree now to close this one on its planned end date and carry over anything unfinished."}
+{"id": "S19", "warn": true, "p_late": 0.75, "message": "All three of our last sprints closed late, by about 13 days on average, and we've committed 200 SP here. Let's cut the scope and plan to close the sprint on its end date."}
+{"id": "S17", "warn": false, "p_late": 0.35, "message": ""}
+{"id": "S38", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S13", "warn": true, "p_late": 0.65, "message": "Two of our last three sprints closed about 11 days late, and we've loaded 40 issues (293+ SP) into this one. Let's trim the scope now and set a firm close date."}
+{"id": "S36", "warn": true, "p_late": 0.6, "message": "Two of our last three sprints closed about 10 days late. Let's estimate these two bugs and plan to close the sprint on its end date, even if work carries over."}
+{"id": "S22", "warn": true, "p_late": 0.65, "message": "All three of our last sprints closed a couple of days late. This sprint is small, so let's close it in Jira on the planned end date."}
+{"id": "S25", "warn": true, "p_late": 0.6, "message": "We've committed 42 issues (247 SP) while we usually finish about 9, and two of our last three sprints closed late. Let's cut the scope now and plan to close on time."}
+{"id": "S29", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S07", "warn": false, "p_late": 0.45, "message": ""}

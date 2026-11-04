@@ -1,0 +1,556 @@
+You are acting as an AI assistant to a Scrum Master. For each sprint board below, decide
+whether to warn the team NOW that the sprint is likely to close late, meaning it will be closed in Jira more
+than one day after its planned end date. A warning interrupts the team, so do not warn without reason; a
+missed late sprint is costly too.
+
+You see the sprint exactly as it stood at the replay point. Judge every board on its own; boards come from
+different teams and are in random order. Do not use any tools, files or web access: answer from the text only.
+
+Answer with one JSON object per board, one per line, and nothing else:
+{"id": "<board id>", "warn": true or false, "p_late": <your probability from 0 to 1 that it closes late>, "message": "<if warn is true, the one or two sentences you would send the team; otherwise empty>"}
+
+=== Board S39 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.20; issues carried over from the last one 3; share that closed more than a day late 0.00; average days late 0.2; average issues completed 1.0.
+Committed at the start: 4 issues; story points recorded on 4 of them (total 30).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 0 of 4. Committed issues moved out of the sprint: 3. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Bug, 8 SP, moved out of the sprint
+- committed: Task, 8 SP, not resolved yet
+- committed: Task, 4 SP, moved out of the sprint
+- committed: Task, 2 SP, moved out of the sprint
+
+=== Board S08 ===
+Team: Project D (name hidden). Planned sprint length: 12.8 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.30; issues carried over from the last one 3; share that closed more than a day late 0.00; average days late 0.0; average issues completed 2.0.
+Committed at the start: 2 issues; story points recorded on 2 of them (total 4).
+Now: day 6.4 of 12.8 (halfway). Committed issues resolved so far: 0 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 2, of which resolved: 0.
+Issues:
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+
+=== Board S01 ===
+Team: Project C (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.42; issues carried over from the last one 0; share that closed more than a day late 0.00; average days late 0.6; average issues completed 0.7.
+Committed at the start: 3 issues; story points recorded on 0 of them (total 0).
+Now: day 3.5 of 7.0 (halfway). Committed issues resolved so far: 0 of 3. Committed issues moved out of the sprint: 0. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+
+=== Board S29 ===
+Team: Project B (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.47; issues carried over from the last one 0; share that closed more than a day late 0.33; average days late 0.9; average issues completed 1.0.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 1 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Story, 3 SP, resolved on day 3.9
+
+=== Board S28 ===
+Team: Project C (name hidden). Planned sprint length: 17.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 1.00; average days late 20.8; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 8.7 of 17.4 (halfway). Committed issues resolved so far: 0 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 2, of which resolved: 0.
+Issues:
+- committed: Bug, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 1 SP, not resolved yet
+
+=== Board S31 ===
+Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 11).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 0 of 3. Committed issues moved out of the sprint: 0. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Suggestion, no estimate, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+
+=== Board S12 ===
+Team: Project C (name hidden). Planned sprint length: 10.2 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.50; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 5.9; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 5.1 of 10.2 (halfway). Committed issues resolved so far: 2 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 3, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, resolved on day 3.8
+- committed: Bug, no estimate, resolved on day 0.0
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+
+=== Board S36 ===
+Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.44; issues carried over from the last one 1; share that closed more than a day late 0.67; average days late 10.4; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 0 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+
+=== Board S24 ===
+Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.39; issues carried over from the last one 4; share that closed more than a day late 0.33; average days late 1.0; average issues completed 6.3.
+Committed at the start: 21 issues; story points recorded on 18 of them (total 92).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 2 of 21. Committed issues moved out of the sprint: 0. Issues added since the start: 3, of which resolved: 2.
+Issues:
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Improvement, 3 SP, resolved on day 3.9
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, no estimate, resolved on day 1.0
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Improvement, 21 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Bug, 1 SP, resolved on day 0.7
+- added later: Improvement, no estimate, resolved on day 3.9
+
+=== Board S07 ===
+Team: Project C (name hidden). Planned sprint length: 11.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.00; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 5.6; average issues completed 0.0.
+Committed at the start: 4 issues; story points recorded on 2 of them (total 8).
+Now: day 5.7 of 11.4 (halfway). Committed issues resolved so far: 0 of 4. Committed issues moved out of the sprint: 1. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, moved out of the sprint
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+
+=== Board S09 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 12; share that closed more than a day late 0.33; average days late 1.1; average issues completed 4.0.
+Committed at the start: 12 issues; story points recorded on 11 of them (total 30).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 12. Committed issues moved out of the sprint: 0. Issues added since the start: 44, of which resolved: 5.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Bug, 0 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 1.4
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 1.4
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- ... and 16 more issues of the same kinds
+
+=== Board S38 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.11; issues carried over from the last one 40; share that closed more than a day late 0.00; average days late 0.4; average issues completed 4.7.
+Committed at the start: 49 issues; story points recorded on 48 of them (total 144).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 13 of 49. Committed issues moved out of the sprint: 1. Issues added since the start: 10, of which resolved: 0.
+Issues:
+- committed: Task, 2 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Task, 0 SP, resolved on day 5.9
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 0 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Task, 0 SP, not resolved yet
+- committed: Bug, 0 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Task, 0 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Task, 4 SP, not resolved yet
+- committed: Task, 8 SP, resolved on day 4.9
+- committed: Task, 2 SP, resolved on day 4.9
+- committed: Task, 8 SP, resolved on day 5.1
+- committed: Task, 2 SP, resolved on day 0.0
+- committed: Task, 0 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Enhancement Request, 4 SP, not resolved yet
+- committed: Task, 1 SP, resolved on day 0.1
+- committed: Bug, 4 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Task, 4 SP, not resolved yet
+- committed: Bug, 0 SP, not resolved yet
+- committed: Task, 4 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 2 SP, resolved on day 6.0
+- committed: Bug, 4 SP, not resolved yet
+- committed: Task, 2 SP, resolved on day 0.9
+- committed: Bug, 4 SP, resolved on day 1.1
+- committed: Bug, 8 SP, resolved on day 5.1
+- ... and 19 more issues of the same kinds
+
+=== Board S26 ===
+Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.04; issues carried over from the last one 37; share that closed more than a day late 0.67; average days late 1.0; average issues completed 1.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 43, of which resolved: 4.
+Issues:
+- committed: Improvement, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, resolved on day 4.8
+- added later: Improvement, 3 SP, resolved on day 4.9
+- added later: Story, 5 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 8 SP, resolved on day 4.8
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 1 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Improvement, no estimate, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Improvement, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: New Feature, 8 SP, resolved on day 4.9
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: New Feature, 21 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- ... and 4 more issues of the same kinds
+
+=== Board S25 ===
+Team: Project E (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.29; issues carried over from the last one 29; share that closed more than a day late 0.67; average days late 5.6; average issues completed 9.0.
+Committed at the start: 42 issues; story points recorded on 41 of them (total 247).
+Now: day 7.1 of 14.1 (halfway). Committed issues resolved so far: 4 of 42. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, resolved on day 5.0
+- committed: Story, 16 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Improvement, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 1 SP, resolved on day 2.9
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, resolved on day 0.2
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 0.1
+- committed: Story, 0 SP, not resolved yet
+- committed: Bug, 20 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- ... and 3 more issues of the same kinds
+
+=== Board S35 ===
+Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.23; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 0.6; average issues completed 0.7.
+Committed at the start: 5 issues; story points recorded on 0 of them (total 0).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 0 of 5. Committed issues moved out of the sprint: 1. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, moved out of the sprint
+- added later: Bug, no estimate, not resolved yet
+
+=== Board S05 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 16; share that closed more than a day late 1.00; average days late 11.2; average issues completed 1.3.
+Committed at the start: 11 issues; story points recorded on 11 of them (total 23).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 2 of 11. Committed issues moved out of the sprint: 0. Issues added since the start: 25, of which resolved: 5.
+Issues:
+- committed: Story, 3 SP, resolved on day 4.1
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Bug, 0 SP, resolved on day 3.0
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 3.2
+- added later: Story, 0 SP, resolved on day 5.1
+- added later: Story, 0 SP, resolved on day 3.3
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 0 SP, resolved on day 3.0
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+
+=== Board S03 ===
+Team: Project G (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.19; issues carried over from the last one 24; share that closed more than a day late 0.00; average days late 0.1; average issues completed 6.3.
+Committed at the start: 20 issues; story points recorded on 19 of them (total 98).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 8 of 20. Committed issues moved out of the sprint: 0. Issues added since the start: 23, of which resolved: 6.
+Issues:
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 3 SP, resolved on day 5.1
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 3 SP, resolved on day 6.1
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 3 SP, resolved on day 5.2
+- committed: Bug, 3 SP, resolved on day 5.1
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: New Feature, 8 SP, resolved on day 2.4
+- committed: Bug, 8 SP, resolved on day 3.4
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 3 SP, resolved on day 3.2
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, 5 SP, resolved on day 2.8
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, 3 SP, resolved on day 4.9
+- added later: Bug, 5 SP, resolved on day 3.2
+- added later: Improvement, 8 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: New Feature, 5 SP, resolved on day 4.3
+- added later: Bug, 5 SP, resolved on day 2.8
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Story, 13 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 21 SP, not resolved yet
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- ... and 3 more issues of the same kinds
+
+=== Board S13 ===
+Team: Project E (name hidden). Planned sprint length: 31.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 6; share that closed more than a day late 0.67; average days late 10.7; average issues completed 2.0.
+Committed at the start: 40 issues; story points recorded on 35 of them (total 293).
+Now: day 15.5 of 31.0 (halfway). Committed issues resolved so far: 6 of 40. Committed issues moved out of the sprint: 0. Issues added since the start: 14, of which resolved: 5.
+Issues:
+- committed: Improvement, 4 SP, resolved on day 0.6
+- committed: Story, 8 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 5 SP, resolved on day 3.6
+- committed: Story, 6 SP, resolved on day 7.6
+- committed: Story, 2 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 6 SP, resolved on day 9.6
+- committed: Bug, 6 SP, not resolved yet
+- committed: Improvement, 5 SP, resolved on day 3.6
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 20 SP, not resolved yet
+- committed: Improvement, 10 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 15 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 16 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Improvement, 12 SP, resolved on day 4.6
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Improvement, 10 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- ... and 14 more issues of the same kinds
+
+=== Board S04 ===
+Team: Project G (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.12; issues carried over from the last one 7; share that closed more than a day late 0.33; average days late 0.9; average issues completed 2.3.
+Committed at the start: 19 issues; story points recorded on 15 of them (total 57).
+Now: day 7.0 of 14.1 (halfway). Committed issues resolved so far: 1 of 19. Committed issues moved out of the sprint: 0. Issues added since the start: 42, of which resolved: 7.
+Issues:
+- committed: Improvement, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: New Feature, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, 3 SP, resolved on day 2.4
+- committed: Epic, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- added later: Bug, 1 SP, resolved on day 3.5
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Bug, 5 SP, resolved on day 2.4
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: New Feature, 5 SP, not resolved yet
+- added later: New Feature, 1 SP, resolved on day 2.4
+- added later: Bug, 1 SP, resolved on day 2.4
+- ... and 21 more issues of the same kinds
+
+=== Board S16 ===
+Team: Project D (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.18; issues carried over from the last one 6; share that closed more than a day late 0.00; average days late 0.0; average issues completed 1.0.
+Committed at the start: 2 issues; story points recorded on 1 of them (total 5).
+Now: day 3.5 of 7.0 (halfway). Committed issues resolved so far: 0 of 2. Committed issues moved out of the sprint: 1. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Bug, 3 SP, moved out of the sprint
+- committed: Bug, 5 SP, not resolved yet

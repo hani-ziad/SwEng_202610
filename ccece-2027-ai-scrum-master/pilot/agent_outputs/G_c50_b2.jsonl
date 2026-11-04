@@ -1,0 +1,20 @@
+{"id": "S19", "warn": true, "p_late": 0.85, "message": "We're halfway and none of the 25 committed issues (200 SP) are done yet, and our last three sprints all closed late. Let's agree today what we can realistically finish and what we push to the next sprint."}
+{"id": "S20", "warn": true, "p_late": 0.88, "message": "We're halfway with 0 of 12 committed issues done, and 31 new issues have been added. Our recent sprints closed about 13 days late, so let's cut scope now so we can close on time."}
+{"id": "S26", "warn": true, "p_late": 0.65, "message": "43 issues have been added since the start and only 4 are resolved at the halfway point. Let's decide which of the added work really belongs in this sprint so we can close on the planned date."}
+{"id": "S14", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S30", "warn": true, "p_late": 0.65, "message": "We're halfway with 1 of 29 committed stories done, and 22 more have been added. Let's re-plan the rest of the sprint now so we can close on time."}
+{"id": "S28", "warn": true, "p_late": 0.7, "message": "At the halfway point the committed 8 SP bug and the two added bugs are all still open, and our recent sprints closed late. Can we check what's blocking them and plan to close on the end date?"}
+{"id": "S17", "warn": true, "p_late": 0.6, "message": "We're halfway with 0 of 17 committed stories done, and 33 issues have been added. Let's trim the scope now so we can close on time."}
+{"id": "S22", "warn": true, "p_late": 0.85, "message": "56 issues have been added since the start, and none of our committed stories are done at the halfway point. Let's cut this back to what we can actually finish so the sprint closes on time."}
+{"id": "S27", "warn": true, "p_late": 0.6, "message": "The committed bug is done, but the added bug is still open, and our recent sprints have closed late. Let's either finish it or move it out so we can close on the planned date."}
+{"id": "S18", "warn": true, "p_late": 0.8, "message": "We're halfway with 0 of 13 committed stories done, and 24 more have been added. Let's re-plan now so we don't close late again like the last three sprints."}
+{"id": "S23", "warn": true, "p_late": 0.55, "message": "33 issues have been added since the start, and nothing is resolved yet at the halfway point. Let's confirm which of these we can really finish in this sprint and move the rest out."}
+{"id": "S06", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S16", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S13", "warn": true, "p_late": 0.65, "message": "We're halfway with only 6 of 40 committed issues done (293 SP committed). Let's pick the must-haves now and move the rest out so we can close on time."}
+{"id": "S24", "warn": true, "p_late": 0.6, "message": "We're halfway with 2 of 21 committed issues done, and most of the 92 SP is still open. Let's agree on priorities and drop what won't fit before the end date."}
+{"id": "S38", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S01", "warn": false, "p_late": 0.25, "message": ""}
+{"id": "S12", "warn": true, "p_late": 0.55, "message": "The committed bugs are done, but the 3 bugs added mid-sprint are still open. Let's decide whether they stay in this sprint so we can close on the planned date."}
+{"id": "S02", "warn": true, "p_late": 0.55, "message": "The committed work is done, but 36 issues have been added and 32 are still open at the halfway point. Let's move whatever won't fit into the next sprint so we can close this one on time."}
+{"id": "S07", "warn": true, "p_late": 0.55, "message": "We're halfway and none of the committed bugs are resolved yet. Can we check what's blocking them so we can still close on the planned date?"}

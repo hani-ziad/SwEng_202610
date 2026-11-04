@@ -1,0 +1,20 @@
+{"id": "S22", "warn": true, "p_late": 0.75, "message": "Heads-up: all of our last three sprints closed more than a day late, and we completed only about 15% of what we committed. Let's agree now how we'll close this sprint on its planned end date."}
+{"id": "S37", "warn": true, "p_late": 0.6, "message": "This sprint starts with 94 SP across 18 stories, and we usually finish about 9 issues. Two of our last three sprints closed late. Can we trim scope or name a must-finish set now so it closes on time?"}
+{"id": "S09", "warn": true, "p_late": 0.6, "message": "We committed 12 issues, but we finished about 4 per sprint recently, and 12 carried over last time. Let's pick the must-finish items now and plan to close the sprint on its end date."}
+{"id": "S24", "warn": true, "p_late": 0.5, "message": "We committed 21 issues (92+ SP, three unestimated, including a 21 SP improvement), but we usually finish about 6. Please split or defer the large items now so the sprint can close on schedule."}
+{"id": "S18", "warn": true, "p_late": 0.75, "message": "Our last three sprints all closed late, by about 9 days on average, and this one starts with 73 SP, including a 20 SP story. Let's agree on a close-out plan and trim scope now."}
+{"id": "S36", "warn": true, "p_late": 0.55, "message": "Two of our last three sprints closed late, by about 10 days on average. Please estimate these two bugs and plan to close the sprint on its end date even if work carries over."}
+{"id": "S30", "warn": true, "p_late": 0.45, "message": "We committed 29 issues, but we usually finish about 9, and 17 carried over last sprint. Let's mark the must-finish items now and close the sprint on time, moving the rest over."}
+{"id": "S15", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S25", "warn": true, "p_late": 0.6, "message": "This sprint starts with 42 issues and 247 SP, while we typically finish about 9 issues, and 29 carried over last time. Please cut scope now and plan to close on the end date."}
+{"id": "S40", "warn": false, "p_late": 0.25, "message": ""}
+{"id": "S23", "warn": false, "p_late": 0.38, "message": ""}
+{"id": "S08", "warn": false, "p_late": 0.25, "message": ""}
+{"id": "S16", "warn": false, "p_late": 0.12, "message": ""}
+{"id": "S29", "warn": true, "p_late": 0.5, "message": "This sprint has a single unestimated story. Please size it and confirm it fits, so the sprint can close on its planned end date."}
+{"id": "S11", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S07", "warn": true, "p_late": 0.55, "message": "We completed none of our committed issues in recent sprints, and two of these four bugs are unestimated. Let's size them now and plan to close the sprint on its end date."}
+{"id": "S21", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S06", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S14", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S01", "warn": false, "p_late": 0.2, "message": ""}

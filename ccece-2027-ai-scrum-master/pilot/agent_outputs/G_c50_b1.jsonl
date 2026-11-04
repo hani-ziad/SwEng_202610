@@ -1,0 +1,20 @@
+{"id": "S11", "warn": false, "p_late": 0.18, "message": ""}
+{"id": "S32", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S10", "warn": true, "p_late": 0.62, "message": "We're halfway and only 8 of 41 committed stories are done, with 12 more added. Our recent sprints closed about 5 days late, so let's agree today what to drop or move out so we can close on the planned date."}
+{"id": "S34", "warn": true, "p_late": 0.6, "message": "We're at the midpoint and only 1 of 45 committed issues is resolved. Let's re-scope now and move what won't fit back to the backlog, so the sprint can close on time."}
+{"id": "S09", "warn": true, "p_late": 0.62, "message": "We're halfway, none of the 12 committed stories are done, and 44 issues have been added. Can we freeze scope and decide which added items go back to the backlog so we close on time?"}
+{"id": "S33", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S25", "warn": true, "p_late": 0.62, "message": "We're halfway with 4 of 42 committed stories done, and our last sprints mostly closed late. Let's pick the stories we can really finish and move the rest out now."}
+{"id": "S03", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S31", "warn": true, "p_late": 0.45, "message": "We're halfway and none of the 3 committed issues are resolved, and our recent sprints closed about 5 days late. Can we check what's blocking them and plan to close on the end date?"}
+{"id": "S39", "warn": false, "p_late": 0.1, "message": ""}
+{"id": "S37", "warn": true, "p_late": 0.6, "message": "We're halfway and only 1 of 18 committed stories is done, while 50 issues have been added. Let's freeze scope and agree what moves out so the sprint closes on schedule."}
+{"id": "S36", "warn": true, "p_late": 0.5, "message": "We're halfway, no bugs resolved yet, and recent sprints closed well past their end date. Let's confirm what we can finish and plan to close the sprint on time."}
+{"id": "S29", "warn": false, "p_late": 0.33, "message": ""}
+{"id": "S40", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S15", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S05", "warn": true, "p_late": 0.82, "message": "We're halfway with 2 of 11 committed stories done and 25 added, and our last sprints all closed late. Let's cut scope now and plan to close on the end date."}
+{"id": "S35", "warn": false, "p_late": 0.35, "message": ""}
+{"id": "S21", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S08", "warn": false, "p_late": 0.28, "message": ""}
+{"id": "S04", "warn": true, "p_late": 0.5, "message": "We're halfway with 1 of 19 committed issues done and 42 added. Let's freeze new additions and agree what moves out so we can close on time."}

@@ -1,0 +1,487 @@
+You are acting as an AI assistant to a Scrum Master. For each sprint board below, decide
+whether to warn the team NOW that the sprint is likely to close late, meaning it will be closed in Jira more
+than one day after its planned end date. A warning interrupts the team, so do not warn without reason; a
+missed late sprint is costly too.
+
+You see the sprint exactly as it stood at the replay point. Judge every board on its own; boards come from
+different teams and are in random order. Do not use any tools, files or web access: answer from the text only.
+
+Answer with one JSON object per board, one per line, and nothing else:
+{"id": "<board id>", "warn": true or false, "p_late": <your probability from 0 to 1 that it closes late>, "message": "<if warn is true, the one or two sentences you would send the team; otherwise empty>"}
+
+Each board also shows the output of a risk model trained on earlier sprints of these
+teams. Use it as you see fit: you may follow it or overrule it.
+
+=== Board S34 ===
+Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.34; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 45 issues; story points recorded on 30 of them (total 255).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Bug, no estimate
+- Bug, no estimate
+- Improvement, 13 SP
+- Bug, 3 SP
+- Story, no estimate
+- Improvement, 5 SP
+- Improvement, 1 SP
+- Bug, 5 SP
+- Bug, 3 SP
+- New Feature, no estimate
+- New Feature, 13 SP
+- Improvement, 13 SP
+- Improvement, 8 SP
+- New Feature, 5 SP
+- New Feature, 8 SP
+- Improvement, no estimate
+- New Feature, 8 SP
+- New Feature, 5 SP
+- Bug, no estimate
+- New Feature, 5 SP
+- Improvement, 8 SP
+- Improvement, 7 SP
+- Improvement, 7 SP
+- New Feature, no estimate
+- New Feature, no estimate
+- New Feature, no estimate
+- Bug, 5 SP
+- New Feature, no estimate
+- Bug, 3 SP
+- Bug, 5 SP
+- Improvement, no estimate
+- Story, 13 SP
+- Improvement, 21 SP
+- Bug, 13 SP
+- New Feature, 21 SP
+- Improvement, no estimate
+- Improvement, 2 SP
+- New Feature, 8 SP
+- Epic, no estimate
+- ... and 5 more issues of the same kinds
+Risk model: probability of closing late 0.79; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S32 ===
+Team: Project H (name hidden). Planned sprint length: 4.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 4; share that closed more than a day late 0.00; average days late 0.0; average issues completed 0.7.
+Committed at the start: 6 issues; story points recorded on 6 of them (total 44).
+Now: day 0, planning has just finished.
+Issues:
+- New Feature, 4 SP
+- New Feature, 4 SP
+- Improvement, 16 SP
+- New Feature, 8 SP
+- New Feature, 8 SP
+- Bug, 4 SP
+Risk model: probability of closing late 0.13; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S12 ===
+Team: Project C (name hidden). Planned sprint length: 10.2 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.50; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 5.9; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate
+Risk model: probability of closing late 0.65; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S13 ===
+Team: Project E (name hidden). Planned sprint length: 31.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 6; share that closed more than a day late 0.67; average days late 10.7; average issues completed 2.0.
+Committed at the start: 40 issues; story points recorded on 35 of them (total 293).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 4 SP
+- Story, 8 SP
+- Bug, 2 SP
+- Bug, 4 SP
+- Improvement, 5 SP
+- Story, 4 SP
+- Story, 2 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 6 SP
+- Bug, 6 SP
+- Improvement, 5 SP
+- Bug, 4 SP
+- Improvement, 20 SP
+- Improvement, 10 SP
+- Bug, 1 SP
+- Story, 20 SP
+- Story, 15 SP
+- Story, no estimate
+- Story, no estimate
+- Story, 16 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, no estimate
+- Story, 6 SP
+- Story, 2 SP
+- Story, 8 SP
+- Story, 20 SP
+- Story, 20 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Story, 6 SP
+- Improvement, 8 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, no estimate
+- Story, 6 SP
+- Story, 20 SP
+- Improvement, 10 SP
+- Story, 10 SP
+Risk model: probability of closing late 0.39; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S19 ===
+Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.30; issues carried over from the last one 19; share that closed more than a day late 1.00; average days late 12.7; average issues completed 5.0.
+Committed at the start: 25 issues; story points recorded on 22 of them (total 200).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 13 SP
+- Bug, no estimate
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+- Bug, 5 SP
+- Story, no estimate
+- Improvement, 13 SP
+- New Feature, 8 SP
+- New Feature, 21 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- New Feature, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 13 SP
+- New Feature, 13 SP
+Risk model: probability of closing late 0.75; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S04 ===
+Team: Project G (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.12; issues carried over from the last one 7; share that closed more than a day late 0.33; average days late 0.9; average issues completed 2.3.
+Committed at the start: 19 issues; story points recorded on 15 of them (total 57).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+- Bug, 5 SP
+- New Feature, 5 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 5 SP
+- New Feature, no estimate
+- New Feature, 5 SP
+- New Feature, 3 SP
+- New Feature, no estimate
+- New Feature, no estimate
+- New Feature, 5 SP
+- Bug, 3 SP
+- Epic, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- Improvement, 3 SP
+- New Feature, 5 SP
+Risk model: probability of closing late 0.50; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S03 ===
+Team: Project G (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.19; issues carried over from the last one 24; share that closed more than a day late 0.00; average days late 0.1; average issues completed 6.3.
+Committed at the start: 20 issues; story points recorded on 19 of them (total 98).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 3 SP
+- Bug, 2 SP
+- Bug, 2 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 8 SP
+- Improvement, 8 SP
+- New Feature, 8 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Improvement, 5 SP
+- New Feature, 5 SP
+- Bug, 5 SP
+Risk model: probability of closing late 0.31; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S17 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.28; issues carried over from the last one 23; share that closed more than a day late 0.33; average days late 1.1; average issues completed 7.3.
+Committed at the start: 17 issues; story points recorded on 15 of them (total 35).
+Now: day 0, planning has just finished.
+Issues:
+- Story, no estimate
+- Story, 3 SP
+- Story, 3 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 2 SP
+- Bug, no estimate
+- Story, 2 SP
+- Story, 3 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 1 SP
+- Improvement, 1 SP
+- Story, 3 SP
+Risk model: probability of closing late 0.62; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S38 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.11; issues carried over from the last one 40; share that closed more than a day late 0.00; average days late 0.4; average issues completed 4.7.
+Committed at the start: 49 issues; story points recorded on 48 of them (total 144).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 2 SP
+- Bug, 1 SP
+- Bug, 2 SP
+- Bug, 1 SP
+- Bug, 2 SP
+- Bug, 4 SP
+- Task, no estimate
+- Bug, 1 SP
+- Bug, 0 SP
+- Bug, 4 SP
+- Task, 0 SP
+- Bug, 0 SP
+- Bug, 8 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Task, 0 SP
+- Bug, 4 SP
+- Task, 4 SP
+- Task, 8 SP
+- Task, 2 SP
+- Task, 8 SP
+- Task, 2 SP
+- Task, 0 SP
+- Bug, 2 SP
+- Bug, 1 SP
+- Bug, 4 SP
+- Enhancement Request, 4 SP
+- Task, 1 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Bug, 8 SP
+- Task, 4 SP
+- Bug, 0 SP
+- Task, 4 SP
+- Bug, 1 SP
+- Bug, 2 SP
+- Bug, 4 SP
+- Task, 2 SP
+- Bug, 4 SP
+- Bug, 8 SP
+- ... and 9 more issues of the same kinds
+Risk model: probability of closing late 0.28; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S33 ===
+Team: Project C (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 2; share that closed more than a day late 0.00; average days late 0.0; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 1 of them (total 1).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, 1 SP
+Risk model: probability of closing late 0.27; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S39 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.20; issues carried over from the last one 3; share that closed more than a day late 0.00; average days late 0.2; average issues completed 1.0.
+Committed at the start: 4 issues; story points recorded on 4 of them (total 30).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 8 SP
+- Task, 16 SP
+- Task, 4 SP
+- Task, 2 SP
+Risk model: probability of closing late 0.22; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S26 ===
+Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.04; issues carried over from the last one 37; share that closed more than a day late 0.67; average days late 1.0; average issues completed 1.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, no estimate
+Risk model: probability of closing late 0.59; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S05 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 16; share that closed more than a day late 1.00; average days late 11.2; average issues completed 1.3.
+Committed at the start: 11 issues; story points recorded on 11 of them (total 23).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 3 SP
+- Story, 1 SP
+- Story, 3 SP
+- Story, 1 SP
+- Bug, 0 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 4 SP
+- Improvement, 2 SP
+- Story, 3 SP
+Risk model: probability of closing late 0.71; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S20 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 7; share that closed more than a day late 1.00; average days late 13.0; average issues completed 0.7.
+Committed at the start: 12 issues; story points recorded on 12 of them (total 40).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 5 SP
+- Improvement, 4 SP
+- Improvement, 3 SP
+- Improvement, 3 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 3 SP
+Risk model: probability of closing late 0.84; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S02 ===
+Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.51; issues carried over from the last one 30; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 2 issues; story points recorded on 2 of them (total 11).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+- Bug, 8 SP
+Risk model: probability of closing late 0.70; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S31 ===
+Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 11).
+Now: day 0, planning has just finished.
+Issues:
+- Suggestion, no estimate
+- Bug, 8 SP
+- Bug, 3 SP
+Risk model: probability of closing late 0.28; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S10 ===
+Team: Project E (name hidden). Planned sprint length: 22.3 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 36; share that closed more than a day late 0.67; average days late 5.6; average issues completed 16.3.
+Committed at the start: 41 issues; story points recorded on 41 of them (total 254).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 4 SP
+- Bug, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 12 SP
+- Story, 6 SP
+- Story, 1 SP
+- Story, 8 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 2 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 2 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Improvement, 2 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 10 SP
+- Story, 20 SP
+- Story, 10 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- ... and 1 more issues of the same kinds
+Risk model: probability of closing late 0.44; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S35 ===
+Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.23; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 0.6; average issues completed 0.7.
+Committed at the start: 5 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate
+- Bug, no estimate
+- Bug, no estimate
+- Bug, no estimate
+Risk model: probability of closing late 0.33; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S27 ===
+Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 4; share that closed more than a day late 1.00; average days late 3.1; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+Risk model: probability of closing late 0.56; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+
+=== Board S28 ===
+Team: Project C (name hidden). Planned sprint length: 17.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 1.00; average days late 20.8; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 8 SP
+Risk model: probability of closing late 0.51; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).

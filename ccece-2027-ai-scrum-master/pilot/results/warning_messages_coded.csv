@@ -1,0 +1,82 @@
+arm,board_id,checkpoint,late,message,closes_on_date_regardless
+L,S37,0.0,1,"Heads-up: two of our last three sprints closed late and we carried 33 issues over last time. Let's check that the 18 stories (94 SP) are realistic and plan to close on the end date, carrying over whatever isn't done.",1
+L,S37,0.5,1,We're halfway through with only 1 of 18 committed stories done and 50 issues added. Let's re-plan scope now so the sprint can close on its end date.,0
+L,S22,0.0,1,"All three of our last sprints closed a couple of days late. This sprint is small, so let's close it in Jira on the planned end date.",1
+L,S22,0.5,1,"We're halfway through, none of the committed stories are done, and 56 issues have been added since the start. Let's trim scope now so the sprint can close on its planned date.",0
+L,S19,0.0,1,"All three of our last sprints closed late, by about 13 days on average, and we've committed 200 SP here. Let's cut the scope and plan to close the sprint on its end date.",0
+L,S19,0.5,1,"We're halfway through and none of the 25 committed issues are resolved yet, and our last sprints all closed well past their end dates. Let's pick the must-haves today and move the rest out.",0
+L,S34,0.0,1,"Heads-up: we've committed 45 issues / 255 SP in an 11-day sprint, far more than we've been finishing. Let's agree on a must-do subset now and plan to close the sprint on its end date, carrying the rest over.",1
+L,S34,0.5,1,"We're halfway through and only 1 of 45 committed issues is done. Let's agree today what we can realistically finish and move the rest out, so the sprint can close on time.",0
+L,S17,0.5,1,"We're halfway through, none of the 17 committed issues are done, and 33 have been added. Let's review scope today so we can close on time.",0
+L,S28,0.0,1,"All three of our last sprints closed late, by about 3 weeks on average. Even with a single 8-point bug in this one, let's set a firm close date now and close the sprint on time, even if the bug isn't finished.",1
+L,S28,0.5,1,"Halfway through and nothing is resolved yet, the 8 SP bug is still open and two more bugs were added. Recent sprints have all closed well past their end date, so let's agree today what can really finish and plan the close on time.",0
+L,S20,0.0,1,"Early warning: our last three sprints all closed late, by about 13 days on average, and we've committed 12 issues / 40 SP while recently finishing about one. Let's trim scope now and commit to closing on the planned end date.",0
+L,S20,0.5,1,"We're halfway through, none of the 12 committed stories are done, and 31 issues have been added. Given how recent sprints ran over, let's cut scope today so this one closes on time.",0
+L,S13,0.0,1,"Two of our last three sprints closed about 11 days late, and we've loaded 40 issues (293+ SP) into this one. Let's trim the scope now and set a firm close date.",0
+L,S13,0.5,1,"Halfway through, 6 of 40 committed issues (around 293 SP) are done, and recent sprints have closed about 11 days late. Let's re-plan scope now so the sprint can close on its planned date.",0
+L,S26,0.0,1,Heads-up: two of our last three sprints closed late and we carried 37 issues over last time. Let's plan to close this one on its end date and move unfinished work to the backlog.,1
+L,S26,0.5,1,"43 issues have been added since the start and only 4 are resolved at the midpoint. Two of the last three sprints closed late, so let's trim the scope now and plan to close on the end date.",0
+L,S25,0.0,1,"We've committed 42 issues (247 SP) while we usually finish about 9, and two of our last three sprints closed late. Let's cut the scope now and plan to close on time.",0
+L,S25,0.5,1,"Halfway through, 4 of 42 committed issues (about 247 SP) are done, and recent sprints have closed late by about 5.6 days on average. Let's re-scope today and agree what gets moved out so the sprint can close on time.",0
+L,S05,0.0,1,"Heads-up: each of our last three sprints closed late, by about 11 days on average, and we finished only about 6% of what we committed. Let's agree now on what we can really finish and close the sprint on its planned date.",0
+L,S05,0.5,1,"At the midpoint only 2 of 11 committed stories are done, and 25 more issues have been added. Every one of the last three sprints closed late (about 11 days on average), so let's cut scope now and plan to close on the end date.",0
+L,S10,0.0,1,"We've committed 41 issues (254 SP) while we usually finish about 16, and two of our last three sprints closed late. Let's cut the scope now and plan to close on the planned date.",0
+L,S10,0.5,1,We're halfway through with 8 of 41 committed stories done and 12 more added. Let's re-plan the remaining scope now so we can close on time.,0
+L,S27,0.0,0,Heads-up: our last three sprints all closed late (about 3 days on average) and we finished very little of what we committed. Let's agree now who owns this bug and check on it mid-sprint so we close on time.,0
+L,S27,0.5,0,"The committed work is done, but our recent sprints all closed late. Please plan to close this one on its end date and move anything open to the next sprint.",1
+L,S31,0.0,0,Two of our last three sprints closed about 5 days late. Let's agree now to close this one on its planned end date and carry over anything unfinished.,1
+L,S31,0.5,0,"We're at the midpoint with 0 of 3 committed items done, and two of the last three sprints closed late. Can we check whether the 8 SP bug will fit, and agree a plan to close on the planned date?",0
+L,S36,0.0,0,"Two of our last three sprints closed about 10 days late. Let's estimate these two bugs and plan to close the sprint on its end date, even if work carries over.",1
+L,S36,0.5,0,"Halfway in, both committed bugs are still open and one more has been added. Recent sprints have closed about 10 days late on average, so let's agree now what will finish and close the sprint on its end date.",0
+L,S30,0.0,0,"Two of our last three sprints closed late, and we're starting this one with 29 issues while we usually finish about 9. Let's trim the scope or agree now that the sprint closes on its planned date.",0
+L,S30,0.5,0,We're halfway through with 1 of 29 committed stories done and 22 more added. Let's pick what we can finish and move the rest out so we close on time.,0
+L,S18,0.0,0,"Early warning: all of our last three sprints closed late (about 9 days on average), and we've committed 13 issues / 73 SP while we usually finish one or two. Let's cut scope or split the 20 SP and 10 SP stories now rather than slip again.",0
+L,S18,0.5,0,"We're halfway through, none of the 13 committed issues are resolved, and 24 more have been added. Let's agree on a smaller scope now so the sprint closes on its planned date.",0
+G,S37,0.0,1,"This sprint starts with 94 SP across 18 stories, and we usually finish about 9 issues. Two of our last three sprints closed late. Can we trim scope or name a must-finish set now so it closes on time?",0
+G,S37,0.5,1,"We're halfway and only 1 of 18 committed stories is done, while 50 issues have been added. Let's freeze scope and agree what moves out so the sprint closes on schedule.",0
+G,S22,0.0,1,"Heads-up: all of our last three sprints closed more than a day late, and we completed only about 15% of what we committed. Let's agree now how we'll close this sprint on its planned end date.",0
+G,S22,0.5,1,"56 issues have been added since the start, and none of our committed stories are done at the halfway point. Let's cut this back to what we can actually finish so the sprint closes on time.",0
+G,S19,0.0,1,"Each of our last three sprints closed late, by about 13 days on average, and we're carrying 200 SP into this one. Let's cut scope now and plan to close the sprint on its end date even if work is left over.",1
+G,S19,0.5,1,"We're halfway and none of the 25 committed issues (200 SP) are done yet, and our last three sprints all closed late. Let's agree today what we can realistically finish and what we push to the next sprint.",0
+G,S34,0.0,1,"Heads-up: we've committed 45 issues and 255 SP, which is far more than we've finished in recent sprints, so this sprint is at risk of closing late. Can we trim scope now or agree on what drops first?",0
+G,S34,0.5,1,"We're at the midpoint and only 1 of 45 committed issues is resolved. Let's re-scope now and move what won't fit back to the backlog, so the sprint can close on time.",0
+G,S17,0.0,1,"With two other sprints open in parallel and a large carry-over last time, this sprint could slip past its end date. Let's estimate the two open items and plan to close on schedule.",0
+G,S17,0.5,1,"We're halfway with 0 of 17 committed stories done, and 33 issues have been added. Let's trim the scope now so we can close on time.",0
+G,S12,0.0,1,"Quick flag: our recent sprints have sometimes closed several days late, and both bugs here are unestimated. Let's size them today and plan to close the sprint on its end date.",0
+G,S12,0.5,1,"The committed bugs are done, but the 3 bugs added mid-sprint are still open. Let's decide whether they stay in this sprint so we can close on the planned date.",0
+G,S28,0.0,1,"Each of our last three sprints closed late, by about 3 weeks on average. Let's agree to close this sprint on its end date, whether or not the bug is finished.",1
+G,S28,0.5,1,"At the halfway point the committed 8 SP bug and the two added bugs are all still open, and our recent sprints closed late. Can we check what's blocking them and plan to close on the end date?",0
+G,S20,0.0,1,Each of our last three sprints closed about two weeks late. Let's protect this sprint's 40 SP and commit to closing it on the planned end date.,0
+G,S20,0.5,1,"We're halfway with 0 of 12 committed issues done, and 31 new issues have been added. Our recent sprints closed about 13 days late, so let's cut scope now so we can close on time.",0
+G,S13,0.0,1,"Two of our last three sprints closed late, by about 11 days on average, and this one commits 40 issues and 293 SP with two other sprints running in parallel. Let's confirm the scope is realistic and plan to close on the end date.",0
+G,S13,0.5,1,We're halfway with only 6 of 40 committed issues done (293 SP committed). Let's pick the must-haves now and move the rest out so we can close on time.,0
+G,S26,0.0,1,"Two of our last three sprints closed late, and we carried 37 issues over last time. Let's make sure this sprint gets closed on its end date, even with only one item in it.",1
+G,S26,0.5,1,43 issues have been added since the start and only 4 are resolved at the halfway point. Let's decide which of the added work really belongs in this sprint so we can close on the planned date.,0
+G,S25,0.0,1,"This sprint starts with 42 issues and 247 SP, while we typically finish about 9 issues, and 29 carried over last time. Please cut scope now and plan to close on the end date.",0
+G,S25,0.5,1,"We're halfway with 4 of 42 committed stories done, and our last sprints mostly closed late. Let's pick the stories we can really finish and move the rest out now.",0
+G,S07,0.0,1,"We completed none of our committed issues in recent sprints, and two of these four bugs are unestimated. Let's size them now and plan to close the sprint on its end date.",0
+G,S07,0.5,1,We're halfway and none of the committed bugs are resolved yet. Can we check what's blocking them so we can still close on the planned date?,0
+G,S09,0.0,1,"We committed 12 issues, but we finished about 4 per sprint recently, and 12 carried over last time. Let's pick the must-finish items now and plan to close the sprint on its end date.",0
+G,S09,0.5,1,"We're halfway, none of the 12 committed stories are done, and 44 issues have been added. Can we freeze scope and decide which added items go back to the backlog so we close on time?",0
+G,S05,0.0,1,"Each of our last three sprints closed late, by about 11 days on average, and five other sprints are open at the same time. Let's agree now to close this one on its end date and move any unfinished work forward.",1
+G,S05,0.5,1,"We're halfway with 2 of 11 committed stories done and 25 added, and our last sprints all closed late. Let's cut scope now and plan to close on the end date.",0
+G,S10,0.0,1,"We've committed 254 SP, much more than we've been finishing, and two of our last three sprints closed late. Let's trim scope now so we can close on the planned end date.",0
+G,S10,0.5,1,"We're halfway and only 8 of 41 committed stories are done, with 12 more added. Our recent sprints closed about 5 days late, so let's agree today what to drop or move out so we can close on the planned date.",0
+G,S29,0.0,0,"This sprint has a single unestimated story. Please size it and confirm it fits, so the sprint can close on its planned end date.",0
+G,S04,0.0,0,"Small heads-up: we've completed only a small share of what we committed in recent sprints, and this one has 19 issues, some unestimated. Let's estimate the open items and keep an eye on closing on time.",0
+G,S04,0.5,0,We're halfway with 1 of 19 committed issues done and 42 added. Let's freeze new additions and agree what moves out so we can close on time.,0
+G,S24,0.0,0,"We committed 21 issues (92+ SP, three unestimated, including a 21 SP improvement), but we usually finish about 6. Please split or defer the large items now so the sprint can close on schedule.",0
+G,S24,0.5,0,"We're halfway with 2 of 21 committed issues done, and most of the 92 SP is still open. Let's agree on priorities and drop what won't fit before the end date.",0
+G,S27,0.0,0,"Each of our last three sprints closed late, by about 3 days on average. Let's estimate this bug and plan to close the sprint on its end date.",0
+G,S27,0.5,0,"The committed bug is done, but the added bug is still open, and our recent sprints have closed late. Let's either finish it or move it out so we can close on the planned date.",0
+G,S31,0.0,0,"Two of our last three sprints closed late, by about 5 days on average, and very little committed work has been getting done. Let's estimate the suggestion item and plan to close on the end date.",0
+G,S31,0.5,0,"We're halfway and none of the 3 committed issues are resolved, and our recent sprints closed about 5 days late. Can we check what's blocking them and plan to close on the end date?",0
+G,S36,0.0,0,"Two of our last three sprints closed late, by about 10 days on average. Please estimate these two bugs and plan to close the sprint on its end date even if work carries over.",1
+G,S36,0.5,0,"We're halfway, no bugs resolved yet, and recent sprints closed well past their end date. Let's confirm what we can finish and plan to close the sprint on time.",0
+G,S23,0.5,0,"33 issues have been added since the start, and nothing is resolved yet at the halfway point. Let's confirm which of these we can really finish in this sprint and move the rest out.",0
+G,S30,0.0,0,"We committed 29 issues, but we usually finish about 9, and 17 carried over last sprint. Let's mark the must-finish items now and close the sprint on time, moving the rest over.",1
+G,S30,0.5,0,"We're halfway with 1 of 29 committed stories done, and 22 more have been added. Let's re-plan the rest of the sprint now so we can close on time.",0
+G,S02,0.0,0,"We carried 30 issues over from last sprint, and some recent sprints closed late. Let's plan to close this one on its end date and carry over cleanly if needed.",1
+G,S02,0.5,0,"The committed work is done, but 36 issues have been added and 32 are still open at the halfway point. Let's move whatever won't fit into the next sprint so we can close this one on time.",1
+G,S18,0.0,0,"Our last three sprints all closed late, by about 9 days on average, and this one starts with 73 SP, including a 20 SP story. Let's agree on a close-out plan and trim scope now.",0
+G,S18,0.5,0,"We're halfway with 0 of 13 committed stories done, and 24 more have been added. Let's re-plan now so we don't close late again like the last three sprints.",0

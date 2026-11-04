@@ -1,0 +1,20 @@
+{"id": "S34", "warn": true, "p_late": 0.58, "message": "Heads-up: we've committed 45 issues and 255 SP, which is far more than we've finished in recent sprints, so this sprint is at risk of closing late. Can we trim scope now or agree on what drops first?"}
+{"id": "S32", "warn": false, "p_late": 0.15, "message": ""}
+{"id": "S12", "warn": true, "p_late": 0.45, "message": "Quick flag: our recent sprints have sometimes closed several days late, and both bugs here are unestimated. Let's size them today and plan to close the sprint on its end date."}
+{"id": "S13", "warn": true, "p_late": 0.6, "message": "Two of our last three sprints closed late, by about 11 days on average, and this one commits 40 issues and 293 SP with two other sprints running in parallel. Let's confirm the scope is realistic and plan to close on the end date."}
+{"id": "S19", "warn": true, "p_late": 0.75, "message": "Each of our last three sprints closed late, by about 13 days on average, and we're carrying 200 SP into this one. Let's cut scope now and plan to close the sprint on its end date even if work is left over."}
+{"id": "S04", "warn": true, "p_late": 0.42, "message": "Small heads-up: we've completed only a small share of what we committed in recent sprints, and this one has 19 issues, some unestimated. Let's estimate the open items and keep an eye on closing on time."}
+{"id": "S03", "warn": false, "p_late": 0.25, "message": ""}
+{"id": "S17", "warn": true, "p_late": 0.45, "message": "With two other sprints open in parallel and a large carry-over last time, this sprint could slip past its end date. Let's estimate the two open items and plan to close on schedule."}
+{"id": "S38", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S33", "warn": false, "p_late": 0.2, "message": ""}
+{"id": "S39", "warn": false, "p_late": 0.18, "message": ""}
+{"id": "S26", "warn": true, "p_late": 0.5, "message": "Two of our last three sprints closed late, and we carried 37 issues over last time. Let's make sure this sprint gets closed on its end date, even with only one item in it."}
+{"id": "S05", "warn": true, "p_late": 0.72, "message": "Each of our last three sprints closed late, by about 11 days on average, and five other sprints are open at the same time. Let's agree now to close this one on its end date and move any unfinished work forward."}
+{"id": "S20", "warn": true, "p_late": 0.78, "message": "Each of our last three sprints closed about two weeks late. Let's protect this sprint's 40 SP and commit to closing it on the planned end date."}
+{"id": "S02", "warn": true, "p_late": 0.42, "message": "We carried 30 issues over from last sprint, and some recent sprints closed late. Let's plan to close this one on its end date and carry over cleanly if needed."}
+{"id": "S31", "warn": true, "p_late": 0.45, "message": "Two of our last three sprints closed late, by about 5 days on average, and very little committed work has been getting done. Let's estimate the suggestion item and plan to close on the end date."}
+{"id": "S10", "warn": true, "p_late": 0.58, "message": "We've committed 254 SP, much more than we've been finishing, and two of our last three sprints closed late. Let's trim scope now so we can close on the planned end date."}
+{"id": "S35", "warn": false, "p_late": 0.3, "message": ""}
+{"id": "S27", "warn": true, "p_late": 0.6, "message": "Each of our last three sprints closed late, by about 3 days on average. Let's estimate this bug and plan to close the sprint on its end date."}
+{"id": "S28", "warn": true, "p_late": 0.65, "message": "Each of our last three sprints closed late, by about 3 weeks on average. Let's agree to close this sprint on its end date, whether or not the bug is finished."}
