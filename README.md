@@ -24,7 +24,6 @@ All phases use the same setup: sprint scope rebuilt from the change log, a per-p
 - `ccece-2027-ai-scrum-master`: the second CCECE 2027 submission, "Grounding the AI Scrum Master: A Sprint-Replay Test and Pilot" (LaTeX, PDF), with the sprint-replay pilot: code, prompts, the agents' raw answers and results. See its README.
 - `canadian-ai-2027-paper`: the earlier Canadian AI 2027 version of that position paper (6-page PMLR format, plus an 8-page draft and an IEEE-format copy), kept as a backup venue.
 - `Claude outputs`: the CCECE submission sheet (title, authors, abstract, track).
-- `guides`: learning and reproduction guides. `Sprint_Risk_Prediction_Walkthrough.html` walks through all four phases and the outside checks; `AI-Basics-and-Reproduction-Guide.docx` covers the first three.
 - `CSBP711 Datasets Algorithm Comparison.pptx` and `.pdf`: the 5-slide Assignment 1 deck.
 
 ## Running it
