@@ -1,0 +1,43 @@
+task,checkpoint,model,auc,sensitivity,specificity,f1,n,n_pos,n_neg,auc_lo,auc_hi,train_auc
+late,0.25,"Gradient boosting, planning features",0.7091,0.6299,0.6383,0.4061,644,127,517,0.6564,0.7622,
+late,0.25,"Gradient boosting, progress features",0.7148,0.5906,0.6886,0.4132,644,127,517,0.659,0.7637,
+late,0.25,"Logistic regression, progress features",0.7111,0.5827,0.6712,0.3989,644,127,517,0.6569,0.762,
+late,0.25,Committed count (rule),0.4819,0.0394,0.9691,0.0676,644,127,517,0.4235,0.5421,0.4636
+late,0.25,Past lateness (rule),0.6248,0.5748,0.6074,0.3623,644,127,517,0.5722,0.6791,0.6231
+late,0.25,Remaining count (rule),0.4856,0.063,0.9594,0.1026,644,127,517,0.43,0.5428,0.4665
+late,0.25,Remaining share (rule),0.5263,0.8425,0.2147,0.3344,644,127,517,0.4865,0.5654,0.5298
+late,0.5,"Gradient boosting, planning features",0.7001,0.7402,0.4932,0.3909,640,127,513,0.6477,0.7529,
+late,0.5,"Gradient boosting, progress features",0.7154,0.5827,0.7212,0.4302,640,127,513,0.665,0.7658,
+late,0.5,"Logistic regression, progress features",0.714,0.5276,0.8187,0.4669,640,127,513,0.6595,0.7647,
+late,0.5,Committed count (rule),0.4827,0.0394,0.9708,0.068,640,127,513,0.4249,0.5437,0.4611
+late,0.5,Past lateness (rule),0.6264,0.5748,0.6101,0.365,640,127,513,0.576,0.6788,0.6232
+late,0.5,Remaining count (rule),0.4858,0.0787,0.9591,0.1266,640,127,513,0.4296,0.5451,0.4664
+late,0.5,Remaining share (rule),0.5217,0.748,0.2749,0.3199,640,127,513,0.4755,0.5648,0.5441
+late,0.75,"Gradient boosting, planning features",0.7018,0.5827,0.6851,0.4111,632,127,505,0.6491,0.7565,
+late,0.75,"Gradient boosting, progress features",0.7104,0.5354,0.7267,0.4084,632,127,505,0.6558,0.7608,
+late,0.75,"Logistic regression, progress features",0.7111,0.5906,0.701,0.4249,632,127,505,0.657,0.7627,
+late,0.75,Committed count (rule),0.4832,0.0394,0.9703,0.068,632,127,505,0.4235,0.5398,0.4606
+late,0.75,Past lateness (rule),0.6263,0.5748,0.6099,0.3678,632,127,505,0.5729,0.6785,0.6239
+late,0.75,Remaining count (rule),0.49,0.0709,0.9644,0.1169,632,127,505,0.4341,0.5519,0.4703
+late,0.75,Remaining share (rule),0.5317,0.8504,0.2337,0.3473,632,127,505,0.485,0.5787,0.5506
+carry,0.25,"Gradient boosting, planning features",0.5744,0.842,0.2698,0.8587,449,386,63,0.4902,0.6487,
+carry,0.25,"Gradient boosting, progress features",0.7825,0.8161,0.6032,0.8678,449,386,63,0.7157,0.8446,
+carry,0.25,"Logistic regression, progress features",0.7581,0.8238,0.5397,0.8677,449,386,63,0.6853,0.8288,
+carry,0.25,Committed count (rule),0.5901,0.1399,0.9524,0.2438,449,386,63,0.5168,0.6657,0.5323
+carry,0.25,Past carry share (rule),0.622,0.9067,0.3016,0.8974,449,386,63,0.54,0.7012,0.6479
+carry,0.25,Remaining count (rule),0.6486,0.2694,0.8095,0.4143,449,386,63,0.5698,0.7261,0.574
+carry,0.25,Remaining share (rule),0.7161,0.8679,0.4603,0.8874,449,386,63,0.6404,0.7895,0.6921
+carry,0.5,"Gradient boosting, planning features",0.5927,0.859,0.2381,0.8658,446,383,63,0.5152,0.6692,
+carry,0.5,"Gradient boosting, progress features",0.8386,0.8721,0.7143,0.9088,446,383,63,0.7741,0.8977,
+carry,0.5,"Logistic regression, progress features",0.8174,0.8303,0.6667,0.8809,446,383,63,0.7505,0.8785,
+carry,0.5,Committed count (rule),0.5892,0.1384,0.9524,0.2415,446,383,63,0.5098,0.6607,0.5286
+carry,0.5,Past carry share (rule),0.6209,0.906,0.3016,0.8966,446,383,63,0.5346,0.6963,0.649
+carry,0.5,Remaining count (rule),0.6798,0.2977,0.8095,0.4479,446,383,63,0.5997,0.7568,0.6091
+carry,0.5,Remaining share (rule),0.8101,0.8982,0.6349,0.9173,446,383,63,0.7395,0.8782,0.7945
+carry,0.75,"Gradient boosting, planning features",0.5937,0.8404,0.2381,0.8541,439,376,63,0.5123,0.6724,
+carry,0.75,"Gradient boosting, progress features",0.9001,0.9441,0.6667,0.9441,439,376,63,0.8424,0.9461,
+carry,0.75,"Logistic regression, progress features",0.8886,0.8697,0.7302,0.9083,439,376,63,0.8396,0.934,
+carry,0.75,Committed count (rule),0.5917,0.141,0.9524,0.2454,439,376,63,0.5173,0.6684,0.526
+carry,0.75,Past carry share (rule),0.6192,0.9043,0.3016,0.8947,439,376,63,0.5411,0.6981,0.6488
+carry,0.75,Remaining count (rule),0.7103,0.3165,0.8254,0.4704,439,376,63,0.6323,0.7814,0.6531
+carry,0.75,Remaining share (rule),0.8723,0.9415,0.6349,0.9402,439,376,63,0.8101,0.9273,0.88

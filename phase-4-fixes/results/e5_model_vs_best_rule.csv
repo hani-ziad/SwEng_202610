@@ -1,0 +1,9 @@
+task,split,checkpoint,model,rule,delta_auc,lo,hi,p_le_0,n,n_pos
+late,fixed time split,0.0,Gradient boosting,Past lateness (rule),0.108,0.0689,0.1495,0.0,786,167
+carry,fixed time split,0.0,Gradient boosting,Past carry share (rule),-0.0559,-0.1511,0.0405,0.87,451,387
+late,Phase 3 time split,0.25,"Gradient boosting, progress features",Past lateness (rule),0.09,0.0501,0.1308,0.0,644,127
+late,Phase 3 time split,0.5,"Gradient boosting, progress features",Past lateness (rule),0.0891,0.0508,0.1287,0.0,640,127
+late,Phase 3 time split,0.75,"Gradient boosting, progress features",Past lateness (rule),0.0846,0.0406,0.1305,0.0,632,127
+carry,Phase 3 time split,0.25,"Gradient boosting, progress features",Remaining share (rule),0.0667,-0.0049,0.1385,0.037,449,386
+carry,Phase 3 time split,0.5,"Gradient boosting, progress features",Remaining share (rule),0.0291,-0.04,0.0939,0.2085,446,383
+carry,Phase 3 time split,0.75,"Gradient boosting, progress features",Remaining share (rule),0.0293,-0.0222,0.0847,0.144,439,376

@@ -1,0 +1,13 @@
+task,model,projects,auc_mean,auc_std,ci_above_half,auc_below_half
+carry,Committed count (rule),9,0.428,0.116,0,6
+carry,Gradient boosting,9,0.522,0.107,0,2
+carry,Logistic regression,9,0.469,0.146,1,4
+carry,Past carry share (rule),9,0.495,0.127,1,4
+carry,Random forest,9,0.515,0.109,1,2
+carry,Scope-only LR (baseline),9,0.441,0.075,0,6
+late,Committed count (rule),9,0.433,0.119,0,7
+late,Gradient boosting,9,0.546,0.139,2,2
+late,Logistic regression,9,0.513,0.172,2,5
+late,Past lateness (rule),9,0.456,0.175,1,5
+late,Random forest,9,0.558,0.167,2,3
+late,Scope-only LR (baseline),9,0.482,0.134,1,5

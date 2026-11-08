@@ -1,0 +1,11 @@
+instance,project,sprints,nonempty,late_1d,late_next_working_day,any_spillover,heavy_carry
+mariadb,MariaDB ColumnStore,122,106,0.541,0.402,1.0,0.896
+mariadb,MariaDB MaxScale,269,245,0.149,0.1,0.988,0.6
+mongodb,MongoDB C Driver,36,28,0.917,0.556,0.964,0.571
+mongodb,MongoDB C++ Driver,29,25,0.586,0.034,0.76,0.4
+mongodb,MongoDB Compass,127,125,0.071,0.063,0.984,0.608
+mongodb,MongoDB Database Tools,43,23,0.488,0.163,0.652,0.609
+mongodb,MongoDB Java Driver,27,22,0.889,0.407,0.909,0.545
+mongodb,MongoDB PHP Driver,32,25,0.406,0.156,0.64,0.52
+mongodb,MongoDB Shell,21,20,0.333,0.238,0.7,0.15
+mongodb,WiredTiger,211,205,0.114,0.062,0.99,0.605

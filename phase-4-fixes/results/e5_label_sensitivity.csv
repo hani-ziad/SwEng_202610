@@ -1,0 +1,33 @@
+task,label,model,mean,std
+carry,label_heavy_carry,Committed count (rule),0.567,0.037
+carry,label_heavy_carry,Gradient boosting,0.634,0.035
+carry,label_heavy_carry,Logistic regression,0.664,0.098
+carry,label_heavy_carry,Past carry share (rule),0.625,0.028
+carry,label_heavy_carry,Random forest,0.662,0.068
+carry,label_heavy_carry,Scope-only LR (baseline),0.59,0.043
+late,label_late,Committed count (rule),0.466,0.029
+late,label_late,Gradient boosting,0.706,0.047
+late,label_late,Logistic regression,0.687,0.019
+late,label_late,Past lateness (rule),0.627,0.015
+late,label_late,Random forest,0.696,0.033
+late,label_late,Scope-only LR (baseline),0.556,0.013
+carry,label_carry_20,Committed count (rule),0.791,0.037
+carry,label_carry_20,Gradient boosting,0.701,0.045
+carry,label_carry_20,Past carry share (rule),0.597,0.053
+carry,label_carry_20,Scope-only LR (baseline),0.773,0.031
+carry,label_carry_30,Committed count (rule),0.69,0.04
+carry,label_carry_30,Gradient boosting,0.644,0.027
+carry,label_carry_30,Past carry share (rule),0.646,0.024
+carry,label_carry_30,Scope-only LR (baseline),0.718,0.026
+carry,label_spillover,Committed count (rule),0.89,0.026
+carry,label_spillover,Gradient boosting,0.813,0.028
+carry,label_spillover,Past carry share (rule),0.557,0.064
+carry,label_spillover,Scope-only LR (baseline),0.883,0.036
+late,label_late_1d,Committed count (rule),0.496,0.026
+late,label_late_1d,Gradient boosting,0.689,0.058
+late,label_late_1d,Past lateness (rule),0.604,0.03
+late,label_late_1d,Scope-only LR (baseline),0.557,0.031
+late,label_late_3d,Committed count (rule),0.444,0.027
+late,label_late_3d,Gradient boosting,0.701,0.05
+late,label_late_3d,Past lateness (rule),0.62,0.017
+late,label_late_3d,Scope-only LR (baseline),0.542,0.011

@@ -1,0 +1,3 @@
+task,gb_within,gb_within_lo,gb_within_hi,rule,rule_within,gap,gap_lo,gap_hi
+late,0.631,0.531,0.689,Past lateness (rule),0.482,0.149,0.053,0.195
+carry,0.521,0.442,0.599,Past carry share (rule),0.52,0.001,-0.101,0.107

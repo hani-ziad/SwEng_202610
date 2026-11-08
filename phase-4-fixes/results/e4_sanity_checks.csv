@@ -1,0 +1,45 @@
+check,value,note
+spillover_rate_nonempty,0.931,1575 of 1691 sprints with committed work
+spillover_rate_1_to_1_issues,0.754,n=248
+spillover_rate_2_to_2_issues,0.855,n=173
+spillover_rate_3_to_3_issues,0.906,n=117
+spillover_rate_4_to_5_issues,0.962,n=238
+spillover_rate_6_to_10_issues,0.973,n=293
+spillover_rate_11_to_10000_issues,0.997,n=622
+median_carry_share_nonempty,0.75,"share of committed issues still unresolved at the planned end, median sprint"
+p3_spillover_test_n_cp0.25,507.0,29 without spillover
+p3_spillover_auc_remaining_count_cp0.25,0.925,"open committed issues at the checkpoint, no model"
+p3_spillover_auc_committed_count_cp0.25,0.881,"committed issues, no model"
+p3_late_auc_remaining_count_cp0.25,0.479,n=782; progress says nothing about late closure
+p3_spillover_test_n_cp0.5,501.0,29 without spillover
+p3_spillover_auc_remaining_count_cp0.5,0.945,"open committed issues at the checkpoint, no model"
+p3_spillover_auc_committed_count_cp0.5,0.879,"committed issues, no model"
+p3_late_auc_remaining_count_cp0.5,0.483,n=775; progress says nothing about late closure
+p3_spillover_test_n_cp0.75,492.0,29 without spillover
+p3_spillover_auc_remaining_count_cp0.75,0.954,"open committed issues at the checkpoint, no model"
+p3_spillover_auc_committed_count_cp0.75,0.88,"committed issues, no model"
+p3_late_auc_remaining_count_cp0.75,0.486,n=762; progress says nothing about late closure
+late_sprints_phase1_label,1006.0,of 2602
+late_share_within_3_days,0.4,
+late_share_end_fri_to_sun_closed_within_3_5_days,0.328,looks like closing on the next working day; dates are UTC
+late_median_days,4.02,
+closed_without_resolution_Apache Mesos,0.0,n=7089
+closed_without_resolution_Appcelerator Studio,0.0,n=5152
+closed_without_resolution_Atlassian Confluence Cloud,0.684,n=16618
+closed_without_resolution_Atlassian Confluence Server,0.005,n=36449
+closed_without_resolution_Lsstcorp Data management,0.0,n=19654
+closed_without_resolution_Mule,0.0,n=11293
+closed_without_resolution_The Titanium SDK,0.002,n=19612
+closed_without_resolution_Titanium Mobile Platform,0.0,n=2774
+closed_without_resolution_mariadb,0.008,n=10638
+closed_without_resolution_mongodb,0.0,n=16198
+external_spillover_rate_MariaDB ColumnStore,1.0,nonempty=106
+external_spillover_rate_MariaDB MaxScale,0.988,nonempty=245
+external_spillover_rate_MongoDB C Driver,0.964,nonempty=28
+external_spillover_rate_MongoDB C++ Driver,0.76,nonempty=25
+external_spillover_rate_MongoDB Compass,0.984,nonempty=125
+external_spillover_rate_MongoDB Database Tools,0.652,nonempty=23
+external_spillover_rate_MongoDB Java Driver,0.909,nonempty=22
+external_spillover_rate_MongoDB PHP Driver,0.64,nonempty=25
+external_spillover_rate_MongoDB Shell,0.7,nonempty=20
+external_spillover_rate_WiredTiger,0.99,nonempty=205
