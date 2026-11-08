@@ -1,9 +1,13 @@
 % Canadian AI 2027 - position paper, short-paper track (6 pages incl. references)
 % FORMAT: PMLR (jmlr class), matching the template CAIAC required for
 % Canadian AI 2026 (proceedings in PMLR). Swap in the official CAIAC 2027
-% template when it is posted; the page count should be nearly identical.
-% DOUBLE-BLIND: the 2026 edition used double-blind review. Before
-% submitting, replace the \author block with \author{\Name{Anonymous Authors}}.
+% template when it is posted, then recheck the page count.
+% DOUBLE-BLIND: the author block below is already anonymised. The real
+% block is kept in the comment for the camera-ready version.
+% Revision 8 Nov 2026: references corrected against publisher records,
+% own-data numbers re-checked against the result files, agreement made
+% chance-aware, cost model made fair to the model-only arm, the
+% pre-training leak and the uncited table rows dealt with.
 \documentclass[pmlr]{jmlr}
 \usepackage[T1]{fontenc}
 \usepackage{array}
@@ -11,39 +15,39 @@
 \jmlryear{2027}
 \jmlrworkshop{Canadian AI 2027}
 \title{Grounding the AI Scrum Master: Evidence Before Autonomy}
-\author{\Name{Hani AbuSharkh} \Email{habusharkh@hct.ac.ae}\\
-\addr Higher Colleges of Technology, Al Ain, UAE}
+\author{\Name{Anonymous Authors}}
+% Camera-ready:
+% \author{\Name{Hani AbuSharkh} \Email{habusharkh@hct.ac.ae}\\
+% \addr Higher Colleges of Technology, Al Ain, UAE}
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Agent systems that carry the Scrum Master label are multiplying, yet none we found has been judged against what actually happened in real sprints, while work that predicts sprint outcomes from Jira histories stops at prediction and never acts. We argue that the two should meet, and make three contributions. First, we map each Scrum Master accountability to the best published evidence and show that the label has run ahead of it: the more relational the task, the thinner the evidence. Second, we name two failure modes that bound the design space: an ungrounded agent says things the data does not support, and an over-grounded one repeats its model and adds nothing. Third, we propose sprint replay, a hindsight-free test that needs only public data: rebuild the board as it stood, run a grounded agent against a model-only arm and an agent-only arm, and report an agreement rate and a cost-weighted measure of what grounding adds. Together these give a bar any AI Scrum Master can be held to today, so the claim can be checked rather than asserted.
+Agent systems that carry the Scrum Master label are multiplying, yet none we found has been judged against what real sprints went on to do, while work that predicts sprint outcomes from Jira histories stops at prediction and never acts. We argue that the two should meet, and make three contributions. First, we map each Scrum Master accountability to the best published evidence and show that the label has run ahead of it. Second, we name two failure modes that bound the design space: an ungrounded agent says things the data does not support, and an over-grounded one repeats its model and adds nothing. Third, we propose sprint replay, a test that needs only public data: rebuild the board as it stood, run a grounded agent against a model-only arm and an agent-only arm, and report a chance-corrected agreement rate and a cost-weighted measure of what grounding adds. We also say where replay is weak, chiefly that a language model may already have read the outcomes it is asked to foresee. Together these give a bar any AI Scrum Master can be held to today.
 \end{abstract}
 
 \begin{keywords}
-LLM agents, Scrum, agile software development, sprint analytics, evaluation, grounding
+agile software development, evaluation, grounding, LLM agents, Scrum, sprint analytics
 \end{keywords}
 
 \section{Introduction}
 
-Much of what a Scrum Master does never reaches the tracker. \citet{shastri} name six everyday functions of the role: facilitating, mentoring, negotiating, adapting processes, coordinating and protecting the team. Only two leave much of a trace in Jira. The rest happen in conversation.
+Much of what a Scrum Master does never reaches the tracker. \citet{shastri} describe the role through six everyday activities: facilitating, mentoring, negotiating, adapting the process, coordinating and protecting the team. In our reading, only coordination and parts of facilitation leave a regular trace in Jira. The rest happen in conversation.
 
-Language-model agents have nonetheless started to wear the title. Since 2024, published systems have given an agent the Scrum Master role in a code-generation pipeline \citep{agilecoder}, simulated agile teams with role agents \citep{cognisim}, and turned burndown charts into status reports under the name of an AI Scrum Master \citep{alliata}.
+Language-model agents have nonetheless started to wear the title. Since 2024, published systems have given an agent the Scrum Master role in a code-generation pipeline \citep{agilecoder} and turned burndown charts into status reports under the name of an AI Scrum Master \citep{alliata}. Others simulate whole agile teams with role agents \citep{cognisim}.
 
-Our position is that the label has run ahead of the evidence, and that a specific, affordable test can bring it back into line. The test is sprint replay: rebuild a project's board as it stood at a chosen moment, give the agent only what was knowable then, let it decide whether and what to say, and score that against what the sprint went on to do. No partner organisation or live team is needed. What is needed is a sensing layer the agent can cite, and the discipline to report how often the agent merely repeats it.
-
-We argue that the label mostly arrives without the job (Section~\ref{sec:gap}), that two documented failure modes bound what a credible system must avoid (Section~\ref{sec:fail}), and that hindsight-free replay is strict enough to separate judgement from repetition and cheap enough to apply now (Sections~\ref{sec:ground} and~\ref{sec:replay}).
+Our position is that the label has run ahead of the evidence, and that an affordable test can bring it back into line. In sprint replay, a project's board is rebuilt as it stood at a chosen moment, the agent sees only what was knowable then and decides whether and what to say, and that is scored against what the sprint went on to do. No partner organisation or live team is needed, only a risk model the agent can cite and the discipline to report how often the agent merely repeats it. Sections~\ref{sec:gap} to~\ref{sec:replay} make this case.
 
 \section{The label and the evidence}
 \label{sec:gap}
 
-Systems that use Scrum roles fall into three families. The first organises code generation: AgileCoder's Scrum Master agent reviews a backlog, picks sprint tasks and judges deliverability, and is scored on code benchmarks alone \citep{agilecoder}. The role supplies a vocabulary, not a set of responsibilities. The second simulates agile teams; CogniSim models scaled-agile roles with language-model agents but has no Scrum Master agent at all, and its own future work asks for predictive analytics for delays \citep{cognisim}. The third targets the role directly, and here the evidence is real but small. An action-research study put assistants into daily Scrums and refinement for three teams at a large organisation: about a third of early refinement outputs were wrong because the input data was stale, and participants asked that it inform rather than warn \citep{cabrero}. Another study prompts models to write status reports from burndown charts and scores the text with similarity metrics, with no agent and no prediction \citep{alliata}.
+Systems that use Scrum roles fall into three families. The first organises code generation. AgileCoder's Scrum Master agent reviews a backlog, picks sprint tasks and judges deliverability, and is scored on code benchmarks alone \citep{agilecoder}, so the role supplies a vocabulary, not responsibilities. The second simulates agile teams; CogniSim models scaled-agile roles with language-model agents but has no Scrum Master agent at all, and its own future work asks for predictive analytics for delays \citep{cognisim}. The third targets the role directly, and here the evidence is real but small. An action-research study put assistants into daily Scrums and refinement for three teams at a large organisation. About a third of early refinement outputs were wrong because the input data was stale, and participants asked that it inform rather than warn \citep{cabrero}. Another study prompts models to write status reports from burndown charts and scores the text with similarity metrics, with no agent and no prediction \citep{alliata}.
 
-Software management accounts for under one percent of language-model usages in a review of 395 software-engineering papers \citep{hou}, and a review of Scrum-specific work finds no applications in the implementation or review-and-retrospect phases \citep{peras}. Table~\ref{tab:gap} sets the role's accountabilities against the best evidence we found.
+Software management accounts for under one percent of language-model usages in a review of 395 software-engineering papers \citep{hou}, and a review of AI in Scrum finds no applications in the implementation or review-and-retrospect phases \citep{peras}. Table~\ref{tab:gap} sets the role's accountabilities against the best evidence we found.
 
 \begin{table}[t]
 \centering\footnotesize
-\caption{Scrum Master accountabilities against the best evidence we found. Rows without a citation reflect absences reported by the reviews discussed in the text.}
+\caption{Scrum Master accountabilities against the best evidence we found. Rows without a citation report the outcome of our own search.}
 \label{tab:gap}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.34\linewidth} l >{\raggedright\arraybackslash}p{0.34\linewidth}}
 \hline
@@ -53,46 +57,46 @@ Effort and story-point estimation & Well covered & Real data, many projects \cit
 Delivery-risk prediction at planning & Moderate & Real Jira histories \citep{tse2018,sprint2vec}\\
 In-sprint monitoring & Thin & Checkpoint prediction, no agent \citep{tse2018}\\
 Daily Scrum facilitation & Thin & One field site, three teams \citep{cabrero}\\
-Impediment detection and removal & Thin to empty & Detection only; no removal studies\\
+Impediment removal & Empty & No study found that removes one\\
 Review and stakeholder reporting & Near empty & Text-similarity scoring \citep{alliata}\\
-Retrospectives, coaching, team health & Near empty & Small author-labelled studies\\
-End-to-end agent in the role & Label only & Code benchmarks and demos \citep{agilecoder}\\
+Retrospectives, coaching, team health & Empty & None in the review-and-retrospect phase \citep{peras}\\
+End-to-end agent in the role & Label only & Code benchmarks \citep{agilecoder}\\
 \hline
 \end{tabular}
 \end{table}
 
-Three patterns follow. The more relational the task, the thinner the evidence: of the six functions \citet{shastri} identify, only facilitation and coordination have any. Evaluation habits are weak, with small samples, single runs and author-labelled ground truth, and where run-to-run stability has been measured it is poor \citep{yoon}. And the data is lopsided. Public sprint histories are plentiful, with one dataset holding thousands of sprints and millions of change-log entries \citep{tawos}, while public transcripts of stand-ups, reviews and retrospectives are, as far as we can tell, absent. The half of the role a tracker records is therefore the half in which an agent can be held to account today.
+Three patterns follow. The more relational the task, the thinner the evidence. Of the six activities \citet{shastri} name, only facilitation has a field study, and coordination is covered by prediction work that never acts. Evaluation habits are weak, with small samples, single runs and author-labelled ground truth, and run-to-run stability, where measured, is poor \citep{yoon}. And the data is lopsided. One public dataset holds thousands of sprints and millions of change-log entries \citep{tawos}, while public transcripts of stand-ups, reviews and retrospectives are, as far as we can tell, absent. The half of the role a tracker records is the half in which an agent can be held to account today.
 
 \section{Two ways to fail}
 \label{sec:fail}
 
-\paragraph{Ungrounded.} Asked certification-style Scrum questions, current models recall well and interpret poorly; in one evaluation at least one prompt failed on roughly a sixth of the items, with errors clustering on interpretive topics \citep{psm}. Generated sprint plans were judged unfit for direct use, with priority accuracy swinging from 44 to 92 percent across runs \citep{yoon}. In mission-critical risk analysis, retrieval-grounded models had the lowest hallucination rates \citep{esem24}. In this role the characteristic failure is a confident wrong statement, and the characteristic fix is grounding.
+\paragraph{Ungrounded.} On 993 certification-style Scrum questions, one current model answered over 85\% correctly, yet at least one of three prompts failed on 16\% of the items, and multi-select questions and interpretive topics were the least stable \citep{psm}. Generated sprint plans were judged unfit for direct use, with priority accuracy swinging from 44 to 92 percent across runs \citep{yoon}. In mission-critical risk analysis, retrieval-grounded models had the lowest hallucination rates \citep{esem24}. In this role the characteristic failure is a confident wrong statement, and the usual fix is grounding.
 
-\paragraph{Over-grounded.} The opposite failure is less discussed and, for research, more dangerous. Given a predictive model as a tool, agents tend to copy it: in one study they reproduced a graph model's output on 97.6 to 99.2 percent of cases, and stronger backbones deferred more, not less \citep{tool}. An agent that repeats its model is the model with added latency. Any claim of an agent in this role should therefore report its agreement with the raw model and include a model-only arm.
+\paragraph{Over-grounded.} The opposite failure is less discussed and, for research, more dangerous. Given a predictive model as a tool, agents tend to copy it. In one study they reproduced a graph model's output on 97.6 to 99.2 percent of cases, and stronger backbones deferred more, not less \citep{tool}. An agent that repeats its model is the model with added latency. Any claim of an agent in this role should therefore report its agreement with the raw model and include a model-only arm.
 
-Neither failure is particular to Scrum. Agents are being placed over classical predictive models in clinical triage, credit decisions and operations, and the same two questions arise each time: when should the agent believe the model, and when is acting on it worth the cost? Sprints are an unusually good place to study both, because outcomes are public, time-stamped, and free of hindsight once the board is rebuilt.
+Neither failure is particular to Scrum. Agents are being placed over classical predictive models in clinical triage, credit decisions and operations, and the same two questions arise each time. When should the agent believe the model, and when is acting on it worth the cost? Sprints are a good place to study both, because outcomes are public and time-stamped.
 
 \section{What grounding means here}
 \label{sec:ground}
 
-Grounding means that the agent's statements about risk trace back to models fitted on real sprint histories, under an evaluation that does not leak the future. Some sprint-outcome studies report accuracies near or above 0.9 using features visible only once the sprint is under way \citep{perez}, or after resampling with no stated split order \citep{obike}, and leakage taxonomies now list software engineering among the affected fields \citep{leakage}. A stricter pipeline produces lower numbers, and the lower numbers are the trustworthy ones. In one study on public Jira data, shuffling sprints before splitting raised late-closure AUC from 0.70 to 0.77. An agent that cites an inflated model inherits the inflation and adds a confident voice to it.
+Grounding means that the agent's statements about risk trace back to models fitted on real sprint histories, under an evaluation that does not leak the future. Some sprint-outcome studies report accuracies near or above 0.9 using features visible only once the sprint is under way \citep{perez}, or after resampling with no stated split order \citep{obike}, and leakage taxonomies now list software engineering among the affected fields \citep{leakage}. Both mistakes are easy to reproduce. In our own reanalysis of public Jira data,\footnote{Code and result files will be released after review.} oversampling the whole pool before splitting doubled late-closure PR-AUC (area under the precision-recall curve) from 0.36 to 0.68, and adding a sprint's own completion ratio lifted the AUC for unfinished work from 0.83 to 1.00. An agent that cites an inflated model inherits the inflation and adds a confident voice to it.
 
 Grounding also limits what the agent may suggest. In defect prediction, guidance derived from explanation methods often fails to fix what it predicts and differs from what developers actually change \citep{saner}, while restricting suggestions to changes with historical precedent brings them much closer to real practice \citep{counteract}. Carried into sprints, an agent should not propose cutting scope merely because the model's expectation falls; it should propose changes that comparable teams actually made.
 
-What is left for the agent is narrower than the label and more interesting than the model: reading the issue text the tabular model never sees, deciding whether a situation is worth raising, choosing the moment, and wording it so that a team can act without feeling audited. Each of these is measurable.
+What is left for the agent is narrower than the label and more interesting than the model. It can read the issue text the tabular model never sees, decide whether a situation is worth raising, choose the moment, and word it so that a team can act without feeling audited. Only the middle two enter the cost measure below; the others need human raters.
 
 \section{Sprint replay as the bar}
 \label{sec:replay}
 
-\paragraph{Construction.} Public datasets record field-level changes with timestamps \citep{tawos}, which is enough to rebuild a board as it stood at any point in a sprint. For sprint $s$ and checkpoint $c \in \{0, 0.25, 0.5, 0.75\}$ of the planned duration, let $B_{s,c}$ be the board rebuilt from events time-stamped no later than that point. Every arm sees $B_{s,c}$ and nothing later.
+\paragraph{Construction.} Public datasets record field-level changes with timestamps \citep{tawos}, which is enough to rebuild a board as it stood at any point in a sprint. For sprint $s$ and checkpoint $c \in \{0, 0.25, 0.5, 0.75\}$ of the planned duration, let $B_{s,c}$ be the board rebuilt from events time-stamped no later than that point. Every arm sees $B_{s,c}$ and nothing later. This removes hindsight from the inputs, not from the weights: a language model may have read the tracker during pre-training. Replay should therefore favour sprints that closed after the model's training cutoff, or at least check whether the $L$ arm can recall outcomes from sprint names alone.
 
-\paragraph{Arms.} Three at minimum: the risk model alone ($M$), the language-model agent without the model ($L$), and the grounded agent ($G$). Without $M$, no one can tell whether the agent added anything; without $L$, no one can tell whether grounding did. At each replay point, arm $a$ emits a decision $d_a(s,c) \in \{\textit{warn}, \textit{silent}\}$ and, for $L$ and $G$, the message it would send.
+\paragraph{Arms.} At minimum, the risk model alone ($M$), the language-model agent without the model ($L$), and the grounded agent ($G$). Without $M$, no one can tell whether the agent added anything; without $L$, no one can tell whether grounding did. At each replay point, arm $a$ emits a decision $d_a(s,c) \in \{\textit{warn}, \textit{silent}\}$ and, for $L$ and $G$, the message it would send.
 
 \paragraph{Agreement.} Over the set $P$ of replay points,
 \[
 A = \frac{1}{|P|} \sum_{(s,c) \in P} \mathbf{1}\big[d_G(s,c) = d_M(s,c)\big],
 \]
-reported as a first-class result, not a footnote.
+reported as a main result. Raw agreement flatters an agent whenever one decision dominates, since two arms that rarely warn agree on most points by chance. $A$ should come with its chance-corrected form (Cohen's coefficient) and with both overrule rates, silent where $M$ warns and warning where $M$ is silent, each with how often the overrule was right.
 
 \paragraph{Added value.} We borrow the cost structure of alarm-based prescriptive process monitoring \citep{alarm}. A warning costs $\kappa$, a failed sprint costs $F$, and a warning raised at checkpoint $c$ averts a fraction $e(c)$ of that cost, with $e$ falling as the sprint proceeds. Let $y_s = 1$ if sprint $s$ failed, $w_a(s) = 1$ if arm $a$ warned at any checkpoint, and $c^{*}_a(s)$ the first checkpoint at which it did. Then
 \[
@@ -100,40 +104,40 @@ C_a(s) = \kappa\, w_a(s) + F\, y_s \big(1 - e(c^{*}_a(s))\, w_a(s)\big),
 \qquad
 \Delta = \min\big(\bar{C}_M, \bar{C}_L\big) - \bar{C}_G ,
 \]
-where $\bar{C}_a$ is the mean of $C_a(s)$ over sprints. A positive $\Delta$ means the grounded agent beats the better of the two baselines. Because $\kappa/F$ and $e$ differ between teams, $\Delta$ is reported as a curve over the cost ratio rather than as one number. Read together, a high $A$ with $\Delta \approx 0$ says the agent is the model, while $\Delta > 0$ with $A$ well below one is evidence of judgement.
+where $\bar{C}_a$ is the mean of $C_a(s)$ over sprints. A positive $\Delta$ means the grounded agent beats the better of the two baselines. Three cautions keep $\Delta$ honest. Replay cannot observe $e$, so $e$ is an assumption and $\Delta$ is reported as a curve over $\kappa/F$ for several shapes of $e$. The model-only arm must use the threshold that minimises cost at each $\kappa/F$, chosen on training sprints; otherwise $\Delta$ rewards the agent for a threshold mismatch rather than judgement. And $C_a$ charges only the first warning, so an arm that warns at every checkpoint pays no more than one that warns once; warnings per sprint are reported beside $\Delta$. Read together, a high chance-corrected $A$ with $\Delta \approx 0$ says the agent is the model, while $\Delta > 0$ with $A$ well below one is evidence of judgement.
 
-\paragraph{Reliability and calibration.} Language-model arms are rerun and their variance reported, and any probability an arm states is checked for calibration, and so are alarm thresholds: in that study, one threshold caught 11\% to 86\% of late sprints on ten new projects.
+\paragraph{Reliability and calibration.} Language-model arms are rerun and their variance reported, and any probability an arm states is checked for calibration. So are alarm thresholds: in our reanalysis, one fixed threshold caught between 11\% and 86\% of late sprints across the eight outside projects where it could be measured.
 
-\paragraph{What replay cannot do.} Replay measures what an agent would have said, not whether saying it would have changed the sprint. The one controlled study of language-model facilitation found it drew out more information, mostly from quieter participants, but not better decisions \citep{alsobay}. Replay is a filter, not a verdict: a system that fails it should not reach a team, and one that passes has earned a study, not a deployment.
+\paragraph{What replay cannot do.} Replay measures what an agent would have said, not whether saying it would have changed the sprint. The one controlled study of language-model facilitation found it drew out more information, mostly from quieter participants, but not better decisions \citep{alsobay}. A system that fails replay should not reach a team, and one that passes has earned a study, not a deployment.
 
 \section{Limits}
 
-Public sprint data is open-source, and enterprise teams may behave differently. Models may have seen public tracker data in pre-training, which is one more reason for the $L$ arm and for replication outside software. The relational half of the role stays out of reach while no public ceremony corpus exists. Finally, autonomy: developers keep planning and management work at low autonomy levels \citep{choudhuri}, and the one field study in this role reports participants asking to be informed rather than warned \citep{cabrero}. An agent built to inform is easier to accept, and to evaluate honestly, than one built to decide.
+Public sprint data is open-source, and enterprise teams may behave differently. The pre-training leak can be reduced but not ruled out for older public data. The relational half of the role stays out of reach while no public ceremony corpus exists. And developers keep planning and management work at low autonomy levels \citep{choudhuri}, while the one field study in this role reports participants asking to be informed rather than warned \citep{cabrero}. An agent built to inform is easier to accept, and to evaluate honestly, than one built to decide.
 
 \section{Conclusion}
 
-The AI Scrum Master exists as a label and a few pilots, not yet as a system whose judgement has been measured against real sprints, while sprint-prediction work senses without acting. The join can be tested cheaply: replay real sprints, ground the agent in models whose evaluation does not leak the future, and report both how often the agent repeated its model and what it added when it did not.
+The AI Scrum Master exists as a label and a few pilots, not as a system whose judgement has been measured against real sprints. Replay can measure it cheaply, provided the agent's model does not leak the future and the report says how often the agent only repeated it.
 
 \begin{thebibliography}{23}
-\bibitem[Alliata et al.(2024)]{alliata} G. Alliata, A. Singhal, and R. Bozagiu. The AI scrum master. In \emph{Agile Processes in Software Engineering and Extreme Programming: Workshops (XP 2024)}, LNBIP 524. Springer, 2024.
+\bibitem[Alliata et al.(2025)]{alliata} Z. Alliata, T. Singhal, and A.-M. Bozagiu. The AI scrum master: using large language models (LLMs) to automate agile project management tasks. In \emph{Agile Processes in Software Engineering and Extreme Programming -- Workshops (XP 2024)}, LNBIP 524, pages 110--122. Springer, 2025.
 \bibitem[Alsobay et al.(2025)]{alsobay} M. Alsobay, D. M. Rothschild, J. M. Hofman, and D. G. Goldstein. Bringing everyone to the table: an experimental study of LLM-facilitated group decision making. arXiv:2508.08242, 2025. Preprint.
-\bibitem[Cabrero-Daniel et al.(2024)]{cabrero} B. Cabrero-Daniel et al. Exploring human-AI collaboration in agile: customised LLM meeting assistants. In \emph{Agile Processes in Software Engineering and Extreme Programming (XP 2024)}, LNBIP. Springer, 2024.
+\bibitem[Cabrero-Daniel et al.(2024)]{cabrero} B. Cabrero-Daniel, T. Herda, V. Pichler, and M. Eder. Exploring human-AI collaboration in agile: customised LLM meeting assistants. In \emph{Agile Processes in Software Engineering and Extreme Programming (XP 2024)}, LNBIP 512, pages 163--178. Springer, 2024.
 \bibitem[Choetkiertikul et al.(2018)]{tse2018} M. Choetkiertikul, H. K. Dam, T. Tran, A. Ghose, and J. Grundy. Predicting delivery capability in iterative software development. \emph{IEEE Transactions on Software Engineering}, 44(6):551--573, 2018.
 \bibitem[Choetkiertikul et al.(2019)]{deepse} M. Choetkiertikul, H. K. Dam, T. Tran, T. Pham, A. Ghose, and T. Menzies. A deep learning model for estimating story points. \emph{IEEE Transactions on Software Engineering}, 45(7):637--656, 2019.
 \bibitem[Choetkiertikul et al.(2025)]{sprint2vec} M. Choetkiertikul, P. Banyongrakkul, C. Ragkhitwetsagul, S. Tuarob, H. K. Dam, and T. Sunetnanta. Sprint2Vec: a deep characterization of sprints in iterative software development. \emph{IEEE Transactions on Software Engineering}, 51(1):220--242, 2025.
 \bibitem[Choudhuri et al.(2026)]{choudhuri} R. Choudhuri, C. Bird, C. Badea, M. Gerosa, and A. Sarma. You shall not pass! Where and why developers draw the line on AI autonomy. arXiv:2607.00533, 2026. Preprint.
-\bibitem[Cinkusz and Chudziak(2025)]{cognisim} K. Cinkusz and J. A. Chudziak. Agile software management with cognitive multi-agent systems. In \emph{Proceedings of the 17th International Conference on Agents and Artificial Intelligence (ICAART)}, 2025.
+\bibitem[Cinkusz and Chudziak(2025)]{cognisim} K. Cinkusz and J. A. Chudziak. Agile software management with cognitive multi-agent systems. In \emph{Proceedings of the 17th International Conference on Agents and Artificial Intelligence (ICAART)}, pages 385--392, 2025.
 \bibitem[Esposito et al.(2024)]{esem24} M. Esposito, F. Palagiano, V. Lenarduzzi, and D. Taibi. Beyond words: on large language models actionability in mission-critical risk analysis. In \emph{Proceedings of the 18th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM)}, 2024.
 \bibitem[Fahrenkrog-Petersen et al.(2022)]{alarm} S. A. Fahrenkrog-Petersen, N. Tax, I. Teinemaa, M. Dumas, M. de Leoni, F. M. Maggi, and M. Weidlich. Fire now, fire later: alarm-based systems for prescriptive process monitoring. \emph{Knowledge and Information Systems}, 64(2):559--587, 2022.
-\bibitem[Hou et al.(2024)]{hou} X. Hou et al. Large language models for software engineering: a systematic literature review. \emph{ACM Transactions on Software Engineering and Methodology}, 33(8), 2024.
+\bibitem[Hou et al.(2024)]{hou} X. Hou, Y. Zhao, Y. Liu, Z. Yang, K. Wang, L. Li, X. Luo, D. Lo, J. Grundy, and H. Wang. Large language models for software engineering: a systematic literature review. \emph{ACM Transactions on Software Engineering and Methodology}, 33(8):220, 2024.
 \bibitem[Kapoor and Narayanan(2023)]{leakage} S. Kapoor and A. Narayanan. Leakage and the reproducibility crisis in machine-learning-based science. \emph{Patterns}, 4(9):100804, 2023.
-\bibitem[Lee and Lee(2025)]{saner} G. Lee and S. U.-J. Lee. Can we trust the actionable guidance from explainable AI techniques in defect prediction? In \emph{Proceedings of the IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)}, 2025.
-\bibitem[Nguyen et al.(2025)]{agilecoder} M. H. Nguyen, T. P. Chau, P. X. Nguyen, and N. D. Q. Bui. AgileCoder: dynamic collaborative agents for software development based on agile methodology. In \emph{Proceedings of the IEEE/ACM International Conference on AI Foundation Models and Software Engineering (FORGE)}, 2025.
+\bibitem[Lee et al.(2025)]{saner} G. Lee, H. Ju, and S. U.-J. Lee. Can we trust the actionable guidance from explainable AI techniques in defect prediction? In \emph{Proceedings of the IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)}, 2025.
+\bibitem[Nguyen et al.(2025)]{agilecoder} M. H. Nguyen, T. P. Chau, P. X. Nguyen, and N. D. Q. Bui. AgileCoder: dynamic collaborative agents for software development based on agile methodology. In \emph{Proceedings of the 2nd International Conference on AI Foundation Models and Software Engineering (FORGE)}, 2025.
 \bibitem[Obike et al.(2025)]{obike} P. G. Obike, V. E. Ekong, and O. U. Obot. A novel scoring-based Agile sprint deliverability prediction and prioritization using machine learning. \emph{International Journal of Computer Applications}, 187(49):40--53, 2025.
 \bibitem[Oueslati et al.(2024)]{counteract} K. Oueslati, G. Laberge, M. Lamothe, and F. Khomh. Mining action rules for defect reduction planning. In \emph{Proceedings of the ACM International Conference on the Foundations of Software Engineering (FSE)}, 2024.
-\bibitem[Peras et al.(2026)]{peras} D. Peras et al. Artificial intelligence in Scrum: a systematic literature review. \emph{Informatica}, 2026.
+\bibitem[Peras et al.(2026)]{peras} D. Peras, L. de-Marcos, and Z. Stapi\'c. AI-enhanced Scrum: a literature review on the impact of artificial intelligence on Scrum processes. \emph{Informatica}, 50(12), 2026.
 \bibitem[P\'erez Castillo et al.(2024)]{perez} Y. J. P\'erez Castillo, S. D. Orantes Jim\'enez, and P. O. Letelier Torres. Sprint management in Agile approach: progress and velocity evaluation applying machine learning. \emph{Information}, 15(11):726, 2024.
-\bibitem[Perkusich et al.(2026)]{psm} M. Perkusich et al. Evaluating large language models on professional scrum master assessments. arXiv:2607.00049, 2026. Preprint.
+\bibitem[Perkusich et al.(2026)]{psm} M. Perkusich, D. Albuquerque, J. Paiva, R. Vilar, E. Dantas, A. F. de Sousa Neto, R. Gheyi, K. Gorg\^onio, and A. Perkusich. Prompting GPT-5 on Scrum certification questions: an empirical accuracy study. arXiv:2607.00049, 2026. Preprint.
 \bibitem[Shastri et al.(2021)]{shastri} Y. Shastri, R. Hoda, and R. Amor. Spearheading agile: the role of the scrum master in agile projects. \emph{Empirical Software Engineering}, 26(1):3, 2021.
 \bibitem[Tawosi et al.(2022)]{tawos} V. Tawosi, A. Al-Subaihin, R. Moussa, and F. Sarro. A versatile dataset of agile open source software projects. In \emph{Proceedings of the 19th International Conference on Mining Software Repositories (MSR)}, pages 707--711, 2022.
 \bibitem[Wang and Vemuri(2026)]{tool} Z. Wang and P. Vemuri. When the tool decides: LLM agents defer blindly to graph neural network tools, and stronger backbones defer more. arXiv:2606.14476, 2026. Preprint.
