@@ -1,0 +1,19 @@
+check,value,note
+commitments_in_modelled_sprints,20579.0,
+commitments_all_sprints_incl_cold_start,20603.0,
+distinct_committed_issues,11624.0,
+share_commitments_that_are_repeats,0.435,issue already committed to an earlier modelled sprint
+share_issues_committed_more_than_once,0.349,
+no_resolution_date_share_Apache Mesos,0.122,
+no_resolution_date_share_Appcelerator Studio,0.156,
+no_resolution_date_share_Atlassian Confluence Cloud,0.507,
+no_resolution_date_share_Atlassian Confluence Server,0.094,
+no_resolution_date_share_Lsstcorp Data management,0.12,
+no_resolution_date_share_Mule,0.03,
+no_resolution_date_share_The Titanium SDK,0.122,
+no_resolution_date_share_Titanium Mobile Platform,0.056,
+no_resolution_date_share_all,0.119,
+lopo_LR_strict_timed_minus_legacy,-0.023,"CI -0.074,0.023"
+lopo_LR_legacy_plus_late_minus_legacy,0.103,"CI 0.050,0.180"
+lopo_RF_strict_timed_minus_legacy,-0.039,"CI -0.053,-0.007"
+lopo_RF_legacy_plus_late_minus_legacy,0.081,"CI 0.004,0.157"

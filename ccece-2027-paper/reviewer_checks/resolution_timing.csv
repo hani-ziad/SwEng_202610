@@ -1,0 +1,15 @@
+check,value
+commitments,20579
+share_completed_by_end_flag,0.324
+share_no_resolution_date,0.119
+share_resolved_by_planned_end,0.368
+share_resolved_within_1_day_after_end,0.019
+share_resolved_by_actual_closure,0.397
+share_resolved_more_than_30d_after_end,0.392
+median_lag_days_resolved_after_end,52.7
+sprints,1691
+spill_rate_planned_end,0.931
+spill_rate_by_actual_closure,0.92
+share_sprints_nothing_done_by_end,0.301
+share_sprints_nothing_done_by_closure,0.289
+unresolved_status_top,To Do=812; Open=511; In Progress=308; Closed=301

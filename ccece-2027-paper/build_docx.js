@@ -8,7 +8,7 @@ const {
 } = require("docx");
 
 const [, , inFile, outFile] = process.argv;
-const { blocks } = JSON.parse(fs.readFileSync(inFile, "utf8"));
+const { blocks, title: TITLE } = JSON.parse(fs.readFileSync(inFile, "utf8"));
 const dir = path.dirname(inFile);
 const FONT = "Times New Roman";
 const IN = 1440;
@@ -41,7 +41,7 @@ function tableBlock(b) {
   const align = b.align.replace(/[^lcr]/g, "");
   const size = b.wide ? 14 : 14;
   const rows = b.rows.map((row, i) => new TableRow({
-    tableHeader: i === 0,
+    tableHeader: i === 0, cantSplit: true,
     children: row.map((c, j) => new TableCell({
       width: { size: widths[j], type: WidthType.DXA },
       verticalAlign: VerticalAlign.CENTER,
@@ -53,7 +53,7 @@ function tableBlock(b) {
       },
       children: [new Paragraph({
         alignment: align[j] === "r" ? AlignmentType.RIGHT : align[j] === "c" ? AlignmentType.CENTER : AlignmentType.LEFT,
-        spacing: { before: 0, after: 0 },
+        spacing: { before: 0, after: 0 }, keepNext: i < b.rows.length - 1, keepLines: true,
         children: runs(c, size, i === 0 ? { bold: true } : {}),
       })],
     })),
@@ -84,7 +84,7 @@ function figureBlock(b) {
 // ---- title section (one column) ----
 const title = [
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 200 },
-    children: [new TextRun({ text: "Reconstructing Sprint-Start Jira State for Leakage-Aware Outcome Prediction", font: FONT, size: 48 })] }),
+    children: [new TextRun({ text: TITLE, font: FONT, size: 48 })] }),
 ];
 const authors = [
   ["Hani AbuSharkh", "Higher Colleges of Technology", "Al Ain, UAE", "habusharkh@hct.ac.ae"],
@@ -152,7 +152,7 @@ for (const b of blocks) {
 flush(true);
 
 const doc = new Document({
-  creator: "Hani AbuSharkh", title: "Reconstructing Sprint-Start Jira State for Leakage-Aware Outcome Prediction",
+  creator: "Hani AbuSharkh", title: TITLE,
   styles: { default: { document: { run: { font: FONT, size: 20 } } } },
   sections,
 });

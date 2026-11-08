@@ -12,6 +12,7 @@ Position paper for IEEE CCECE 2027, with a small pilot of the sprint-replay test
 | `pilot/score.py` | Scores the three arms: agreement, AUC, sensitivity, specificity, F1, cost curve, bootstrap intervals. |
 | `pilot/rule_baseline.py` | Added 8 Nov 2026. Cohen's kappa, a past-lateness rule, and how often each arm changed its call between checkpoints. |
 | `pilot/results/` | Every number in the paper's pilot section. |
+| `guide/` | `Rebuild_Manual.docx` (every step to rebuild the pilot by hand) and `Plain_Explanation.docx` (the paper in plain words). |
 
 ## The pilot in short
 
@@ -34,6 +35,8 @@ Main results:
 | Cost, G vs M | no detectable difference at any warning price (gap at most 0.02 F) |
 | Cost, Delta at kappa/F = 0.5 | -0.086 F [-0.161, -0.019] (L is cheaper) |
 | Warnings that say "close on the date, carry work over" | 16 of 81 (8 per arm), coded by hand in `results/warning_messages_coded.csv`. This is what the Scrum Guide asks for, so it shows the late-closure label rewards timebox discipline, not delivery. |
+
+What the companion audit adds (8 Nov 2026, from `ccece-2027-paper`): the model arm's 0.751 is pooled over projects and falls to 0.634 within a project; the recent late rate behind the past-lateness rule ranks a project's own sprints at chance (0.51); 40% of late closures are one to three days late, and sprints planned to end on a Friday or weekend close late 57% of the time against 28% otherwise. That backs the paper's point that late closure measures timebox discipline. A yes-or-no spillover label is no fix, since counting committed issues alone ranks it at 0.88, so the next replay should score the share of committed work left unfinished. The paper now says all of this, and it no longer cites the shuffled-split gap (0.70 to 0.77), which mixes leakage with drift; it cites the two leakage case studies instead.
 
 What the pilot cannot show: it is one run of one model with one prompt on 40 sprints, the boards have no issue text (the TAWOS extract has no titles), the numbers the agents quote were not checked against the boards (so the ungrounded failure is not tested), and the effect of a warning e(c) is assumed.
 

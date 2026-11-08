@@ -1,0 +1,28 @@
+check,value,note
+th1_late_rate_all,0.387,
+th1_test_pos,246,
+th1_gb_pooled,0.751,
+th1_project_rate,0.64,
+th1_gb_within_mean,0.634,8 projects
+th1_gb_within_ci,"0.570,0.695",sprint bootstrap within projects
+test_late_positives_by_project,Apache Mesos=6; Appcelerator Studio=11; Atlassian Confluence Cloud=63; Atlassian Confluence Server=36; Lsstcorp Data management=77; Mule=16; The Titanium SDK=30; Titanium Mobile Platform=7,
+th3_late_rate_all,0.232,
+th3_test_pos,143,
+th3_gb_pooled,0.727,
+th3_project_rate,0.705,
+th3_gb_within_mean,0.623,8 projects
+th7_late_rate_all,0.135,
+th7_test_pos,87,
+th7_gb_pooled,0.638,
+th7_project_rate,0.623,
+th7_gb_within_mean,0.502,7 projects
+late_sprints_1_to_3_days_share,0.4,
+late_days_median_among_late,4.0,
+planned_end_friday_share,0.184,
+planned_end_weekend_share,0.191,
+late_rate_end_fri_or_weekend,0.569,
+late_rate_end_mon_to_thu,0.277,
+train_labels_known_after_test_start,29,of 1816
+sprint_length_under_1_day,3,
+sprint_length_over_60_days,6,
+repeat_window_late_rates,0.47; 0.32; 0.27; 0.32; 0.33,

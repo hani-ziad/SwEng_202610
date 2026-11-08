@@ -43,6 +43,7 @@ What it shows:
 - **Part of the time-ordered drop is just less training data.** The time-ordered repeats train on 40% up to 80% of each project's history, and AUC climbs with it: .62, .66, .71, .75, .74. With 70% or more, it matches the paper's .751.
 - **Spillover holds up under every scheme** (.81 to .84), and the scope-only baseline roughly matches the learned models, as in the paper. Spillover is mostly about how much was committed.
 - **Use the time-ordered numbers as the headline,** and the shuffled ones as the optimistic comparison the professor asked for.
+- **Not all of the shuffled gap is leakage** (added 8 Nov 2026). The late rate of the five time-ordered test windows runs from 27% to 47%, so part of the gap fits drift over time. All of these AUCs are also pooled over projects. Within a single project, gradient boosting on the 70% split scores 0.634, against 0.751 pooled (`ccece-2027-paper/reviewer_checks/`).
 
 ## Experiment 2: ROC curves with uncertainty
 

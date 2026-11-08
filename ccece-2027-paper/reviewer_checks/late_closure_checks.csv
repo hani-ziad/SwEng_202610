@@ -1,0 +1,45 @@
+check,value,note
+all_test_n,786,
+all_test_late,246,
+all_pooled_auc_gb,0.751,
+all_pooled_auc_rf,0.71,
+all_pooled_auc_proj_rate,0.64,
+all_pooled_auc_rule_late_rate,0.635,
+all_pooled_auc_rule_late_days,0.611,
+all_pooled_auc_lr_late_proj,0.665,
+all_pooled_auc_count,0.471,
+all_within_mean_auc_gb,0.634,min 0.409 max 0.828 over 8 projects
+all_within_gb_Apache Mesos,0.634,
+all_within_gb_Appcelerator Studio,0.627,
+all_within_gb_Atlassian Confluence Cloud,0.828,
+all_within_gb_Atlassian Confluence Server,0.568,
+all_within_gb_Lsstcorp Data management,0.753,
+all_within_gb_Mule,0.689,
+all_within_gb_The Titanium SDK,0.565,
+all_within_gb_Titanium Mobile Platform,0.409,
+all_within_mean_auc_rf,0.603,min 0.469 max 0.737 over 8 projects
+all_within_mean_auc_rule_late_rate,0.51,min 0.396 max 0.626 over 8 projects
+all_within_mean_auc_rule_late_days,0.502,min 0.332 max 0.703 over 8 projects
+all_within_mean_auc_count,0.422,min 0.322 max 0.591 over 8 projects
+all_projects_gb_beats_late_rate_rule_within,7,of 8
+all_projects_gb_within_above_half,7,of 8
+all_pooled_gb_minus_late_rate_rule_ci,"0.061,0.192",
+all_test_spill_pos,453,
+all_test_spill_auc_nonempty_flag,0.956,
+all_test_spill_auc_committed_count,0.989,
+nonempty_test_n,511,
+nonempty_test_late,149,
+nonempty_pooled_auc_gb,0.713,
+nonempty_pooled_auc_rf,0.693,
+nonempty_pooled_auc_proj_rate,0.614,
+nonempty_pooled_auc_rule_late_rate,0.611,
+nonempty_pooled_auc_rule_late_days,0.589,
+nonempty_pooled_auc_lr_late_proj,0.648,
+nonempty_pooled_auc_count,0.568,
+nonempty_within_mean_auc_gb,0.586,min 0.293 max 0.835 over 8 projects
+nonempty_within_mean_auc_rf,0.559,min 0.369 max 0.827 over 8 projects
+nonempty_within_mean_auc_rule_late_rate,0.515,min 0.386 max 0.777 over 8 projects
+nonempty_within_mean_auc_rule_late_days,0.525,min 0.319 max 0.853 over 8 projects
+nonempty_within_mean_auc_count,0.473,min 0.320 max 0.610 over 8 projects
+rf_late_time_auc_seed_mean_sd,"0.711,0.003",10 seeds
+gb_late_time_auc_seed_range,"0.7514,0.7514",3 seeds

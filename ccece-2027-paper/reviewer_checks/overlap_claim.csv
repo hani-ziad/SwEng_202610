@@ -1,0 +1,5 @@
+check,value
+modelled_sprints_with_predecessor,2602.0
+share_prev_planned_end_after_start,0.713
+share_prev_closed_after_start,0.731
+share_prev_unfinished_either,0.802

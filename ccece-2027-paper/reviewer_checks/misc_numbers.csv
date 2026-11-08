@@ -1,0 +1,13 @@
+check,value
+late_days_min,-363.3
+late_days_max,2603.1
+sprint_length_min_days,0.001
+sprint_length_max_days,390.1
+late_days_capped_min,0.0
+train_late_rate,0.419
+test_late_rate,0.313
+spill_test_negatives_by_project,Apache Mesos=2; Appcelerator Studio=3; Atlassian Confluence Cloud=4; Atlassian Confluence Server=2; Lsstcorp Data management=3; Mule=10; The Titanium SDK=4; Titanium Mobile Platform=1
+late_within_mean_auc_lr,0.492
+late_within_mean_auc_sc,0.473
+late_pooled_auc_lr,0.68
+external_scope_only_below_half,7 of 8

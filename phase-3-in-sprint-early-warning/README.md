@@ -23,7 +23,7 @@ Phases 1 and 2 are not modified. Phase 3 imports them, so the three folders have
 Time split, gradient boosting, with leave-one-project-out in brackets.
 
 - AUC goes from 0.83 (0.80) with planning information only to 0.93 (0.86) at 25%, 0.96 (0.90) at 50% and 0.95 (0.93) at 75%. The gain over the same model without progress is +0.10, +0.12 and +0.13, and the intervals exclude zero (except random forest at 25% across projects).
-- The plain rule "share of committed issues still open" only reaches 0.67, 0.77 and 0.80, so the learned model beats it by 0.10 to 0.26. Time pressure, scope and team history add to raw progress.
+- The plain rule "share of committed issues still open" only reaches 0.67, 0.77 and 0.80. But that rule ignores how many issues remain. Corrected 8 Nov 2026: the plain count of committed issues still open, with no model, reaches 0.925, 0.945 and 0.954 (0.876, 0.902 and 0.938 across projects, where it beats the model at every checkpoint). At 50% the model's edge over the count is 0.013, with an interval from -0.034 to 0.010 for the count minus the model, so the two cannot be told apart. The earlier claim that the model beats the rule by 0.10 to 0.26 compared it with the weaker share rule and was wrong. Scripts: `ccece-2027-paper/reviewer_checks/progress_rules.py` and `insprint_vs_count.py`.
 - F1 is still not informative here, since 94% of sprints spill over. Always saying "spillover" gets 0.970, and progress-aware boosting gets 0.982, 0.987 and 0.990. Use AUC.
 - At 50%, the explanation splits into progress so far 34%, time pressure 23%, scope 16% and recent history 15%.
 
