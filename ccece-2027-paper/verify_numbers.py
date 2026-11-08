@@ -399,4 +399,43 @@ ins = pd.read_csv(f"{P3}/checkpoint_model_bootstrap.csv")
 for m in ("logreg", "random_forest"):
     r = ins[(ins.task == "spillover") & (ins.checkpoint == 0.25) & (ins.protocol == "lopo") & (ins.model == m) & (ins.versus == "planning_same_algo")].iloc[0]
     check(f"LOPO 25% {m} gain includes zero", 1, int(r.ci_low < 0 < r.ci_high), 0)
+# ---------- 8 Nov 2026 review: count baselines, timing confound, label defect, outside CIs ----------
+# Recomputed here from the frames where possible; the timing rerun is read from reviewer_checks/.
+from sklearn.metrics import roc_auc_score as _auc
+RC = f"{R}/ccece-2027-paper/reviewer_checks"
+ne = frame[frame.nonempty]
+te_ne = []
+for p, g in ne.groupby("project"):
+    g = g.sort_values(["start_date", "sprint_id"]); te_ne.append(g.iloc[int(len(g) * 0.7):])
+te_ne = pd.concat(te_ne)
+check("spill test negatives 29", 29, (te_ne.label_spillover == 0).sum(), 0)
+check("raw committed count spill AUC .881", .881, _auc(te_ne.label_spillover, te_ne.committed_issue_count))
+for c, (tv, lv) in {0.25: (.925, .876), 0.5: (.945, .902), 0.75: (.954, .938)}.items():
+    b = ckf[(ckf.checkpoint == c) & ckf.nonempty & ckf.open_at_checkpoint]
+    t = b[b.split_nonempty == "test"]
+    check(f"open-count rule time {c}", tv, _auc(t.label_spillover, t.remaining_n))
+    check(f"open-count rule LOPO pool {c}", lv, _auc(b.label_spillover, b.remaining_n))
+end = ckf[ckf.nonempty & (ckf.checkpoint == 1.0)]
+zd = end.groupby("project").done_share.apply(lambda v: (v == 0).mean())
+check("Confluence Cloud zero done 74%", 74, 100 * zd["Atlassian Confluence Cloud"], 0.5)
+check("Confluence Server zero done 48%", 48, 100 * zd["Atlassian Confluence Server"], 0.5)
+rest = zd.drop(["Atlassian Confluence Cloud", "Atlassian Confluence Server"])
+check("other projects zero done min 11%", 11, 100 * rest.min(), 0.5); check("other projects zero done max 31%", 31, 100 * rest.max(), 0.5)
+pc = pd.read_csv(f"{RC}/planning_checks.csv").set_index("check").value
+check("spill scope-only without Confluence Cloud .908", .908, pc["spill_time_auc_scope_only_lr_without_confluence_cloud"])
+check("zero scope filled within 1h 33%", 33, 100 * pc["zero_scope_first_issue_added_within_1h_after_start"], 0.5)
+check("zero scope filled within 24h 42%", 42, 100 * pc["zero_scope_first_issue_added_within_24h_after_start"], 0.5)
+check("outside late GB CI above .5 in 2", 2, (lg.auc_lo > .5).sum(), 0)
+check("outside late sprints min 21", 21, lg.n.min(), 0); check("outside late sprints max 269", 269, lg.n.max(), 0)
+tc = pd.read_csv(f"{RC}/timing_confound.csv").set_index(["feature_set", "model"]).lopo_pooled_auc_late
+check("confound LOPO strict-timed LR .519", .519, tc[("strict timing, same content", "LR")])
+check("confound LOPO strict-timed RF .563", .563, tc[("strict timing, same content", "RF")])
+check("confound LOPO legacy+lateness LR .645", .645, tc[("legacy + past lateness", "LR")])
+check("confound LOPO legacy+lateness RF .682", .682, tc[("legacy + past lateness", "RF")])
+check("confound rerun full strict LR within .007 of .629", .629, tc[("full strict", "LR")], .0075)
+check("confound rerun full strict RF within .007 of .642", .642, tc[("full strict", "RF")], .0075)
+tt = pd.read_csv(f"{RC}/timing_confound_time.csv").set_index(["feature_set", "model"]).time_split_auc_late
+check("confound time strict-timed LR .661", .661, tt[("strict timing, same content", "LR")])
+check("confound time legacy GB .732", .732, tt[("legacy (scope + old history)", "GB")])
+check("confound time strict-timed GB .731", .731, tt[("strict timing, same content", "GB")])
 print("FAILS:", fails)

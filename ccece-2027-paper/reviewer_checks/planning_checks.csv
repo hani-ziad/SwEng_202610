@@ -1,0 +1,15 @@
+check,value,note
+spill_test_n,511.0,
+spill_test_neg,29.0,
+spill_time_auc_committed_issue_count_raw,0.881,"no model, raw count"
+spill_time_auc_scope_only_lr,0.885,
+spill_time_auc_scope_only_lr_without_confluence_cloud,0.908,
+late_rate_zero_scope,0.402,
+late_rate_nonempty,0.378,
+zero_scope_n,911.0,
+zero_scope_first_issue_added_within_1h_after_start,0.332,
+zero_scope_first_issue_added_within_24h_after_start,0.42,
+zero_scope_first_issue_added_any_time_after_start,0.592,
+outside_late_gb_projects,8.0,
+outside_late_gb_point_auc_above_half,7.0,
+outside_late_gb_ci_low_above_half,2.0,"MariaDB ColumnStore, MongoDB PHP Driver"

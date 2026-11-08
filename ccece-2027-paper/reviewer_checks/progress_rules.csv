@@ -1,0 +1,7 @@
+checkpoint,population,n,pos,auc_one_minus_share_done,auc_open_committed_count,auc_committed_count_only
+0.25,time,507,478,0.667,0.925,0.881
+0.25,all open (LOPO pool),1663,1548,0.61,0.876,0.836
+0.5,time,501,472,0.767,0.945,0.879
+0.5,all open (LOPO pool),1646,1534,0.715,0.902,0.835
+0.75,time,492,463,0.802,0.954,0.88
+0.75,all open (LOPO pool),1621,1512,0.827,0.938,0.839

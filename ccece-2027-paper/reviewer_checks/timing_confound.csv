@@ -1,0 +1,11 @@
+feature_set,model,lopo_pooled_auc_late
+legacy (scope + old history),LR,0.542
+legacy (scope + old history),RF,0.601
+"strict timing, same content",LR,0.519
+"strict timing, same content",RF,0.563
+strict minus past lateness,LR,0.496
+strict minus past lateness,RF,0.563
+legacy + past lateness,LR,0.645
+legacy + past lateness,RF,0.682
+full strict,LR,0.629
+full strict,RF,0.649

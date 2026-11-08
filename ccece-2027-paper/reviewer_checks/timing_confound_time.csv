@@ -1,0 +1,11 @@
+feature_set,model,time_split_auc_late
+legacy (scope + old history),LR,0.636
+legacy (scope + old history),GB,0.732
+"strict timing, same content",LR,0.661
+"strict timing, same content",GB,0.731
+strict minus past lateness,LR,0.672
+strict minus past lateness,GB,0.74
+legacy + past lateness,LR,0.664
+legacy + past lateness,GB,0.731
+full strict,LR,0.681
+full strict,GB,0.747
