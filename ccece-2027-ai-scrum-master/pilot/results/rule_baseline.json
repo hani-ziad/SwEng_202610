@@ -1,0 +1,58 @@
+{
+ "n_sprints": 40,
+ "n_points": 80,
+ "L": {
+  "agreement": 0.725,
+  "cohen_kappa": 0.47083583884545993,
+  "departures": 22,
+  "departures_correct": 12,
+  "departures_to_silent": 19
+ },
+ "G": {
+  "agreement": 0.9125,
+  "cohen_kappa": 0.8167539267015707,
+  "departures": 7,
+  "departures_correct": 4,
+  "departures_to_silent": 4
+ },
+ "sprints_with_changed_call": {
+  "M": 3,
+  "L": 1,
+  "G": 2
+ },
+ "rule_c0": {
+  "definition": "warn if hist_late_rate_3 >= 0.5",
+  "warn_rate": 0.375,
+  "sensitivity": 0.5,
+  "specificity": 0.75,
+  "auc_hist_late_rate_3": 0.6312500000000001,
+  "agreement_with_M": 0.7,
+  "agreement_with_L": 0.975,
+  "agreement_with_G": 0.775,
+  "auc_M_minus_rule": 0.08624999999999983,
+  "auc_M_minus_rule_ci": [
+   -0.0802462699718045,
+   0.248183959899749
+  ]
+ },
+ "sprints_per_project": {
+  "Lsstcorp Data management": 11,
+  "The Titanium SDK": 8,
+  "Atlassian Confluence Cloud": 7,
+  "Mule": 6,
+  "Atlassian Confluence Server": 5,
+  "Appcelerator Studio": 1,
+  "Apache Mesos": 1,
+  "Titanium Mobile Platform": 1
+ },
+ "late_per_project": {
+  "Apache Mesos": 0,
+  "Appcelerator Studio": 0,
+  "Atlassian Confluence Cloud": 4,
+  "Atlassian Confluence Server": 1,
+  "Lsstcorp Data management": 9,
+  "Mule": 2,
+  "The Titanium SDK": 4,
+  "Titanium Mobile Platform": 0
+ }
+}
