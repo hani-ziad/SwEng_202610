@@ -23,7 +23,7 @@
 \maketitle
 
 \begin{abstract}
-Agent systems that carry the Scrum Master label are multiplying, yet none we found has been judged against what real sprints went on to do, while work that predicts sprint outcomes from Jira histories stops at prediction and never acts. We argue that the two should meet, and make three contributions. First, we map each Scrum Master accountability to the best published evidence and show that the label has run ahead of it. Second, we name two failure modes that bound the design space: an ungrounded agent says things the data does not support, and an over-grounded one repeats its model and adds nothing. Third, we propose sprint replay, a test that needs only public data: rebuild the board as it stood, run a grounded agent against a model-only arm and an agent-only arm, and report a chance-corrected agreement rate and a cost-weighted measure of what grounding adds. We also say where replay is weak, chiefly that a language model may already have read the outcomes it is asked to foresee. Together these give a bar any AI Scrum Master can be held to today.
+Agent systems that carry the Scrum Master label are multiplying, yet none we found has been judged against what real sprints went on to do, while work that predicts sprint outcomes from Jira histories stops at prediction and never acts. We argue that the two should meet, and make three contributions. First, we map each Scrum Master accountability to the best published evidence and show that the label has run ahead of it. Second, we name two failure modes that bound the design space: an ungrounded agent says things the data does not support, and an over-grounded one repeats its model and adds nothing. Third, we propose sprint replay, a test that needs only public data: rebuild the board as it stood, run a grounded agent against a model-only arm and an agent-only arm, and report a chance-corrected agreement rate and a cost-weighted measure of what grounding adds. We also say where replay is weak, chiefly that a language model may already have read the outcomes it is asked to foresee.
 \end{abstract}
 
 \begin{keywords}
@@ -34,9 +34,9 @@ agile software development, evaluation, grounding, LLM agents, Scrum, sprint ana
 
 Much of what a Scrum Master does never reaches the tracker. \citet{shastri} describe the role through six everyday activities: facilitating, mentoring, negotiating, adapting the process, coordinating and protecting the team. In our reading, only coordination and parts of facilitation leave a regular trace in Jira. The rest happen in conversation.
 
-Language-model agents have nonetheless started to wear the title. Since 2024, published systems have given an agent the Scrum Master role in a code-generation pipeline \citep{agilecoder} and turned burndown charts into status reports under the name of an AI Scrum Master \citep{alliata}. Others simulate whole agile teams with role agents \citep{cognisim}.
+Language-model agents have nonetheless started to wear the title. Since 2024, published systems have given an agent the Scrum Master role in a code-generation pipeline \citep{agilecoder} and turned burndown charts into status reports under the name of an AI Scrum Master \citep{alliata}; others simulate whole agile teams with role agents \citep{cognisim}.
 
-Our position is that the label has run ahead of the evidence, and that an affordable test can bring it back into line. In sprint replay, a project's board is rebuilt as it stood at a chosen moment, the agent sees only what was knowable then and decides whether and what to say, and that is scored against what the sprint went on to do. No partner organisation or live team is needed, only a risk model the agent can cite and the discipline to report how often the agent merely repeats it. Sections~\ref{sec:gap} to~\ref{sec:replay} make this case.
+Our position is that the label has run ahead of the evidence, and that an affordable test can bring it back into line. In sprint replay, a project's board is rebuilt as it stood at a chosen moment, the agent sees only what was knowable then and decides whether and what to say, and that is scored against what the sprint went on to do. No partner organisation or live team is needed, only a risk model the agent can cite and the discipline to report how often the agent merely repeats it.
 
 \section{The label and the evidence}
 \label{sec:gap}
@@ -65,7 +65,7 @@ End-to-end agent in the role & Label only & Code benchmarks \citep{agilecoder}\\
 \end{tabular}
 \end{table}
 
-Three patterns follow. The more relational the task, the thinner the evidence. Of the six activities \citet{shastri} name, only facilitation has a field study, and coordination is covered by prediction work that never acts. Evaluation habits are weak, with small samples, single runs and author-labelled ground truth, and run-to-run stability, where measured, is poor \citep{yoon}. And the data is lopsided. One public dataset holds thousands of sprints and millions of change-log entries \citep{tawos}, while public transcripts of stand-ups, reviews and retrospectives are, as far as we can tell, absent. The half of the role a tracker records is the half in which an agent can be held to account today.
+Three patterns follow. The more relational the task, the thinner the evidence: of the six activities \citet{shastri} name, only facilitation has a field study. Evaluation habits are weak, with small samples, single runs and author-labelled ground truth, and run-to-run stability, where measured, is poor \citep{yoon}. And the data is lopsided. One public dataset holds thousands of sprints and millions of change-log entries \citep{tawos}, while public transcripts of stand-ups, reviews and retrospectives are, as far as we can tell, absent. The half of the role a tracker records is the half in which an agent can be held to account today.
 
 \section{Two ways to fail}
 \label{sec:fail}
@@ -74,14 +74,14 @@ Three patterns follow. The more relational the task, the thinner the evidence. O
 
 \paragraph{Over-grounded.} The opposite failure is less discussed and, for research, more dangerous. Given a predictive model as a tool, agents tend to copy it. In one study they reproduced a graph model's output on 97.6 to 99.2 percent of cases, and stronger backbones deferred more, not less \citep{tool}. An agent that repeats its model is the model with added latency. Any claim of an agent in this role should therefore report its agreement with the raw model and include a model-only arm.
 
-Neither failure is particular to Scrum. Agents are being placed over classical predictive models in clinical triage, credit decisions and operations, and the same two questions arise each time. When should the agent believe the model, and when is acting on it worth the cost? Sprints are a good place to study both, because outcomes are public and time-stamped.
+Neither failure is particular to Scrum. Agents placed over predictive models in triage, credit or operations face the same two questions, when to believe the model and when acting on it is worth the cost, and sprints suit both because their outcomes are public and time-stamped.
 
 \section{What grounding means here}
 \label{sec:ground}
 
 Grounding means that the agent's statements about risk trace back to models fitted on real sprint histories, under an evaluation that does not leak the future. Some sprint-outcome studies report accuracies near or above 0.9 using features visible only once the sprint is under way \citep{perez}, or after resampling with no stated split order \citep{obike}, and leakage taxonomies now list software engineering among the affected fields \citep{leakage}. Both mistakes are easy to reproduce. In our own reanalysis of public Jira data,\footnote{Code and result files will be released after review.} oversampling the whole pool before splitting doubled late-closure PR-AUC (area under the precision-recall curve) from 0.36 to 0.68, and adding a sprint's own completion ratio lifted the AUC for unfinished work from 0.83 to 1.00. An agent that cites an inflated model inherits the inflation and adds a confident voice to it.
 
-Grounding also limits what the agent may suggest. In defect prediction, guidance derived from explanation methods often fails to fix what it predicts and differs from what developers actually change \citep{saner}, while restricting suggestions to changes with historical precedent brings them much closer to real practice \citep{counteract}. Carried into sprints, an agent should not propose cutting scope merely because the model's expectation falls; it should propose changes that comparable teams actually made.
+Grounding also limits what the agent may suggest. In defect prediction, guidance derived from explanation methods often fails to fix what it predicts and differs from what developers actually change \citep{saner}, while restricting suggestions to changes with historical precedent brings them much closer to real practice \citep{counteract}. Carried into sprints, an agent should propose changes that comparable teams actually made, not cut scope merely because the model's expectation falls.
 
 What is left for the agent is narrower than the label and more interesting than the model. It can read the issue text the tabular model never sees, decide whether a situation is worth raising, choose the moment, and word it so that a team can act without feeling audited. Only the middle two enter the cost measure below; the others need human raters.
 
@@ -92,11 +92,7 @@ What is left for the agent is narrower than the label and more interesting than 
 
 \paragraph{Arms.} At minimum, the risk model alone ($M$), the language-model agent without the model ($L$), and the grounded agent ($G$). Without $M$, no one can tell whether the agent added anything; without $L$, no one can tell whether grounding did. At each replay point, arm $a$ emits a decision $d_a(s,c) \in \{\textit{warn}, \textit{silent}\}$ and, for $L$ and $G$, the message it would send.
 
-\paragraph{Agreement.} Over the set $P$ of replay points,
-\[
-A = \frac{1}{|P|} \sum_{(s,c) \in P} \mathbf{1}\big[d_G(s,c) = d_M(s,c)\big],
-\]
-reported as a main result. Raw agreement flatters an agent whenever one decision dominates, since two arms that rarely warn agree on most points by chance. $A$ should come with its chance-corrected form (Cohen's coefficient) and with both overrule rates, silent where $M$ warns and warning where $M$ is silent, each with how often the overrule was right.
+\paragraph{Agreement.} The share of replay points $(s,c) \in P$ at which the grounded agent and the model decide alike, $A = |P|^{-1} \sum_{P} \mathbf{1}[d_G(s,c) = d_M(s,c)]$, is reported as a main result. Raw agreement flatters an agent whenever one decision dominates, since two arms that rarely warn agree on most points by chance. $A$ should come with its chance-corrected form (Cohen's coefficient) and with both overrule rates, silent where $M$ warns and warning where $M$ is silent, each with how often the overrule was right.
 
 \paragraph{Added value.} We borrow the cost structure of alarm-based prescriptive process monitoring \citep{alarm}. A warning costs $\kappa$, a failed sprint costs $F$, and a warning raised at checkpoint $c$ averts a fraction $e(c)$ of that cost, with $e$ falling as the sprint proceeds. Let $y_s = 1$ if sprint $s$ failed, $w_a(s) = 1$ if arm $a$ warned at any checkpoint, and $c^{*}_a(s)$ the first checkpoint at which it did. Then
 \[
@@ -110,11 +106,9 @@ where $\bar{C}_a$ is the mean of $C_a(s)$ over sprints. A positive $\Delta$ mean
 
 \paragraph{What replay cannot do.} Replay measures what an agent would have said, not whether saying it would have changed the sprint. The one controlled study of language-model facilitation found it drew out more information, mostly from quieter participants, but not better decisions \citep{alsobay}. A system that fails replay should not reach a team, and one that passes has earned a study, not a deployment.
 
-\section{Limits}
+\section{Limits and conclusion}
 
-Public sprint data is open-source, and enterprise teams may behave differently. The pre-training leak can be reduced but not ruled out for older public data. The relational half of the role stays out of reach while no public ceremony corpus exists. And developers keep planning and management work at low autonomy levels \citep{choudhuri}, while the one field study in this role reports participants asking to be informed rather than warned \citep{cabrero}. An agent built to inform is easier to accept, and to evaluate honestly, than one built to decide.
-
-\section{Conclusion}
+Public sprint data is open-source, and enterprise teams may behave differently. The pre-training leak can be reduced but not ruled out for older public data. The relational half of the role stays out of reach while no public ceremony corpus exists. And developers keep planning and management work at low autonomy levels \citep{choudhuri}, so an agent built to inform is easier to accept, and to evaluate honestly, than one built to decide.
 
 The AI Scrum Master exists as a label and a few pilots, not as a system whose judgement has been measured against real sprints. Replay can measure it cheaply, provided the agent's model does not leak the future and the report says how often the agent only repeated it.
 

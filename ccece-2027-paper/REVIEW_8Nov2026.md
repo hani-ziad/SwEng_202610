@@ -55,12 +55,15 @@ Not submittable as it stood this morning. The revised version is a defensible ne
 | 38 | Missing related work, r3 misdescribed | Falessi et al. EMSE 2020 (verified), Choetkiertikul et al. ASE 2015 (verified); Tawosi et al. found Deep-SE did not consistently beat mean/median | Added; r3 corrected; EMSE 2017 delay paper not added because volume/pages could not be verified |
 | 39 | Table hygiene | Comparators, captions, uncited rows | Table II rebuilt (14 rows, all cited); captions rewritten |
 | 40 | Bibliography style | Months on some entries only; Janzing missing PMLR volume | Months removed; PMLR vol. 108 added |
+| 41 | Paper ran to 7 pages (limit 6) | References spilled about a third of a page | Cut repeated or low-value text (two cross-check sentences now in Threats, MariaDB in-sprint gain, sensitivity range, raw delay range, reliability-bin sentence), tightened the numeric-targets and leakage paragraphs, shorter captions, Table IV in scriptsize, figures at 0.9 and 0.75 column width. Overleaf compile: 6 pages, no overfull boxes |
+| 42 | Table II caption pointed the project-cluster AUC interval at row 9 | The interval [.818, .922] belongs to row 8 (scope-only LR); row 9 has none | Caption corrected |
+| 43 | Conclusion said the count "matches or beats every model" on size-normalised labels | At the 0.5 carry-share threshold RF (.615) beats the count (.562) | Sentence removed; Results now say the model leads only where the count is weak |
 
 Not changed, with reason: Fig. 1 kept (helps non-specialist readers, now half height); Obike et al. kept but presented as an example; Zenodo DOI and data licence wording left to you.
 
 ## Still open (need you)
 
-1. Overleaf: paste the new tex and upload the new fig1_pipeline.png, compile, check it is 6 pages (estimated about 11 lines of slack), download the PDF.
+1. Overleaf is updated and compiles to exactly 6 pages with almost no slack, so any added line will push it to 7. Download the PDF from Overleaf and replace the local CCECE_2027_Sprint_Risk_Prediction.pdf (still the 4 Nov version).
 2. Run `python ccece-2027-paper\verify_numbers.py` (full run) and check it ends with `FAILS: []`.
 3. Co-authors must agree to the new title and the reframing.
 4. Read Choetkiertikul et al. (2018) in full.
