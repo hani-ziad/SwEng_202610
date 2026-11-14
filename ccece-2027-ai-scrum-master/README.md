@@ -40,6 +40,8 @@ What the companion audit adds (8 Nov 2026, from `ccece-2027-paper`): the model a
 
 What the pilot cannot show: it is one run of one model with one prompt on 40 sprints, the boards have no issue text (the TAWOS extract has no titles), the numbers the agents quote were not checked against the boards (so the ungrounded failure is not tested), and the effect of a warning e(c) is assumed.
 
+**Hidden issues (noted 14 Nov 2026).** Public Jira hides private and deleted issues. Across the eight TAWOS projects a median of 26% of issue numbers since the first sprint issue are missing (`../ccece-2027-paper/reviewer_checks/hidden_issues.csv`), so the boards all three arms saw may be incomplete. The paper's Limits of the pilot now say so.
+
 ## How to run
 
 Run from this folder. The pilot reuses Phases 1 to 3, so the folders must stay side by side.

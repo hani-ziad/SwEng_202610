@@ -14,6 +14,8 @@ All phases use the same setup: sprint scope rebuilt from the change log, a per-p
 
 **Known data defect.** In Atlassian Confluence Cloud, 68% of finished issues have no resolution date, and the export has no status history to recover them. Anything that reads "finished by the planned end" (spillover, carry share, progress features) is wrong for that project. Phase 4 experiment 5 leaves it out of those tasks. Late closure is not affected.
 
+**Hidden issues (found 14 Nov 2026).** Public Jira hides private and deleted issues but keeps their numbers. A median of 26% of the issue numbers since each project's first sprint issue are missing (0.4% in Apache Mesos, 66% in Confluence Cloud). A hidden issue that sat in a sprint lowers the rebuilt committed scope, so spillover and the scope features may be off. This cannot be checked from public data. Per-project numbers: `ccece-2027-paper/reviewer_checks/hidden_issues.csv`.
+
 ## What is where
 
 - `week-12-method-preliminary-results/sprint-risk-prediction`: Phase 1 code, data and results. Its `README.md` is also the repo README for CSBP711 Assignment 1.

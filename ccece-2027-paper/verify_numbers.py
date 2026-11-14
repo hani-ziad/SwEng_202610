@@ -554,4 +554,8 @@ r = mb[(mb.task == "late_days") & (mb.feature_set == "strict") & (mb.protocol ==
 check("days late vs train median CI includes zero", 1, int(r.ci_low < 0 < r.ci_high), 0)
 r = mb[(mb.task == "issues_done") & (mb.feature_set == "strict") & (mb.protocol == "time_ordered") & (mb.model == "gb_median") & (mb.baseline == "scope_x_rate")].iloc[0]
 check("issues completed CI includes zero", 1, int(r.ci_low < 0 < r.ci_high), 0)
+hi_ = pd.read_csv(f"{RC}/hidden_issues.csv")
+check("hidden issues median 26%", 26, 100 * hi_.gap.median(), 0.5); check("hidden issues max 66%", 66, 100 * hi_.gap.max(), 0.5)
+check("hidden issues max is Confluence Cloud", 1, int(hi_.loc[hi_.gap.idxmax(), "project"] == "Atlassian Confluence Cloud"), 0)
+check("hidden issues min under 1%", 1, int(hi_.gap.min() < 0.01), 0)
 print("FAILS:", fails)

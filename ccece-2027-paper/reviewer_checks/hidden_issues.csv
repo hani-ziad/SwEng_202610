@@ -1,0 +1,9 @@
+project,key,first_sprint_issue,highest,visible,gap
+Apache Mesos,MESOS,191,10194,9967,0.0037
+Appcelerator Studio,TISTUD,273,9226,5712,0.3621
+Atlassian Confluence Cloud,CONFCLOUD,2455,70989,23267,0.6605
+Atlassian Confluence Server,CONFSERVER,2455,60420,40718,0.2976
+Lsstcorp Data management,DM,8,27271,26499,0.0281
+Mule,MULE,4223,18479,8379,0.4123
+The Titanium SDK,TIMOB,339,28207,21736,0.2201
+Titanium Mobile Platform,TIDOC,240,3403,2827,0.1065
