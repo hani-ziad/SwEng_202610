@@ -569,4 +569,7 @@ check("GB minus weekday interval low -.037", -.037, lo_); check("GB minus weekda
 lo_, hi_w = [float(x) for x in el["th7_gb_within_ci"].split(",")]
 check("7-day within interval low .402", .402, lo_); check("7-day within interval high .572", .572, hi_w)
 check("7-day within .502 (rerun)", .502, float(el["th7_gb_within_mean"]))
+check("calendar cut train 1,803", 1803, float(el["calendar_n_train"]), 0); check("calendar cut test 781", 781, float(el["calendar_n_test"]), 0)
+check("calendar cut date 19 Jan 2018", 1, int(el["calendar_cut_date"] == "2018-01-19"), 0)
+check("1-60 day sprints GB pooled .751", .751, float(el["dur_1_60_gb_pooled"]))
 print("FAILS:", fails)

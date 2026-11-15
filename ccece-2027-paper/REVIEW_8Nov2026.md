@@ -99,3 +99,18 @@ Later the same evening (15 Nov), three one-clause fixes from the same report, st
 | 56 | "Exact" Shapley uses a finite background sample | III-E: "exact over coalitions only" |
 
 Cut to make room: "The 70% cut is also the most favourable one", the rest of the future-work sentence, the process-monitoring clause in Related Work, and shorter wording for the environment line, the per-project range and the GB-deterministic sentence.
+
+## Second Elicit report on the revised paper (15 Nov, "weak reject") and what was done
+
+| # | Reviewer's point | Fix applied |
+|---|---|---|
+| 57 | Reconstruction is partial; state it up front | Introduction: "planned dates and issue status are not replayed"; conclusion: "partly reconstructed, retrospective data" |
+| 58 | Calendar-cut test not described | III-D now gives the cut (19 Jan 2018), 1,803 training sprints closed before it and 781 test sprints that start later |
+| 59 | Weekday rule: interval in the abstract; was it chosen in advance? | Abstract gives 0.021 (-0.037 to 0.082); the rule is called post hoc in the abstract, III-D and the conclusion; dates are UTC |
+| 60 | "Need no human judgement"; "fail"; "simplest rule"; "not that sprint risk is predictable" | Reworded: "can be computed without human labelling"; "find no support"; "a learning-free rule"; "not that a model adds to sprint size" |
+| 61 | LOPO is a warm start | Said in III-D |
+| 62 | Odd sprint durations | III-A: dropping sprints under 1 day or over 60 days leaves GB at 0.751 |
+
+Cut to make room: the sentence pointing to Table II in the introduction, the Hearty et al. clause in Related Work (still cited in Table I), "several sprints are often open at once", and "We ran no hyperparameter search". verify_numbers.py: four more checks.
+
+Not done: label renaming throughout, per-project count tables, dependence-aware bootstrap, external per-project account, weekday row in Table II (no room in 6 pages); "cannot be distinguished" kept, since it already claims no more than an undetected difference.
