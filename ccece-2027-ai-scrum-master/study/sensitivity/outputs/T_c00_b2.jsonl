@@ -1,0 +1,20 @@
+{"id": "B044", "warn": false, "p_late": 0.40, "unfinished": 0.70, "message": ""}
+{"id": "B056", "warn": true, "p_late": 0.52, "unfinished": 0.82, "message": "Heads up: we've committed 12 issues, and the last sprints finished only about 14% of what was committed, with 13 carried over. Let's cut scope now or agree on which items come first so we can close on time."}
+{"id": "B019", "warn": true, "p_late": 0.47, "unfinished": 0.80, "message": "Two of our last three sprints closed late, by about 5.6 days on average, and three other sprints are open alongside this one. Let's check today that these four bugs fit and plan to close the sprint on its planned date."}
+{"id": "B071", "warn": false, "p_late": 0.30, "unfinished": 0.75, "message": ""}
+{"id": "B101", "warn": true, "p_late": 0.52, "unfinished": 0.85, "message": "Recent sprints closed late about 5 days on average and completed very little of what was committed. With 7 mostly unestimated bugs, let's estimate them now and drop what won't fit before we start."}
+{"id": "B047", "warn": false, "p_late": 0.20, "unfinished": 0.65, "message": ""}
+{"id": "B120", "warn": false, "p_late": 0.20, "unfinished": 0.70, "message": ""}
+{"id": "B092", "warn": false, "p_late": 0.18, "unfinished": 0.70, "message": ""}
+{"id": "B082", "warn": true, "p_late": 0.47, "unfinished": 0.55, "message": "This sprint rests on one unestimated story, so any slip on it makes the whole sprint late. Can we size it today and split it if it won't fit in 11 days?"}
+{"id": "B052", "warn": false, "p_late": 0.30, "unfinished": 0.60, "message": ""}
+{"id": "B005", "warn": true, "p_late": 0.52, "unfinished": 0.85, "message": "Two of our last three sprints closed late, by about 12 days on average, and three other sprints are running in parallel. Let's confirm today who owns these two bugs and close the sprint on its planned date even if one slips."}
+{"id": "B034", "warn": false, "p_late": 0.15, "unfinished": 0.80, "message": ""}
+{"id": "B040", "warn": true, "p_late": 0.65, "unfinished": 0.75, "message": "All of our last three sprints closed late, and five other sprints are open at the same time. Let's agree now to close this one on its planned end date and carry the bug over if it isn't done."}
+{"id": "B087", "warn": false, "p_late": 0.10, "unfinished": 0.85, "message": ""}
+{"id": "B049", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B038", "warn": true, "p_late": 0.50, "unfinished": 0.80, "message": "We've committed 47 points, including a 13-point bug, and two of our last three sprints closed late. Let's split the big items or drop one now so we can close on the planned date."}
+{"id": "B028", "warn": false, "p_late": 0.25, "unfinished": 0.70, "message": ""}
+{"id": "B061", "warn": false, "p_late": 0.20, "unfinished": 0.70, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}
+{"id": "B058", "warn": true, "p_late": 0.60, "unfinished": 0.85, "message": "Two of our last three sprints closed late, and we finished only about 5% of what we committed. Let's agree today which of these 7 stories really must land and close on the planned date."}

@@ -1,0 +1,25 @@
+{"id": "W0286", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0188", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0002", "claims_ok": false, "bad_claims": "\"these 7 bugs\" (board has 6 bugs and 1 improvement)", "close_on_date": 1}
+{"id": "W0009", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0254", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0192", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0147", "claims_ok": false, "bad_claims": "\"the 15 stories\" (board has 14 stories and 1 bug)", "close_on_date": 1}
+{"id": "W0136", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0104", "claims_ok": false, "bad_claims": "\"our last few sprints closed well over a week late\" (only 2 of the last 3 closed late; 12.1 is an average)", "close_on_date": 1}
+{"id": "W0110", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0200", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0242", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0328", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0026", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0315", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0384", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0180", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0336", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0368", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0148", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0004", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0166", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0025", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0382", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0390", "claims_ok": false, "bad_claims": "\"11 of our 12 committed tasks are still open\" (only 9 of the 12 committed items are Tasks; 1 is a bug and 2 are improvements)", "close_on_date": 0}

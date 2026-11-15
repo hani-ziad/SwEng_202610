@@ -1,0 +1,25 @@
+{"id": "W0319", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0109", "claims_ok": false, "bad_claims": "\"every recent sprint closed weeks late\"", "close_on_date": 1}
+{"id": "W0362", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0130", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0041", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0175", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0286", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0050", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0034", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0067", "claims_ok": false, "bad_claims": "\"34 stories are committed\"", "close_on_date": 0}
+{"id": "W0180", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0086", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0160", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0299", "claims_ok": false, "bad_claims": "\"only 1 of 21 committed stories is done\"", "close_on_date": 0}
+{"id": "W0125", "claims_ok": false, "bad_claims": "\"Only 3 of 34 committed stories are resolved\"", "close_on_date": 0}
+{"id": "W0022", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0334", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0192", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0322", "claims_ok": false, "bad_claims": "\"this one is starting the same way\"", "close_on_date": 1}
+{"id": "W0257", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0325", "claims_ok": false, "bad_claims": "\"recent sprints completed one or two issues each\"", "close_on_date": 0}
+{"id": "W0293", "claims_ok": false, "bad_claims": "\"none of the 12 committed stories are resolved\"", "close_on_date": 0}
+{"id": "W0018", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0394", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0383", "claims_ok": true, "bad_claims": "", "close_on_date": 1}

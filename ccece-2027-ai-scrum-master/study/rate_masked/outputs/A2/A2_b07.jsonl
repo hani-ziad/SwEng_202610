@@ -1,0 +1,25 @@
+{"id": "W0367", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0102", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0254", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0201", "claims_ok": false, "bad_claims": "\"this sprint commits 7 bugs worth 47 SP\" (6 bugs and 1 improvement)", "close_on_date": 0}
+{"id": "W0357", "claims_ok": false, "bad_claims": "\"45 issues, 38 of them carried over\" (board says 38 carried over from the last sprint, not that 38 of these 45 are carry-overs)", "close_on_date": 0}
+{"id": "W0126", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0378", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0060", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0111", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0003", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0138", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0253", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0305", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0179", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0233", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0309", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0191", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0187", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0298", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0146", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0386", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0239", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0281", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0335", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0059", "claims_ok": true, "bad_claims": "", "close_on_date": 1}

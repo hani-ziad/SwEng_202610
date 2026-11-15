@@ -1,0 +1,20 @@
+{"id": "B022", "warn": true, "p_late": 0.60, "unfinished": 0.55, "message": "Heads up: the last three sprints all closed well past their end date. Let's agree today what done means for this bug and close the sprint on its planned date."}
+{"id": "B037", "warn": false, "p_late": 0.20, "unfinished": 0.70, "message": ""}
+{"id": "B110", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "This sprint has 40 SP across 12 items, but recent sprints finished only about 1 issue each and all closed about two weeks late. Please cut the scope to what we can really finish, and plan to close on the planned date."}
+{"id": "B059", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}
+{"id": "B085", "warn": true, "p_late": 0.50, "unfinished": 0.80, "message": "We've committed 21 issues (118 SP, including three items of 13 to 21 SP) after carrying 13 over last time and finishing only about 2 per sprint. Let's trim the big items now so the sprint can close on time."}
+{"id": "B107", "warn": false, "p_late": 0.12, "unfinished": 0.65, "message": ""}
+{"id": "B023", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B115", "warn": false, "p_late": 0.15, "unfinished": 0.70, "message": ""}
+{"id": "B116", "warn": true, "p_late": 0.75, "unfinished": 0.55, "message": "Each of the last three sprints closed late, by about 3 days on average. Let's check daily whether the 9 stories are on track and agree to close on the planned end date."}
+{"id": "B054", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B021", "warn": false, "p_late": 0.30, "unfinished": 0.65, "message": ""}
+{"id": "B098", "warn": false, "p_late": 0.20, "unfinished": 0.90, "message": ""}
+{"id": "B057", "warn": false, "p_late": 0.15, "unfinished": 0.60, "message": ""}
+{"id": "B015", "warn": false, "p_late": 0.30, "unfinished": 0.80, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.20, "unfinished": 0.55, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B032", "warn": true, "p_late": 0.65, "unfinished": 0.80, "message": "There are 34 stories in this sprint, but we finished about 4 per sprint recently and two of the last three closed late. Please pick the must-haves now and plan to close on the planned date."}
+{"id": "B027", "warn": false, "p_late": 0.20, "unfinished": 0.55, "message": ""}
+{"id": "B030", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}

@@ -1,0 +1,20 @@
+{"id": "B016", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B112", "warn": false, "p_late": 0.18, "unfinished": 0.65, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.20, "unfinished": 0.50, "message": ""}
+{"id": "B068", "warn": true, "p_late": 0.60, "unfinished": 0.65, "message": "Heads-up: recent sprints finished under 40% of committed work and 12 issues carried over last time, so this sprint looks likely to run late. Can we agree today which stories to drop if we fall behind?"}
+{"id": "B119", "warn": true, "p_late": 0.42, "unfinished": 0.75, "message": "We committed 8 issues (24 SP) in a 7-day sprint, but recent sprints closed about 2 issues each and one ran over 3 days late. Let's trim scope now or agree on what can slip."}
+{"id": "B118", "warn": true, "p_late": 0.50, "unfinished": 0.85, "message": "Two of our last three sprints closed late, and we have finished very little of what we committed. With 6 issues (24+ SP) on the board, let's pick the must-haves now."}
+{"id": "B117", "warn": false, "p_late": 0.33, "unfinished": 0.65, "message": ""}
+{"id": "B108", "warn": true, "p_late": 0.55, "unfinished": 0.55, "message": "20 issues are committed, with 3 other sprints open, and one of our last three sprints ran nearly 5 days late on average. Let's flag the lower-priority stories now so we can still close on time."}
+{"id": "B093", "warn": false, "p_late": 0.15, "unfinished": 0.65, "message": ""}
+{"id": "B042", "warn": false, "p_late": 0.30, "unfinished": 0.80, "message": ""}
+{"id": "B048", "warn": false, "p_late": 0.35, "unfinished": 0.80, "message": ""}
+{"id": "B007", "warn": true, "p_late": 0.72, "unfinished": 0.75, "message": "Two of our last three sprints closed late, 47 issues carried over last time and 5 other sprints are open. This one looks likely to slip too, so let's cut scope or set a firm close plan today."}
+{"id": "B020", "warn": true, "p_late": 0.50, "unfinished": 0.70, "message": "Only one story is committed, but two of our last three sprints closed late. Let's make sure this sprint is closed on its planned end date, even if the story has to carry over."}
+{"id": "B046", "warn": false, "p_late": 0.35, "unfinished": 0.70, "message": ""}
+{"id": "B086", "warn": false, "p_late": 0.25, "unfinished": 0.45, "message": ""}
+{"id": "B088", "warn": true, "p_late": 0.40, "unfinished": 0.70, "message": "We committed 15 tasks (46 SP), but recent sprints finished about 4 issues each and one closed late. Let's agree on a smaller must-finish set now."}
+{"id": "B114", "warn": false, "p_late": 0.20, "unfinished": 0.65, "message": ""}
+{"id": "B033", "warn": true, "p_late": 0.50, "unfinished": 0.65, "message": "17 issues are committed and 23 carried over from the last sprint, which also closed late. Let's agree today on what can move out so we close on time."}
+{"id": "B031", "warn": false, "p_late": 0.32, "unfinished": 0.60, "message": ""}
+{"id": "B078", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}

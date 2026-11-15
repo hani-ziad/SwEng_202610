@@ -1,0 +1,20 @@
+{"id": "B044", "warn": true, "p_late": 0.40, "unfinished": 0.65, "message": "Heads up: this team has closed late on recent sprints and the one improvement here has no estimate yet. Can we size it today and agree what 'done' looks like so the sprint can close on time?"}
+{"id": "B099", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B071", "warn": false, "p_late": 0.30, "unfinished": 0.75, "message": ""}
+{"id": "B115", "warn": false, "p_late": 0.20, "unfinished": 0.65, "message": ""}
+{"id": "B083", "warn": false, "p_late": 0.27, "unfinished": 0.50, "message": ""}
+{"id": "B025", "warn": false, "p_late": 0.18, "unfinished": 0.35, "message": ""}
+{"id": "B039", "warn": false, "p_late": 0.25, "unfinished": 0.72, "message": ""}
+{"id": "B087", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B109", "warn": false, "p_late": 0.18, "unfinished": 0.62, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.38, "unfinished": 0.80, "message": ""}
+{"id": "B036", "warn": true, "p_late": 0.82, "unfinished": 0.70, "message": "Every one of our last three sprints closed late, and this one looks the same. Let's agree today on what we can realistically finish and plan to close the sprint on its end date."}
+{"id": "B022", "warn": true, "p_late": 0.60, "unfinished": 0.55, "message": "Our recent sprints have all closed well past their end dates. Please size this bug today and let's commit to closing the sprint on the planned date, whatever is left."}
+{"id": "B068", "warn": true, "p_late": 0.65, "unfinished": 0.65, "message": "We carried 12 issues over last time, and this sprint is at real risk of closing late. Can we trim the commitment now and agree to close on the planned end date?"}
+{"id": "B016", "warn": false, "p_late": 0.25, "unfinished": 0.80, "message": ""}
+{"id": "B009", "warn": false, "p_late": 0.18, "unfinished": 0.88, "message": ""}
+{"id": "B047", "warn": false, "p_late": 0.28, "unfinished": 0.68, "message": ""}
+{"id": "B051", "warn": false, "p_late": 0.18, "unfinished": 0.85, "message": ""}
+{"id": "B090", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.55, "message": ""}

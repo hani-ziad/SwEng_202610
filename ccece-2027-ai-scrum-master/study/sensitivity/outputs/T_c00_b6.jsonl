@@ -1,0 +1,20 @@
+{"id": "B076", "warn": false, "p_late": 0.20, "unfinished": 0.70, "message": ""}
+{"id": "B039", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B067", "warn": true, "p_late": 0.50, "unfinished": 0.90, "message": "This sprint has 45 issues and 373 SP committed, but the last three sprints finished only about 2% of their commitment and carried 41 issues over. Please cut scope to a realistic set now, or expect a late close with most of it unfinished."}
+{"id": "B073", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}
+{"id": "B064", "warn": true, "p_late": 0.80, "unfinished": 0.80, "message": "All of the last three sprints closed late (about 21 days on average), and very little committed work got finished. Please agree on a firm close date and a smaller must-finish set for these four bugs today."}
+{"id": "B113", "warn": true, "p_late": 0.60, "unfinished": 0.60, "message": "Two of the last three sprints closed late, and only about 45% of committed work was finished. With 15 issues committed and 3 other sprints open, please pick the stories that must land and plan to close on the planned date."}
+{"id": "B013", "warn": false, "p_late": 0.30, "unfinished": 0.85, "message": ""}
+{"id": "B062", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B010", "warn": false, "p_late": 0.25, "unfinished": 0.70, "message": ""}
+{"id": "B106", "warn": true, "p_late": 0.55, "unfinished": 0.85, "message": "The last three sprints finished none of their committed issues, and one closed almost 6 days late. Please size the two unestimated bugs and confirm what can really be done by the planned end."}
+{"id": "B002", "warn": true, "p_late": 0.45, "unfinished": 0.60, "message": "18 issues carried over from the last sprint, and the team finishes about half of what it commits. Please trim these 17 issues to what fits, and plan to close on the planned date rather than extending."}
+{"id": "B094", "warn": true, "p_late": 0.80, "unfinished": 0.85, "message": "Each of the last three sprints closed late (about 15 days on average) with nothing completed. Please confirm who owns this bug and commit to closing the sprint on its planned end date."}
+{"id": "B014", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}
+{"id": "B099", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B091", "warn": false, "p_late": 0.30, "unfinished": 0.80, "message": ""}
+{"id": "B041", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.35, "unfinished": 0.80, "message": ""}
+{"id": "B090", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.60, "message": ""}
+{"id": "B035", "warn": false, "p_late": 0.20, "unfinished": 0.40, "message": ""}

@@ -1,0 +1,25 @@
+{"id": "W0242", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0342", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0304", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0292", "claims_ok": false, "bad_claims": "\"this team's late sprints have run about 10 days over\" (10.0 is the average days late across all three sprints, only 1 of which was late, not the overrun of the late sprints)", "close_on_date": 0}
+{"id": "W0012", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0140", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0274", "claims_ok": false, "bad_claims": "\"61 points is well above what we've been finishing\" (the board gives no history of points finished); \"two of our last three sprints ran about 10 days late\" (10.6 is the average across all three sprints, not the lateness of the two late ones)", "close_on_date": 0}
+{"id": "W0238", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0064", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0220", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0176", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0110", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0226", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0104", "claims_ok": false, "bad_claims": "\"our last few sprints closed well over a week late\" (only 2 of the last 3 closed late; 12.1 is the average across all three)", "close_on_date": 0}
+{"id": "W0193", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0368", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0058", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0203", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0147", "claims_ok": false, "bad_claims": "\"Two of our last three sprints closed late, by about 4 days on average\" (4.2 is the average across all three sprints, not across the two late ones); \"the 15 stories\" (the 15 committed issues are 14 stories and 1 bug)", "close_on_date": 0}
+{"id": "W0374", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0206", "claims_ok": false, "bad_claims": "\"each of our last three sprints closed about three weeks late\" (the board gives only the average of 20.8 days late, not each sprint's value)", "close_on_date": 0}
+{"id": "W0077", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0155", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0106", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0263", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

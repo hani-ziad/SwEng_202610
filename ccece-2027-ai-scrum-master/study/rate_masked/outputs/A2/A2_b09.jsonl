@@ -1,0 +1,25 @@
+{"id": "W0225", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0268", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0120", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0103", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0356", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0030", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0046", "claims_ok": false, "bad_claims": "\"two of our last three sprints closed well over a week late\" (board gives only a 10.7-day average across sprints; it does not show both late sprints were over a week late)", "close_on_date": 0}
+{"id": "W0164", "claims_ok": false, "bad_claims": "\"only 1 of 21 committed stories is resolved\" (one of the 21 committed issues is an Improvement, not a story)", "close_on_date": 0}
+{"id": "W0097", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0045", "claims_ok": false, "bad_claims": "\"a recent sprint of ours ran about 10 days over\" (only 1 of 3 sprints was late and 10.0 is the average days late across sprints, so the late one ran well over 10 days)", "close_on_date": 0}
+{"id": "W0149", "claims_ok": false, "bad_claims": "\"two of our last three sprints closed late by about 10 days on average\" (10.7 is the average across the sprints, not the average of the two late ones)", "close_on_date": 0}
+{"id": "W0087", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0019", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0151", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0116", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0141", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0250", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0024", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0184", "claims_ok": false, "bad_claims": "\"none of the 15 committed tasks are resolved yet\" (one of the 15 committed issues is a Bug, not a task)", "close_on_date": 0}
+{"id": "W0353", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0127", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0055", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0185", "claims_ok": false, "bad_claims": "\"Our last sprints closed several days late\" (only 2 of the last 3 closed more than a day late)", "close_on_date": 0}
+{"id": "W0243", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0178", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

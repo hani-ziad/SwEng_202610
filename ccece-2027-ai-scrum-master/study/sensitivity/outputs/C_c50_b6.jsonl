@@ -1,0 +1,20 @@
+{"id": "B011", "warn": true, "p_late": 0.72, "unfinished": 0.88, "message": "We're halfway through and only 2 of 39 committed issues are done, and our last few sprints closed late. Let's agree today what we can realistically finish and move the rest out."}
+{"id": "B015", "warn": false, "p_late": 0.22, "unfinished": 0.0, "message": ""}
+{"id": "B096", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}
+{"id": "B120", "warn": false, "p_late": 0.3, "unfinished": 0.25, "message": ""}
+{"id": "B071", "warn": false, "p_late": 0.3, "unfinished": 0.3, "message": ""}
+{"id": "B016", "warn": false, "p_late": 0.15, "unfinished": 0.8, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.15, "unfinished": 0.9, "message": ""}
+{"id": "B033", "warn": true, "p_late": 0.6, "unfinished": 0.8, "message": "None of the 17 committed issues is resolved at the halfway point, and 33 new issues have been added since the start. Please stop adding scope and focus on the committed work, or re-plan the sprint now."}
+{"id": "B092", "warn": false, "p_late": 0.2, "unfinished": 0.8, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.2, "unfinished": 0.75, "message": ""}
+{"id": "B051", "warn": false, "p_late": 0.2, "unfinished": 0.33, "message": ""}
+{"id": "B025", "warn": false, "p_late": 0.2, "unfinished": 0.9, "message": ""}
+{"id": "B067", "warn": true, "p_late": 0.55, "unfinished": 0.9, "message": "Only 1 of 45 committed issues is done at the halfway mark, and most of this sprint was carried over from the last one. Let's cut the commitment to what we can actually close and plan to end the sprint on time."}
+{"id": "B014", "warn": false, "p_late": 0.3, "unfinished": 0.5, "message": ""}
+{"id": "B062", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B081", "warn": false, "p_late": 0.3, "unfinished": 0.85, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.2, "unfinished": 0.75, "message": ""}
+{"id": "B108", "warn": true, "p_late": 0.55, "unfinished": 0.7, "message": "We're halfway and only 2 of 20 committed issues are resolved, while 33 new issues have come in. Let's freeze new scope and agree on the committed items we'll finish by the end date."}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.65, "message": ""}
+{"id": "B111", "warn": false, "p_late": 0.25, "unfinished": 0.8, "message": ""}

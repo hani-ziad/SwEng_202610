@@ -1,0 +1,20 @@
+{"id": "B073", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B100", "warn": true, "p_late": 0.5, "unfinished": 0.9, "message": "We're halfway through and none of the 3 committed bugs is resolved. Two of our last three sprints closed late. Can we agree today what we can realistically finish, and descope the rest?"}
+{"id": "B083", "warn": false, "p_late": 0.35, "unfinished": 0.7, "message": ""}
+{"id": "B018", "warn": false, "p_late": 0.28, "unfinished": 0.8, "message": ""}
+{"id": "B005", "warn": true, "p_late": 0.65, "unfinished": 0.9, "message": "We're halfway through this short sprint and neither committed bug is resolved. Our recent sprints have closed well past their end date. Let's decide now whether both bugs can land, or move one out so we close on time."}
+{"id": "B088", "warn": true, "p_late": 0.45, "unfinished": 0.8, "message": "We're at day 7 of 14 with 1 of 15 committed tasks done. At this pace most of the scope won't be finished. Can we reprioritise today and agree which tasks to move out?"}
+{"id": "B019", "warn": true, "p_late": 0.6, "unfinished": 0.6, "message": "We're halfway through and 3 of 4 committed bugs are still open, two of them unestimated. We've closed late in two of the last three sprints. Let's check today whether the remaining bugs fit in the time left."}
+{"id": "B116", "warn": true, "p_late": 0.4, "unfinished": 0.6, "message": "45 issues have been added since the start and none of the 9 committed stories is done yet. Our last three sprints all closed late. Can we pause new additions and focus on the committed stories?"}
+{"id": "B095", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B040", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.25, "unfinished": 0.4, "message": ""}
+{"id": "B047", "warn": false, "p_late": 0.3, "unfinished": 0.45, "message": ""}
+{"id": "B027", "warn": true, "p_late": 0.6, "unfinished": 0.45, "message": "We're halfway through with 15 of 23 committed issues still open, including several 8-point tasks, and 12 more issues have been added. Let's agree today what drops out so we can close on the planned date."}
+{"id": "B055", "warn": true, "p_late": 0.42, "unfinished": 0.55, "message": "We're halfway through and three 8-point tasks are still open. Can we check whether all three can realistically finish, and split or move one out if not?"}
+{"id": "B066", "warn": true, "p_late": 0.55, "unfinished": 0.75, "message": "We're at day 7 of 14 and none of the 7 committed items (61 SP, including a 21-point feature) is resolved. Our recent sprints have run well over. Let's re-plan today and agree what we can actually deliver."}
+{"id": "B119", "warn": true, "p_late": 0.5, "unfinished": 0.5, "message": "We're halfway through this one-week sprint with 4 committed items still open. Let's confirm today that they fit in the remaining 3.5 days, or move one out now."}
+{"id": "B004", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B039", "warn": false, "p_late": 0.2, "unfinished": 0.05, "message": ""}
+{"id": "B045", "warn": true, "p_late": 0.55, "unfinished": 0.5, "message": "We're halfway through and 20 committed issues are still open, including three 16-point tasks, while new work keeps coming in. Can we agree today what to finish and what to move out?"}
+{"id": "B076", "warn": false, "p_late": 0.35, "unfinished": 0.6, "message": ""}

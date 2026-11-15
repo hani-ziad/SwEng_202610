@@ -1,0 +1,25 @@
+{"id": "W0249", "claims_ok": false, "bad_claims": "\"Our recent sprints have closed several days late\" (only 1 of the last 3 closed more than a day late, share 0.33)", "close_on_date": 0}
+{"id": "W0280", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0040", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0282", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0349", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0085", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0306", "claims_ok": false, "bad_claims": "\"4 of the 7 committed bugs (34 SP) are still open\" (one committed item is an Improvement, and the 4 open items total 32 SP)", "close_on_date": 0}
+{"id": "W0023", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0344", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0385", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0027", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0204", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0289", "claims_ok": false, "bad_claims": "\"we've committed 47 SP again\" (the board gives no earlier sprint's committed SP)", "close_on_date": 0}
+{"id": "W0078", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0312", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0338", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0345", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0010", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0031", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0211", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0246", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0352", "claims_ok": false, "bad_claims": "\"12 stories is far more than that\" (the 12 committed issues are 9 stories and 3 improvements)", "close_on_date": 0}
+{"id": "W0276", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0376", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0009", "claims_ok": true, "bad_claims": "", "close_on_date": 1}

@@ -1,0 +1,503 @@
+You are acting as an AI assistant to a Scrum Master. For each sprint board below, decide
+whether to warn the team NOW that the sprint is likely to close late, meaning it will be closed in Jira more
+than one day after its planned end date. A warning interrupts the team, so do not warn without reason; a
+missed late sprint is costly too. Also estimate how much of the committed work will still be unresolved
+at the planned end date.
+
+You see the sprint exactly as it stood at the replay point. Judge every board on its own; boards come from
+different teams and are in random order. Do not use any tools, files or web access: answer from the text only.
+
+Answer with one JSON object per board, one per line, and nothing else:
+{"id": "<board id>", "warn": true or false, "p_late": <your probability from 0 to 1 that it closes late>, "unfinished": <your estimate from 0 to 1 of the share of the committed issues that will still be unresolved at the planned end date>, "message": "<if warn is true, the one or two sentences you would send the team; otherwise empty>"}
+
+Each board also shows the output of two models trained on earlier sprints of these
+teams. Use them as you see fit: you may follow them or overrule them.
+
+=== Board B074 ===
+Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 0.9; average issues completed 1.7.
+Committed at the start: 5 issues; story points recorded on 3 of them (total 9).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, 3 SP
+- Suggestion, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+Risk model: probability of closing late 0.48; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.73. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B017 ===
+Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.49; issues carried over from the last one 46; share that closed more than a day late 0.67; average days late 5.4; average issues completed 19.7.
+Committed at the start: 44 issues; story points recorded on 43 of them (total 82).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 1 SP
+- Story, 5 SP
+- Story, 1 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 0 SP
+- Story, 3 SP
+- Story, 3 SP
+- Bug, 0 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 2 SP
+- Improvement, 0 SP
+- Story, 2 SP
+- Story, 1 SP
+- Improvement, 1 SP
+- Improvement, 0 SP
+- Story, 3 SP
+- Improvement, 2 SP
+- Story, no estimate
+- Bug, 1 SP
+- Story, 3 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, 2 SP
+- Improvement, 1 SP
+- Improvement, 1 SP
+- Story, 2 SP
+- Story, 6 SP
+- Story, 5 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 1 SP
+- Story, 3 SP
+- Story, 1 SP
+- Story, 2 SP
+- ... and 4 more issues of the same kinds
+Risk model: probability of closing late 0.16; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.69. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B101 ===
+Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 7 issues; story points recorded on 1 of them (total 3).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, no estimate
+- Bug, no estimate
+- Bug, no estimate
+- Bug, no estimate
+- Bug, no estimate
+Risk model: probability of closing late 0.41; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.69. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B057 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.22; issues carried over from the last one 3; share that closed more than a day late 0.00; average days late 0.0; average issues completed 1.0.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 5).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 5 SP
+Risk model: probability of closing late 0.51; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.54. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B046 ===
+Team: Project G (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.53; issues carried over from the last one 0; share that closed more than a day late 0.00; average days late 0.5; average issues completed 5.0.
+Committed at the start: 26 issues; story points recorded on 26 of them (total 220).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 2 SP
+- Bug, 7 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Improvement, 13 SP
+- Story, 13 SP
+- Bug, 13 SP
+- Improvement, 5 SP
+- Bug, 13 SP
+- Story, 5 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Bug, 8 SP
+- Improvement, 8 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Improvement, 8 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+Risk model: probability of closing late 0.32; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.53. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B042 ===
+Team: Project G (name hidden). Planned sprint length: 10.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.55; issues carried over from the last one 0; share that closed more than a day late 0.00; average days late 0.0; average issues completed 1.3.
+Committed at the start: 31 issues; story points recorded on 23 of them (total 175).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 3 SP
+- New Feature, 13 SP
+- Improvement, 8 SP
+- New Feature, 5 SP
+- New Feature, 8 SP
+- New Feature, no estimate
+- Bug, no estimate
+- New Feature, 5 SP
+- Improvement, 8 SP
+- Improvement, 7 SP
+- Improvement, 7 SP
+- New Feature, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- New Feature, no estimate
+- Bug, 3 SP
+- Bug, no estimate
+- Bug, 5 SP
+- Story, 8 SP
+- Story, 13 SP
+- Bug, 13 SP
+- Bug, 8 SP
+- Improvement, 13 SP
+- Improvement, 2 SP
+- New Feature, 8 SP
+- Epic, no estimate
+- Improvement, 21 SP
+- New Feature, no estimate
+- Improvement, 8 SP
+- Improvement, no estimate
+Risk model: probability of closing late 0.26; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.71. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B001 ===
+Team: Project E (name hidden). Planned sprint length: 25.0 days.
+Other sprints of this project open at the same time: 4.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.24; issues carried over from the last one 25; share that closed more than a day late 1.00; average days late 16.2; average issues completed 10.7.
+Committed at the start: 21 issues; story points recorded on 14 of them (total 82).
+Now: day 0, planning has just finished.
+Issues:
+- Story, no estimate
+- Story, 47 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 3 SP
+- Story, no estimate
+- Story, 2 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, no estimate
+- Story, no estimate
+- Story, 2 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 1 SP
+- Story, no estimate
+- Story, 8 SP
+- Story, 2 SP
+- Story, 1 SP
+- Improvement, no estimate
+- Story, no estimate
+Risk model: probability of closing late 0.06; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.69. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B072 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 4.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.16; issues carried over from the last one 1; share that closed more than a day late 0.00; average days late 0.3; average issues completed 3.0.
+Committed at the start: 19 issues; story points recorded on 19 of them (total 77).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 4 SP
+- Task, 2 SP
+- Task, 2 SP
+- Task, 2 SP
+- Task, 4 SP
+- Task, 4 SP
+- Bug, 1 SP
+- Bug, 4 SP
+- Task, 2 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Enhancement Request, 2 SP
+- Task, 16 SP
+- Task, 8 SP
+- Task, 4 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Bug, 2 SP
+Risk model: probability of closing late 0.47; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.66. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B038 ===
+Team: Project B (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.11; issues carried over from the last one 4; share that closed more than a day late 0.67; average days late 3.6; average issues completed 0.7.
+Committed at the start: 7 issues; story points recorded on 7 of them (total 47).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Improvement, 3 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 13 SP
+Risk model: probability of closing late 0.39; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.74. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B035 ===
+Team: Project A (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.80; issues carried over from the last one 1; share that closed more than a day late 0.00; average days late 0.3; average issues completed 4.0.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 3).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+Risk model: probability of closing late 0.47; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.66. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B040 ===
+Team: Project C (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 1.1; average issues completed 2.0.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+Risk model: probability of closing late 0.11; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.76. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B107 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 6; share that closed more than a day late 0.00; average days late 0.5; average issues completed 5.7.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 12).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Task, 4 SP
+- Bug, 8 SP
+Risk model: probability of closing late 0.62; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.72. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B011 ===
+Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 29; share that closed more than a day late 0.67; average days late 10.7; average issues completed 3.7.
+Committed at the start: 39 issues; story points recorded on 35 of them (total 255).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 3 SP
+- Bug, 5 SP
+- Story, 8 SP
+- Bug, 2 SP
+- Bug, 5 SP
+- Bug, no estimate
+- Improvement, 3 SP
+- Bug, 5 SP
+- Bug, 3 SP
+- Bug, no estimate
+- Improvement, 13 SP
+- Improvement, 13 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Bug, 5 SP
+- Bug, 3 SP
+- Story, no estimate
+- Improvement, 13 SP
+- New Feature, 8 SP
+- New Feature, 21 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- New Feature, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 13 SP
+- Improvement, 3 SP
+- New Feature, 5 SP
+Risk model: probability of closing late 0.19; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.73. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B025 ===
+Team: Project F (name hidden). Planned sprint length: 13.3 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.75; issues carried over from the last one 0; share that closed more than a day late 0.00; average days late 0.0; average issues completed 1.0.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 12).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 4 SP
+- Bug, no estimate
+- Bug, 8 SP
+Risk model: probability of closing late 0.55; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.35. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B098 ===
+Team: Project G (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.03; issues carried over from the last one 41; share that closed more than a day late 0.00; average days late 0.1; average issues completed 1.3.
+Committed at the start: 47 issues; story points recorded on 41 of them (total 444).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Improvement, 3 SP
+- Improvement, 3 SP
+- Bug, 7 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Bug, no estimate
+- Bug, no estimate
+- Bug, 1 SP
+- Bug, 5 SP
+- Improvement, 5 SP
+- Improvement, 8 SP
+- New Feature, 13 SP
+- New Feature, 5 SP
+- New Feature, 11 SP
+- Improvement, 13 SP
+- Epic, 23 SP
+- Bug, 3 SP
+- Story, no estimate
+- Improvement, 13 SP
+- Story, 13 SP
+- New Feature, 8 SP
+- Story, no estimate
+- New Feature, 21 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- Improvement, 34 SP
+- Bug, 2 SP
+- New Feature, 3 SP
+- Bug, 5 SP
+- New Feature, 8 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Improvement, 13 SP
+- Bug, 2 SP
+- Improvement, 8 SP
+- New Feature, 13 SP
+- Bug, 13 SP
+- Bug, 13 SP
+- Bug, 8 SP
+- ... and 7 more issues of the same kinds
+Risk model: probability of closing late 0.44; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.79. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B114 ===
+Team: Project B (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.25; issues carried over from the last one 5; share that closed more than a day late 0.00; average days late 0.0; average issues completed 1.7.
+Committed at the start: 2 issues; story points recorded on 2 of them (total 13).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Bug, 8 SP
+Risk model: probability of closing late 0.46; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.68. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B088 ===
+Team: Project A (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 2; share that closed more than a day late 0.33; average days late 1.7; average issues completed 4.0.
+Committed at the start: 15 issues; story points recorded on 15 of them (total 46).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 5 SP
+- Task, 3 SP
+- Task, 3 SP
+- Task, 1 SP
+- Task, 2 SP
+- Task, 3 SP
+- Task, 2 SP
+- Task, 3 SP
+- Task, 2 SP
+- Task, 5 SP
+- Task, 5 SP
+- Task, 3 SP
+- Task, 3 SP
+- Task, 1 SP
+- Bug, 5 SP
+Risk model: probability of closing late 0.42; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.74. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B002 ===
+Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.47; issues carried over from the last one 18; share that closed more than a day late 0.33; average days late 1.0; average issues completed 13.0.
+Committed at the start: 17 issues; story points recorded on 15 of them (total 27).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 3 SP
+- Story, no estimate
+- Story, no estimate
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 0 SP
+- Improvement, 0 SP
+- Improvement, 0 SP
+- Improvement, 0 SP
+- Story, 2 SP
+- Improvement, 3 SP
+Risk model: probability of closing late 0.18; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.74. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B053 ===
+Team: Project H (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.24; issues carried over from the last one 3; share that closed more than a day late 0.00; average days late 0.1; average issues completed 1.0.
+Committed at the start: 4 issues; story points recorded on 4 of them (total 36).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 16 SP
+- New Feature, 8 SP
+- New Feature, 8 SP
+- Bug, 4 SP
+Risk model: probability of closing late 0.62; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.70. On held-out sprints its typical error was 0.24 (mean absolute error).
+
+=== Board B099 ===
+Team: Project B (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.22; issues carried over from the last one 1; share that closed more than a day late 0.00; average days late 0.4; average issues completed 0.7.
+Committed at the start: 5 issues; story points recorded on 5 of them (total 30).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+- Story, 3 SP
+- Bug, 8 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+Risk model: probability of closing late 0.59; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75).
+Delivery model: expected share of the committed issues still unresolved at the planned end 0.71. On held-out sprints its typical error was 0.24 (mean absolute error).

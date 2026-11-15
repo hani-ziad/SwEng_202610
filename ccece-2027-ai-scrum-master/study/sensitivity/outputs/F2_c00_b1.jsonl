@@ -1,0 +1,20 @@
+{"id": "B100", "warn": true, "p_late": 0.52, "unfinished": 0.80, "message": "Heads-up: two of our last three sprints closed late and we finished almost nothing we committed. These three bugs have no estimates, so can we size them today and agree what 'done' means before day 14?"}
+{"id": "B045", "warn": true, "p_late": 0.48, "unfinished": 0.75, "message": "We've committed 33 issues (142 SP), but we usually finish about 5 per sprint, and four other sprints are open at the same time. Let's pick the must-have items now so we don't run past the end date."}
+{"id": "B090", "warn": false, "p_late": 0.28, "unfinished": 0.75, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.18, "unfinished": 0.50, "message": ""}
+{"id": "B112", "warn": false, "p_late": 0.15, "unfinished": 0.70, "message": ""}
+{"id": "B037", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B081", "warn": true, "p_late": 0.42, "unfinished": 0.80, "message": "This is a 7-day sprint, and recently we've finished under a fifth of what we commit, with late closes averaging almost 5 days. Can we confirm which of these five bugs we'll really finish this week and estimate the two that have no size?"}
+{"id": "B080", "warn": false, "p_late": 0.25, "unfinished": 0.90, "message": ""}
+{"id": "B118", "warn": true, "p_late": 0.50, "unfinished": 0.80, "message": "Two of our last three sprints closed late, and we've been completing very little of what we commit. Let's agree on a realistic subset of these six items now and estimate the unsized bug."}
+{"id": "B091", "warn": false, "p_late": 0.15, "unfinished": 0.60, "message": ""}
+{"id": "B004", "warn": false, "p_late": 0.15, "unfinished": 0.80, "message": ""}
+{"id": "B103", "warn": true, "p_late": 0.55, "unfinished": 0.85, "message": "Our recent 7-day sprints have mostly closed late, by about 5 days on average, and three other sprints are running in parallel. Let's check today that these three bugs really fit this week or move one out now."}
+{"id": "B013", "warn": false, "p_late": 0.30, "unfinished": 0.85, "message": ""}
+{"id": "B106", "warn": false, "p_late": 0.30, "unfinished": 0.80, "message": ""}
+{"id": "B026", "warn": false, "p_late": 0.35, "unfinished": 0.90, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B066", "warn": true, "p_late": 0.55, "unfinished": 0.60, "message": "Two of our last three sprints closed late, by more than 10 days on average, and this one carries 61 SP, including a 21 SP feature. Can we split or drop the largest items now so we close on time?"}
+{"id": "B076", "warn": false, "p_late": 0.25, "unfinished": 0.65, "message": ""}
+{"id": "B096", "warn": false, "p_late": 0.25, "unfinished": 0.70, "message": ""}
+{"id": "B023", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}

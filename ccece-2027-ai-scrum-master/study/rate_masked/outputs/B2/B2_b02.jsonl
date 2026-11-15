@@ -1,0 +1,25 @@
+{"id": "W0149", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0319", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0380", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0017", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0238", "claims_ok": false, "bad_claims": "\"with about 175 points still open\" (175 SP was the total committed; one 8 SP item is resolved, so about 167 committed SP are open)", "close_on_date": 0}
+{"id": "W0134", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0288", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0327", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0075", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0151", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0265", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0293", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0122", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0303", "claims_ok": false, "bad_claims": "\"this sprint will likely close late like the last two\" (the board only says two of the last three closed late, not that the two most recent did)", "close_on_date": 0}
+{"id": "W0225", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0018", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "W0381", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0170", "claims_ok": false, "bad_claims": "\"so we don't repeat the late closures of earlier sprints\" (late share 0.33 means only one of the last three closed late)", "close_on_date": 0}
+{"id": "W0065", "claims_ok": false, "bad_claims": "\"one recent sprint ran almost five days late\" (4.8 is the average over three sprints with only one late, so that sprint ran about 12 or more days late)", "close_on_date": 0}
+{"id": "W0356", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0224", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0290", "claims_ok": false, "bad_claims": "\"we're starting with 12 issues again\" (the board says nothing about earlier sprints committing 12 issues)", "close_on_date": 0}
+{"id": "W0183", "claims_ok": false, "bad_claims": "\"26 SP of new work has come in\" (the added issues total 32 SP plus one unestimated item)", "close_on_date": 0}
+{"id": "W0233", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "W0318", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

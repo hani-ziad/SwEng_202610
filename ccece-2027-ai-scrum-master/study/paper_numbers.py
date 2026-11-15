@@ -168,6 +168,13 @@ def expected():
     co = {(r["scenario"], r["kappa_over_F"]): r["G_minus_Mopt"] for r in ts["cost_optimal_M"]}
     assert all(v > -0.0005 for v in co.values()) and [k for k, v in co.items() if v < 0.0005] == [("strong", 0.2)]
     e["tied once"] = "tied once, at $\\kappa/F=0.2$ with stronger warnings"
+    # added 15 Nov 2026 (night): chronology check of M (study/chronology_check.py, run in a scratch workspace)
+    ch = json.loads((R / "chronology_check.json").read_text())["0.0"]
+    e.update({
+        "chrono early": f"{ch['start_before_some_training_start']} of the {ch['n']} replayed sprints start before",
+        "chrono same": f"same call on {ch['same_call']} of the {ch['n']} sprints (Cohen's $\\kappa$ {ch['kappa']:.2f})",
+        "chrono auc": f"pooled AUC of {ch['auc_M_tv']:.2f} against {ch['auc_M']:.2f}",
+    })
     return e
 
 

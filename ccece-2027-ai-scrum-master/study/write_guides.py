@@ -79,6 +79,10 @@ def plain(e):
       "13 sprints shared with the pilot are disclosed (results without them are the same), only six of the eight "
       "projects enter the within-project score, and the planning sample is limited by a fact known only at halfway. "
       "The CCECE paper is now 6 pages (the limit). The Canadian AI paper got the same changes in short form.")
+    P("One more check came the same night: the model was trained once on the early part of every project, so 71 of "
+      "the 120 replayed sprints started before some training sprint of another project. Retrained at each point in "
+      "time on sprints whose outcome was already known, it made the same call on 115 of the 120 sprints and ranked them "
+      "almost as well (AUC 0.72 against 0.73). Both papers now say this. The agents were not rerun against that model.")
     H("What changed on the evening of 15 November 2026")
     P("An outside reviewer read the Canadian AI version and asked for a narrower claim and a sharper test. This paper "
       "now says it tests one part of the role (a sprint-risk assistant), adds the hidden and flipped model tests, adds "
@@ -176,6 +180,11 @@ def manual(e):
     P("python -m study.rate_masked collect <transcript folder>\npython -m study.rate_masked score")
     P("Writes results/ratings_masked.csv and ratings_masked_summary.json, with the first rating's counts and "
       "board-resampled intervals side by side (32 of 32 clean in our run).")
+    H("5d. Chronology check of the model (added 15 Nov, night)")
+    P("study/chronology_check.py refits M at planning time on sprints whose outcome was known before each replayed "
+      "sprint's quarter and compares its calls with the stored ones. It was run in a scratch workspace against the "
+      "journal repository's eight-project frame; edit the paths at the top to rerun. Writes "
+      "results/chronology_check.json (only the planning checkpoint is quoted).")
     H("6. Check the numbers against the paper")
     P("python -m study.paper_numbers check")
     P(f"Checks all {len(e)} study numbers quoted in the text and every row of the results table against the result "
@@ -202,7 +211,8 @@ def manual(e):
             ("Flipped call followed when wrong / right", e['flip split']),
             ("Only the written verdict flipped", e['C follow']),
             ("Training-only performance lines", e['T agree']),
-            ("Without the 13 pilot sprints", e['no pilot'] + "; " + e['no pilot auc'])]
+            ("Without the 13 pilot sprints", e['no pilot'] + "; " + e['no pilot auc']),
+            ("Chronology check of M", e['chrono early'] + "; " + e['chrono same'] + "; " + e['chrono auc'])]
     t = d.add_table(rows=1, cols=2)
     t.style = "Light Grid Accent 1"
     t.rows[0].cells[0].text, t.rows[0].cells[1].text = "Number", "Expected"
