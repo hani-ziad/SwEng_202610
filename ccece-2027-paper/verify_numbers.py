@@ -558,4 +558,15 @@ hi_ = pd.read_csv(f"{RC}/hidden_issues.csv")
 check("hidden issues median 26%", 26, 100 * hi_.gap.median(), 0.5); check("hidden issues max 66%", 66, 100 * hi_.gap.max(), 0.5)
 check("hidden issues max is Confluence Cloud", 1, int(hi_.loc[hi_.gap.idxmax(), "project"] == "Atlassian Confluence Cloud"), 0)
 check("hidden issues min under 1%", 1, int(hi_.gap.min() < 0.01), 0)
+el = pd.read_csv(f"{RC}/elicit_review_checks.csv").set_index("check")["value"]
+eln = pd.read_csv(f"{RC}/elicit_review_checks.csv").set_index("check")["note"]
+check("purged GB pooled .749", .749, float(el["purged_gb_pooled"])); check("purged GB within .623", .623, float(el["purged_gb_within"]))
+check("purged removes 29", 29, float(el["purge_n_removed"]), 0)
+check("calendar cut GB pooled .745", .745, float(el["calendar_gb_pooled"])); check("calendar cut GB within .640", .640, float(el["calendar_gb_within"]))
+check("weekday rule within .613", .613, float(el["weekday_rule_within"])); check("GB minus weekday rule within .021", .021, float(el["gb_minus_weekday_rule_within"]))
+lo_, hi_w = [float(x) for x in eln["gb_minus_weekday_rule_within"].replace("CI ", "").split(",")]
+check("GB minus weekday interval low -.037", -.037, lo_); check("GB minus weekday interval high .082", .082, hi_w)
+lo_, hi_w = [float(x) for x in el["th7_gb_within_ci"].split(",")]
+check("7-day within interval low .402", .402, lo_); check("7-day within interval high .572", .572, hi_w)
+check("7-day within .502 (rerun)", .502, float(el["th7_gb_within_mean"]))
 print("FAILS:", fails)

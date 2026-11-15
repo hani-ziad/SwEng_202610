@@ -71,3 +71,21 @@ Not changed, with reason: Fig. 1 kept (helps non-specialist readers, now half he
 4. Read Choetkiertikul et al. (2018) in full.
 5. Not fixable from the data we have: planned sprint dates and issue status history are not in the TAWOS export used here, so they are stated as threats.
 | 46 | Hidden issues not reported (found in the journal's Red Hat work, 14 Nov) | Public Jira omits private, deleted and moved issues but keeps their numbers. Share of issue numbers missing since each project's first sprint issue (reviewer_checks/hidden_issues.py on the week-12 TAWOS export): Mesos 0.4%, DM 2.8%, TIDOC 10.7%, TIMOB 22.0%, CONFSERVER 29.8%, TISTUD 36.2%, MULE 41.2%, CONFCLOUD 66.1%; median 25.9%. A hidden issue in a sprint lowers the reconstructed committed scope | One sentence added to Threats (Reconstruction); scikit-learn rerun sentence and UTC sentence shortened to hold 6 pages; four checks added to verify_numbers.py |
+
+## External referee report (Elicit, 15 Nov 2026) and what was done
+
+New checks: `reviewer_checks/elicit_review_checks.py` (inputs: phase-2 modelling frame and tawos_sprint.csv). `verify_numbers.py` has 13 new checks.
+
+| # | Reviewer's point | Evidence (new run) | Fix applied |
+|---|---|---|---|
+| 47 | 29 training labels known only after the first test sprint; no calendar-time split | Removing the 29: GB 0.749 pooled, 0.623 within (was 0.751, 0.634). One calendar cut (19 Jan 2018), training only on sprints closed before it (1,803 train, 781 test, 18 straddling sprints dropped): GB 0.745 pooled, 0.640 within [0.574, 0.708] | One sentence in III-D |
+| 48 | No weekday baseline | Flag for planned end on Friday or weekend, training rates only: 0.637 pooled, 0.613 within [0.581, 0.647]. GB minus the flag within a project: 0.021 [-0.037, 0.082]. GB with the flag added: 0.770 pooled, 0.675 within (gain 0.041 [-0.000, 0.087]) | Baseline listed in III-D; result in IV-A, abstract and conclusion; recommendation (6) now says "count, rate or calendar rule" |
+| 49 | "Skill disappears", "at chance" without intervals | 7-day threshold within-project 0.502 [0.402, 0.572]; 3-day 0.623 [0.530, 0.700] | Interval added; both phrases replaced by the numbers |
+| 50 | "Mechanical" and "match" overclaim | Wording only | "depends strongly on sprint size"; "score about as high as" |
+| 51 | Denominator of the empty-sprint shares unclear | 33% and 42% are of the 911 empty sprints (planning_checks.csv) | Stated in III-A |
+| 52 | F1 and Brier "not comparable" is wrong | Wording only | "a fixed threshold means something different for each" |
+| 53 | Odd sprint durations kept | 1 to 60 days only (2,593 sprints): GB 0.751 pooled, 0.641 within | Checked, not added to the paper (no room, no change) |
+
+Cut to hold 6 pages: the three-day threshold sentence, the capacity-group sentence, the oversampling spillover sentence, the late-closure F1 clause in the leakage paragraph, the UTC sentence, the history-cost sentence in the conclusion, and half of the future-work sentence.
+
+Not done, with reason: sprint-date and issue-status histories are not in the TAWOS export (stays a threat); manual label validation; a full external-validation table (no room in 6 pages); the 0.957/0.958 mid-sprint comparator (already explained in IV-G and the Table II caption); Shapley background sensitivity.

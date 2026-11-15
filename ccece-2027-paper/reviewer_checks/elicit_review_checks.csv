@@ -1,0 +1,37 @@
+check,value,note
+th1_gb_within_mean,0.634,8 projects
+th1_gb_within_ci,"0.570,0.695",sprint bootstrap within projects
+th3_gb_within_mean,0.623,8 projects
+th3_gb_within_ci,"0.530,0.700",sprint bootstrap within projects
+th7_gb_within_mean,0.502,7 projects
+th7_gb_within_ci,"0.402,0.572",sprint bootstrap within projects
+purge_n_removed,29,Lsstcorp Data management=6; Atlassian Confluence Cloud=5; Mule=5; Apache Mesos=4; Atlassian Confluence Server=3; The Titanium SDK=3; Appcelerator Studio=2; Titanium Mobile Platform=1
+orig_gb_pooled,0.751,
+orig_gb_within,0.634,
+purged_gb_pooled,0.749,
+purged_gb_within,0.623,
+calendar_cut_date,2018-01-19,
+calendar_n_train,1803,
+calendar_n_test,781,277 late
+calendar_dropped_straddling,18,"started before the cut, closed after it"
+calendar_test_projects,Lsstcorp Data management=215; Atlassian Confluence Server=132; Apache Mesos=115; Atlassian Confluence Cloud=83; The Titanium SDK=78; Titanium Mobile Platform=78; Mule=41; Appcelerator Studio=39,
+calendar_gb_pooled,0.745,
+calendar_project_rate_pooled,0.639,
+calendar_gb_within,0.64,8 projects
+calendar_gb_within_ci,"0.574,0.708",
+weekday_rule_pooled,0.637,
+weekday_rule_within,0.613,8 projects
+project_weekday_rate_pooled,0.692,
+project_weekday_rate_within,0.613,
+gb_plus_weekday_pooled,0.77,
+gb_plus_weekday_within,0.675,
+weekday_rule_within_ci,"0.581,0.647",
+project_weekday_rate_within_ci,"0.581,0.647",
+gb_minus_weekday_rule_within,0.021,"CI -0.037,0.082"
+gb_minus_project_weekday_within,0.021,"CI -0.037,0.082"
+gb_plus_weekday_minus_gb_within,0.041,"CI -0.000,0.087"
+test_share_end_fri_wkd,0.405,
+end_fri_wkd_share_by_project,Apache Mesos=0.13; Appcelerator Studio=0.51; Atlassian Confluence Cloud=0.20; Atlassian Confluence Server=0.23; Lsstcorp Data management=0.44; Mule=0.05; The Titanium SDK=0.91; Titanium Mobile Platform=0.87,
+dur_1_60_n,2593,
+dur_1_60_gb_pooled,0.751,
+dur_1_60_gb_within,0.641,
