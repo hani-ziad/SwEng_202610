@@ -1,0 +1,25 @@
+{"id": "M0324", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0212", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0114", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0237", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0399", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0356", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0297", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0228", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0061", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0251", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0473", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0018", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0270", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0321", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0169", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0411", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0385", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0044", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0191", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0258", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0180", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0462", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0395", "claims_ok": false, "bad_claims": "\"our last three sprints all closed more than two weeks late\" (board gives only an average of 16.2 days late, not that each sprint was over two weeks late)", "close_on_date": 0}
+{"id": "M0472", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0093", "claims_ok": false, "bad_claims": "\"only 1 of the 17 committed stories is done\" (the only resolved committed issue is an Improvement; no committed Story is resolved, and not all 17 are stories)", "close_on_date": 0}

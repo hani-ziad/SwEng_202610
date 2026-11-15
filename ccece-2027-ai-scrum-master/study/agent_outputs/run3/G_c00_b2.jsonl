@@ -1,0 +1,20 @@
+{"id": "B098", "warn": false, "p_late": 0.25, "unfinished": 0.9, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.32, "unfinished": 0.7, "message": ""}
+{"id": "B005", "warn": true, "p_late": 0.55, "unfinished": 0.85, "message": "Heads-up: two of the last three sprints closed late, by about 12 days on average, and three other sprints are open in parallel. Please agree now on what has to be done by the planned end, and plan to close the sprint on time."}
+{"id": "B013", "warn": false, "p_late": 0.3, "unfinished": 0.85, "message": ""}
+{"id": "B048", "warn": false, "p_late": 0.33, "unfinished": 0.75, "message": ""}
+{"id": "B096", "warn": false, "p_late": 0.1, "unfinished": 0.7, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B059", "warn": false, "p_late": 0.35, "unfinished": 0.7, "message": ""}
+{"id": "B042", "warn": false, "p_late": 0.35, "unfinished": 0.8, "message": ""}
+{"id": "B101", "warn": true, "p_late": 0.5, "unfinished": 0.85, "message": "Heads-up: two of the last three sprints closed late (about 5 days on average), and six of the seven bugs have no estimate. Please size them today and plan to close the sprint on its end date."}
+{"id": "B073", "warn": false, "p_late": 0.25, "unfinished": 0.7, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.25, "unfinished": 0.7, "message": ""}
+{"id": "B105", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B006", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}
+{"id": "B075", "warn": false, "p_late": 0.25, "unfinished": 0.35, "message": ""}
+{"id": "B100", "warn": true, "p_late": 0.5, "unfinished": 0.9, "message": "Heads-up: two of the last three sprints closed late, and none of the three bugs has an estimate yet. Please size them and plan to close this sprint on its end date."}
+{"id": "B066", "warn": true, "p_late": 0.5, "unfinished": 0.6, "message": "Heads-up: two of the last three sprints closed late, by more than 10 days on average, and this sprint includes a 21 SP feature. Please break it down early and plan to close the sprint on its end date."}
+{"id": "B114", "warn": false, "p_late": 0.2, "unfinished": 0.65, "message": ""}
+{"id": "B051", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B067", "warn": true, "p_late": 0.45, "unfinished": 0.9, "message": "Heads-up: 45 issues (373 SP) are committed, but recent sprints completed only about one issue each and carried 41 over. Please cut the scope to what can realistically be done and close the sprint on its end date."}

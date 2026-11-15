@@ -1,0 +1,20 @@
+{"id": "B041", "warn": false, "p_late": 0.20, "unfinished": 0.70, "message": ""}
+{"id": "B113", "warn": true, "p_late": 0.65, "unfinished": 0.68, "message": "Halfway through, only 2 of the 15 committed stories are done, while 50 new issues have come in. Can we agree today which committed items we will really finish, and stop adding scope, so the sprint can close on time?"}
+{"id": "B111", "warn": false, "p_late": 0.25, "unfinished": 0.80, "message": ""}
+{"id": "B061", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B120", "warn": false, "p_late": 0.20, "unfinished": 0.30, "message": ""}
+{"id": "B003", "warn": false, "p_late": 0.07, "unfinished": 0.30, "message": ""}
+{"id": "B056", "warn": true, "p_late": 0.50, "unfinished": 0.85, "message": "We are halfway through the sprint and only 1 of the 12 committed tasks is resolved. Let's pick the few items we can realistically finish by the end date and plan to close the sprint on time rather than let it run over."}
+{"id": "B091", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B100", "warn": true, "p_late": 0.50, "unfinished": 0.90, "message": "None of the 3 committed bugs is resolved at the halfway point, and our last sprints mostly closed late. Can someone take each bug today, and can we agree to close the sprint on its planned date whatever is left?"}
+{"id": "B098", "warn": false, "p_late": 0.15, "unfinished": 0.78, "message": ""}
+{"id": "B051", "warn": false, "p_late": 0.15, "unfinished": 0.30, "message": ""}
+{"id": "B042", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B035", "warn": false, "p_late": 0.10, "unfinished": 0.00, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.30, "unfinished": 0.80, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.88, "unfinished": 0.80, "message": "We are at day 12.5 of 25 with only 1 of the 21 committed stories resolved, and 51 issues added. Our last three sprints all closed well past their end date, so let's cut scope now and commit to closing this one on the planned day."}
+{"id": "B092", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B104", "warn": false, "p_late": 0.33, "unfinished": 0.85, "message": ""}
+{"id": "B105", "warn": false, "p_late": 0.25, "unfinished": 1.00, "message": ""}
+{"id": "B094", "warn": true, "p_late": 0.80, "unfinished": 0.90, "message": "The one committed bug is still open at the halfway point, and our last three sprints all closed about two weeks late. Let's finish or re-plan that bug this week and close the sprint on its planned end date."}
+{"id": "B072", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}

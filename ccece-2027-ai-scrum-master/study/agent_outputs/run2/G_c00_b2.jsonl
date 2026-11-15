@@ -1,0 +1,20 @@
+{"id": "B104", "warn": false, "p_late": 0.33, "unfinished": 0.68, "message": ""}
+{"id": "B107", "warn": false, "p_late": 0.12, "unfinished": 0.6, "message": ""}
+{"id": "B035", "warn": false, "p_late": 0.15, "unfinished": 0.3, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}
+{"id": "B048", "warn": false, "p_late": 0.3, "unfinished": 0.8, "message": ""}
+{"id": "B082", "warn": true, "p_late": 0.42, "unfinished": 0.55, "message": "Heads-up: this sprint looks at risk of closing late. The single story has no estimate, so please size it and agree on a clear done point before the planned end."}
+{"id": "B046", "warn": false, "p_late": 0.3, "unfinished": 0.75, "message": ""}
+{"id": "B049", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B088", "warn": false, "p_late": 0.33, "unfinished": 0.72, "message": ""}
+{"id": "B119", "warn": false, "p_late": 0.33, "unfinished": 0.75, "message": ""}
+{"id": "B059", "warn": false, "p_late": 0.33, "unfinished": 0.7, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.8, "unfinished": 0.75, "message": "This sprint is very likely to close late: all of the last three did, by about 16 days on average, and 25 issues carried over last time. Please trim the scope now and split the 47-point story and the unestimated items before work starts."}
+{"id": "B016", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.12, "unfinished": 0.9, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.27, "unfinished": 0.7, "message": ""}
+{"id": "B007", "warn": true, "p_late": 0.75, "unfinished": 0.75, "message": "This sprint is likely to close late: two of the last three did, and 47 issues carried over from the last one. Please cut the commitment down to what you finished in recent sprints and agree on a firm close date."}
+{"id": "B083", "warn": false, "p_late": 0.22, "unfinished": 0.35, "message": ""}
+{"id": "B067", "warn": true, "p_late": 0.45, "unfinished": 0.92, "message": "The sprint holds 45 issues (373 SP), but recent sprints finished about one issue each and 41 carried over last time. Please cut it down to a realistic set now so the sprint can close on time."}
+{"id": "B005", "warn": true, "p_late": 0.5, "unfinished": 0.85, "message": "Two of the last three sprints closed late, by about 12 days on average. Please estimate the open bug and plan to close the sprint on its end date even if some work has to carry over."}
+{"id": "B084", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}

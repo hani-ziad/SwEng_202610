@@ -1,0 +1,20 @@
+{"id": "B091", "warn": false, "p_late": 0.12, "unfinished": 0.65, "message": ""}
+{"id": "B077", "warn": true, "p_late": 0.62, "unfinished": 0.88, "message": "We're halfway through and only 3 of 44 committed issues are done, with 10 more added. Let's agree today what comes out of this sprint so it can close on time."}
+{"id": "B086", "warn": false, "p_late": 0.35, "unfinished": 0.65, "message": ""}
+{"id": "B059", "warn": true, "p_late": 0.42, "unfinished": 0.75, "message": "We're at the midpoint with 1 of 12 committed issues resolved. Past sprints have run well past their end date, so please flag now which tasks won't make it and we'll re-plan the scope."}
+{"id": "B068", "warn": true, "p_late": 0.45, "unfinished": 0.75, "message": "None of the 7 committed stories are done yet, and 30 issues have been added since the start, including a 40 SP epic. Let's stop adding scope and focus on finishing the committed stories before day 12."}
+{"id": "B099", "warn": false, "p_late": 0.12, "unfinished": 0.5, "message": ""}
+{"id": "B026", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B076", "warn": false, "p_late": 0.1, "unfinished": 0.55, "message": ""}
+{"id": "B082", "warn": false, "p_late": 0.15, "unfinished": 0.0, "message": ""}
+{"id": "B035", "warn": false, "p_late": 0.08, "unfinished": 0.0, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.12, "unfinished": 0.8, "message": ""}
+{"id": "B109", "warn": false, "p_late": 0.15, "unfinished": 0.8, "message": ""}
+{"id": "B081", "warn": true, "p_late": 0.4, "unfinished": 0.75, "message": "We're halfway through this one-week sprint with none of the 5 committed bugs resolved and 3 more added. Please pick the bugs you can realistically close by day 7 and we'll move the rest out."}
+{"id": "B120", "warn": false, "p_late": 0.1, "unfinished": 0.25, "message": ""}
+{"id": "B078", "warn": true, "p_late": 0.45, "unfinished": 0.7, "message": "Only 2 of 12 committed issues are resolved at the midpoint, and 11 new ones have come in. Let's review scope now and move out what won't finish, so we don't repeat the late closures of earlier sprints."}
+{"id": "B061", "warn": false, "p_late": 0.25, "unfinished": 0.6, "message": ""}
+{"id": "B057", "warn": false, "p_late": 0.1, "unfinished": 0.6, "message": ""}
+{"id": "B071", "warn": false, "p_late": 0.3, "unfinished": 0.25, "message": ""}
+{"id": "B040", "warn": true, "p_late": 0.6, "unfinished": 0.7, "message": "Our recent sprints have all closed late, and the one committed bug is still open at the halfway point. Please confirm it can be finished by day 14, or plan to close the sprint on time and carry it over."}
+{"id": "B103", "warn": true, "p_late": 0.55, "unfinished": 0.55, "message": "Two of the three committed bugs are still open at the midpoint, and recent sprints have closed several days late. Let's either finish them by day 7 or close the sprint on schedule and carry them over."}

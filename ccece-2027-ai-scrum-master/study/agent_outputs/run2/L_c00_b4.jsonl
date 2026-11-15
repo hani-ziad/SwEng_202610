@@ -1,0 +1,20 @@
+{"id": "B094", "warn": true, "p_late": 0.85, "unfinished": 0.9, "message": "Heads up: the last three sprints all closed late (about 15 days on average) with nothing completed. Let's agree today on what done looks like for this bug and close the sprint on its planned date, even if the bug has to carry over."}
+{"id": "B086", "warn": false, "p_late": 0.3, "unfinished": 0.5, "message": ""}
+{"id": "B095", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B052", "warn": false, "p_late": 0.08, "unfinished": 0.7, "message": ""}
+{"id": "B002", "warn": false, "p_late": 0.3, "unfinished": 0.55, "message": ""}
+{"id": "B097", "warn": false, "p_late": 0.1, "unfinished": 0.65, "message": ""}
+{"id": "B025", "warn": false, "p_late": 0.08, "unfinished": 0.35, "message": ""}
+{"id": "B073", "warn": false, "p_late": 0.08, "unfinished": 0.75, "message": ""}
+{"id": "B039", "warn": false, "p_late": 0.07, "unfinished": 0.75, "message": ""}
+{"id": "B071", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}
+{"id": "B028", "warn": false, "p_late": 0.08, "unfinished": 0.75, "message": ""}
+{"id": "B015", "warn": false, "p_late": 0.3, "unfinished": 0.9, "message": ""}
+{"id": "B027", "warn": false, "p_late": 0.45, "unfinished": 0.65, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.07, "unfinished": 0.45, "message": ""}
+{"id": "B032", "warn": true, "p_late": 0.65, "unfinished": 0.85, "message": "Heads up: we've committed 34 issues, but recent sprints finished about 4, and two of the last three closed late. Can we trim the commitment to what we can really finish and plan to close on the planned end date?"}
+{"id": "B060", "warn": false, "p_late": 0.4, "unfinished": 0.85, "message": ""}
+{"id": "B088", "warn": false, "p_late": 0.35, "unfinished": 0.7, "message": ""}
+{"id": "B026", "warn": false, "p_late": 0.35, "unfinished": 0.9, "message": ""}
+{"id": "B105", "warn": false, "p_late": 0.07, "unfinished": 0.7, "message": ""}
+{"id": "B103", "warn": true, "p_late": 0.65, "unfinished": 0.85, "message": "Heads up: this is a one-week sprint, and two of the last three closed about 5 days late with very little finished. Let's pick the one bug we're sure we can finish and close the sprint on time, carrying the rest over if we need to."}

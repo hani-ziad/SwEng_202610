@@ -1,0 +1,20 @@
+{"id": "B032", "warn": true, "p_late": 0.65, "unfinished": 0.85, "message": "Heads-up: we've committed 34 issues, but recent sprints finished about 4 each and two of the last three closed late. Let's agree today on what to cut so we can close on time."}
+{"id": "B036", "warn": true, "p_late": 0.75, "unfinished": 0.6, "message": "All three of our last sprints closed late, and this one is starting the same way. Please flag blockers early and plan to close the sprint on the planned end date, even if some items carry over."}
+{"id": "B087", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}
+{"id": "B056", "warn": true, "p_late": 0.5, "unfinished": 0.88, "message": "We're carrying 12 issues, four of them unestimated, and lately we've finished about one per sprint. Let's estimate or drop the unsized tasks now so this sprint doesn't run over."}
+{"id": "B104", "warn": false, "p_late": 0.3, "unfinished": 0.7, "message": ""}
+{"id": "B095", "warn": true, "p_late": 0.5, "unfinished": 0.85, "message": "We've committed 66 points across 15 issues, including a 13-point feature, and recent sprints finished about 3 issues. Let's trim scope now so we can close on the planned date."}
+{"id": "B060", "warn": false, "p_late": 0.35, "unfinished": 0.8, "message": ""}
+{"id": "B077", "warn": true, "p_late": 0.55, "unfinished": 0.9, "message": "We've committed 44 issues and 267 points, but recent sprints completed one or two issues each and two of the last three closed late. Please reprioritise today and move what won't fit back to the backlog."}
+{"id": "B071", "warn": false, "p_late": 0.3, "unfinished": 0.75, "message": ""}
+{"id": "B103", "warn": true, "p_late": 0.4, "unfinished": 0.75, "message": "Two of our last three sprints closed about five days late. This one is small, so let's keep it on track and close it on the planned end date."}
+{"id": "B090", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}
+{"id": "B078", "warn": false, "p_late": 0.28, "unfinished": 0.6, "message": ""}
+{"id": "B037", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.1, "unfinished": 0.7, "message": ""}
+{"id": "B016", "warn": false, "p_late": 0.2, "unfinished": 0.8, "message": ""}
+{"id": "B039", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.5, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.2, "unfinished": 0.5, "message": ""}
+{"id": "B025", "warn": false, "p_late": 0.15, "unfinished": 0.35, "message": ""}
+{"id": "B023", "warn": false, "p_late": 0.18, "unfinished": 0.7, "message": ""}

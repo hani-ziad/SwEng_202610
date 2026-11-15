@@ -1,0 +1,25 @@
+{"id": "M0219", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0121", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0031", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0438", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0241", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0401", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0367", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0036", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0017", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0351", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0160", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0115", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0380", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0129", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0055", "claims_ok": false, "bad_claims": "\"This sprint starts with 18 issues carried over\"", "close_on_date": 0}
+{"id": "M0042", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0464", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0078", "claims_ok": false, "bad_claims": "\"We carried over 23 issues from the last sprint and committed 17 more\"", "close_on_date": 0}
+{"id": "M0320", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0432", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0363", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0080", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0372", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0326", "claims_ok": false, "bad_claims": "\"Two of our last three sprints closed about five days late.\"", "close_on_date": 0}
+{"id": "M0216", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

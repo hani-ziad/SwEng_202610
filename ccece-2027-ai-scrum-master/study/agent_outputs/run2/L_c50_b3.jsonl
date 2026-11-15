@@ -1,0 +1,20 @@
+{"id": "B006", "warn": false, "p_late": 0.1, "unfinished": 0.8, "message": ""}
+{"id": "B098", "warn": false, "p_late": 0.1, "unfinished": 0.8, "message": ""}
+{"id": "B062", "warn": false, "p_late": 0.08, "unfinished": 0.9, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.55, "unfinished": 0.0, "message": "The committed story is done, but 11 issues have been added and 7 are still open. Recent sprints closed late, so please agree on which added items really need to land this sprint."}
+{"id": "B011", "warn": true, "p_late": 0.7, "unfinished": 0.9, "message": "We are halfway through and only 2 of 39 committed issues are resolved, and recent sprints closed well past their end date. Let's re-scope now so we can close on time."}
+{"id": "B037", "warn": false, "p_late": 0.1, "unfinished": 0.85, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.1, "unfinished": 0.6, "message": ""}
+{"id": "B027", "warn": false, "p_late": 0.35, "unfinished": 0.4, "message": ""}
+{"id": "B085", "warn": false, "p_late": 0.35, "unfinished": 0.9, "message": ""}
+{"id": "B092", "warn": false, "p_late": 0.1, "unfinished": 0.75, "message": ""}
+{"id": "B104", "warn": true, "p_late": 0.45, "unfinished": 0.75, "message": "We are halfway and none of the 13 committed issues is resolved yet, and one of our recent sprints closed about 10 days late. Can we pick the items that must finish and move the rest out now?"}
+{"id": "B009", "warn": false, "p_late": 0.08, "unfinished": 0.6, "message": ""}
+{"id": "B119", "warn": false, "p_late": 0.3, "unfinished": 0.45, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "Halfway in, only 1 of 21 committed stories is resolved and 51 issues have been added. Our last sprints all closed late, so let's cut scope now and plan the close for the planned end date."}
+{"id": "B017", "warn": true, "p_late": 0.6, "unfinished": 0.55, "message": "We have resolved 11 of 44 committed issues at the halfway point, and 22 more were added. Two of our last three sprints closed late, so please flag what can move to the next sprint."}
+{"id": "B002", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}
+{"id": "B080", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B021", "warn": false, "p_late": 0.35, "unfinished": 0.5, "message": ""}
+{"id": "B031", "warn": false, "p_late": 0.4, "unfinished": 0.55, "message": ""}

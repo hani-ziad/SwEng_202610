@@ -1,0 +1,20 @@
+{"id": "B120", "warn": false, "p_late": 0.15, "unfinished": 0.70, "message": ""}
+{"id": "B078", "warn": true, "p_late": 0.45, "unfinished": 0.65, "message": "Heads-up: this sprint has 84 SP across 12 issues while four other sprints are open, and recent sprints have finished only about 38% of their commitment, some closing several days late. Can we agree today what to drop or defer so we close on time?"}
+{"id": "B016", "warn": false, "p_late": 0.15, "unfinished": 0.90, "message": ""}
+{"id": "B041", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B031", "warn": true, "p_late": 0.40, "unfinished": 0.60, "message": "Heads-up: 20 issues (79 SP) are committed with four other sprints open, and recent sprints have completed about a third of their scope, with one closing several days late. Please flag the must-finish items now and plan to close on the end date even if some carry over."}
+{"id": "B053", "warn": false, "p_late": 0.10, "unfinished": 0.75, "message": ""}
+{"id": "B048", "warn": false, "p_late": 0.30, "unfinished": 0.85, "message": ""}
+{"id": "B108", "warn": true, "p_late": 0.40, "unfinished": 0.40, "message": "Heads-up: one of the last three sprints closed nearly five days late and three other sprints are open alongside this one. Let's keep an eye on the 20 committed items and plan to close on the planned end date."}
+{"id": "B018", "warn": false, "p_late": 0.25, "unfinished": 0.90, "message": ""}
+{"id": "B026", "warn": false, "p_late": 0.30, "unfinished": 0.90, "message": ""}
+{"id": "B082", "warn": false, "p_late": 0.25, "unfinished": 0.50, "message": ""}
+{"id": "B028", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B073", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B106", "warn": true, "p_late": 0.40, "unfinished": 0.90, "message": "Heads-up: the last three sprints completed none of their committed issues and one closed over five days late. Please confirm these four bugs are realistic for this sprint and plan to close on the end date."}
+{"id": "B099", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.10, "unfinished": 0.75, "message": ""}
+{"id": "B107", "warn": false, "p_late": 0.20, "unfinished": 0.65, "message": ""}
+{"id": "B071", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}
+{"id": "B058", "warn": true, "p_late": 0.55, "unfinished": 0.90, "message": "Heads-up: two of the last three sprints closed more than a day late and recent sprints finished only about 5% of their commitment. Let's agree now which of these seven stories must land and plan to close on the end date."}
+{"id": "B056", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}

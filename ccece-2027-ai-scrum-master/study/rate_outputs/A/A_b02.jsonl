@@ -1,0 +1,25 @@
+{"id": "M0004", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0355", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0287", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0111", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0089", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0230", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0265", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0101", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0278", "claims_ok": false, "bad_claims": "\"one of the last three sprints closed nearly five days late\" (the board gives only an average of 4.8 days late across the history, not the lateness of the one late sprint)", "close_on_date": 0}
+{"id": "M0229", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0368", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0163", "claims_ok": false, "bad_claims": "\"one of our recent sprints closed about 10 days late\" (the board gives only an average of 10.0 days late across the history, not the lateness of the one late sprint)", "close_on_date": 0}
+{"id": "M0154", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0294", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0184", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0471", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0133", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0002", "claims_ok": false, "bad_claims": "\"these 7 bugs\" (one of the 7 committed issues is an Improvement)", "close_on_date": 1}
+{"id": "M0090", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0419", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0331", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0447", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0073", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0106", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0243", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

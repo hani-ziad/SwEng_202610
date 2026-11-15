@@ -1,0 +1,25 @@
+{"id": "M0253", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0407", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0179", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0141", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0302", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0448", "claims_ok": false, "bad_claims": "\"only 8 of 41 committed stories are done\" (the committed work includes a Bug and Improvements, and one of the 8 resolved is a Bug); \"Our recent sprints closed about 5 days late\" (board says 5.6)", "close_on_date": 0}
+{"id": "M0005", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0455", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0102", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0403", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0123", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0207", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0273", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0445", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0143", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0252", "claims_ok": false, "bad_claims": "\"which is far beyond what we usually complete\" (1 resolved matches the usual 1.0 completed, so it is not far beyond it)", "close_on_date": 0}
+{"id": "M0156", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0248", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0312", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0132", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0103", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0052", "claims_ok": false, "bad_claims": "\"one ran nearly a week late\" (the board gives only an average of 5.6 days late across the three sprints with one late, so it doesn't say how late that one sprint was)", "close_on_date": 0}
+{"id": "M0371", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0113", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0040", "claims_ok": true, "bad_claims": "", "close_on_date": 1}

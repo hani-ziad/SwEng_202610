@@ -1,0 +1,20 @@
+{"id": "B014", "warn": false, "p_late": 0.30, "unfinished": 0.50, "message": ""}
+{"id": "B092", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B095", "warn": true, "p_late": 0.62, "unfinished": 0.75, "message": "We're halfway and only 2 of 15 committed items are done, while 19 more have been added. Can we agree today what comes out so the sprint can still close on time?"}
+{"id": "B017", "warn": true, "p_late": 0.65, "unfinished": 0.55, "message": "We've closed 11 of 44 committed items at the halfway point and 22 new ones have come in. Our last sprints ran late, so let's trim scope now rather than at the end."}
+{"id": "B018", "warn": false, "p_late": 0.40, "unfinished": 0.75, "message": ""}
+{"id": "B057", "warn": false, "p_late": 0.20, "unfinished": 0.60, "message": ""}
+{"id": "B016", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B062", "warn": false, "p_late": 0.20, "unfinished": 0.90, "message": ""}
+{"id": "B042", "warn": true, "p_late": 0.55, "unfinished": 0.80, "message": "Only 1 of 31 committed items is done at the halfway point, with about 175 points still open. Let's pick the must-haves today and move the rest out so we can close on time."}
+{"id": "B003", "warn": false, "p_late": 0.08, "unfinished": 0.30, "message": ""}
+{"id": "B108", "warn": true, "p_late": 0.60, "unfinished": 0.75, "message": "We're halfway with only 2 of 20 committed items done, and 33 new items have been added. Should we put the original commitment first and push the new work to the next sprint?"}
+{"id": "B096", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B087", "warn": false, "p_late": 0.15, "unfinished": 0.80, "message": ""}
+{"id": "B071", "warn": false, "p_late": 0.30, "unfinished": 0.30, "message": ""}
+{"id": "B036", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "None of the committed stories are done yet, 3 have been moved out and 56 new items have come in. Our recent sprints all closed late, so let's agree on a cut line today."}
+{"id": "B113", "warn": true, "p_late": 0.70, "unfinished": 0.70, "message": "Only 2 of 15 committed stories are done at the halfway point, while 50 new items have been pulled in. Let's get back to the committed work first so we don't slip past the end date again."}
+{"id": "B051", "warn": false, "p_late": 0.15, "unfinished": 0.33, "message": ""}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.65, "message": ""}
+{"id": "B035", "warn": false, "p_late": 0.20, "unfinished": 0.00, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}

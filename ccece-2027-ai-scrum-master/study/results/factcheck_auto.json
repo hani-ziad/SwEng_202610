@@ -1,0 +1,34 @@
+{
+ "study": {
+  "set": "study",
+  "warnings": 395,
+  "warnings_with_numbers": 381,
+  "numbers": 1131,
+  "unsupported_numbers": 2,
+  "warnings_all_supported": 393,
+  "L_warnings": 168,
+  "L_all_supported": 166,
+  "L_numbers": 490,
+  "L_unsupported_numbers": 2,
+  "G_warnings": 227,
+  "G_all_supported": 227,
+  "G_numbers": 641,
+  "G_unsupported_numbers": 0
+ },
+ "pilot_4nov": {
+  "set": "pilot_4nov",
+  "warnings": 81,
+  "warnings_with_numbers": 75,
+  "numbers": 223,
+  "unsupported_numbers": 0,
+  "warnings_all_supported": 81,
+  "L_warnings": 33,
+  "L_all_supported": 33,
+  "L_numbers": 104,
+  "L_unsupported_numbers": 0,
+  "G_warnings": 48,
+  "G_all_supported": 48,
+  "G_numbers": 119,
+  "G_unsupported_numbers": 0
+ }
+}

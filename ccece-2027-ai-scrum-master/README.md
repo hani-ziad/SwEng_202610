@@ -1,57 +1,73 @@
 # Grounding the AI Scrum Master (CCECE 2027)
 
-Position paper for IEEE CCECE 2027, with a small pilot of the sprint-replay test it proposes. This is a separate paper from `ccece-2027-paper` (the sprint-risk paper): different question, different results. It started as the Canadian AI 2027 short paper in `canadian-ai-2027-paper`, now in IEEE format and with the pilot added.
+Position paper for IEEE CCECE 2027, with a replay study of the sprint-replay test it proposes. This is a separate paper from `ccece-2027-paper` (the sprint-risk paper): different question, different results. It started as the Canadian AI 2027 short paper in `canadian-ai-2027-paper`, now in IEEE format with the study added.
 
 | File | What it is |
 |---|---|
 | `CCECE_2027_Grounding_AI_Scrum_Master.tex` | The paper (IEEEtran). Same text as the Overleaf project "Grounding the AI Scrum Master - CCECE 2027". |
 | `CCECE_2027_Grounding_AI_Scrum_Master.pdf` | Compiled PDF from Overleaf. |
-| `pilot/build.py` | Picks the 40 sprints, rebuilds their boards, scores the model arm, writes the prompts. |
-| `pilot/prompts/` | The exact prompts the agent arms read (8 files of 20 boards each). |
-| `pilot/agent_outputs/` | The agents' answers, saved word for word, plus `audit.json` (every tool call each agent made). |
-| `pilot/score.py` | Scores the three arms: agreement, AUC, sensitivity, specificity, F1, cost curve, bootstrap intervals. |
-| `pilot/rule_baseline.py` | Added 8 Nov 2026. Cohen's kappa, a past-lateness rule, and how often each arm changed its call between checkpoints. |
-| `pilot/results/` | Every number in the paper's pilot section. |
-| `guide/` | `Rebuild_Manual.docx` (every step to rebuild the pilot by hand) and `Plain_Explanation.docx` (the paper in plain words). |
+| `study/` | The 120-sprint replay (15 Nov 2026), the study the paper reports. Code, prompts, raw agent and rater answers, audits and results. |
+| `study/build.py` | Draws 15 held-out sprints per project, rebuilds their boards, scores the late-closure and unfinished-share models, writes 72 prompt files (3 runs). |
+| `study/collect.py` | Saves each agent answer word for word and audits every tool call (`agent_outputs/audit.json`). |
+| `study/score.py` | All replay numbers: per run, arm and checkpoint, run-to-run agreement, bootstrap intervals, cost curve. |
+| `study/factcheck.py` | Traces every number in every warning to its board. |
+| `study/rate.py` | Two independent rater agents judge every warning for unsupported claims and close-on-date advice. |
+| `study/paper_numbers.py` | Prints the paper's table rows and checks all study numbers in the paper against the result files. |
+| `study/write_guides.py` | Rebuilds the two guide documents from the result files. |
+| `pilot/` | The first 40-sprint pilot (4 Nov 2026), kept as it was. |
+| `guide/` | `Rebuild_Manual.docx` (every step to rebuild the study by hand) and `Plain_Explanation.docx` (the paper in plain words). |
 
-## The pilot in short
+## The study in short
 
-- 40 held-out TAWOS sprints (20 late, 20 on time), drawn with seed 42 from the 472 test sprints that had committed work and were still open at mid-sprint. 37 of the 40 come from five projects.
-- Two replay points each: sprint start and halfway. 80 decisions per arm, but calls rarely change between the two points (see below), so they behave like about 40.
-- Arm M: the Phase 2 gradient boosting model at the start and the Phase 3 one at halfway, trained on the first 70% of each project only. The threshold comes from training data only.
-- Arms L and G: Claude (claude-opus-5-5), run on 4 Nov 2026 as sub-agents in a Claude session, so sampling settings were not under our control. L sees the board; G also sees the model's score and call. Project names, issue keys and dates are hidden. Each agent read one prompt file and nothing else (see `audit.json`). One run.
+- 120 held-out TAWOS sprints, 15 from each of the eight projects (seed 2027), drawn from the 472 test sprints that had committed work and were still open at mid-sprint. 33 closed late (1 to 10 per project). No balancing on the outcome.
+- Two replay points each: sprint start and halfway.
+- Arm M: the Phase 2 gradient boosting model at the start and the Phase 3 one at halfway, trained on the first 70% of each project only, threshold from training data only. A second model of the same kind predicts the share of committed issues left unresolved at the planned end.
+- Arms L and G: Claude (claude-opus-5-5) sub-agents, three independent runs, boards in a new random order each run. L sees the board; G also sees both models' outputs. Project names, issue keys and dates are hidden. Every agent read only its own prompt file (`study/agent_outputs/audit.json`).
+- Baseline rule: warn if at least half of the last three sprints closed late.
 
-Main results:
+Main results (agent numbers are means of three runs; intervals are 95% bootstrap over sprints within project):
 
 | | Value |
 |---|---|
-| G agrees with M | 91% of decisions [84, 98], Cohen's kappa 0.82 |
-| L agrees with M | 73% [60, 85], kappa 0.47; 19 of its 22 departures are silences |
-| G overrules M | 7 times in 80, right 4 times |
-| Past-lateness rule (warn if half or more of the last 3 sprints were late) | Same call as L on 39 of 40 sprints at the start; AUC 0.63; M beats it by 0.09 [-0.08, 0.25] |
-| Sprints whose call changed between start and halfway | M 3, G 2, L 1 (of 40) |
-| AUC (M / L / G) at start | .72 / .69 / .74 |
-| AUC (M / L / G) at halfway | .71 / .70 / .72 |
-| Cost, G vs M | no detectable difference at any warning price (gap at most 0.02 F) |
-| Cost, Delta at kappa/F = 0.5 | -0.086 F [-0.161, -0.019] (L is cheaper) |
-| Warnings that say "close on the date, carry work over" | 16 of 81 (8 per arm), coded by hand in `results/warning_messages_coded.csv`. This is what the Scrum Guide asks for, so it shows the late-closure label rewards timebox discipline, not delivery. |
+| G agrees with M | 89% of decisions, kappa 0.75 |
+| G's departures from M | 24 to 26 of 240 per run: 16 extra warnings, all on sprints that closed on time; 8 to 10 silences, 5 right |
+| AUC, G minus M | -0.04 at both checkpoints (intervals about -0.10 to 0.02) |
+| Cost, G minus M | G costs more at every warning price: 0.010 F [0.002, 0.024] at kappa/F = 0.02 up to 0.031 F [0.006, 0.059] at 0.5 |
+| L vs the past-lateness rule at planning | same call on 119, 120 and 116 of 120 sprints; L's within-project AUC 0.47, the rule's 0.46 |
+| M minus rule, AUC at planning | 0.14 [0.03, 0.24] |
+| Calibration (Brier) at planning | M 0.163, G 0.177, L 0.206; always quoting the late rate 0.199 |
+| Run-to-run | same call in all three runs on 93% (L) and 94% (G) of points |
+| Unfinished share at planning | nothing predicts it (all correlations under 0.11; no arm beats a constant guess) |
+| Unfinished share at halfway (Spearman) | M 0.66, G 0.64, L 0.56; team's own record 0.10 |
+| Numbers in warnings traced to the board | 1,129 of 1,131 (one advice, one real error) |
+| Unsupported claims (both raters) | L 16 of 168 (10%), G 13 of 227 (6%); rater kappa 0.49 |
+| "Close on the date, carry work over" (both raters) | L 49 of 168 (29%), G 34 of 227 (15%); rater kappa 0.66; on the 81 pilot warnings the raters matched the original hand coding at kappa 0.81 |
 
-What the companion audit adds (8 Nov 2026, from `ccece-2027-paper`): the model arm's 0.751 is pooled over projects and falls to 0.634 within a project; the recent late rate behind the past-lateness rule ranks a project's own sprints at chance (0.51); 40% of late closures are one to three days late, and sprints planned to end on a Friday or weekend close late 57% of the time against 28% otherwise. That backs the paper's point that late closure measures timebox discipline. A yes-or-no spillover label is no fix, since counting committed issues alone ranks it at 0.88, so the next replay should score the share of committed work left unfinished. The paper now says all of this, and it no longer cites the shuffled-split gap (0.70 to 0.77), which mixes leakage with drift; it cites the two leakage case studies instead.
+What it means: the grounded agent repeats its model and its own calls are false alarms; the agent alone is the past-lateness rule; its messages are mostly faithful to the board, with overreach rather than invented numbers; and its close-on-date advice is what the Scrum Guide asks, so late closure measures timebox discipline more than delivery.
 
-What the pilot cannot show: it is one run of one model with one prompt on 40 sprints, the boards have no issue text (the TAWOS extract has no titles), the numbers the agents quote were not checked against the boards (so the ungrounded failure is not tested), and the effect of a warning e(c) is assumed.
+What the study cannot show: one model with one prompt; the raters are the same model family as the agents; the boards have no issue text (the TAWOS extract has no titles); e(c) is assumed; the unfinished share leaves out Confluence Cloud, where most issues have no resolution date.
 
-**Hidden issues (noted 14 Nov 2026).** Public Jira hides private and deleted issues. Across the eight TAWOS projects a median of 26% of issue numbers since the first sprint issue are missing (`../ccece-2027-paper/reviewer_checks/hidden_issues.csv`), so the boards all three arms saw may be incomplete. The paper's Limits of the pilot now say so.
+**Hidden issues (noted 14 Nov 2026).** Public Jira hides private and deleted issues. Across the eight TAWOS projects a median of 26% of issue numbers since the first sprint issue are missing (`../ccece-2027-paper/reviewer_checks/hidden_issues.csv`), so the boards all arms saw may be incomplete. The paper's Limits of the replay say so.
+
+**From the companion audit (8 Nov 2026).** The model arm's 0.751 is pooled over projects and falls to 0.634 within a project; 40% of late closures are one to three days late, and sprints planned to end on a Friday or weekend close late 57% of the time against 28% otherwise.
 
 ## How to run
 
-Run from this folder. The pilot reuses Phases 1 to 3, so the folders must stay side by side.
+Run from this folder. The study reuses Phases 1 to 3, so the folders must stay side by side.
 
 ```
-python -m pilot.build            # boards, model arm, prompts (about 20 seconds)
-# give each file in pilot/prompts to a language-model agent with no tools;
-# save each answer as pilot/agent_outputs/<prompt name>.jsonl
-python -m pilot.score            # all pilot numbers (about 1 minute)
-python -m pilot.rule_baseline    # kappa, rule baseline, checkpoint stability (a few seconds)
+python -m study.build                       # boards, models, 72 prompts (about 15 seconds)
+# give each prompt file to an agent that may read only that file (see guide/Rebuild_Manual.docx)
+python -m study.collect <transcript folder> # save answers, audit tool calls
+python -m study.score                       # all replay numbers (about 3 minutes)
+python -m study.factcheck                   # number check of every warning
+python -m study.rate build                  # 40 rater prompts; give each to a rater agent
+python -m study.rate collect <transcript folder>
+python -m study.rate score                  # rater results
+python -m study.paper_numbers check         # every study number in the paper (must say 0 problems)
+python -m study.write_guides                # rebuild the two guide documents
 ```
 
-Our run used Python 3.13, scikit-learn 1.9.1 and pandas 3.0.
+The 4 Nov pilot reruns with `python -m pilot.build`, `python -m pilot.score` and `python -m pilot.rule_baseline`.
+
+Our run used Python 3.13, scikit-learn 1.9.1, pandas 3.0 and scipy.

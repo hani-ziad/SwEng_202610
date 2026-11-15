@@ -1,0 +1,20 @@
+{"id": "B034", "warn": false, "p_late": 0.10, "unfinished": 0.85, "message": ""}
+{"id": "B024", "warn": false, "p_late": 0.12, "unfinished": 0.80, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.08, "unfinished": 0.70, "message": ""}
+{"id": "B112", "warn": false, "p_late": 0.08, "unfinished": 0.90, "message": ""}
+{"id": "B085", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B101", "warn": true, "p_late": 0.60, "unfinished": 0.90, "message": "Heads-up: two of our last three sprints closed late (about 5 days on average), and most of these 7 bugs have no estimate yet. Can we size them today and agree what we will drop if we fall behind, so we close on time?"}
+{"id": "B062", "warn": false, "p_late": 0.07, "unfinished": 0.80, "message": ""}
+{"id": "B070", "warn": false, "p_late": 0.08, "unfinished": 0.70, "message": ""}
+{"id": "B096", "warn": false, "p_late": 0.08, "unfinished": 0.70, "message": ""}
+{"id": "B064", "warn": true, "p_late": 0.80, "unfinished": 0.90, "message": "Heads-up: each of our last three sprints closed late, by about three weeks on average. Let's estimate the unsized bug now and plan to close this sprint on its end date, moving anything unfinished to the next one."}
+{"id": "B076", "warn": false, "p_late": 0.08, "unfinished": 0.65, "message": ""}
+{"id": "B087", "warn": false, "p_late": 0.08, "unfinished": 0.90, "message": ""}
+{"id": "B033", "warn": false, "p_late": 0.35, "unfinished": 0.70, "message": ""}
+{"id": "B109", "warn": false, "p_late": 0.07, "unfinished": 0.65, "message": ""}
+{"id": "B030", "warn": false, "p_late": 0.33, "unfinished": 0.65, "message": ""}
+{"id": "B093", "warn": false, "p_late": 0.06, "unfinished": 0.65, "message": ""}
+{"id": "B091", "warn": false, "p_late": 0.06, "unfinished": 0.70, "message": ""}
+{"id": "B067", "warn": false, "p_late": 0.40, "unfinished": 0.95, "message": ""}
+{"id": "B009", "warn": false, "p_late": 0.06, "unfinished": 0.90, "message": ""}
+{"id": "B006", "warn": false, "p_late": 0.08, "unfinished": 0.60, "message": ""}

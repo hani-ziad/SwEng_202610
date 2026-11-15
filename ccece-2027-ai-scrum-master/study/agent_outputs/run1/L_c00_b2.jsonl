@@ -1,0 +1,20 @@
+{"id": "B034", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.08, "unfinished": 0.95, "message": ""}
+{"id": "B083", "warn": false, "p_late": 0.3, "unfinished": 0.4, "message": ""}
+{"id": "B010", "warn": false, "p_late": 0.08, "unfinished": 0.7, "message": ""}
+{"id": "B084", "warn": false, "p_late": 0.1, "unfinished": 0.75, "message": ""}
+{"id": "B115", "warn": false, "p_late": 0.08, "unfinished": 0.75, "message": ""}
+{"id": "B008", "warn": false, "p_late": 0.1, "unfinished": 0.9, "message": ""}
+{"id": "B077", "warn": true, "p_late": 0.55, "unfinished": 0.95, "message": "Heads up: we've committed 44 issues (267 SP), but recent sprints finished only a small share of their scope and two of the last three closed late. Let's trim the commitment now or agree on a firm close date so this one doesn't slip."}
+{"id": "B102", "warn": false, "p_late": 0.1, "unfinished": 0.6, "message": ""}
+{"id": "B044", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}
+{"id": "B022", "warn": true, "p_late": 0.8, "unfinished": 0.55, "message": "Each of our last three sprints closed late, about two weeks on average. Let's plan to close this one on its end date, even if the bug has to carry over."}
+{"id": "B067", "warn": false, "p_late": 0.4, "unfinished": 0.97, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.6, "unfinished": 0.8, "message": "Two of our last three sprints closed late, by almost four days on average. Let's make sure this one closes on its planned end date, even if the story isn't done."}
+{"id": "B013", "warn": false, "p_late": 0.35, "unfinished": 0.9, "message": ""}
+{"id": "B082", "warn": false, "p_late": 0.3, "unfinished": 0.5, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.85, "unfinished": 0.75, "message": "All of our last three sprints closed late, by about 16 days on average, and we've carried 25 issues over. Let's cut scope or split the 47-point story now and commit to closing this sprint on its planned date."}
+{"id": "B109", "warn": false, "p_late": 0.1, "unfinished": 0.65, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.1, "unfinished": 0.75, "message": ""}
+{"id": "B042", "warn": false, "p_late": 0.15, "unfinished": 0.9, "message": ""}
+{"id": "B112", "warn": false, "p_late": 0.08, "unfinished": 0.95, "message": ""}

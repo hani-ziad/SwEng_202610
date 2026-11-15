@@ -1,0 +1,25 @@
+{"id": "M0312", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0274", "claims_ok": false, "bad_claims": "\"61 points is well above what we've been finishing\" (the board gives no story-point history, only 2.3 issues completed on average)", "close_on_date": 0}
+{"id": "M0307", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0104", "claims_ok": false, "bad_claims": "\"our last few sprints closed well over a week late\" (only 0.67 of the last three closed late)", "close_on_date": 0}
+{"id": "M0057", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0176", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0373", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0065", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0361", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0458", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0319", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0352", "claims_ok": false, "bad_claims": "\"12 stories\" (the 12 committed issues are 9 stories and 3 improvements)", "close_on_date": 0}
+{"id": "M0326", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0350", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0385", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0323", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0402", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0120", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0149", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0258", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0338", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0124", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0152", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0230", "claims_ok": false, "bad_claims": "\"1 of 21 committed stories done\" (the 21 committed issues are 20 stories and 1 improvement)", "close_on_date": 0}
+{"id": "M0151", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

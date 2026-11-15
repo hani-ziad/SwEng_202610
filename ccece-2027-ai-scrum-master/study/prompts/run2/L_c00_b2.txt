@@ -1,0 +1,362 @@
+You are acting as an AI assistant to a Scrum Master. For each sprint board below, decide
+whether to warn the team NOW that the sprint is likely to close late, meaning it will be closed in Jira more
+than one day after its planned end date. A warning interrupts the team, so do not warn without reason; a
+missed late sprint is costly too. Also estimate how much of the committed work will still be unresolved
+at the planned end date.
+
+You see the sprint exactly as it stood at the replay point. Judge every board on its own; boards come from
+different teams and are in random order. Do not use any tools, files or web access: answer from the text only.
+
+Answer with one JSON object per board, one per line, and nothing else:
+{"id": "<board id>", "warn": true or false, "p_late": <your probability from 0 to 1 that it closes late>, "unfinished": <your estimate from 0 to 1 of the share of the committed issues that will still be unresolved at the planned end date>, "message": "<if warn is true, the one or two sentences you would send the team; otherwise empty>"}
+
+=== Board B013 ===
+Team: Project G (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 28; share that closed more than a day late 0.33; average days late 0.9; average issues completed 1.7.
+Committed at the start: 7 issues; story points recorded on 1 of them (total 42).
+Now: day 0, planning has just finished.
+Issues:
+- Story, no estimate
+- Improvement, no estimate
+- Story, no estimate
+- Epic, no estimate
+- Improvement, no estimate
+- Improvement, no estimate
+- Story, 42 SP
+
+=== Board B065 ===
+Team: Project E (name hidden). Planned sprint length: 27.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.23; issues carried over from the last one 38; share that closed more than a day late 0.33; average days late 1.7; average issues completed 10.0.
+Committed at the start: 45 issues; story points recorded on 44 of them (total 263).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 1 SP
+- Story, 8 SP
+- Bug, 1 SP
+- Story, 8 SP
+- Story, 2 SP
+- Bug, 2 SP
+- Story, 6 SP
+- Story, 16 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Bug, no estimate
+- Story, 4 SP
+- Improvement, 4 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 16 SP
+- Story, 20 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 6 SP
+- Story, 0 SP
+- Bug, 20 SP
+- Story, 6 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Story, 1 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 10 SP
+- Story, 2 SP
+- ... and 5 more issues of the same kinds
+
+=== Board B046 ===
+Team: Project G (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.53; issues carried over from the last one 0; share that closed more than a day late 0.00; average days late 0.5; average issues completed 5.0.
+Committed at the start: 26 issues; story points recorded on 26 of them (total 220).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 2 SP
+- Bug, 7 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Improvement, 13 SP
+- Story, 13 SP
+- Bug, 13 SP
+- Improvement, 5 SP
+- Bug, 13 SP
+- Story, 5 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Bug, 8 SP
+- Improvement, 8 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 5 SP
+- Improvement, 8 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+
+=== Board B020 ===
+Team: Project E (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 12; share that closed more than a day late 0.67; average days late 3.7; average issues completed 4.0.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 1).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 1 SP
+
+=== Board B083 ===
+Team: Project A (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.83; issues carried over from the last one 2; share that closed more than a day late 0.33; average days late 0.4; average issues completed 4.7.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 8 SP
+
+=== Board B117 ===
+Team: Project B (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.22; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 2.6; average issues completed 1.0.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 16).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 8 SP
+- Improvement, no estimate
+- Bug, 8 SP
+
+=== Board B116 ===
+Team: Project E (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 6.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.47; issues carried over from the last one 6; share that closed more than a day late 1.00; average days late 2.9; average issues completed 2.0.
+Committed at the start: 9 issues; story points recorded on 9 of them (total 27).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 3 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 3 SP
+
+=== Board B051 ===
+Team: Project H (name hidden). Planned sprint length: 4.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.00; issues carried over from the last one 4; share that closed more than a day late 0.33; average days late 1.0; average issues completed 0.0.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 4).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+- Bug, no estimate
+- Bug, 1 SP
+
+=== Board B079 ===
+Team: Project B (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.26; issues carried over from the last one 3; share that closed more than a day late 0.00; average days late 0.0; average issues completed 1.7.
+Committed at the start: 5 issues; story points recorded on 5 of them (total 55).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- New Feature, 21 SP
+- Bug, 13 SP
+
+=== Board B089 ===
+Team: Project D (name hidden). Planned sprint length: 4.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.00; issues carried over from the last one 2; share that closed more than a day late 0.00; average days late 0.0; average issues completed 0.0.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 4).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, 1 SP
+- Bug, 3 SP
+
+=== Board B110 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 7; share that closed more than a day late 1.00; average days late 13.0; average issues completed 0.7.
+Committed at the start: 12 issues; story points recorded on 12 of them (total 40).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 5 SP
+- Improvement, 4 SP
+- Improvement, 3 SP
+- Improvement, 3 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 3 SP
+
+=== Board B005 ===
+Team: Project C (name hidden). Planned sprint length: 6.9 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 0.67; average days late 12.1; average issues completed 0.3.
+Committed at the start: 2 issues; story points recorded on 1 of them (total 3).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, 3 SP
+
+=== Board B104 ===
+Team: Project A (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.37; issues carried over from the last one 10; share that closed more than a day late 0.33; average days late 10.0; average issues completed 4.7.
+Committed at the start: 13 issues; story points recorded on 9 of them (total 38).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 5 SP
+- Task, 5 SP
+- Task, 1 SP
+- Task, no estimate
+- Task, no estimate
+- Task, 5 SP
+- Task, no estimate
+- Task, no estimate
+- Task, 5 SP
+- Bug, 8 SP
+- Bug, 1 SP
+- Improvement, 5 SP
+- Improvement, 3 SP
+
+=== Board B023 ===
+Team: Project A (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.11; issues carried over from the last one 2; share that closed more than a day late 0.00; average days late 0.0; average issues completed 0.3.
+Committed at the start: 4 issues; story points recorded on 4 of them (total 24).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 13 SP
+- Bug, 8 SP
+- Task, 2 SP
+- Bug, 1 SP
+
+=== Board B081 ===
+Team: Project D (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.19; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 4.7; average issues completed 0.7.
+Committed at the start: 5 issues; story points recorded on 3 of them (total 11).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 5 SP
+
+=== Board B108 ===
+Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.50; issues carried over from the last one 10; share that closed more than a day late 0.33; average days late 4.8; average issues completed 18.0.
+Committed at the start: 20 issues; story points recorded on 18 of them (total 41).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 3 SP
+- Story, 5 SP
+- Improvement, 0 SP
+- Improvement, 2 SP
+- Bug, 2 SP
+- Story, 3 SP
+- Story, 2 SP
+- Story, no estimate
+- Story, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 3 SP
+- Story, 1 SP
+- Story, 3 SP
+- Story, 2 SP
+- Improvement, no estimate
+- Story, 3 SP
+- Story, 3 SP
+- Story, 2 SP
+
+=== Board B066 ===
+Team: Project B (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.42; issues carried over from the last one 2; share that closed more than a day late 0.67; average days late 10.6; average issues completed 2.3.
+Committed at the start: 7 issues; story points recorded on 7 of them (total 61).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 8 SP
+- Bug, 5 SP
+- Story, 3 SP
+- Bug, 8 SP
+- Bug, 3 SP
+- New Feature, 21 SP
+- Bug, 13 SP
+
+=== Board B072 ===
+Team: Project F (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 4.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.16; issues carried over from the last one 1; share that closed more than a day late 0.00; average days late 0.3; average issues completed 3.0.
+Committed at the start: 19 issues; story points recorded on 19 of them (total 77).
+Now: day 0, planning has just finished.
+Issues:
+- Task, 4 SP
+- Task, 2 SP
+- Task, 2 SP
+- Task, 2 SP
+- Task, 4 SP
+- Task, 4 SP
+- Bug, 1 SP
+- Bug, 4 SP
+- Task, 2 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Enhancement Request, 2 SP
+- Task, 16 SP
+- Task, 8 SP
+- Task, 4 SP
+- Bug, 4 SP
+- Bug, 4 SP
+- Bug, 2 SP
+
+=== Board B036 ===
+Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 6.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.15; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 2.2; average issues completed 7.3.
+Committed at the start: 6 issues; story points recorded on 6 of them (total 12).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 1 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP
+
+=== Board B049 ===
+Team: Project H (name hidden). Planned sprint length: 7.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 4; share that closed more than a day late 0.33; average days late 1.2; average issues completed 0.3.
+Committed at the start: 4 issues; story points recorded on 4 of them (total 41).
+Now: day 0, planning has just finished.
+Issues:
+- New Feature, 4 SP
+- New Feature, 8 SP
+- Improvement, 24 SP
+- Bug, 5 SP

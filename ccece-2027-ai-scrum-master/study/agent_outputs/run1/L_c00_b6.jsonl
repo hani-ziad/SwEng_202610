@@ -1,0 +1,20 @@
+{"id": "B039", "warn": false, "p_late": 0.08, "unfinished": 0.7, "message": ""}
+{"id": "B098", "warn": false, "p_late": 0.1, "unfinished": 0.9, "message": ""}
+{"id": "B114", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B110", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "Heads up: each of our last three sprints closed late, by about 13 days on average, and we finished only around 13% of what we committed. With 12 issues and 40 SP in, let's trim scope now or agree how we'll close on time."}
+{"id": "B041", "warn": false, "p_late": 0.1, "unfinished": 0.85, "message": ""}
+{"id": "B047", "warn": false, "p_late": 0.1, "unfinished": 0.8, "message": ""}
+{"id": "B076", "warn": false, "p_late": 0.12, "unfinished": 0.65, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.12, "unfinished": 0.5, "message": ""}
+{"id": "B019", "warn": true, "p_late": 0.65, "unfinished": 0.8, "message": "Two of our last three sprints closed late, by about 5 to 6 days, and this one is under a week long. Let's estimate the two unestimated bugs and confirm today that the scope fits."}
+{"id": "B037", "warn": false, "p_late": 0.08, "unfinished": 0.7, "message": ""}
+{"id": "B097", "warn": false, "p_late": 0.12, "unfinished": 0.65, "message": ""}
+{"id": "B080", "warn": false, "p_late": 0.1, "unfinished": 0.9, "message": ""}
+{"id": "B066", "warn": true, "p_late": 0.6, "unfinished": 0.6, "message": "Two of our last three sprints closed late, by about 10 days on average, and this sprint has 61 SP including a 21 SP feature. Can we split or drop something now so we close on the planned date?"}
+{"id": "B116", "warn": true, "p_late": 0.8, "unfinished": 0.55, "message": "Each of our last three sprints closed late, by about 3 days on average. Let's agree now on what we'll drop if we're behind mid-sprint, so we close on the planned end date."}
+{"id": "B058", "warn": true, "p_late": 0.6, "unfinished": 0.9, "message": "Two of our last three sprints closed late, and we've been finishing very little of what we commit. Let's pick the stories we're sure we can finish and plan to close on time."}
+{"id": "B021", "warn": false, "p_late": 0.35, "unfinished": 0.65, "message": ""}
+{"id": "B118", "warn": true, "p_late": 0.55, "unfinished": 0.9, "message": "Two of our last three sprints closed late, and we finished only about 7% of what we committed. Let's cut this sprint down to what we can realistically finish and close it on the planned date."}
+{"id": "B059", "warn": false, "p_late": 0.3, "unfinished": 0.65, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B090", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}

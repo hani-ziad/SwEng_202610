@@ -1,0 +1,25 @@
+{"id": "M0245", "claims_ok": false, "bad_claims": "\"none of the 13 remaining committed stories are resolved\" (2 of the 13 are Improvements)", "close_on_date": 0}
+{"id": "M0297", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0405", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0186", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0213", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0425", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0463", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0409", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0377", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0383", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0099", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0242", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0055", "claims_ok": false, "bad_claims": "\"This sprint starts with 18 issues carried over\" (18 is what the last sprint carried over; this sprint has only 17 committed issues)", "close_on_date": 0}
+{"id": "M0008", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0436", "claims_ok": false, "bad_claims": "\"4 of 42 committed stories done\" (the committed issues include Bugs and Improvements, and one of the 4 resolved is an Improvement)", "close_on_date": 0}
+{"id": "M0076", "claims_ok": false, "bad_claims": "\"the 15 committed stories\" (one of the 15 is a Bug)", "close_on_date": 1}
+{"id": "M0034", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0470", "claims_ok": false, "bad_claims": "\"1 of 29 committed stories done\" (3 of the 29 committed are Improvements)", "close_on_date": 0}
+{"id": "M0178", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0130", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0089", "claims_ok": false, "bad_claims": "\"only 1 of the 12 committed tasks is resolved\" (the 12 include 1 Bug and 2 Improvements)", "close_on_date": 0}
+{"id": "M0194", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0430", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0390", "claims_ok": false, "bad_claims": "\"11 of our 12 committed tasks are still open\" (the 12 include 1 Bug and 2 Improvements)", "close_on_date": 0}
+{"id": "M0073", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

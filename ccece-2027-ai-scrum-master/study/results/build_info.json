@@ -1,0 +1,27 @@
+{
+ "seed": 2027,
+ "per_project": 15,
+ "n_sprints": 120,
+ "n_late": 33,
+ "pool": {
+  "Apache Mesos": 23,
+  "Appcelerator Studio": 31,
+  "Atlassian Confluence Cloud": 54,
+  "Atlassian Confluence Server": 108,
+  "Lsstcorp Data management": 73,
+  "Mule": 67,
+  "The Titanium SDK": 67,
+  "Titanium Mobile Platform": 49
+ },
+ "pool_n": 472,
+ "pool_late": 134,
+ "overlap_with_pilot": 13,
+ "unfinished_model_mae_heldout": {
+  "0.0": 0.23678571127353384,
+  "0.5": 0.14469175718381944
+ },
+ "unfinished_scored_sprints": 105,
+ "n_prompts": 72,
+ "sample_auc_M_c0": 0.73075583420411,
+ "sample_auc_M_c50": 0.7394636015325671
+}

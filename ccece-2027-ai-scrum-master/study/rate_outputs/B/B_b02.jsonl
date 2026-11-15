@@ -1,0 +1,25 @@
+{"id": "M0113", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0380", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0004", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0256", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0278", "claims_ok": false, "bad_claims": "\"one of the last three sprints closed nearly five days late\"", "close_on_date": 0}
+{"id": "M0460", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0476", "claims_ok": false, "bad_claims": "\"0 of 13 committed stories done\"", "close_on_date": 0}
+{"id": "M0049", "claims_ok": false, "bad_claims": "\"This sprint is on track to close late\"", "close_on_date": 0}
+{"id": "M0153", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0263", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0305", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0031", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0454", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0122", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0353", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0163", "claims_ok": false, "bad_claims": "\"one of our recent sprints closed about 10 days late\"", "close_on_date": 0}
+{"id": "M0220", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0317", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0009", "claims_ok": false, "bad_claims": "\"Two of our last three sprints closed late, by almost four days on average\"", "close_on_date": 1}
+{"id": "M0043", "claims_ok": false, "bad_claims": "\"recent sprints closed well over a week late\"", "close_on_date": 0}
+{"id": "M0208", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0250", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0389", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0399", "claims_ok": false, "bad_claims": "\"only 1 of 18 committed stories is done\"", "close_on_date": 0}
+{"id": "M0451", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

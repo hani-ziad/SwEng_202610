@@ -1,0 +1,25 @@
+{"id": "M0300", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0255", "claims_ok": false, "bad_claims": "\"only 3 of 34 committed stories are done\" (the 34 committed include 1 bug and 2 improvements)", "close_on_date": 0}
+{"id": "M0001", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0466", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0302", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0285", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0290", "claims_ok": false, "bad_claims": "\"we're starting with 12 issues again\" (the board gives no committed counts for past sprints)", "close_on_date": 1}
+{"id": "M0066", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0159", "claims_ok": false, "bad_claims": "\"Past sprints here have run several days late\" (only 0.33 of the last three closed more than a day late, so one sprint)", "close_on_date": 0}
+{"id": "M0145", "claims_ok": false, "bad_claims": "\"this one starts with 21 stories\" (20 stories and 1 improvement)", "close_on_date": 0}
+{"id": "M0166", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0201", "claims_ok": false, "bad_claims": "\"this sprint commits 7 bugs worth 47 SP\" (6 bugs and 1 improvement)", "close_on_date": 1}
+{"id": "M0267", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0254", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0025", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0275", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0418", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0012", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0455", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0006", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0183", "claims_ok": false, "bad_claims": "\"26 SP of new work has come in\" (the added issues total 32 SP; 26 SP is only the part still unresolved)", "close_on_date": 0}
+{"id": "M0211", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0419", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0286", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0002", "claims_ok": false, "bad_claims": "\"which of these 7 bugs must land\" (6 bugs and 1 improvement)", "close_on_date": 1}

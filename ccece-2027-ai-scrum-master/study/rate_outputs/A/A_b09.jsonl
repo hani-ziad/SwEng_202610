@@ -1,0 +1,25 @@
+{"id": "M0429", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0361", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0069", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0023", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0344", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0240", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0286", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0466", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0334", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0170", "claims_ok": false, "bad_claims": "\"so we don't repeat the late closures of earlier sprints\" (only 1 of the last 3 closed late, share 0.33)", "close_on_date": 0}
+{"id": "M0461", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0342", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0086", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0140", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0118", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0417", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0043", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0098", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0077", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0120", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0187", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0309", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0271", "claims_ok": false, "bad_claims": "\"Each of our last three sprints closed more than two weeks late\" (board gives only an average of 15.1 days late, not each sprint's lateness)", "close_on_date": 1}
+{"id": "M0026", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0412", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

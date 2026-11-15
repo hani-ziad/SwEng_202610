@@ -1,0 +1,682 @@
+[
+ {
+  "rater": "A",
+  "prompt": "A_b01",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b01.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b02",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b02.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b03",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b03.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b04",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b04.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b05",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b05.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b06",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b06.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b07",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b07.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b08",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b08.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b09",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b09.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b10",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b10.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b11",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b11.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b12",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b12.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b13",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b13.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b14",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b14.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b15",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b15.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b16",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b16.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b17",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b17.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b18",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b18.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b19",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b19.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "A",
+  "prompt": "A_b20",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/A/A_b20.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b01",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b01.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b02",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b02.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b03",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b03.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b04",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b04.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b05",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b05.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b06",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b06.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b07",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b07.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b08",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b08.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b09",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b09.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b10",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b10.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b11",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b11.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b12",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b12.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b13",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b13.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b14",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b14.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b15",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b15.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b16",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b16.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b17",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b17.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b18",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b18.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b19",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b19.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "rater": "B",
+  "prompt": "B_b20",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/rate/B/B_b20.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ }
+]

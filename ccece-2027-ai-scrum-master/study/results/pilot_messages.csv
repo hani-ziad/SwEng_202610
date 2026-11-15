@@ -1,0 +1,2381 @@
+run,arm,board_id,checkpoint,late,message,board_text,model_text
+0,L,S37,0.0,1,"Heads-up: two of our last three sprints closed late and we carried 33 issues over last time. Let's check that the 18 stories (94 SP) are realistic and plan to close on the end date, carrying over whatever isn't done.","Team: Project E (name hidden). Planned sprint length: 29.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.25; issues carried over from the last one 33; share that closed more than a day late 0.67; average days late 1.8; average issues completed 9.0.
+Committed at the start: 18 issues; story points recorded on 18 of them (total 94).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 1 SP
+- Story, 4 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 6 SP
+- Bug, 1 SP
+- Story, 2 SP",
+0,G,S37,0.0,1,"This sprint starts with 94 SP across 18 stories, and we usually finish about 9 issues. Two of our last three sprints closed late. Can we trim scope or name a must-finish set now so it closes on time?","Team: Project E (name hidden). Planned sprint length: 29.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.25; issues carried over from the last one 33; share that closed more than a day late 0.67; average days late 1.8; average issues completed 9.0.
+Committed at the start: 18 issues; story points recorded on 18 of them (total 94).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 1 SP
+- Story, 4 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 6 SP
+- Bug, 1 SP
+- Story, 2 SP","Risk model: probability of closing late 0.51; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S37,0.5,1,We're halfway through with only 1 of 18 committed stories done and 50 issues added. Let's re-plan scope now so the sprint can close on its end date.,"Team: Project E (name hidden). Planned sprint length: 29.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.25; issues carried over from the last one 33; share that closed more than a day late 0.67; average days late 1.8; average issues completed 9.0.
+Committed at the start: 18 issues; story points recorded on 18 of them (total 94).
+Now: day 14.5 of 29.1 (halfway). Committed issues resolved so far: 1 of 18. Committed issues moved out of the sprint: 0. Issues added since the start: 50, of which resolved: 15.
+Issues:
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 8.2
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 20 SP, not resolved yet
+- added later: Story, 10 SP, not resolved yet
+- added later: Story, 6 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 6.0
+- added later: Story, 4 SP, resolved on day 8.0
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 4.0
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Improvement, 0.5 SP, not resolved yet
+- added later: Story, 8 SP, resolved on day 3.0
+- added later: Story, 4 SP, resolved on day 3.0
+- added later: Story, 1 SP, resolved on day 0.1
+- added later: Story, 10 SP, not resolved yet
+- ... and 28 more issues of the same kinds",
+0,G,S37,0.5,1,"We're halfway and only 1 of 18 committed stories is done, while 50 issues have been added. Let's freeze scope and agree what moves out so the sprint closes on schedule.","Team: Project E (name hidden). Planned sprint length: 29.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.25; issues carried over from the last one 33; share that closed more than a day late 0.67; average days late 1.8; average issues completed 9.0.
+Committed at the start: 18 issues; story points recorded on 18 of them (total 94).
+Now: day 14.5 of 29.1 (halfway). Committed issues resolved so far: 1 of 18. Committed issues moved out of the sprint: 0. Issues added since the start: 50, of which resolved: 15.
+Issues:
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 8.2
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 20 SP, not resolved yet
+- added later: Story, 10 SP, not resolved yet
+- added later: Story, 6 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 6.0
+- added later: Story, 4 SP, resolved on day 8.0
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 4.0
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Improvement, 0.5 SP, not resolved yet
+- added later: Story, 8 SP, resolved on day 3.0
+- added later: Story, 4 SP, resolved on day 3.0
+- added later: Story, 1 SP, resolved on day 0.1
+- added later: Story, 10 SP, not resolved yet
+- ... and 28 more issues of the same kinds","Risk model: probability of closing late 0.66; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S22,0.0,1,"All three of our last sprints closed a couple of days late. This sprint is small, so let's close it in Jira on the planned end date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 6.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.15; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 2.2; average issues completed 7.3.
+Committed at the start: 6 issues; story points recorded on 6 of them (total 12).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 1 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP",
+0,G,S22,0.0,1,"Heads-up: all of our last three sprints closed more than a day late, and we completed only about 15% of what we committed. Let's agree now how we'll close this sprint on its planned end date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 6.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.15; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 2.2; average issues completed 7.3.
+Committed at the start: 6 issues; story points recorded on 6 of them (total 12).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 1 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP","Risk model: probability of closing late 0.84; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S22,0.5,1,"We're halfway through, none of the committed stories are done, and 56 issues have been added since the start. Let's trim scope now so the sprint can close on its planned date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 6.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.15; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 2.2; average issues completed 7.3.
+Committed at the start: 6 issues; story points recorded on 6 of them (total 12).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 6. Committed issues moved out of the sprint: 3. Issues added since the start: 56, of which resolved: 9.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 2 SP, moved out of the sprint
+- committed: Story, 3 SP, moved out of the sprint
+- committed: Story, 3 SP, moved out of the sprint
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, resolved on day 1.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 2.9
+- added later: Story, 3 SP, resolved on day 1.0
+- added later: Story, 3 SP, resolved on day 1.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Improvement, 1 SP, resolved on day 2.1
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- ... and 22 more issues of the same kinds",
+0,G,S22,0.5,1,"56 issues have been added since the start, and none of our committed stories are done at the halfway point. Let's cut this back to what we can actually finish so the sprint closes on time.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 6.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.15; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 2.2; average issues completed 7.3.
+Committed at the start: 6 issues; story points recorded on 6 of them (total 12).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 6. Committed issues moved out of the sprint: 3. Issues added since the start: 56, of which resolved: 9.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 2 SP, moved out of the sprint
+- committed: Story, 3 SP, moved out of the sprint
+- committed: Story, 3 SP, moved out of the sprint
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, resolved on day 1.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 2.9
+- added later: Story, 3 SP, resolved on day 1.0
+- added later: Story, 3 SP, resolved on day 1.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Improvement, 1 SP, resolved on day 2.1
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- ... and 22 more issues of the same kinds","Risk model: probability of closing late 0.93; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S19,0.0,1,"All three of our last sprints closed late, by about 13 days on average, and we've committed 200 SP here. Let's cut the scope and plan to close the sprint on its end date.","Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.30; issues carried over from the last one 19; share that closed more than a day late 1.00; average days late 12.7; average issues completed 5.0.
+Committed at the start: 25 issues; story points recorded on 22 of them (total 200).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 13 SP
+- Bug, no estimate
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+- Bug, 5 SP
+- Story, no estimate
+- Improvement, 13 SP
+- New Feature, 8 SP
+- New Feature, 21 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- New Feature, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 13 SP
+- New Feature, 13 SP",
+0,G,S19,0.0,1,"Each of our last three sprints closed late, by about 13 days on average, and we're carrying 200 SP into this one. Let's cut scope now and plan to close the sprint on its end date even if work is left over.","Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.30; issues carried over from the last one 19; share that closed more than a day late 1.00; average days late 12.7; average issues completed 5.0.
+Committed at the start: 25 issues; story points recorded on 22 of them (total 200).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 13 SP
+- Bug, no estimate
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+- Improvement, 8 SP
+- Bug, 5 SP
+- Story, no estimate
+- Improvement, 13 SP
+- New Feature, 8 SP
+- New Feature, 21 SP
+- New Feature, 13 SP
+- New Feature, 13 SP
+- New Feature, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 8 SP
+- Bug, 8 SP
+- Bug, 5 SP
+- Bug, 13 SP
+- New Feature, 13 SP","Risk model: probability of closing late 0.75; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S19,0.5,1,"We're halfway through and none of the 25 committed issues are resolved yet, and our last sprints all closed well past their end dates. Let's pick the must-haves today and move the rest out.","Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.30; issues carried over from the last one 19; share that closed more than a day late 1.00; average days late 12.7; average issues completed 5.0.
+Committed at the start: 25 issues; story points recorded on 22 of them (total 200).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 25. Committed issues moved out of the sprint: 0. Issues added since the start: 9, of which resolved: 6.
+Issues:
+- committed: Improvement, 13 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Improvement, 13 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: New Feature, 21 SP, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 13 SP, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.1
+- added later: Story, no estimate, not resolved yet
+- added later: Bug, 5 SP, resolved on day 2.0
+- added later: Improvement, 1 SP, resolved on day 0.1
+- added later: Bug, 1 SP, resolved on day 3.2
+- added later: Bug, 3 SP, resolved on day 0.3
+- added later: Bug, 3 SP, resolved on day 4.1",
+0,G,S19,0.5,1,"We're halfway and none of the 25 committed issues (200 SP) are done yet, and our last three sprints all closed late. Let's agree today what we can realistically finish and what we push to the next sprint.","Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.30; issues carried over from the last one 19; share that closed more than a day late 1.00; average days late 12.7; average issues completed 5.0.
+Committed at the start: 25 issues; story points recorded on 22 of them (total 200).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 25. Committed issues moved out of the sprint: 0. Issues added since the start: 9, of which resolved: 6.
+Issues:
+- committed: Improvement, 13 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Improvement, 13 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: New Feature, 21 SP, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 13 SP, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.1
+- added later: Story, no estimate, not resolved yet
+- added later: Bug, 5 SP, resolved on day 2.0
+- added later: Improvement, 1 SP, resolved on day 0.1
+- added later: Bug, 1 SP, resolved on day 3.2
+- added later: Bug, 3 SP, resolved on day 0.3
+- added later: Bug, 3 SP, resolved on day 4.1","Risk model: probability of closing late 0.87; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S34,0.0,1,"Heads-up: we've committed 45 issues / 255 SP in an 11-day sprint, far more than we've been finishing. Let's agree on a must-do subset now and plan to close the sprint on its end date, carrying the rest over.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.34; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 45 issues; story points recorded on 30 of them (total 255).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Bug, no estimate
+- Bug, no estimate
+- Improvement, 13 SP
+- Bug, 3 SP
+- Story, no estimate
+- Improvement, 5 SP
+- Improvement, 1 SP
+- Bug, 5 SP
+- Bug, 3 SP
+- New Feature, no estimate
+- New Feature, 13 SP
+- Improvement, 13 SP
+- Improvement, 8 SP
+- New Feature, 5 SP
+- New Feature, 8 SP
+- Improvement, no estimate
+- New Feature, 8 SP
+- New Feature, 5 SP
+- Bug, no estimate
+- New Feature, 5 SP
+- Improvement, 8 SP
+- Improvement, 7 SP
+- Improvement, 7 SP
+- New Feature, no estimate
+- New Feature, no estimate
+- New Feature, no estimate
+- Bug, 5 SP
+- New Feature, no estimate
+- Bug, 3 SP
+- Bug, 5 SP
+- Improvement, no estimate
+- Story, 13 SP
+- Improvement, 21 SP
+- Bug, 13 SP
+- New Feature, 21 SP
+- Improvement, no estimate
+- Improvement, 2 SP
+- New Feature, 8 SP
+- Epic, no estimate
+- ... and 5 more issues of the same kinds",
+0,G,S34,0.0,1,"Heads-up: we've committed 45 issues and 255 SP, which is far more than we've finished in recent sprints, so this sprint is at risk of closing late. Can we trim scope now or agree on what drops first?","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.34; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 45 issues; story points recorded on 30 of them (total 255).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 5 SP
+- Bug, no estimate
+- Bug, no estimate
+- Improvement, 13 SP
+- Bug, 3 SP
+- Story, no estimate
+- Improvement, 5 SP
+- Improvement, 1 SP
+- Bug, 5 SP
+- Bug, 3 SP
+- New Feature, no estimate
+- New Feature, 13 SP
+- Improvement, 13 SP
+- Improvement, 8 SP
+- New Feature, 5 SP
+- New Feature, 8 SP
+- Improvement, no estimate
+- New Feature, 8 SP
+- New Feature, 5 SP
+- Bug, no estimate
+- New Feature, 5 SP
+- Improvement, 8 SP
+- Improvement, 7 SP
+- Improvement, 7 SP
+- New Feature, no estimate
+- New Feature, no estimate
+- New Feature, no estimate
+- Bug, 5 SP
+- New Feature, no estimate
+- Bug, 3 SP
+- Bug, 5 SP
+- Improvement, no estimate
+- Story, 13 SP
+- Improvement, 21 SP
+- Bug, 13 SP
+- New Feature, 21 SP
+- Improvement, no estimate
+- Improvement, 2 SP
+- New Feature, 8 SP
+- Epic, no estimate
+- ... and 5 more issues of the same kinds","Risk model: probability of closing late 0.79; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S34,0.5,1,"We're halfway through and only 1 of 45 committed issues is done. Let's agree today what we can realistically finish and move the rest out, so the sprint can close on time.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.34; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 45 issues; story points recorded on 30 of them (total 255).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 1 of 45. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Improvement, 13 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Improvement, 1 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: Improvement, 13 SP, resolved on day 1.1
+- committed: Improvement, 8 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 7 SP, not resolved yet
+- committed: Improvement, 7 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Story, 13 SP, not resolved yet
+- committed: Improvement, 21 SP, not resolved yet
+- committed: Bug, 13 SP, not resolved yet
+- committed: New Feature, 21 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Epic, no estimate, not resolved yet
+- ... and 6 more issues of the same kinds",
+0,G,S34,0.5,1,"We're at the midpoint and only 1 of 45 committed issues is resolved. Let's re-scope now and move what won't fit back to the backlog, so the sprint can close on time.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.34; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 45 issues; story points recorded on 30 of them (total 255).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 1 of 45. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Improvement, 13 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Improvement, 1 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: Improvement, 13 SP, resolved on day 1.1
+- committed: Improvement, 8 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 7 SP, not resolved yet
+- committed: Improvement, 7 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Story, 13 SP, not resolved yet
+- committed: Improvement, 21 SP, not resolved yet
+- committed: Bug, 13 SP, not resolved yet
+- committed: New Feature, 21 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Epic, no estimate, not resolved yet
+- ... and 6 more issues of the same kinds","Risk model: probability of closing late 0.86; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S17,0.0,1,"With two other sprints open in parallel and a large carry-over last time, this sprint could slip past its end date. Let's estimate the two open items and plan to close on schedule.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.28; issues carried over from the last one 23; share that closed more than a day late 0.33; average days late 1.1; average issues completed 7.3.
+Committed at the start: 17 issues; story points recorded on 15 of them (total 35).
+Now: day 0, planning has just finished.
+Issues:
+- Story, no estimate
+- Story, 3 SP
+- Story, 3 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 2 SP
+- Bug, no estimate
+- Story, 2 SP
+- Story, 3 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 1 SP
+- Improvement, 1 SP
+- Story, 3 SP","Risk model: probability of closing late 0.62; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S17,0.5,1,"We're halfway through, none of the 17 committed issues are done, and 33 have been added. Let's review scope today so we can close on time.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.28; issues carried over from the last one 23; share that closed more than a day late 0.33; average days late 1.1; average issues completed 7.3.
+Committed at the start: 17 issues; story points recorded on 15 of them (total 35).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 17. Committed issues moved out of the sprint: 0. Issues added since the start: 33, of which resolved: 4.
+Issues:
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Improvement, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Improvement, 1 SP, resolved on day 2.8
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 1 SP, resolved on day 2.0
+- added later: Story, 1 SP, resolved on day 3.8
+- added later: Bug, no estimate, resolved on day 0.9
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Improvement, 4 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- ... and 10 more issues of the same kinds",
+0,G,S17,0.5,1,"We're halfway with 0 of 17 committed stories done, and 33 issues have been added. Let's trim the scope now so we can close on time.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.28; issues carried over from the last one 23; share that closed more than a day late 0.33; average days late 1.1; average issues completed 7.3.
+Committed at the start: 17 issues; story points recorded on 15 of them (total 35).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 17. Committed issues moved out of the sprint: 0. Issues added since the start: 33, of which resolved: 4.
+Issues:
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Improvement, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Improvement, 1 SP, resolved on day 2.8
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 1 SP, resolved on day 2.0
+- added later: Story, 1 SP, resolved on day 3.8
+- added later: Bug, no estimate, resolved on day 0.9
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Improvement, 4 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- ... and 10 more issues of the same kinds","Risk model: probability of closing late 0.77; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S12,0.0,1,"Quick flag: our recent sprints have sometimes closed several days late, and both bugs here are unestimated. Let's size them today and plan to close the sprint on its end date.","Team: Project C (name hidden). Planned sprint length: 10.2 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.50; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 5.9; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate","Risk model: probability of closing late 0.65; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S12,0.5,1,"The committed bugs are done, but the 3 bugs added mid-sprint are still open. Let's decide whether they stay in this sprint so we can close on the planned date.","Team: Project C (name hidden). Planned sprint length: 10.2 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.50; issues carried over from the last one 1; share that closed more than a day late 0.33; average days late 5.9; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 5.1 of 10.2 (halfway). Committed issues resolved so far: 2 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 3, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, resolved on day 3.8
+- committed: Bug, no estimate, resolved on day 0.0
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet","Risk model: probability of closing late 0.77; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S28,0.0,1,"All three of our last sprints closed late, by about 3 weeks on average. Even with a single 8-point bug in this one, let's set a firm close date now and close the sprint on time, even if the bug isn't finished.","Team: Project C (name hidden). Planned sprint length: 17.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 1.00; average days late 20.8; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 8 SP",
+0,G,S28,0.0,1,"Each of our last three sprints closed late, by about 3 weeks on average. Let's agree to close this sprint on its end date, whether or not the bug is finished.","Team: Project C (name hidden). Planned sprint length: 17.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 1.00; average days late 20.8; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 8 SP","Risk model: probability of closing late 0.51; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S28,0.5,1,"Halfway through and nothing is resolved yet, the 8 SP bug is still open and two more bugs were added. Recent sprints have all closed well past their end date, so let's agree today what can really finish and plan the close on time.","Team: Project C (name hidden). Planned sprint length: 17.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 1.00; average days late 20.8; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 8.7 of 17.4 (halfway). Committed issues resolved so far: 0 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 2, of which resolved: 0.
+Issues:
+- committed: Bug, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 1 SP, not resolved yet",
+0,G,S28,0.5,1,"At the halfway point the committed 8 SP bug and the two added bugs are all still open, and our recent sprints closed late. Can we check what's blocking them and plan to close on the end date?","Team: Project C (name hidden). Planned sprint length: 17.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.08; issues carried over from the last one 3; share that closed more than a day late 1.00; average days late 20.8; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 1 of them (total 8).
+Now: day 8.7 of 17.4 (halfway). Committed issues resolved so far: 0 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 2, of which resolved: 0.
+Issues:
+- committed: Bug, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 1 SP, not resolved yet","Risk model: probability of closing late 0.57; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S20,0.0,1,"Early warning: our last three sprints all closed late, by about 13 days on average, and we've committed 12 issues / 40 SP while recently finishing about one. Let's trim scope now and commit to closing on the planned end date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 7; share that closed more than a day late 1.00; average days late 13.0; average issues completed 0.7.
+Committed at the start: 12 issues; story points recorded on 12 of them (total 40).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 5 SP
+- Improvement, 4 SP
+- Improvement, 3 SP
+- Improvement, 3 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 3 SP",
+0,G,S20,0.0,1,Each of our last three sprints closed about two weeks late. Let's protect this sprint's 40 SP and commit to closing it on the planned end date.,"Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 7; share that closed more than a day late 1.00; average days late 13.0; average issues completed 0.7.
+Committed at the start: 12 issues; story points recorded on 12 of them (total 40).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 5 SP
+- Improvement, 4 SP
+- Improvement, 3 SP
+- Improvement, 3 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 1 SP
+- Story, 3 SP","Risk model: probability of closing late 0.84; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S20,0.5,1,"We're halfway through, none of the 12 committed stories are done, and 31 issues have been added. Given how recent sprints ran over, let's cut scope today so this one closes on time.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 7; share that closed more than a day late 1.00; average days late 13.0; average issues completed 0.7.
+Committed at the start: 12 issues; story points recorded on 12 of them (total 40).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 12. Committed issues moved out of the sprint: 0. Issues added since the start: 31, of which resolved: 4.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Improvement, 4 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 1 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.9
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 1 SP, resolved on day 4.0
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 4 SP, resolved on day 3.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- ... and 3 more issues of the same kinds",
+0,G,S20,0.5,1,"We're halfway with 0 of 12 committed issues done, and 31 new issues have been added. Our recent sprints closed about 13 days late, so let's cut scope now so we can close on time.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.13; issues carried over from the last one 7; share that closed more than a day late 1.00; average days late 13.0; average issues completed 0.7.
+Committed at the start: 12 issues; story points recorded on 12 of them (total 40).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 12. Committed issues moved out of the sprint: 0. Issues added since the start: 31, of which resolved: 4.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Improvement, 4 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 1 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.9
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 1 SP, resolved on day 4.0
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Improvement, 4 SP, resolved on day 3.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- ... and 3 more issues of the same kinds","Risk model: probability of closing late 0.90; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S13,0.0,1,"Two of our last three sprints closed about 11 days late, and we've loaded 40 issues (293+ SP) into this one. Let's trim the scope now and set a firm close date.","Team: Project E (name hidden). Planned sprint length: 31.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 6; share that closed more than a day late 0.67; average days late 10.7; average issues completed 2.0.
+Committed at the start: 40 issues; story points recorded on 35 of them (total 293).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 4 SP
+- Story, 8 SP
+- Bug, 2 SP
+- Bug, 4 SP
+- Improvement, 5 SP
+- Story, 4 SP
+- Story, 2 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 6 SP
+- Bug, 6 SP
+- Improvement, 5 SP
+- Bug, 4 SP
+- Improvement, 20 SP
+- Improvement, 10 SP
+- Bug, 1 SP
+- Story, 20 SP
+- Story, 15 SP
+- Story, no estimate
+- Story, no estimate
+- Story, 16 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, no estimate
+- Story, 6 SP
+- Story, 2 SP
+- Story, 8 SP
+- Story, 20 SP
+- Story, 20 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Story, 6 SP
+- Improvement, 8 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, no estimate
+- Story, 6 SP
+- Story, 20 SP
+- Improvement, 10 SP
+- Story, 10 SP",
+0,G,S13,0.0,1,"Two of our last three sprints closed late, by about 11 days on average, and this one commits 40 issues and 293 SP with two other sprints running in parallel. Let's confirm the scope is realistic and plan to close on the end date.","Team: Project E (name hidden). Planned sprint length: 31.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 6; share that closed more than a day late 0.67; average days late 10.7; average issues completed 2.0.
+Committed at the start: 40 issues; story points recorded on 35 of them (total 293).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 4 SP
+- Story, 8 SP
+- Bug, 2 SP
+- Bug, 4 SP
+- Improvement, 5 SP
+- Story, 4 SP
+- Story, 2 SP
+- Bug, 8 SP
+- Bug, no estimate
+- Bug, 6 SP
+- Bug, 6 SP
+- Improvement, 5 SP
+- Bug, 4 SP
+- Improvement, 20 SP
+- Improvement, 10 SP
+- Bug, 1 SP
+- Story, 20 SP
+- Story, 15 SP
+- Story, no estimate
+- Story, no estimate
+- Story, 16 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, no estimate
+- Story, 6 SP
+- Story, 2 SP
+- Story, 8 SP
+- Story, 20 SP
+- Story, 20 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Story, 6 SP
+- Improvement, 8 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, no estimate
+- Story, 6 SP
+- Story, 20 SP
+- Improvement, 10 SP
+- Story, 10 SP","Risk model: probability of closing late 0.39; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S13,0.5,1,"Halfway through, 6 of 40 committed issues (around 293 SP) are done, and recent sprints have closed about 11 days late. Let's re-plan scope now so the sprint can close on its planned date.","Team: Project E (name hidden). Planned sprint length: 31.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 6; share that closed more than a day late 0.67; average days late 10.7; average issues completed 2.0.
+Committed at the start: 40 issues; story points recorded on 35 of them (total 293).
+Now: day 15.5 of 31.0 (halfway). Committed issues resolved so far: 6 of 40. Committed issues moved out of the sprint: 0. Issues added since the start: 14, of which resolved: 5.
+Issues:
+- committed: Improvement, 4 SP, resolved on day 0.6
+- committed: Story, 8 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 5 SP, resolved on day 3.6
+- committed: Story, 6 SP, resolved on day 7.6
+- committed: Story, 2 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 6 SP, resolved on day 9.6
+- committed: Bug, 6 SP, not resolved yet
+- committed: Improvement, 5 SP, resolved on day 3.6
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 20 SP, not resolved yet
+- committed: Improvement, 10 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 15 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 16 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Improvement, 12 SP, resolved on day 4.6
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Improvement, 10 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- ... and 14 more issues of the same kinds",
+0,G,S13,0.5,1,We're halfway with only 6 of 40 committed issues done (293 SP committed). Let's pick the must-haves now and move the rest out so we can close on time.,"Team: Project E (name hidden). Planned sprint length: 31.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 6; share that closed more than a day late 0.67; average days late 10.7; average issues completed 2.0.
+Committed at the start: 40 issues; story points recorded on 35 of them (total 293).
+Now: day 15.5 of 31.0 (halfway). Committed issues resolved so far: 6 of 40. Committed issues moved out of the sprint: 0. Issues added since the start: 14, of which resolved: 5.
+Issues:
+- committed: Improvement, 4 SP, resolved on day 0.6
+- committed: Story, 8 SP, not resolved yet
+- committed: Bug, 2 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 5 SP, resolved on day 3.6
+- committed: Story, 6 SP, resolved on day 7.6
+- committed: Story, 2 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 6 SP, resolved on day 9.6
+- committed: Bug, 6 SP, not resolved yet
+- committed: Improvement, 5 SP, resolved on day 3.6
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 20 SP, not resolved yet
+- committed: Improvement, 10 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 15 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 16 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Improvement, 12 SP, resolved on day 4.6
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Improvement, 10 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- ... and 14 more issues of the same kinds","Risk model: probability of closing late 0.47; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S26,0.0,1,Heads-up: two of our last three sprints closed late and we carried 37 issues over last time. Let's plan to close this one on its end date and move unfinished work to the backlog.,"Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.04; issues carried over from the last one 37; share that closed more than a day late 0.67; average days late 1.0; average issues completed 1.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, no estimate",
+0,G,S26,0.0,1,"Two of our last three sprints closed late, and we carried 37 issues over last time. Let's make sure this sprint gets closed on its end date, even with only one item in it.","Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.04; issues carried over from the last one 37; share that closed more than a day late 0.67; average days late 1.0; average issues completed 1.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, no estimate","Risk model: probability of closing late 0.59; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S26,0.5,1,"43 issues have been added since the start and only 4 are resolved at the midpoint. Two of the last three sprints closed late, so let's trim the scope now and plan to close on the end date.","Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.04; issues carried over from the last one 37; share that closed more than a day late 0.67; average days late 1.0; average issues completed 1.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 43, of which resolved: 4.
+Issues:
+- committed: Improvement, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, resolved on day 4.8
+- added later: Improvement, 3 SP, resolved on day 4.9
+- added later: Story, 5 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 8 SP, resolved on day 4.8
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 1 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Improvement, no estimate, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Improvement, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: New Feature, 8 SP, resolved on day 4.9
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: New Feature, 21 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- ... and 4 more issues of the same kinds",
+0,G,S26,0.5,1,43 issues have been added since the start and only 4 are resolved at the halfway point. Let's decide which of the added work really belongs in this sprint so we can close on the planned date.,"Team: Project G (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.04; issues carried over from the last one 37; share that closed more than a day late 0.67; average days late 1.0; average issues completed 1.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 43, of which resolved: 4.
+Issues:
+- committed: Improvement, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, resolved on day 4.8
+- added later: Improvement, 3 SP, resolved on day 4.9
+- added later: Story, 5 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 8 SP, resolved on day 4.8
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 1 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Improvement, no estimate, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Improvement, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: New Feature, 8 SP, resolved on day 4.9
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: New Feature, 21 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: Bug, 8 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- ... and 4 more issues of the same kinds","Risk model: probability of closing late 0.68; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S25,0.0,1,"We've committed 42 issues (247 SP) while we usually finish about 9, and two of our last three sprints closed late. Let's cut the scope now and plan to close on time.","Team: Project E (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.29; issues carried over from the last one 29; share that closed more than a day late 0.67; average days late 5.6; average issues completed 9.0.
+Committed at the start: 42 issues; story points recorded on 41 of them (total 247).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 6 SP
+- Story, 4 SP
+- Story, 16 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Bug, no estimate
+- Improvement, 4 SP
+- Story, 1 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Bug, 4 SP
+- Improvement, 1 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 20 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 6 SP
+- Story, 8 SP
+- Story, 0 SP
+- Bug, 20 SP
+- Story, 6 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Story, 1 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 10 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 2 SP
+- ... and 2 more issues of the same kinds",
+0,G,S25,0.0,1,"This sprint starts with 42 issues and 247 SP, while we typically finish about 9 issues, and 29 carried over last time. Please cut scope now and plan to close on the end date.","Team: Project E (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.29; issues carried over from the last one 29; share that closed more than a day late 0.67; average days late 5.6; average issues completed 9.0.
+Committed at the start: 42 issues; story points recorded on 41 of them (total 247).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 6 SP
+- Story, 4 SP
+- Story, 16 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Bug, no estimate
+- Improvement, 4 SP
+- Story, 1 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 4 SP
+- Bug, 4 SP
+- Improvement, 1 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 20 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 4 SP
+- Story, 6 SP
+- Story, 8 SP
+- Story, 0 SP
+- Bug, 20 SP
+- Story, 6 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Story, 1 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 10 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 2 SP
+- ... and 2 more issues of the same kinds","Risk model: probability of closing late 0.48; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S25,0.5,1,"Halfway through, 4 of 42 committed issues (about 247 SP) are done, and recent sprints have closed late by about 5.6 days on average. Let's re-scope today and agree what gets moved out so the sprint can close on time.","Team: Project E (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.29; issues carried over from the last one 29; share that closed more than a day late 0.67; average days late 5.6; average issues completed 9.0.
+Committed at the start: 42 issues; story points recorded on 41 of them (total 247).
+Now: day 7.1 of 14.1 (halfway). Committed issues resolved so far: 4 of 42. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, resolved on day 5.0
+- committed: Story, 16 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Improvement, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 1 SP, resolved on day 2.9
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, resolved on day 0.2
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 0.1
+- committed: Story, 0 SP, not resolved yet
+- committed: Bug, 20 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- ... and 3 more issues of the same kinds",
+0,G,S25,0.5,1,"We're halfway with 4 of 42 committed stories done, and our last sprints mostly closed late. Let's pick the stories we can really finish and move the rest out now.","Team: Project E (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.29; issues carried over from the last one 29; share that closed more than a day late 0.67; average days late 5.6; average issues completed 9.0.
+Committed at the start: 42 issues; story points recorded on 41 of them (total 247).
+Now: day 7.1 of 14.1 (halfway). Committed issues resolved so far: 4 of 42. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, resolved on day 5.0
+- committed: Story, 16 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Improvement, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, 4 SP, not resolved yet
+- committed: Improvement, 1 SP, resolved on day 2.9
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, resolved on day 0.2
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 0.1
+- committed: Story, 0 SP, not resolved yet
+- committed: Bug, 20 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- ... and 3 more issues of the same kinds","Risk model: probability of closing late 0.68; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S07,0.0,1,"We completed none of our committed issues in recent sprints, and two of these four bugs are unestimated. Let's size them now and plan to close the sprint on its end date.","Team: Project C (name hidden). Planned sprint length: 11.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.00; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 5.6; average issues completed 0.0.
+Committed at the start: 4 issues; story points recorded on 2 of them (total 8).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 5 SP","Risk model: probability of closing late 0.64; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S07,0.5,1,We're halfway and none of the committed bugs are resolved yet. Can we check what's blocking them so we can still close on the planned date?,"Team: Project C (name hidden). Planned sprint length: 11.4 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.00; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 5.6; average issues completed 0.0.
+Committed at the start: 4 issues; story points recorded on 2 of them (total 8).
+Now: day 5.7 of 11.4 (halfway). Committed issues resolved so far: 0 of 4. Committed issues moved out of the sprint: 1. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, moved out of the sprint
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet","Risk model: probability of closing late 0.58; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S09,0.0,1,"We committed 12 issues, but we finished about 4 per sprint recently, and 12 carried over last time. Let's pick the must-finish items now and plan to close the sprint on its end date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 12; share that closed more than a day late 0.33; average days late 1.1; average issues completed 4.0.
+Committed at the start: 12 issues; story points recorded on 11 of them (total 30).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 4 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 2 SP
+- Story, no estimate
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP","Risk model: probability of closing late 0.85; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S09,0.5,1,"We're halfway, none of the 12 committed stories are done, and 44 issues have been added. Can we freeze scope and decide which added items go back to the backlog so we close on time?","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.17; issues carried over from the last one 12; share that closed more than a day late 0.33; average days late 1.1; average issues completed 4.0.
+Committed at the start: 12 issues; story points recorded on 11 of them (total 30).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 0 of 12. Committed issues moved out of the sprint: 0. Issues added since the start: 44, of which resolved: 5.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Bug, 0 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 1.4
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 1.4
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- ... and 16 more issues of the same kinds","Risk model: probability of closing late 0.81; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S05,0.0,1,"Heads-up: each of our last three sprints closed late, by about 11 days on average, and we finished only about 6% of what we committed. Let's agree now on what we can really finish and close the sprint on its planned date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 16; share that closed more than a day late 1.00; average days late 11.2; average issues completed 1.3.
+Committed at the start: 11 issues; story points recorded on 11 of them (total 23).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 3 SP
+- Story, 1 SP
+- Story, 3 SP
+- Story, 1 SP
+- Bug, 0 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 4 SP
+- Improvement, 2 SP
+- Story, 3 SP",
+0,G,S05,0.0,1,"Each of our last three sprints closed late, by about 11 days on average, and five other sprints are open at the same time. Let's agree now to close this one on its end date and move any unfinished work forward.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 16; share that closed more than a day late 1.00; average days late 11.2; average issues completed 1.3.
+Committed at the start: 11 issues; story points recorded on 11 of them (total 23).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 3 SP
+- Story, 1 SP
+- Story, 3 SP
+- Story, 1 SP
+- Bug, 0 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 4 SP
+- Improvement, 2 SP
+- Story, 3 SP","Risk model: probability of closing late 0.71; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S05,0.5,1,"At the midpoint only 2 of 11 committed stories are done, and 25 more issues have been added. Every one of the last three sprints closed late (about 11 days on average), so let's cut scope now and plan to close on the end date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 16; share that closed more than a day late 1.00; average days late 11.2; average issues completed 1.3.
+Committed at the start: 11 issues; story points recorded on 11 of them (total 23).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 2 of 11. Committed issues moved out of the sprint: 0. Issues added since the start: 25, of which resolved: 5.
+Issues:
+- committed: Story, 3 SP, resolved on day 4.1
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Bug, 0 SP, resolved on day 3.0
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 3.2
+- added later: Story, 0 SP, resolved on day 5.1
+- added later: Story, 0 SP, resolved on day 3.3
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 0 SP, resolved on day 3.0
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 4 SP, not resolved yet",
+0,G,S05,0.5,1,"We're halfway with 2 of 11 committed stories done and 25 added, and our last sprints all closed late. Let's cut scope now and plan to close on the end date.","Team: Project E (name hidden). Planned sprint length: 12.0 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 16; share that closed more than a day late 1.00; average days late 11.2; average issues completed 1.3.
+Committed at the start: 11 issues; story points recorded on 11 of them (total 23).
+Now: day 6.0 of 12.0 (halfway). Committed issues resolved so far: 2 of 11. Committed issues moved out of the sprint: 0. Issues added since the start: 25, of which resolved: 5.
+Issues:
+- committed: Story, 3 SP, resolved on day 4.1
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Bug, 0 SP, resolved on day 3.0
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, resolved on day 3.2
+- added later: Story, 0 SP, resolved on day 5.1
+- added later: Story, 0 SP, resolved on day 3.3
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 0 SP, resolved on day 3.0
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 2 SP, resolved on day 3.0
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 4 SP, not resolved yet","Risk model: probability of closing late 0.86; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S10,0.0,1,"We've committed 41 issues (254 SP) while we usually finish about 16, and two of our last three sprints closed late. Let's cut the scope now and plan to close on the planned date.","Team: Project E (name hidden). Planned sprint length: 22.3 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 36; share that closed more than a day late 0.67; average days late 5.6; average issues completed 16.3.
+Committed at the start: 41 issues; story points recorded on 41 of them (total 254).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 4 SP
+- Bug, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 12 SP
+- Story, 6 SP
+- Story, 1 SP
+- Story, 8 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 2 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 2 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Improvement, 2 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 10 SP
+- Story, 20 SP
+- Story, 10 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- ... and 1 more issues of the same kinds",
+0,G,S10,0.0,1,"We've committed 254 SP, much more than we've been finishing, and two of our last three sprints closed late. Let's trim scope now so we can close on the planned end date.","Team: Project E (name hidden). Planned sprint length: 22.3 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 36; share that closed more than a day late 0.67; average days late 5.6; average issues completed 16.3.
+Committed at the start: 41 issues; story points recorded on 41 of them (total 254).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 4 SP
+- Bug, 2 SP
+- Story, 4 SP
+- Story, 5 SP
+- Story, 12 SP
+- Story, 6 SP
+- Story, 1 SP
+- Story, 8 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 2 SP
+- Story, 8 SP
+- Story, 6 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 2 SP
+- Story, 10 SP
+- Improvement, 8 SP
+- Improvement, 2 SP
+- Story, 4 SP
+- Story, 1 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, 12 SP
+- Story, 10 SP
+- Story, 20 SP
+- Story, 10 SP
+- Story, 4 SP
+- Story, 10 SP
+- Story, 8 SP
+- Story, 5 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- ... and 1 more issues of the same kinds","Risk model: probability of closing late 0.44; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S10,0.5,1,We're halfway through with 8 of 41 committed stories done and 12 more added. Let's re-plan the remaining scope now so we can close on time.,"Team: Project E (name hidden). Planned sprint length: 22.3 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 36; share that closed more than a day late 0.67; average days late 5.6; average issues completed 16.3.
+Committed at the start: 41 issues; story points recorded on 41 of them (total 254).
+Now: day 11.1 of 22.3 (halfway). Committed issues resolved so far: 8 of 41. Committed issues moved out of the sprint: 0. Issues added since the start: 12, of which resolved: 2.
+Issues:
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, 2 SP, resolved on day 1.0
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 1 SP, resolved on day 7.1
+- committed: Story, 4 SP, resolved on day 3.1
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, resolved on day 2.2
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 7.9
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 10 SP, resolved on day 10.1
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, resolved on day 5.1
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 4 SP, resolved on day 10.3
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- ... and 13 more issues of the same kinds",
+0,G,S10,0.5,1,"We're halfway and only 8 of 41 committed stories are done, with 12 more added. Our recent sprints closed about 5 days late, so let's agree today what to drop or move out so we can close on the planned date.","Team: Project E (name hidden). Planned sprint length: 22.3 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.33; issues carried over from the last one 36; share that closed more than a day late 0.67; average days late 5.6; average issues completed 16.3.
+Committed at the start: 41 issues; story points recorded on 41 of them (total 254).
+Now: day 11.1 of 22.3 (halfway). Committed issues resolved so far: 8 of 41. Committed issues moved out of the sprint: 0. Issues added since the start: 12, of which resolved: 2.
+Issues:
+- committed: Story, 4 SP, not resolved yet
+- committed: Bug, 2 SP, resolved on day 1.0
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 1 SP, resolved on day 7.1
+- committed: Story, 4 SP, resolved on day 3.1
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, resolved on day 2.2
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 8 SP, resolved on day 7.9
+- committed: Story, 6 SP, not resolved yet
+- committed: Story, 10 SP, resolved on day 10.1
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 12 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 10 SP, resolved on day 5.1
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 4 SP, resolved on day 10.3
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- ... and 13 more issues of the same kinds","Risk model: probability of closing late 0.44; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S29,0.0,0,"This sprint has a single unestimated story. Please size it and confirm it fits, so the sprint can close on its planned end date.","Team: Project B (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.47; issues carried over from the last one 0; share that closed more than a day late 0.33; average days late 0.9; average issues completed 1.0.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Story, no estimate","Risk model: probability of closing late 0.66; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S04,0.0,0,"Small heads-up: we've completed only a small share of what we committed in recent sprints, and this one has 19 issues, some unestimated. Let's estimate the open items and keep an eye on closing on time.","Team: Project G (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.12; issues carried over from the last one 7; share that closed more than a day late 0.33; average days late 0.9; average issues completed 2.3.
+Committed at the start: 19 issues; story points recorded on 15 of them (total 57).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+- Bug, 5 SP
+- New Feature, 5 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 5 SP
+- New Feature, no estimate
+- New Feature, 5 SP
+- New Feature, 3 SP
+- New Feature, no estimate
+- New Feature, no estimate
+- New Feature, 5 SP
+- Bug, 3 SP
+- Epic, no estimate
+- Bug, 3 SP
+- Bug, 3 SP
+- Bug, 3 SP
+- Improvement, 3 SP
+- New Feature, 5 SP","Risk model: probability of closing late 0.50; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S04,0.5,0,We're halfway with 1 of 19 committed issues done and 42 added. Let's freeze new additions and agree what moves out so we can close on time.,"Team: Project G (name hidden). Planned sprint length: 14.1 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.12; issues carried over from the last one 7; share that closed more than a day late 0.33; average days late 0.9; average issues completed 2.3.
+Committed at the start: 19 issues; story points recorded on 15 of them (total 57).
+Now: day 7.0 of 14.1 (halfway). Committed issues resolved so far: 1 of 19. Committed issues moved out of the sprint: 0. Issues added since the start: 42, of which resolved: 7.
+Issues:
+- committed: Improvement, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: New Feature, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, 3 SP, resolved on day 2.4
+- committed: Epic, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- added later: Bug, 1 SP, resolved on day 3.5
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Bug, 5 SP, resolved on day 2.4
+- added later: Bug, 5 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 2 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: New Feature, 5 SP, not resolved yet
+- added later: New Feature, 1 SP, resolved on day 2.4
+- added later: Bug, 1 SP, resolved on day 2.4
+- ... and 21 more issues of the same kinds","Risk model: probability of closing late 0.54; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S24,0.0,0,"We committed 21 issues (92+ SP, three unestimated, including a 21 SP improvement), but we usually finish about 6. Please split or defer the large items now so the sprint can close on schedule.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.39; issues carried over from the last one 4; share that closed more than a day late 0.33; average days late 1.0; average issues completed 6.3.
+Committed at the start: 21 issues; story points recorded on 18 of them (total 92).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, 3 SP
+- Bug, 5 SP
+- Bug, 3 SP
+- Improvement, 3 SP
+- Bug, 5 SP
+- New Feature, no estimate
+- Improvement, 3 SP
+- Bug, 8 SP
+- Bug, 1 SP
+- Bug, 3 SP
+- Improvement, 5 SP
+- Bug, 8 SP
+- Improvement, 5 SP
+- Bug, 5 SP
+- Bug, no estimate
+- Bug, 3 SP
+- Bug, 5 SP
+- Improvement, 21 SP
+- Bug, 3 SP
+- Improvement, 3 SP
+- New Feature, no estimate","Risk model: probability of closing late 0.55; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S24,0.5,0,"We're halfway with 2 of 21 committed issues done, and most of the 92 SP is still open. Let's agree on priorities and drop what won't fit before the end date.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.39; issues carried over from the last one 4; share that closed more than a day late 0.33; average days late 1.0; average issues completed 6.3.
+Committed at the start: 21 issues; story points recorded on 18 of them (total 92).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 2 of 21. Committed issues moved out of the sprint: 0. Issues added since the start: 3, of which resolved: 2.
+Issues:
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Improvement, 3 SP, resolved on day 3.9
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 1 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, no estimate, resolved on day 1.0
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Improvement, 21 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Improvement, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- added later: Improvement, 5 SP, not resolved yet
+- added later: Bug, 1 SP, resolved on day 0.7
+- added later: Improvement, no estimate, resolved on day 3.9","Risk model: probability of closing late 0.79; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S27,0.0,0,Heads-up: our last three sprints all closed late (about 3 days on average) and we finished very little of what we committed. Let's agree now who owns this bug and check on it mid-sprint so we close on time.,"Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 4; share that closed more than a day late 1.00; average days late 3.1; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate",
+0,G,S27,0.0,0,"Each of our last three sprints closed late, by about 3 days on average. Let's estimate this bug and plan to close the sprint on its end date.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 4; share that closed more than a day late 1.00; average days late 3.1; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate","Risk model: probability of closing late 0.56; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S27,0.5,0,"The committed work is done, but our recent sprints all closed late. Please plan to close this one on its end date and move anything open to the next sprint.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 4; share that closed more than a day late 1.00; average days late 3.1; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 1 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, resolved on day 0.9
+- added later: Bug, no estimate, not resolved yet",
+0,G,S27,0.5,0,"The committed bug is done, but the added bug is still open, and our recent sprints have closed late. Let's either finish it or move it out so we can close on the planned date.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.07; issues carried over from the last one 4; share that closed more than a day late 1.00; average days late 3.1; average issues completed 0.3.
+Committed at the start: 1 issues; story points recorded on 0 of them (total 0).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 1 of 1. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, resolved on day 0.9
+- added later: Bug, no estimate, not resolved yet","Risk model: probability of closing late 0.64; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S31,0.0,0,Two of our last three sprints closed about 5 days late. Let's agree now to close this one on its planned end date and carry over anything unfinished.,"Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 11).
+Now: day 0, planning has just finished.
+Issues:
+- Suggestion, no estimate
+- Bug, 8 SP
+- Bug, 3 SP",
+0,G,S31,0.0,0,"Two of our last three sprints closed late, by about 5 days on average, and very little committed work has been getting done. Let's estimate the suggestion item and plan to close on the end date.","Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 11).
+Now: day 0, planning has just finished.
+Issues:
+- Suggestion, no estimate
+- Bug, 8 SP
+- Bug, 3 SP","Risk model: probability of closing late 0.28; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S31,0.5,0,"We're at the midpoint with 0 of 3 committed items done, and two of the last three sprints closed late. Can we check whether the 8 SP bug will fit, and agree a plan to close on the planned date?","Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 11).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 0 of 3. Committed issues moved out of the sprint: 0. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Suggestion, no estimate, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet",
+0,G,S31,0.5,0,"We're halfway and none of the 3 committed issues are resolved, and our recent sprints closed about 5 days late. Can we check what's blocking them and plan to close on the end date?","Team: Project D (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 2.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 5; share that closed more than a day late 0.67; average days late 5.1; average issues completed 0.3.
+Committed at the start: 3 issues; story points recorded on 2 of them (total 11).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 0 of 3. Committed issues moved out of the sprint: 0. Issues added since the start: 0, of which resolved: 0.
+Issues:
+- committed: Suggestion, no estimate, not resolved yet
+- committed: Bug, 8 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet","Risk model: probability of closing late 0.29; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S36,0.0,0,"Two of our last three sprints closed about 10 days late. Let's estimate these two bugs and plan to close the sprint on its end date, even if work carries over.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.44; issues carried over from the last one 1; share that closed more than a day late 0.67; average days late 10.4; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate",
+0,G,S36,0.0,0,"Two of our last three sprints closed late, by about 10 days on average. Please estimate these two bugs and plan to close the sprint on its end date even if work carries over.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.44; issues carried over from the last one 1; share that closed more than a day late 0.67; average days late 10.4; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 0, planning has just finished.
+Issues:
+- Bug, no estimate
+- Bug, no estimate","Risk model: probability of closing late 0.49; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S36,0.5,0,"Halfway in, both committed bugs are still open and one more has been added. Recent sprints have closed about 10 days late on average, so let's agree now what will finish and close the sprint on its end date.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.44; issues carried over from the last one 1; share that closed more than a day late 0.67; average days late 10.4; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 0 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet",
+0,G,S36,0.5,0,"We're halfway, no bugs resolved yet, and recent sprints closed well past their end date. Let's confirm what we can finish and plan to close the sprint on time.","Team: Project C (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.44; issues carried over from the last one 1; share that closed more than a day late 0.67; average days late 10.4; average issues completed 0.7.
+Committed at the start: 2 issues; story points recorded on 0 of them (total 0).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 0 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, no estimate, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- added later: Bug, no estimate, not resolved yet","Risk model: probability of closing late 0.55; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S23,0.5,0,"33 issues have been added since the start, and nothing is resolved yet at the halfway point. Let's confirm which of these we can really finish in this sprint and move the rest out.","Team: Project G (name hidden). Planned sprint length: 13.0 days.
+Other sprints of this project open at the same time: 1.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.51; issues carried over from the last one 30; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 3 issues; story points recorded on 1 of them (total 5).
+Now: day 6.5 of 13.0 (halfway). Committed issues resolved so far: 0 of 3. Committed issues moved out of the sprint: 0. Issues added since the start: 33, of which resolved: 0.
+Issues:
+- committed: Story, no estimate, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Improvement, 1 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: New Feature, 5 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: Improvement, no estimate, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: New Feature, 5 SP, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: Improvement, 7 SP, not resolved yet
+- added later: Improvement, 7 SP, not resolved yet
+- added later: New Feature, no estimate, not resolved yet
+- added later: New Feature, no estimate, not resolved yet
+- added later: New Feature, no estimate, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 13 SP, not resolved yet
+- added later: Improvement, 21 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: Epic, no estimate, not resolved yet
+- added later: Improvement, 21 SP, not resolved yet
+- added later: New Feature, no estimate, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet","Risk model: probability of closing late 0.60; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S30,0.0,0,"Two of our last three sprints closed late, and we're starting this one with 29 issues while we usually finish about 9. Let's trim the scope or agree now that the sprint closes on its planned date.","Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.31; issues carried over from the last one 17; share that closed more than a day late 0.67; average days late 3.7; average issues completed 9.0.
+Committed at the start: 29 issues; story points recorded on 26 of them (total 53.5).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 2 SP
+- Story, 0 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 0.5 SP
+- Story, no estimate
+- Story, 0.5 SP
+- Story, 0.5 SP
+- Story, 2 SP
+- Story, 0.5 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Improvement, no estimate
+- Improvement, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 0.5 SP
+- Improvement, no estimate
+- Story, 2 SP
+- Story, 1 SP",
+0,G,S30,0.0,0,"We committed 29 issues, but we usually finish about 9, and 17 carried over last sprint. Let's mark the must-finish items now and close the sprint on time, moving the rest over.","Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.31; issues carried over from the last one 17; share that closed more than a day late 0.67; average days late 3.7; average issues completed 9.0.
+Committed at the start: 29 issues; story points recorded on 26 of them (total 53.5).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 2 SP
+- Story, 2 SP
+- Story, 0 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 0.5 SP
+- Story, no estimate
+- Story, 0.5 SP
+- Story, 0.5 SP
+- Story, 2 SP
+- Story, 0.5 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 3 SP
+- Story, 3 SP
+- Improvement, no estimate
+- Improvement, 2 SP
+- Story, 2 SP
+- Story, 2 SP
+- Story, 3 SP
+- Story, 0.5 SP
+- Improvement, no estimate
+- Story, 2 SP
+- Story, 1 SP","Risk model: probability of closing late 0.33; its alarm threshold is 0.37, so the model says SILENT. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S30,0.5,0,We're halfway through with 1 of 29 committed stories done and 22 more added. Let's pick what we can finish and move the rest out so we close on time.,"Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.31; issues carried over from the last one 17; share that closed more than a day late 0.67; average days late 3.7; average issues completed 9.0.
+Committed at the start: 29 issues; story points recorded on 26 of them (total 53.5).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 1 of 29. Committed issues moved out of the sprint: 0. Issues added since the start: 22, of which resolved: 7.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 0 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, resolved on day 2.0
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- added later: Story, 0 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 0 SP, resolved on day 4.9
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 0 SP, resolved on day 2.5
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 0 SP, resolved on day 3.0
+- added later: Story, 0 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- ... and 11 more issues of the same kinds",
+0,G,S30,0.5,0,"We're halfway with 1 of 29 committed stories done, and 22 more have been added. Let's re-plan the rest of the sprint now so we can close on time.","Team: Project E (name hidden). Planned sprint length: 14.0 days.
+Other sprints of this project open at the same time: 3.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.31; issues carried over from the last one 17; share that closed more than a day late 0.67; average days late 3.7; average issues completed 9.0.
+Committed at the start: 29 issues; story points recorded on 26 of them (total 53.5).
+Now: day 7.0 of 14.0 (halfway). Committed issues resolved so far: 1 of 29. Committed issues moved out of the sprint: 0. Issues added since the start: 22, of which resolved: 7.
+Issues:
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 0 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, resolved on day 2.0
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 3 SP, not resolved yet
+- committed: Story, 0.5 SP, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 1 SP, not resolved yet
+- added later: Story, 0 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 0 SP, resolved on day 4.9
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 5 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 0 SP, resolved on day 2.5
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 0 SP, resolved on day 3.0
+- added later: Story, 0 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- ... and 11 more issues of the same kinds","Risk model: probability of closing late 0.57; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,G,S02,0.0,0,"We carried 30 issues over from last sprint, and some recent sprints closed late. Let's plan to close this one on its end date and carry over cleanly if needed.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.51; issues carried over from the last one 30; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 2 issues; story points recorded on 2 of them (total 11).
+Now: day 0, planning has just finished.
+Issues:
+- Improvement, 3 SP
+- Bug, 8 SP","Risk model: probability of closing late 0.70; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,G,S02,0.5,0,"The committed work is done, but 36 issues have been added and 32 are still open at the halfway point. Let's move whatever won't fit into the next sprint so we can close this one on time.","Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.51; issues carried over from the last one 30; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 2 issues; story points recorded on 2 of them (total 11).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 2 of 2. Committed issues moved out of the sprint: 0. Issues added since the start: 36, of which resolved: 4.
+Issues:
+- committed: Improvement, 3 SP, resolved on day 0.8
+- committed: Bug, 8 SP, resolved on day 0.8
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Improvement, 1 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, no estimate, resolved on day 0.8
+- added later: Bug, no estimate, not resolved yet
+- added later: New Feature, 13 SP, not resolved yet
+- added later: Improvement, 13 SP, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: New Feature, 5 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: Improvement, no estimate, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: Bug, no estimate, not resolved yet
+- added later: New Feature, 5 SP, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet
+- added later: Improvement, 7 SP, not resolved yet
+- added later: Improvement, 7 SP, not resolved yet
+- added later: New Feature, no estimate, not resolved yet
+- added later: Improvement, 3 SP, not resolved yet
+- added later: Bug, 3 SP, resolved on day 0.8
+- added later: Bug, 3 SP, resolved on day 0.8
+- added later: New Feature, no estimate, not resolved yet
+- added later: Bug, 3 SP, not resolved yet
+- added later: Bug, no estimate, resolved on day 0.7
+- added later: Bug, 5 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 13 SP, not resolved yet
+- added later: Bug, 13 SP, not resolved yet
+- added later: Improvement, 2 SP, not resolved yet
+- added later: New Feature, 8 SP, not resolved yet
+- added later: Epic, no estimate, not resolved yet
+- added later: Improvement, 21 SP, not resolved yet
+- added later: New Feature, no estimate, not resolved yet
+- added later: Improvement, 8 SP, not resolved yet","Risk model: probability of closing late 0.73; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."
+0,L,S18,0.0,0,"Early warning: all of our last three sprints closed late (about 9 days on average), and we've committed 13 issues / 73 SP while we usually finish one or two. Let's cut scope or split the 20 SP and 10 SP stories now rather than slip again.","Team: Project E (name hidden). Planned sprint length: 30.8 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 9.1; average issues completed 1.3.
+Committed at the start: 13 issues; story points recorded on 11 of them (total 73).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 6 SP
+- Bug, no estimate
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, no estimate
+- Story, 20 SP
+- Story, 10 SP
+- Story, 2 SP
+- Story, 5 SP
+- Story, 6 SP
+- Bug, 6 SP",
+0,G,S18,0.0,0,"Our last three sprints all closed late, by about 9 days on average, and this one starts with 73 SP, including a 20 SP story. Let's agree on a close-out plan and trim scope now.","Team: Project E (name hidden). Planned sprint length: 30.8 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 9.1; average issues completed 1.3.
+Committed at the start: 13 issues; story points recorded on 11 of them (total 73).
+Now: day 0, planning has just finished.
+Issues:
+- Story, 6 SP
+- Bug, no estimate
+- Story, 4 SP
+- Story, 2 SP
+- Story, 4 SP
+- Story, 8 SP
+- Story, no estimate
+- Story, 20 SP
+- Story, 10 SP
+- Story, 2 SP
+- Story, 5 SP
+- Story, 6 SP
+- Bug, 6 SP","Risk model: probability of closing late 0.54; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 75% of the time (AUC 0.75)."
+0,L,S18,0.5,0,"We're halfway through, none of the 13 committed issues are resolved, and 24 more have been added. Let's agree on a smaller scope now so the sprint closes on its planned date.","Team: Project E (name hidden). Planned sprint length: 30.8 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 9.1; average issues completed 1.3.
+Committed at the start: 13 issues; story points recorded on 11 of them (total 73).
+Now: day 15.4 of 30.8 (halfway). Committed issues resolved so far: 0 of 13. Committed issues moved out of the sprint: 0. Issues added since the start: 24, of which resolved: 2.
+Issues:
+- committed: Story, 6 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Bug, 6 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 0.5 SP, resolved on day 3.0
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, resolved on day 9.1
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 16 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 10 SP, not resolved yet
+- added later: Story, 12 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 12 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet",
+0,G,S18,0.5,0,"We're halfway with 0 of 13 committed stories done, and 24 more have been added. Let's re-plan now so we don't close late again like the last three sprints.","Team: Project E (name hidden). Planned sprint length: 30.8 days.
+Other sprints of this project open at the same time: 5.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.06; issues carried over from the last one 1; share that closed more than a day late 1.00; average days late 9.1; average issues completed 1.3.
+Committed at the start: 13 issues; story points recorded on 11 of them (total 73).
+Now: day 15.4 of 30.8 (halfway). Committed issues resolved so far: 0 of 13. Committed issues moved out of the sprint: 0. Issues added since the start: 24, of which resolved: 2.
+Issues:
+- committed: Story, 6 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 4 SP, not resolved yet
+- committed: Story, 8 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Story, 20 SP, not resolved yet
+- committed: Story, 10 SP, not resolved yet
+- committed: Story, 2 SP, not resolved yet
+- committed: Story, 5 SP, not resolved yet
+- committed: Story, 6 SP, not resolved yet
+- committed: Bug, 6 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 0.5 SP, resolved on day 3.0
+- added later: Bug, no estimate, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, no estimate, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 4 SP, resolved on day 9.1
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 1 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 16 SP, not resolved yet
+- added later: Story, 4 SP, not resolved yet
+- added later: Story, 10 SP, not resolved yet
+- added later: Story, 12 SP, not resolved yet
+- added later: Story, 2 SP, not resolved yet
+- added later: Story, 12 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet
+- added later: Story, 3 SP, not resolved yet
+- added later: Story, 8 SP, not resolved yet","Risk model: probability of closing late 0.66; its alarm threshold is 0.37, so the model says WARN. On held-out sprints this model ranked late sprints above on-time ones 76% of the time (AUC 0.76)."

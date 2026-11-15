@@ -1,0 +1,20 @@
+{"id": "B089", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B034", "warn": false, "p_late": 0.18, "unfinished": 0.8, "message": ""}
+{"id": "B062", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B100", "warn": true, "p_late": 0.55, "unfinished": 0.8, "message": "Two of our last three sprints closed late and none of these three bugs is estimated yet. Can we size them today and agree what we'll close by the end date?"}
+{"id": "B076", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B072", "warn": false, "p_late": 0.22, "unfinished": 0.75, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B077", "warn": true, "p_late": 0.62, "unfinished": 0.9, "message": "We've committed 44 issues (267 SP), and 37 of them carried over from last time, when we only finished a small share. Let's cut this to what we can actually close in 12 days before we start."}
+{"id": "B075", "warn": false, "p_late": 0.3, "unfinished": 0.45, "message": ""}
+{"id": "B094", "warn": true, "p_late": 0.8, "unfinished": 0.8, "message": "Our last three sprints all closed late, on average more than two weeks past the end date. Let's agree today who owns this bug and that we close the sprint on the planned date."}
+{"id": "B056", "warn": true, "p_late": 0.5, "unfinished": 0.85, "message": "We're carrying a lot over (13 issues last time), and four tasks have no estimate. Can we size them now and trim scope so the sprint closes on time?"}
+{"id": "B027", "warn": false, "p_late": 0.33, "unfinished": 0.6, "message": ""}
+{"id": "B115", "warn": false, "p_late": 0.18, "unfinished": 0.7, "message": ""}
+{"id": "B036", "warn": true, "p_late": 0.8, "unfinished": 0.7, "message": "Each of our last three sprints closed more than a day late. Let's plan to close this one on the end date and push anything unfinished back to the backlog then."}
+{"id": "B003", "warn": false, "p_late": 0.12, "unfinished": 0.8, "message": ""}
+{"id": "B033", "warn": true, "p_late": 0.5, "unfinished": 0.7, "message": "We carried 23 issues over last sprint and have 17 committed now, two of them unestimated. Let's check the scope is realistic for 12 days and plan to close on the end date."}
+{"id": "B030", "warn": false, "p_late": 0.35, "unfinished": 0.7, "message": ""}
+{"id": "B052", "warn": false, "p_late": 0.3, "unfinished": 0.6, "message": ""}
+{"id": "B044", "warn": true, "p_late": 0.42, "unfinished": 0.65, "message": "One of our last three sprints ran about three days late, and this improvement has no estimate. Can we size it and agree on a clear done condition today?"}
+{"id": "B068", "warn": true, "p_late": 0.55, "unfinished": 0.6, "message": "We carried 12 issues over last time, and the risk model flags this sprint. Let's keep an eye on progress mid-sprint and close on the planned date."}

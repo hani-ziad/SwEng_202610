@@ -1,0 +1,20 @@
+{"id": "B030", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B106", "warn": true, "p_late": 0.55, "unfinished": 0.75, "message": "Heads-up: the last three sprints closed with almost nothing finished, and one ran nearly a week late. Can we size the two unestimated bugs today and agree what we can realistically close by the end date?"}
+{"id": "B067", "warn": true, "p_late": 0.5, "unfinished": 0.9, "message": "We've committed 45 issues (373 SP), and 41 of them came straight over from last sprint, where we finished almost none. Let's cut this down to what we can really close in 13 days before work starts."}
+{"id": "B093", "warn": false, "p_late": 0.15, "unfinished": 0.65, "message": ""}
+{"id": "B019", "warn": true, "p_late": 0.45, "unfinished": 0.8, "message": "Two of our last three sprints closed late, by about 5 days on average, and three other sprints are open alongside this one. Please estimate the two open bugs and plan to close this sprint on its end date."}
+{"id": "B050", "warn": false, "p_late": 0.12, "unfinished": 0.8, "message": ""}
+{"id": "B111", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.2, "unfinished": 0.5, "message": ""}
+{"id": "B014", "warn": false, "p_late": 0.3, "unfinished": 0.7, "message": ""}
+{"id": "B120", "warn": false, "p_late": 0.2, "unfinished": 0.75, "message": ""}
+{"id": "B084", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B091", "warn": false, "p_late": 0.3, "unfinished": 0.75, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.35, "unfinished": 0.65, "message": ""}
+{"id": "B061", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B002", "warn": true, "p_late": 0.45, "unfinished": 0.6, "message": "This sprint starts with 18 issues carried over and three other sprints open at the same time, and the risk model flags it. Let's confirm the scope now and estimate the two unsized stories so we can close on the planned date."}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.7, "message": ""}
+{"id": "B082", "warn": true, "p_late": 0.45, "unfinished": 0.55, "message": "Our only story has no estimate yet, and the risk model flags this sprint. Can we size it and check that it fits in the 11 days?"}
+{"id": "B107", "warn": false, "p_late": 0.12, "unfinished": 0.65, "message": ""}

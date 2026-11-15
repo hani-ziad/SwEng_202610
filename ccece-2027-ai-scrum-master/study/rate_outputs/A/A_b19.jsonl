@@ -1,0 +1,25 @@
+{"id": "M0029", "claims_ok": false, "bad_claims": "\"26 points of new work have been added\" (the added issues total 32 SP; 26 is only the unresolved part)", "close_on_date": 0}
+{"id": "M0236", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0081", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0375", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0020", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0177", "claims_ok": false, "bad_claims": "\"none of the 16 committed stories are done\" (only 12 of the 16 are Stories; 4 are Improvements)", "close_on_date": 0}
+{"id": "M0313", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0284", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0373", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0452", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0335", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0298", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0454", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0266", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0433", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0282", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0108", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0196", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0116", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0465", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0050", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0338", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0233", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0304", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0343", "claims_ok": false, "bad_claims": "\"We've committed 15 tasks\" (14 are Tasks; one is a Bug)", "close_on_date": 0}

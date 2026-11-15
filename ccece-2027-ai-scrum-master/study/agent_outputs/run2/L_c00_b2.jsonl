@@ -1,0 +1,20 @@
+{"id": "B013", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B065", "warn": false, "p_late": 0.4, "unfinished": 0.75, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.6, "unfinished": 0.5, "message": "Heads-up: two of the last three sprints closed late, so this one is at risk too. Please plan to close the sprint on its end date, even if the one story is still open."}
+{"id": "B083", "warn": false, "p_late": 0.3, "unfinished": 0.3, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}
+{"id": "B116", "warn": true, "p_late": 0.75, "unfinished": 0.6, "message": "All of the last three sprints closed late, and we usually finish only about half of what we commit. Let's agree now which stories we drop if we fall behind, and close the sprint on its planned date."}
+{"id": "B051", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.15, "unfinished": 0.9, "message": ""}
+{"id": "B110", "warn": true, "p_late": 0.8, "unfinished": 0.85, "message": "The last three sprints all closed late, by about 13 days on average, and very little committed work got finished. Please cut the scope to what we can really finish and plan to close this sprint on its end date."}
+{"id": "B005", "warn": true, "p_late": 0.65, "unfinished": 0.85, "message": "Two of the last three sprints closed late, by about 12 days on average. Let's plan to close this sprint on its end date and move anything unfinished to the next one."}
+{"id": "B104", "warn": false, "p_late": 0.4, "unfinished": 0.65, "message": ""}
+{"id": "B023", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B081", "warn": false, "p_late": 0.4, "unfinished": 0.8, "message": ""}
+{"id": "B108", "warn": false, "p_late": 0.35, "unfinished": 0.5, "message": ""}
+{"id": "B066", "warn": true, "p_late": 0.6, "unfinished": 0.6, "message": "Two of the last three sprints closed late, by more than 10 days on average, and the 21 SP feature is a big risk. Let's split or drop it early and close the sprint on the planned date."}
+{"id": "B072", "warn": false, "p_late": 0.15, "unfinished": 0.8, "message": ""}
+{"id": "B036", "warn": true, "p_late": 0.75, "unfinished": 0.8, "message": "All of the last three sprints closed late. Please plan to close this sprint on its end date and carry over whatever is not done, rather than keep it open."}
+{"id": "B049", "warn": false, "p_late": 0.35, "unfinished": 0.9, "message": ""}

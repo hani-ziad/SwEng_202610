@@ -1,0 +1,25 @@
+{"id": "M0165", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0189", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0108", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0349", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0248", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0197", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0021", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0161", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0442", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0342", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0316", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0459", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0431", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0322", "claims_ok": false, "bad_claims": "\"this one is starting the same way\"", "close_on_date": 1}
+{"id": "M0337", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0404", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0123", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0449", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0446", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0382", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0423", "claims_ok": false, "bad_claims": "\"none of the 12 committed stories are done\" (3 of the 12 committed issues are Improvements, not stories)", "close_on_date": 0}
+{"id": "M0269", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0067", "claims_ok": false, "bad_claims": "\"34 stories are committed\" (the 34 committed issues include 2 Improvements and 1 Bug)", "close_on_date": 0}
+{"id": "M0040", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0376", "claims_ok": true, "bad_claims": "", "close_on_date": 0}

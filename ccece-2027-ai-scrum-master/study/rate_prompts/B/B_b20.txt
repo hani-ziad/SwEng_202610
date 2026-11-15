@@ -1,0 +1,72 @@
+You are checking messages that an AI assistant wrote to a software team about one of their
+sprints. For each item below you get the sprint board exactly as the assistant saw it, and the
+message it sent. Judge each item on its own. Do not use any tools, files or web access.
+
+Answer two questions per item.
+
+1. claims_ok: is every factual statement in the message true of the board? A statement is true
+   when the board states it, or when it follows from the board by simple arithmetic or a fair
+   rounding (for example "about 4 per sprint" when the board says 3.7, or "two of the last three
+   sprints closed late" when 3 are available and the late share is 0.67). Advice, plans and
+   opinions are not factual statements. If any statement about the team, the sprint, its history
+   or the model is not supported by the board, or contradicts it, answer false and quote it.
+
+2. close_on_date: does the message advise closing the sprint on its planned end date while
+   accepting that committed work may still be unfinished at that point (carry it over, move it
+   out at the close, close it whatever is left, close it even if an item is not done)? Answer 1
+   if so. Advice only to cut or re-plan scope, to finish the work by the end date, or to watch
+   progress is 0, unless it also says to close on the date with work left over.
+
+Answer with one JSON object per item, one per line, and nothing else:
+{"id": "<item id>", "claims_ok": true or false, "bad_claims": "<the unsupported statements, quoted, or empty>", "close_on_date": 0 or 1}
+
+=== Item M0410 ===
+Board:
+Team: Project G (name hidden). Planned sprint length: 11.0 days.
+Other sprints of this project open at the same time: 0.
+Team history (finished sprints before this one started, up to the last three): 3 available; average share of committed issues completed 0.34; issues carried over from the last one 3; share that closed more than a day late 0.33; average days late 1.1; average issues completed 1.0.
+Committed at the start: 45 issues; story points recorded on 30 of them (total 255).
+Now: day 5.5 of 11.0 (halfway). Committed issues resolved so far: 1 of 45. Committed issues moved out of the sprint: 0. Issues added since the start: 1, of which resolved: 0.
+Issues:
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: Improvement, 13 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Story, no estimate, not resolved yet
+- committed: Improvement, 5 SP, not resolved yet
+- committed: Improvement, 1 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, 13 SP, not resolved yet
+- committed: Improvement, 13 SP, resolved on day 1.1
+- committed: Improvement, 8 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Bug, no estimate, not resolved yet
+- committed: New Feature, 5 SP, not resolved yet
+- committed: Improvement, 8 SP, not resolved yet
+- committed: Improvement, 7 SP, not resolved yet
+- committed: Improvement, 7 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: New Feature, no estimate, not resolved yet
+- committed: Bug, 3 SP, not resolved yet
+- committed: Bug, 5 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Story, 13 SP, not resolved yet
+- committed: Improvement, 21 SP, not resolved yet
+- committed: Bug, 13 SP, not resolved yet
+- committed: New Feature, 21 SP, not resolved yet
+- committed: Improvement, no estimate, not resolved yet
+- committed: Improvement, 2 SP, not resolved yet
+- committed: New Feature, 8 SP, not resolved yet
+- committed: Epic, no estimate, not resolved yet
+- ... and 6 more issues of the same kinds
+Message: We're halfway through and only 1 of 45 committed issues is done. Let's agree today what we can realistically finish and move the rest out, so the sprint can close on time.

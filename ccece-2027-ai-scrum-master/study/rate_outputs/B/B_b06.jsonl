@@ -1,0 +1,25 @@
+{"id": "M0090", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0443", "claims_ok": false, "bad_claims": "\"only 2 of 11 committed stories are done\" (the 11 committed items include a bug and an improvement, and one of the 2 resolved is a bug)", "close_on_date": 1}
+{"id": "M0372", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0088", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0264", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0439", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0381", "claims_ok": false, "bad_claims": "\"2 of 20 committed stories done\" (both resolved committed items are Improvements, no committed story is resolved)", "close_on_date": 1}
+{"id": "M0100", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0083", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0047", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0071", "claims_ok": false, "bad_claims": "\"Two of our last three sprints closed more than a week late\" (board gives only a 0.67 late share and a 10.6-day average, not that two were each over a week late)", "close_on_date": 1}
+{"id": "M0052", "claims_ok": false, "bad_claims": "\"one ran nearly a week late\" (with one late sprint of three and a 5.6-day average across all three, the late one was roughly two weeks or more late)", "close_on_date": 0}
+{"id": "M0219", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0472", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0003", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0010", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0422", "claims_ok": false, "bad_claims": "\"Each of our last three sprints closed about two weeks late\" (board gives only a 13.0-day average, not each sprint's lateness)", "close_on_date": 1}
+{"id": "M0086", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0341", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0304", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0260", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0103", "claims_ok": true, "bad_claims": "", "close_on_date": 1}
+{"id": "M0184", "claims_ok": true, "bad_claims": "", "close_on_date": 0}
+{"id": "M0306", "claims_ok": false, "bad_claims": "\"4 of the 7 committed bugs (34 SP) are still open\" (one of the 4 open items is an Improvement, and the open items total 32 SP)", "close_on_date": 0}
+{"id": "M0013", "claims_ok": true, "bad_claims": "", "close_on_date": 1}

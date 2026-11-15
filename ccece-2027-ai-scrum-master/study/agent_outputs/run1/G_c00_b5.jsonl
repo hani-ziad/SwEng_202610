@@ -1,0 +1,20 @@
+{"id": "B029", "warn": false, "p_late": 0.25, "unfinished": 0.72, "message": ""}
+{"id": "B114", "warn": false, "p_late": 0.20, "unfinished": 0.68, "message": ""}
+{"id": "B104", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.80, "unfinished": 0.72, "message": "Heads-up: all of our last three sprints closed late (about 16 days on average), and this one starts with 21 issues, including a 47 SP story and 7 unestimated items. Can we split the big story and agree today on what we would drop so we can close on the planned date?"}
+{"id": "B048", "warn": false, "p_late": 0.33, "unfinished": 0.80, "message": ""}
+{"id": "B066", "warn": true, "p_late": 0.50, "unfinished": 0.60, "message": "Two of our last three sprints closed more than a week late, and this one carries 61 SP, including a 21 SP feature. Let's confirm the must-finish items now and plan to close on the end date even if some work rolls over."}
+{"id": "B085", "warn": true, "p_late": 0.62, "unfinished": 0.80, "message": "We've committed 21 issues (118 SP, two 21 SP improvements, 5 unestimated), but recent sprints finished about 2 issues each. Please re-check scope today so the sprint can close on time."}
+{"id": "B020", "warn": true, "p_late": 0.55, "unfinished": 0.60, "message": "This is a one-story sprint, but two of the last three closed late and five other sprints are open in parallel. Let's finish the story and close the sprint on its end date rather than leave it open."}
+{"id": "B007", "warn": true, "p_late": 0.75, "unfinished": 0.72, "message": "Two of our last three sprints closed late, and the last one carried over 47 issues. With 16 issues committed and five other sprints open, can we agree now on a realistic subset and close on the planned date?"}
+{"id": "B034", "warn": false, "p_late": 0.15, "unfinished": 0.80, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.20, "unfinished": 0.62, "message": ""}
+{"id": "B041", "warn": false, "p_late": 0.15, "unfinished": 0.78, "message": ""}
+{"id": "B110", "warn": true, "p_late": 0.85, "unfinished": 0.82, "message": "All of our last three sprints closed late (about 13 days on average), with fewer than one issue finished per sprint. With 12 issues and 40 SP committed, let's cut scope now and plan to close on the end date."}
+{"id": "B074", "warn": false, "p_late": 0.27, "unfinished": 0.72, "message": ""}
+{"id": "B113", "warn": true, "p_late": 0.60, "unfinished": 0.55, "message": "Two of our last three sprints closed late, and three other sprints are open alongside this one. Let's keep an eye on the 15 committed stories and plan to close on the end date, carrying over whatever isn't done."}
+{"id": "B099", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B027", "warn": false, "p_late": 0.18, "unfinished": 0.58, "message": ""}
+{"id": "B064", "warn": true, "p_late": 0.85, "unfinished": 0.72, "message": "Every one of our last three sprints closed late, by about three weeks on average. Even with only 4 bugs, let's set a firm close date now and agree that unfinished items roll over."}
+{"id": "B033", "warn": true, "p_late": 0.50, "unfinished": 0.70, "message": "We carried over 23 issues from the last sprint and committed 17 more, with two unestimated. Please confirm the priorities today so we can close on the planned end date."}
+{"id": "B095", "warn": true, "p_late": 0.50, "unfinished": 0.78, "message": "Recent sprints completed very little (about 6% of committed issues), and the last one carried over 16. With 15 issues and 66 SP committed, let's trim scope now and plan to close on time."}

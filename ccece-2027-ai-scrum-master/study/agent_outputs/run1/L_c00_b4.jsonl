@@ -1,0 +1,20 @@
+{"id": "B095", "warn": false, "p_late": 0.4, "unfinished": 0.85, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.1, "unfinished": 0.9, "message": ""}
+{"id": "B119", "warn": false, "p_late": 0.4, "unfinished": 0.75, "message": ""}
+{"id": "B093", "warn": false, "p_late": 0.1, "unfinished": 0.6, "message": ""}
+{"id": "B078", "warn": false, "p_late": 0.45, "unfinished": 0.7, "message": ""}
+{"id": "B075", "warn": false, "p_late": 0.3, "unfinished": 0.25, "message": ""}
+{"id": "B050", "warn": false, "p_late": 0.1, "unfinished": 0.85, "message": ""}
+{"id": "B007", "warn": true, "p_late": 0.65, "unfinished": 0.7, "message": "Heads up: two of our last three sprints closed late, and we've committed 16 issues while we usually finish about 7. Let's agree now on what we can realistically finish and plan to close this sprint on its end date."}
+{"id": "B054", "warn": false, "p_late": 0.3, "unfinished": 0.9, "message": ""}
+{"id": "B064", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "Our last three sprints all closed late, by about three weeks on average. Let's commit to closing this one on its planned end date and move anything unfinished to the next sprint, rather than keeping it open."}
+{"id": "B070", "warn": false, "p_late": 0.1, "unfinished": 0.7, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.1, "unfinished": 0.45, "message": ""}
+{"id": "B052", "warn": false, "p_late": 0.1, "unfinished": 0.8, "message": ""}
+{"id": "B073", "warn": false, "p_late": 0.1, "unfinished": 0.75, "message": ""}
+{"id": "B085", "warn": false, "p_late": 0.4, "unfinished": 0.9, "message": ""}
+{"id": "B092", "warn": false, "p_late": 0.12, "unfinished": 0.65, "message": ""}
+{"id": "B104", "warn": false, "p_late": 0.4, "unfinished": 0.6, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.4, "unfinished": 0.6, "message": ""}
+{"id": "B028", "warn": false, "p_late": 0.1, "unfinished": 0.75, "message": ""}
+{"id": "B003", "warn": false, "p_late": 0.1, "unfinished": 0.85, "message": ""}

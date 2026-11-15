@@ -1,0 +1,20 @@
+{"id": "B031", "warn": false, "p_late": 0.30, "unfinished": 0.60, "message": ""}
+{"id": "B054", "warn": false, "p_late": 0.20, "unfinished": 0.90, "message": ""}
+{"id": "B002", "warn": true, "p_late": 0.55, "unfinished": 0.75, "message": "We're halfway through and only 1 of the 17 committed stories is done, while 34 new issues have come in. Let's agree today what drops out so the sprint can still close on time."}
+{"id": "B026", "warn": false, "p_late": 0.30, "unfinished": 0.90, "message": ""}
+{"id": "B004", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B008", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B093", "warn": false, "p_late": 0.12, "unfinished": 0.80, "message": ""}
+{"id": "B110", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "At the halfway point none of the 12 committed items is done and 31 issues have been added. Our last sprints all closed well past the end date, so let's cut scope now and plan to close on the planned day."}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.65, "message": ""}
+{"id": "B075", "warn": false, "p_late": 0.25, "unfinished": 0.50, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.12, "unfinished": 0.95, "message": ""}
+{"id": "B048", "warn": true, "p_late": 0.45, "unfinished": 0.85, "message": "We're halfway and none of the 25 committed items is resolved, and 51 more issues have been pulled in. Let's review the scope at stand-up and move out what we can't finish so the sprint closes on time."}
+{"id": "B115", "warn": false, "p_late": 0.15, "unfinished": 0.90, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.12, "unfinished": 0.80, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B068", "warn": true, "p_late": 0.70, "unfinished": 0.85, "message": "Halfway through, none of the committed stories is done and 30 issues have been added, including a 40-point epic. Let's decide now what comes out of the sprint so we don't end up closing it late."}
+{"id": "B057", "warn": false, "p_late": 0.20, "unfinished": 0.70, "message": ""}
+{"id": "B074", "warn": false, "p_late": 0.30, "unfinished": 0.85, "message": ""}
+{"id": "B070", "warn": false, "p_late": 0.30, "unfinished": 1.00, "message": ""}
+{"id": "B023", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}

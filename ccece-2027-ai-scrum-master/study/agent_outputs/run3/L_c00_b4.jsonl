@@ -1,0 +1,20 @@
+{"id": "B002", "warn": false, "p_late": 0.35, "unfinished": 0.4, "message": ""}
+{"id": "B055", "warn": false, "p_late": 0.3, "unfinished": 0.45, "message": ""}
+{"id": "B088", "warn": false, "p_late": 0.4, "unfinished": 0.7, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.6, "unfinished": 0.6, "message": "Heads-up: two of the last three sprints closed late, by almost four days on average, and five other sprints are open alongside this one. Please agree today who owns this story and close the sprint on its planned end date even if it carries over."}
+{"id": "B068", "warn": false, "p_late": 0.4, "unfinished": 0.65, "message": ""}
+{"id": "B074", "warn": false, "p_late": 0.3, "unfinished": 0.7, "message": ""}
+{"id": "B098", "warn": false, "p_late": 0.1, "unfinished": 0.95, "message": ""}
+{"id": "B077", "warn": true, "p_late": 0.5, "unfinished": 0.95, "message": "Two of the last three sprints closed more than a day late, and 44 issues are committed against a recent average of about one finished per sprint. Please plan to close the sprint on its end date and move what is left to the next one, rather than holding it open."}
+{"id": "B075", "warn": false, "p_late": 0.25, "unfinished": 0.35, "message": ""}
+{"id": "B064", "warn": true, "p_late": 0.85, "unfinished": 0.9, "message": "Each of the last three sprints closed late, by about three weeks on average, and very little committed work was finished. Please pick the one or two bugs you can really finish and agree now to close this sprint on its planned end date."}
+{"id": "B089", "warn": false, "p_late": 0.1, "unfinished": 0.9, "message": ""}
+{"id": "B043", "warn": false, "p_late": 0.15, "unfinished": 0.8, "message": ""}
+{"id": "B102", "warn": false, "p_late": 0.15, "unfinished": 0.6, "message": ""}
+{"id": "B104", "warn": false, "p_late": 0.4, "unfinished": 0.65, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.4, "unfinished": 0.85, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.85, "unfinished": 0.75, "message": "All of the last three sprints closed late, by about 16 days on average, and this one carries a 47-point story plus seven unestimated items. Please split the large story and agree on a firm close date at the planned end."}
+{"id": "B054", "warn": false, "p_late": 0.35, "unfinished": 0.9, "message": ""}
+{"id": "B061", "warn": false, "p_late": 0.3, "unfinished": 0.8, "message": ""}
+{"id": "B105", "warn": false, "p_late": 0.1, "unfinished": 0.7, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.4, "unfinished": 0.8, "message": ""}

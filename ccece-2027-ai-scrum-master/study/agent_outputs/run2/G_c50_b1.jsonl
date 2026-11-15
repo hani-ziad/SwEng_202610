@@ -1,0 +1,20 @@
+{"id": "B023", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.25, "unfinished": 0.5, "message": ""}
+{"id": "B022", "warn": true, "p_late": 0.75, "unfinished": 0.9, "message": "Heads-up: we're halfway and the one committed bug is still open, and the last three sprints all closed well past their end date. Can we agree today what it takes to finish it and close the sprint on time?"}
+{"id": "B106", "warn": true, "p_late": 0.5, "unfinished": 0.85, "message": "We're halfway with none of the committed bugs resolved, and one has already moved out. Let's pick the bugs we can really finish by the end date and plan to close the sprint on schedule."}
+{"id": "B021", "warn": false, "p_late": 0.3, "unfinished": 0.5, "message": ""}
+{"id": "B093", "warn": false, "p_late": 0.15, "unfinished": 0.8, "message": ""}
+{"id": "B065", "warn": true, "p_late": 0.55, "unfinished": 0.75, "message": "We're halfway and only 5 of 45 committed stories are done, with a big carry-over from last sprint. Let's cut scope now to what we can finish and keep the close date."}
+{"id": "B052", "warn": false, "p_late": 0.3, "unfinished": 0.7, "message": ""}
+{"id": "B111", "warn": false, "p_late": 0.3, "unfinished": 0.85, "message": ""}
+{"id": "B078", "warn": false, "p_late": 0.35, "unfinished": 0.65, "message": ""}
+{"id": "B088", "warn": true, "p_late": 0.42, "unfinished": 0.8, "message": "We're halfway and 14 of the 15 committed tasks are still open. Can we check in today on which ones will make it and plan to close the sprint on its end date?"}
+{"id": "B040", "warn": true, "p_late": 0.65, "unfinished": 0.9, "message": "The one committed bug is still open at the halfway point, and our recent sprints have all closed late. Let's confirm a plan to finish it, or move it out, so we can close on time."}
+{"id": "B001", "warn": true, "p_late": 0.85, "unfinished": 0.8, "message": "We're halfway with 1 of 21 committed stories done and 51 issues added since the start, so this sprint is on track to close late like the last three. Let's freeze new scope and agree today what we will drop."}
+{"id": "B006", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B082", "warn": false, "p_late": 0.35, "unfinished": 0.02, "message": ""}
+{"id": "B010", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B055", "warn": false, "p_late": 0.25, "unfinished": 0.55, "message": ""}
+{"id": "B038", "warn": true, "p_late": 0.45, "unfinished": 0.4, "message": "Four committed items are still open at the halfway point, and two 13-point items were added mid-sprint. Two of our last three sprints closed late, so let's decide now what moves out to keep the end date."}
+{"id": "B102", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B084", "warn": false, "p_late": 0.12, "unfinished": 0.2, "message": ""}

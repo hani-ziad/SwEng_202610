@@ -1,0 +1,20 @@
+{"id": "B085", "warn": true, "p_late": 0.62, "unfinished": 0.9, "message": "We're at the halfway point with 1 of 21 committed issues done, and 13 more have been added since the start. Let's agree today on what we can realistically finish and what goes back to the backlog, so we can still close on time."}
+{"id": "B056", "warn": true, "p_late": 0.5, "unfinished": 0.8, "message": "We're halfway through and 11 of our 12 committed tasks are still open. Can we pick the items we can really finish by the end date and flag the rest now?"}
+{"id": "B039", "warn": false, "p_late": 0.3, "unfinished": 0.0, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.2, "unfinished": 0.5, "message": ""}
+{"id": "B110", "warn": true, "p_late": 0.85, "unfinished": 0.85, "message": "We're halfway through with none of the 12 committed stories closed, and 31 new items have come in. Our last sprints closed well past their end date. Let's re-scope today and agree to close this sprint on the planned date."}
+{"id": "B113", "warn": true, "p_late": 0.65, "unfinished": 0.7, "message": "Only 2 of 15 committed stories are done at the halfway mark, while 50 items have been added. Let's look again at what we take in and focus on the committed work so we can close on time."}
+{"id": "B027", "warn": false, "p_late": 0.2, "unfinished": 0.45, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.12, "unfinished": 0.4, "message": ""}
+{"id": "B011", "warn": true, "p_late": 0.6, "unfinished": 0.85, "message": "We're halfway through and 37 of 39 committed issues are still open, with most of the large features not started. Let's cut the scope to what we can actually finish and plan to close on the end date instead of running over again."}
+{"id": "B091", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B109", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.2, "unfinished": 0.8, "message": ""}
+{"id": "B101", "warn": false, "p_late": 0.42, "unfinished": 0.8, "message": ""}
+{"id": "B087", "warn": false, "p_late": 0.12, "unfinished": 0.85, "message": ""}
+{"id": "B094", "warn": true, "p_late": 0.8, "unfinished": 0.9, "message": "The committed bug is still open at the halfway mark, and our recent sprints all closed late. Can we either finish it or move it out in good time, so the sprint closes on its planned date?"}
+{"id": "B003", "warn": false, "p_late": 0.07, "unfinished": 0.3, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.3, "unfinished": 0.85, "message": ""}
+{"id": "B092", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B001", "warn": true, "p_late": 0.88, "unfinished": 0.75, "message": "We're halfway through with 1 of 21 committed stories done and 51 items added, and our last three sprints all closed more than two weeks late. Let's re-scope now and set a firm close date."}
+{"id": "B088", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}

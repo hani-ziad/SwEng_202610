@@ -1,0 +1,20 @@
+{"id": "B096", "warn": false, "p_late": 0.12, "unfinished": 0.70, "message": ""}
+{"id": "B098", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B112", "warn": false, "p_late": 0.18, "unfinished": 0.70, "message": ""}
+{"id": "B042", "warn": false, "p_late": 0.33, "unfinished": 0.60, "message": ""}
+{"id": "B059", "warn": false, "p_late": 0.33, "unfinished": 0.70, "message": ""}
+{"id": "B011", "warn": true, "p_late": 0.65, "unfinished": 0.80, "message": "Heads up: 39 issues (255 SP) are committed, 29 of them carried over, and two of our last three sprints closed about 10 days late. Can we cut scope now or agree on what we drop if it slips?"}
+{"id": "B043", "warn": false, "p_late": 0.12, "unfinished": 0.75, "message": ""}
+{"id": "B032", "warn": true, "p_late": 0.65, "unfinished": 0.80, "message": "Heads up: 34 stories are committed while 5 other sprints are open, and two of our last three sprints closed late. Let's agree today which items come out first if we fall behind."}
+{"id": "B016", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B065", "warn": true, "p_late": 0.55, "unfinished": 0.70, "message": "Heads up: 45 issues (263 SP) are committed, 38 carried over from last sprint, with 2 other sprints open. Let's check this is realistic and pick the stretch items now."}
+{"id": "B073", "warn": false, "p_late": 0.25, "unfinished": 0.65, "message": ""}
+{"id": "B057", "warn": false, "p_late": 0.18, "unfinished": 0.60, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.13, "unfinished": 0.85, "message": ""}
+{"id": "B097", "warn": false, "p_late": 0.12, "unfinished": 0.55, "message": ""}
+{"id": "B056", "warn": true, "p_late": 0.50, "unfinished": 0.85, "message": "Heads up: 13 issues carried over last time and we usually finish only about 1 issue per sprint, yet 12 are committed for 9 days. Can we trim scope now so the sprint can close on time?"}
+{"id": "B081", "warn": false, "p_late": 0.28, "unfinished": 0.80, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}
+{"id": "B021", "warn": false, "p_late": 0.30, "unfinished": 0.60, "message": ""}
+{"id": "B049", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B080", "warn": false, "p_late": 0.22, "unfinished": 0.80, "message": ""}

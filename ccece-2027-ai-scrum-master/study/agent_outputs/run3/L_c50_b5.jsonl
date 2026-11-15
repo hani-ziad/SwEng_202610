@@ -1,0 +1,20 @@
+{"id": "B007", "warn": true, "p_late": 0.7, "unfinished": 0.8, "message": "We're halfway through and none of the 16 committed issues are resolved, while 45 new issues have come in. Let's agree today what we can realistically finish, or we're likely to close late again."}
+{"id": "B076", "warn": false, "p_late": 0.15, "unfinished": 0.5, "message": ""}
+{"id": "B051", "warn": false, "p_late": 0.3, "unfinished": 0.33, "message": ""}
+{"id": "B041", "warn": false, "p_late": 0.2, "unfinished": 0.7, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.6, "unfinished": 0.0, "message": "The committed story is done, but 7 of the added stories are still open and most have no estimate. Please decide which ones really belong in this sprint so we can close it on time."}
+{"id": "B065", "warn": false, "p_late": 0.45, "unfinished": 0.75, "message": ""}
+{"id": "B023", "warn": false, "p_late": 0.1, "unfinished": 0.8, "message": ""}
+{"id": "B017", "warn": true, "p_late": 0.7, "unfinished": 0.55, "message": "We're at day 7 with 11 of 44 committed issues done, and 22 more have been added since the start. Let's trim the scope now so we don't close several days late like the last few sprints."}
+{"id": "B036", "warn": true, "p_late": 0.8, "unfinished": 0.8, "message": "Halfway in, none of the committed stories are done, 3 have been moved out, and 56 issues have been added. Let's reset the sprint goal today and agree on a closing plan so we don't run late again."}
+{"id": "B024", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B109", "warn": false, "p_late": 0.15, "unfinished": 0.9, "message": ""}
+{"id": "B056", "warn": false, "p_late": 0.35, "unfinished": 0.8, "message": ""}
+{"id": "B115", "warn": false, "p_late": 0.1, "unfinished": 0.6, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.35, "unfinished": 0.4, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.15, "unfinished": 0.75, "message": ""}
+{"id": "B111", "warn": false, "p_late": 0.35, "unfinished": 0.6, "message": ""}
+{"id": "B098", "warn": false, "p_late": 0.1, "unfinished": 0.8, "message": ""}
+{"id": "B002", "warn": false, "p_late": 0.45, "unfinished": 0.75, "message": ""}
+{"id": "B011", "warn": true, "p_late": 0.7, "unfinished": 0.9, "message": "We're halfway through with only 2 of 39 committed issues resolved, and our recent sprints have closed well over a week late. Let's cut the scope to what we can finish and plan the close now."}
+{"id": "B085", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
