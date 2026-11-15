@@ -89,3 +89,13 @@ New checks: `reviewer_checks/elicit_review_checks.py` (inputs: phase-2 modelling
 Cut to hold 6 pages: the three-day threshold sentence, the capacity-group sentence, the oversampling spillover sentence, the late-closure F1 clause in the leakage paragraph, the UTC sentence, the history-cost sentence in the conclusion, and half of the future-work sentence.
 
 Not done, with reason: sprint-date and issue-status histories are not in the TAWOS export (stays a threat); manual label validation; a full external-validation table (no room in 6 pages); the 0.957/0.958 mid-sprint comparator (already explained in IV-G and the Table II caption); Shapley background sensitivity.
+
+Later the same evening (15 Nov), three one-clause fixes from the same report, still 6 pages:
+
+| # | Reviewer's point | Fix applied |
+|---|---|---|
+| 54 | Abstract quoted 0.957 beside an interval computed against the rebuilt model (0.958) | Abstract now says "a rebuilt copy of the best model (0.958)", as in the Table II caption |
+| 55 | Missing story points versus real zeros | III-B: coded as zero "and cannot tell apart from a true zero estimate" |
+| 56 | "Exact" Shapley uses a finite background sample | III-E: "exact over coalitions only" |
+
+Cut to make room: "The 70% cut is also the most favourable one", the rest of the future-work sentence, the process-monitoring clause in Related Work, and shorter wording for the environment line, the per-project range and the GB-deterministic sentence.
