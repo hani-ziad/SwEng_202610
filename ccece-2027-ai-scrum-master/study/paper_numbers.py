@@ -106,6 +106,27 @@ def expected():
         "close L pct": f"{round(100 * ra['study']['L']['close_both'] / ra['study']['L']['n'])}\\%",
         "close G pct": f"{round(100 * ra['study']['G']['close_both'] / ra['study']['G']['n'])}\\%",
     }
+    # added 15 Nov 2026 (evening): model-output ablation and cost scenarios
+    ab = json.loads((R / "ablation_summary.json").read_text())
+    iv = ab["intervals"]
+    sc = json.loads((R / "cost_scenarios.json").read_text())
+    rows = {(r["scenario"], r["kappa_over_F"]): r for r in sc["rows"]}
+    band = sc["beats_trivial_band"]["default"]
+    e.update({
+        "P agree": f"{round(100 * ab['pooled']['P_agree_true_M'])}\\%",
+        "P-G": f"{iv['P_minus_G_agree']['point']:.2f}", "P-G lo": f"{iv['P_minus_G_agree']['lo']:.2f}",
+        "P-G hi": f"{iv['P_minus_G_agree']['hi']:.2f}",
+        "F follow n": f"{ab['pooled']['F_follow_n']} of 240",
+        "F-L": f"{iv['F_follow_minus_L']['point']:.2f} more often", "F-L lo": f"({iv['F_follow_minus_L']['lo']:.2f} to",
+        "F-L hi": f"{iv['F_follow_minus_L']['hi']:.2f})",
+        "F auc c0": f"(AUC {ab['c0']['F']['auc']:.2f})",
+        "F auc gap": f"{-iv['auc_F_minus_L_c0']['point']:.2f} below the agent alone ({-iv['auc_F_minus_L_c0']['hi']:.2f} to {-iv['auc_F_minus_L_c0']['lo']:.2f})",
+        "strong gap": f"({rows[('strong', 0.02)]['G_minus_M']:.3f} to {rows[('strong', 0.5)]['G_minus_M']:.3f})",
+        "M band": f"between {band['M']['from']:.2f} and {band['M']['to']:.2f}",
+        "G band": f"between {band['G']['from']:.2f} and {band['G']['to']:.2f}",
+    })
+    assert band["M"]["contiguous"] and band["G"]["contiguous"]
+    assert rows[("zero", 0.5)]["G_minus_M_lo"] <= 0 <= rows[("zero", 0.5)]["G_minus_M_hi"]
     return e
 
 

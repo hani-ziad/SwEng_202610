@@ -44,9 +44,17 @@ def plain(e):
     H(f"What the replay found ({e['sample sprints']} sprints, three runs)")
     B(f"The agent that saw the model agreed with it {e['A_G percent'].replace(chr(92), '')} of the time. When it "
       f"disagreed and warned anyway, it was wrong every time ({e['G extra warnings']} extra warnings per run, all on "
-      "sprints that finished on time). So it cost more than the model alone.")
+      "sprints that finished on time). So, under our cost assumptions, it cost more than the model alone.")
     B(f"The agent without the model behaved almost exactly like a one-line rule: warn if the team was late in at least "
       f"half of its last three sprints. It matched that rule on {e['rule agree runs']} of 120 sprints.")
+    B(f"To check whether the agent was simply copying, we ran it again with the model's verdict hidden and with it "
+      f"flipped. With the verdict hidden it still agreed with the model's real call {e['P agree'].replace(chr(92), '')} "
+      f"of the time, so it follows the model's number. With the verdict flipped it followed the wrong call on "
+      f"{e['F follow n']} decisions, and at sprint start its ranking fell to chance, worse than the agent with no model. "
+      "It could not tell when the model was wrong.")
+    B("Costs are only a \"what if\": they depend on how much a warning helps, which nobody observed. Under our main "
+      f"assumption the model beat both \"never warn\" and \"always warn\" only when a warning cost {e['M band']} of a "
+      "late sprint. If warnings help nothing, never warning is always cheapest.")
     B(f"Running the agent three times changed very little: all three runs made the same call on about "
       f"{e['same call L'].replace(chr(92), '')} of boards.")
     B("At the start of a sprint, nobody (model, agent or rule) could predict how much work would be left unfinished. "
@@ -58,7 +66,13 @@ def plain(e):
     B(f"{e['close L pct'].replace(chr(92), '')} of the plain agent's warnings (and {e['close G pct'].replace(chr(92), '')} "
       "of the other's) told the team to close the sprint on its planned date and carry leftover work over. That is what "
       "Scrum asks for, and it shows the \"late closure\" label rewards closing on time more than finishing the work.")
-    H("What changed on 15 November 2026")
+    H("What changed on the evening of 15 November 2026")
+    P("An outside reviewer read the Canadian AI version and asked for a narrower claim and a sharper test. This paper "
+      "now says it tests one part of the role (a sprint-risk assistant), adds the hidden and flipped model tests, adds "
+      "the never-warn and always-warn policies and a scenario where warnings do nothing, writes the cost formula "
+      "correctly for sprints with no warning, calls the evidence table illustrative, and no longer calls a lower cost "
+      "\"evidence of judgement\". It is still 5 pages.")
+    H("What changed earlier on 15 November 2026")
     P("The first pilot (4 November) used 40 sprints, one run and one person coding the messages, and did not check the "
       "agents' numbers. The new study uses 120 sprints spread evenly over the eight projects, three runs per agent, a "
       "second target (the share of planned work left unfinished), an automatic number check and two independent "
@@ -118,6 +132,18 @@ def manual(e):
     P("python -m study.rate collect <transcript folder>\npython -m study.rate score")
     P("Writes ratings.csv and ratings_summary.json: unsupported claims and close-on-date advice per arm, rater agreement, "
       "and agreement with the pilot's original hand coding.")
+    H("5b. The model-output ablation and the cost scenarios (added 15 Nov evening)")
+    P("python -m study.ablation build")
+    P("Writes 24 prompt files to study/ablation/prompts: the grounded agent's boards with the risk-model line changed "
+      "only. P shows the probability without the threshold or verdict; F mirrors the probability around the threshold "
+      "so the stated verdict is the opposite of the real one. Give each file to an agent as in step 3 (folder "
+      "/home/claude/agentbox/ablation in our run, description \"ablation <prompt>\"), then:")
+    P("python -m study.ablation collect <transcript folder>\npython -m study.ablation score\npython -m study.ablation intervals")
+    P("Writes study/ablation/outputs (answers and audit.json; 24 of 24 clean in our run), ablation_points.csv and "
+      "results/ablation_summary.json. Then:")
+    P("python -m study.scenarios")
+    P("Writes results/cost_scenarios.csv and .json: costs under three effectiveness scenarios (zero, default 0.5/0.25, "
+      "strong 0.8/0.5) with never-warn and always-warn, and the cost-ratio band where each arm beats both.")
     H("6. Check the numbers against the paper")
     P("python -m study.paper_numbers check")
     P(f"Checks all {len(e)} study numbers quoted in the text and every row of the results table against the result "
@@ -133,7 +159,12 @@ def manual(e):
             ("Numbers traced to the board", f"{e['numbers traced']} of {e['numbers']}"),
             ("Unsupported claims, both raters (L / G)", f"{e['unsupported L']} / {e['unsupported G']}"),
             ("Close-on-date advice, both raters (L / G)", f"{e['close L']} / {e['close G']}"),
-            ("Rater agreement (claims / close)", f"kappa {e['kappa claims']} / {e['kappa close']}")]
+            ("Rater agreement (claims / close)", f"kappa {e['kappa claims']} / {e['kappa close']}"),
+            ("Verdict hidden: agrees with the model's real call", f"{e['P agree']}, difference from G {e['P-G']} [{e['P-G lo']}, {e['P-G hi']}]".replace(chr(92), "")),
+            ("Verdict flipped: follows the wrong call", f"{e['F follow n']}; {e['F-L']} than the agent alone {e['F-L lo']} {e['F-L hi']}"),
+            ("Verdict flipped: ranking at planning", f"{e['F auc c0']}, {e['F auc gap']}"),
+            ("Cost band where M / G beat both trivial policies", f"{e['M band']} / {e['G band']}"),
+            ("G minus M, strong scenario", e['strong gap'])]
     t = d.add_table(rows=1, cols=2)
     t.style = "Light Grid Accent 1"
     t.rows[0].cells[0].text, t.rows[0].cells[1].text = "Number", "Expected"
@@ -152,7 +183,7 @@ def manual(e):
       "Jira (ccece-2027-paper/reviewer_checks/hidden_issues.csv). Quoted in Limits of the replay.")
     H("8. Build the PDF")
     P("Paste CCECE_2027_Grounding_AI_Scrum_Master.tex into the Overleaf project \"Grounding the AI Scrum Master - "
-      "CCECE 2027\", compile with IEEEtran, check it is at most 6 pages with no warnings, and download the PDF into this "
+      "CCECE 2027\", compile with IEEEtran, check it is at most 6 pages (5 on 15 Nov) with no warnings, and download the PDF into this "
       "folder.")
     H("9. Push")
     P("cd C:\\Project\\course-submission\\SwEng_202610\ngit add ccece-2027-ai-scrum-master\n"

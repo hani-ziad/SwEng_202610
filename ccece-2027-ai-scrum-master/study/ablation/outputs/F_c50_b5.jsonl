@@ -1,0 +1,20 @@
+{"id": "B096", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}
+{"id": "B057", "warn": false, "p_late": 0.20, "unfinished": 0.65, "message": ""}
+{"id": "B032", "warn": true, "p_late": 0.55, "unfinished": 0.80, "message": "We're halfway through and only 3 of 34 committed stories are done, with 14 more added. This team has closed 2 of its last 3 sprints late, so let's agree today what we drop or move rather than letting the close slip again."}
+{"id": "B008", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B016", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B006", "warn": false, "p_late": 0.20, "unfinished": 0.80, "message": ""}
+{"id": "B015", "warn": false, "p_late": 0.20, "unfinished": 0.00, "message": ""}
+{"id": "B104", "warn": true, "p_late": 0.50, "unfinished": 0.85, "message": "We're at day 7 of 14 and none of the 13 committed issues is resolved yet. Recent sprints have run up to 10 days over, so please flag what's blocked and what we should take out now so we can still close on time."}
+{"id": "B117", "warn": false, "p_late": 0.40, "unfinished": 0.80, "message": ""}
+{"id": "B003", "warn": false, "p_late": 0.15, "unfinished": 0.25, "message": ""}
+{"id": "B065", "warn": false, "p_late": 0.35, "unfinished": 0.70, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.20, "unfinished": 0.90, "message": ""}
+{"id": "B118", "warn": true, "p_late": 0.50, "unfinished": 0.50, "message": "We're halfway with 4 of 6 committed items still open, and 2 of our last 3 sprints closed late. Let's check the remaining bugs today and decide what can realistically finish by the end date."}
+{"id": "B010", "warn": false, "p_late": 0.25, "unfinished": 0.90, "message": ""}
+{"id": "B105", "warn": false, "p_late": 0.15, "unfinished": 1.00, "message": ""}
+{"id": "B043", "warn": false, "p_late": 0.20, "unfinished": 0.45, "message": ""}
+{"id": "B048", "warn": true, "p_late": 0.45, "unfinished": 0.85, "message": "We're halfway and none of the 25 committed items (204 SP) is done, while 51 issues have been added. Can we re-plan today, decide what really belongs in this sprint and move the rest out before the end date?"}
+{"id": "B089", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B034", "warn": false, "p_late": 0.15, "unfinished": 0.25, "message": ""}
+{"id": "B107", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}

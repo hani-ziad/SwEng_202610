@@ -1,0 +1,20 @@
+{"id": "B007", "warn": true, "p_late": 0.80, "unfinished": 0.90, "message": "We're halfway and none of the 16 committed issues is done, while 45 new issues have come in. Let's agree today what we drop or move so we can close on time."}
+{"id": "B023", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B099", "warn": false, "p_late": 0.12, "unfinished": 0.55, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.58, "unfinished": 0.00, "message": "The committed item is done, but 7 added issues are still open, most of them unestimated, and our recent sprints have closed late. Let's estimate them now or move them out so the sprint can close on day 7."}
+{"id": "B043", "warn": false, "p_late": 0.12, "unfinished": 0.45, "message": ""}
+{"id": "B005", "warn": false, "p_late": 0.40, "unfinished": 0.85, "message": ""}
+{"id": "B105", "warn": false, "p_late": 0.25, "unfinished": 1.00, "message": ""}
+{"id": "B004", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B059", "warn": false, "p_late": 0.30, "unfinished": 0.75, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B090", "warn": false, "p_late": 0.10, "unfinished": 0.35, "message": ""}
+{"id": "B017", "warn": true, "p_late": 0.62, "unfinished": 0.60, "message": "We're halfway with 11 of 44 committed issues done and 22 more added. At this pace we'll close late again, so let's trim the scope at today's stand-up."}
+{"id": "B031", "warn": false, "p_late": 0.20, "unfinished": 0.55, "message": ""}
+{"id": "B074", "warn": false, "p_late": 0.30, "unfinished": 0.85, "message": ""}
+{"id": "B072", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B091", "warn": false, "p_late": 0.30, "unfinished": 0.90, "message": ""}
+{"id": "B112", "warn": false, "p_late": 0.18, "unfinished": 0.85, "message": ""}
+{"id": "B012", "warn": false, "p_late": 0.12, "unfinished": 0.95, "message": ""}
+{"id": "B009", "warn": false, "p_late": 0.15, "unfinished": 0.60, "message": ""}
+{"id": "B068", "warn": true, "p_late": 0.75, "unfinished": 0.85, "message": "We're halfway with none of the committed stories done, and 30 issues have been added, including a 40-point epic. Let's decide today what comes out of this sprint so we can close on time."}

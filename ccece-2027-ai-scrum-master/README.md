@@ -12,6 +12,8 @@ Position paper for IEEE CCECE 2027, with a replay study of the sprint-replay tes
 | `study/score.py` | All replay numbers: per run, arm and checkpoint, run-to-run agreement, bootstrap intervals, cost curve. |
 | `study/factcheck.py` | Traces every number in every warning to its board. |
 | `study/rate.py` | Two independent rater agents judge every warning for unsupported claims and close-on-date advice. |
+| `study/ablation.py` | Added 15 Nov evening after the external review: the grounded agent rerun with the model's verdict hidden (P) or flipped (F), 24 more agent calls, with audit and bootstrap intervals. |
+| `study/scenarios.py` | Added 15 Nov evening: costs under three effectiveness scenarios (including zero) with never-warn and always-warn policies. |
 | `study/paper_numbers.py` | Prints the paper's table rows and checks all study numbers in the paper against the result files. |
 | `study/write_guides.py` | Rebuilds the two guide documents from the result files. |
 | `pilot/` | The first 40-sprint pilot (4 Nov 2026), kept as it was. |
@@ -30,9 +32,12 @@ Main results (agent numbers are means of three runs; intervals are 95% bootstrap
 | | Value |
 |---|---|
 | G agrees with M | 89% of decisions, kappa 0.75 |
+| Verdict hidden (P) | agrees with M's real call on 88%, same as G (difference -0.01 [-0.05, 0.02]) |
+| Verdict flipped (F) | follows the wrong call on 102 of 240 points, 0.20 [0.14, 0.27] more often than L would; AUC at planning 0.49, 0.14 [0.05, 0.22] below L |
 | G's departures from M | 24 to 26 of 240 per run: 16 extra warnings, all on sprints that closed on time; 8 to 10 silences, 5 right |
 | AUC, G minus M | -0.04 at both checkpoints (intervals about -0.10 to 0.02) |
 | Cost, G minus M | G costs more at every warning price: 0.010 F [0.002, 0.024] at kappa/F = 0.02 up to 0.031 F [0.006, 0.059] at 0.5 |
+| Cost scenarios | G costs more than M under the default and strong scenarios (strong: 0.015 to 0.036 F); with e = 0 the gap is within noise. By default M beats both never-warn and always-warn only for kappa/F 0.09 to 0.27, G only 0.11 to 0.22 |
 | L vs the past-lateness rule at planning | same call on 119, 120 and 116 of 120 sprints; L's within-project AUC 0.47, the rule's 0.46 |
 | M minus rule, AUC at planning | 0.14 [0.03, 0.24] |
 | Calibration (Brier) at planning | M 0.163, G 0.177, L 0.206; always quoting the late rate 0.199 |
@@ -43,9 +48,9 @@ Main results (agent numbers are means of three runs; intervals are 95% bootstrap
 | Unsupported claims (both raters) | L 16 of 168 (10%), G 13 of 227 (6%); rater kappa 0.49 |
 | "Close on the date, carry work over" (both raters) | L 49 of 168 (29%), G 34 of 227 (15%); rater kappa 0.66; on the 81 pilot warnings the raters matched the original hand coding at kappa 0.81 |
 
-What it means: the grounded agent repeats its model and its own calls are false alarms; the agent alone is the past-lateness rule; its messages are mostly faithful to the board, with overreach rather than invented numbers; and its close-on-date advice is what the Scrum Guide asks, so late closure measures timebox discipline more than delivery.
+What it means: the grounded agent follows its model's number, with or without the verdict, and cannot tell when the model is wrong; its own calls are false alarms; the agent alone is the past-lateness rule; its messages are mostly faithful to the board, with overreach rather than invented numbers; and its close-on-date advice is what the Scrum Guide asks, so late closure measures timebox discipline more than delivery.
 
-What the study cannot show: one model with one prompt; the raters are the same model family as the agents; the boards have no issue text (the TAWOS extract has no titles); e(c) is assumed; the unfinished share leaves out Confluence Cloud, where most issues have no resolution date.
+What the study cannot show: one model with one prompt (the ablation is a single run); costs are scenarios, not observed benefit; the raters are the same model family as the agents; the boards have no issue text (the TAWOS extract has no titles); e(c) is assumed; the unfinished share leaves out Confluence Cloud, where most issues have no resolution date.
 
 **Hidden issues (noted 14 Nov 2026).** Public Jira hides private and deleted issues. Across the eight TAWOS projects a median of 26% of issue numbers since the first sprint issue are missing (`../ccece-2027-paper/reviewer_checks/hidden_issues.csv`), so the boards all arms saw may be incomplete. The paper's Limits of the replay say so.
 
@@ -64,6 +69,11 @@ python -m study.factcheck                   # number check of every warning
 python -m study.rate build                  # 40 rater prompts; give each to a rater agent
 python -m study.rate collect <transcript folder>
 python -m study.rate score                  # rater results
+python -m study.ablation build               # 24 ablation prompts; give each to an agent
+python -m study.ablation collect <transcript folder>
+python -m study.ablation score
+python -m study.ablation intervals           # about 30 seconds
+python -m study.scenarios                    # cost scenarios and trivial policies
 python -m study.paper_numbers check         # every study number in the paper (must say 0 problems)
 python -m study.write_guides                # rebuild the two guide documents
 ```

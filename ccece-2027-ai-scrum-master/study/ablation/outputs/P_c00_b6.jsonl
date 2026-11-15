@@ -1,0 +1,20 @@
+{"id": "B039", "warn": false, "p_late": 0.22, "unfinished": 0.72, "message": ""}
+{"id": "B040", "warn": true, "p_late": 0.68, "unfinished": 0.78, "message": "Heads up: all of our last three sprints closed late and the model agrees this one is at risk. Let's agree today on a firm close date and who owns the bug."}
+{"id": "B042", "warn": false, "p_late": 0.40, "unfinished": 0.85, "message": ""}
+{"id": "B020", "warn": true, "p_late": 0.57, "unfinished": 0.70, "message": "Two of our last three sprints closed late, with 12 issues carried over last time. Let's plan to close this sprint on its end date even if the story slips."}
+{"id": "B021", "warn": false, "p_late": 0.27, "unfinished": 0.65, "message": ""}
+{"id": "B030", "warn": false, "p_late": 0.30, "unfinished": 0.72, "message": ""}
+{"id": "B028", "warn": false, "p_late": 0.24, "unfinished": 0.72, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}
+{"id": "B060", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B029", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}
+{"id": "B106", "warn": true, "p_late": 0.57, "unfinished": 0.80, "message": "We completed nothing in our last three sprints and the risk model flags this one as likely to close late. Let's cut scope to what we can finish and commit to closing on the planned date."}
+{"id": "B034", "warn": false, "p_late": 0.18, "unfinished": 0.80, "message": ""}
+{"id": "B006", "warn": false, "p_late": 0.20, "unfinished": 0.72, "message": ""}
+{"id": "B073", "warn": false, "p_late": 0.28, "unfinished": 0.65, "message": ""}
+{"id": "B107", "warn": false, "p_late": 0.12, "unfinished": 0.70, "message": ""}
+{"id": "B090", "warn": false, "p_late": 0.20, "unfinished": 0.75, "message": ""}
+{"id": "B041", "warn": false, "p_late": 0.20, "unfinished": 0.85, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.25, "unfinished": 0.67, "message": ""}
+{"id": "B100", "warn": true, "p_late": 0.50, "unfinished": 0.85, "message": "Two of our last three sprints closed late and we finished none of the committed issues. Let's pick a firm close date now and check the three bugs mid-sprint."}
+{"id": "B012", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}

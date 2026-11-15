@@ -1,0 +1,20 @@
+{"id": "B092", "warn": false, "p_late": 0.35, "unfinished": 0.80, "message": ""}
+{"id": "B075", "warn": true, "p_late": 0.48, "unfinished": 0.65, "message": "We're halfway and only 1 of 7 committed items is done, with 29 SP still open. Can we agree today what we can realistically finish and what should move out, so the sprint closes on time?"}
+{"id": "B067", "warn": false, "p_late": 0.30, "unfinished": 0.90, "message": ""}
+{"id": "B031", "warn": true, "p_late": 0.55, "unfinished": 0.50, "message": "Halfway through, 5 of 20 committed items are done and 11 more have been added. Let's re-check scope now so we don't repeat the late close from earlier sprints."}
+{"id": "B106", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.40, "unfinished": 0.80, "message": ""}
+{"id": "B082", "warn": false, "p_late": 0.15, "unfinished": 0.00, "message": ""}
+{"id": "B080", "warn": false, "p_late": 0.35, "unfinished": 0.85, "message": ""}
+{"id": "B078", "warn": true, "p_late": 0.55, "unfinished": 0.65, "message": "Only 2 of 12 committed items are done at the halfway point, and 11 new items have come in. Please flag what can't make it this sprint so we can close on the planned date."}
+{"id": "B022", "warn": true, "p_late": 0.65, "unfinished": 0.70, "message": "Our last three sprints all closed well past their end date, and this sprint's only committed bug is still open at the halfway point. Is anything blocking it, and can we plan to close on time this round?"}
+{"id": "B044", "warn": true, "p_late": 0.45, "unfinished": 0.80, "message": "Seven items (about 53 SP) have been added since the start and none are resolved yet, and neither is the committed item. Can we decide what actually belongs in this sprint before it slips?"}
+{"id": "B001", "warn": true, "p_late": 0.75, "unfinished": 0.75, "message": "Halfway through, 1 of 21 committed stories is done and 51 items have been added. Our last three sprints all closed late, so let's cut scope now and plan to close on the planned date."}
+{"id": "B045", "warn": true, "p_late": 0.55, "unfinished": 0.45, "message": "We're at 10 of 33 committed items done halfway, with several 8 to 16 SP tasks still open and 19 items added. Let's agree today which items move out so the sprint closes on time."}
+{"id": "B051", "warn": true, "p_late": 0.45, "unfinished": 0.33, "message": "With two days left, one committed bug and two newly added bugs are still open. Can we confirm they'll be done or moved out by the end date?"}
+{"id": "B041", "warn": false, "p_late": 0.30, "unfinished": 0.70, "message": ""}
+{"id": "B046", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B049", "warn": true, "p_late": 0.50, "unfinished": 0.60, "message": "Halfway through this 7-day sprint, three committed items (17 SP) are still open and a new bug has come in. Let's check today whether these can realistically land by the end date."}
+{"id": "B108", "warn": false, "p_late": 0.40, "unfinished": 0.65, "message": ""}
+{"id": "B014", "warn": true, "p_late": 0.45, "unfinished": 0.50, "message": "Four of 6 committed items are still open halfway, and recent sprints have closed a few days late. Can we confirm a plan to finish or move these out by the end date?"}
+{"id": "B093", "warn": false, "p_late": 0.35, "unfinished": 0.75, "message": ""}

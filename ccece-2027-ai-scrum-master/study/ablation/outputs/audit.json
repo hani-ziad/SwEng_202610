@@ -1,0 +1,386 @@
+[
+ {
+  "prompt": "P_c00_b1",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c00_b1.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c00_b2",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c00_b2.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c00_b3",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c00_b3.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c00_b4",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c00_b4.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c00_b5",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c00_b5.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c00_b6",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c00_b6.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c50_b1",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c50_b1.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c50_b2",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c50_b2.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c50_b3",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c50_b3.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c50_b4",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c50_b4.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c50_b5",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c50_b5.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "P_c50_b6",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/P_c50_b6.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c00_b1",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c00_b1.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c00_b2",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c00_b2.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c00_b3",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c00_b3.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c00_b4",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c00_b4.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c00_b5",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c00_b5.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c00_b6",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c00_b6.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c50_b1",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c50_b1.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c50_b2",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c50_b2.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c50_b3",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c50_b3.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c50_b4",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c50_b4.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c50_b5",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c50_b5.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ },
+ {
+  "prompt": "F_c50_b6",
+  "models": [
+   "claude-opus-5-5"
+  ],
+  "tool_calls": [
+   {
+    "tool": "Read",
+    "input": {
+     "file_path": "/home/claude/agentbox/ablation/F_c50_b6.txt"
+    }
+   }
+  ],
+  "only_read_own_prompt": true,
+  "answers_complete": true
+ }
+]

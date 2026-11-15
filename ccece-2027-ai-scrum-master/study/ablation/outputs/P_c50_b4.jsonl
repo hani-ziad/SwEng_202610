@@ -1,0 +1,20 @@
+{"id": "B051", "warn": false, "p_late": 0.18, "unfinished": 0.33, "message": ""}
+{"id": "B002", "warn": true, "p_late": 0.58, "unfinished": 0.76, "message": "We're halfway and only 1 of 17 committed stories is done, while 34 new items have come in. Can we agree today which added work goes back to the backlog so the committed stories can finish on time?"}
+{"id": "B106", "warn": true, "p_late": 0.5, "unfinished": 0.8, "message": "We're halfway and none of the committed bugs are resolved yet, and our recent sprints have slipped by several days. Let's check what's blocking these three bugs and decide now whether the sprint scope still holds."}
+{"id": "B050", "warn": false, "p_late": 0.2, "unfinished": 0.85, "message": ""}
+{"id": "B063", "warn": false, "p_late": 0.1, "unfinished": 0.3, "message": ""}
+{"id": "B045", "warn": false, "p_late": 0.2, "unfinished": 0.5, "message": ""}
+{"id": "B088", "warn": false, "p_late": 0.4, "unfinished": 0.75, "message": ""}
+{"id": "B117", "warn": false, "p_late": 0.35, "unfinished": 0.8, "message": ""}
+{"id": "B003", "warn": false, "p_late": 0.07, "unfinished": 0.25, "message": ""}
+{"id": "B075", "warn": false, "p_late": 0.3, "unfinished": 0.55, "message": ""}
+{"id": "B107", "warn": false, "p_late": 0.25, "unfinished": 0.75, "message": ""}
+{"id": "B079", "warn": false, "p_late": 0.2, "unfinished": 0.8, "message": ""}
+{"id": "B025", "warn": false, "p_late": 0.25, "unfinished": 0.9, "message": ""}
+{"id": "B087", "warn": false, "p_late": 0.15, "unfinished": 0.85, "message": ""}
+{"id": "B028", "warn": false, "p_late": 0.3, "unfinished": 0.8, "message": ""}
+{"id": "B085", "warn": true, "p_late": 0.72, "unfinished": 0.88, "message": "We're halfway with 1 of 21 committed items done and 13 more added, none of them finished. Let's cut scope today and focus on the few items we can actually close by the end date."}
+{"id": "B032", "warn": true, "p_late": 0.7, "unfinished": 0.8, "message": "Only 3 of 34 committed stories are done at the halfway point, and two of our last three sprints closed late. Can we agree today which stories to drop so we can close this sprint on time?"}
+{"id": "B018", "warn": false, "p_late": 0.42, "unfinished": 0.7, "message": ""}
+{"id": "B104", "warn": true, "p_late": 0.45, "unfinished": 0.85, "message": "We're halfway and none of the 13 committed items are resolved yet, and a recent sprint ran well past its end date. Let's review what's in progress today and agree what can realistically finish."}
+{"id": "B102", "warn": false, "p_late": 0.25, "unfinished": 0.8, "message": ""}

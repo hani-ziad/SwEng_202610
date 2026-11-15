@@ -1,0 +1,20 @@
+{"id": "B072", "warn": false, "p_late": 0.32, "unfinished": 0.8, "message": ""}
+{"id": "B102", "warn": false, "p_late": 0.25, "unfinished": 0.65, "message": ""}
+{"id": "B078", "warn": true, "p_late": 0.52, "unfinished": 0.8, "message": "Heads-up: 84 SP across 12 issues is far above what we've closed in recent sprints, and a third of those ran about 5 days late. Can we trim scope now so we can close on the planned date?"}
+{"id": "B020", "warn": false, "p_late": 0.42, "unfinished": 0.75, "message": ""}
+{"id": "B043", "warn": false, "p_late": 0.4, "unfinished": 0.75, "message": ""}
+{"id": "B032", "warn": true, "p_late": 0.5, "unfinished": 0.85, "message": "We've committed 34 issues, but recent sprints finished about 4 each and two of the last three closed late by around 5 days. Let's agree today on what we drop if we're behind at mid-sprint, so we still close on time."}
+{"id": "B018", "warn": false, "p_late": 0.3, "unfinished": 0.85, "message": ""}
+{"id": "B053", "warn": false, "p_late": 0.4, "unfinished": 0.75, "message": ""}
+{"id": "B089", "warn": false, "p_late": 0.3, "unfinished": 0.9, "message": ""}
+{"id": "B069", "warn": false, "p_late": 0.25, "unfinished": 0.7, "message": ""}
+{"id": "B039", "warn": false, "p_late": 0.2, "unfinished": 0.75, "message": ""}
+{"id": "B107", "warn": false, "p_late": 0.3, "unfinished": 0.65, "message": ""}
+{"id": "B033", "warn": false, "p_late": 0.3, "unfinished": 0.65, "message": ""}
+{"id": "B068", "warn": false, "p_late": 0.25, "unfinished": 0.65, "message": ""}
+{"id": "B049", "warn": true, "p_late": 0.55, "unfinished": 0.85, "message": "41 SP in a 7-day sprint, including a 24-point item, is a lot next to our recent completion rate. Could we split or defer the big improvement now so the sprint can close on its end date?"}
+{"id": "B103", "warn": true, "p_late": 0.6, "unfinished": 0.85, "message": "Two of our last three sprints closed about 5 days late and we finished very little of what we committed. Let's check daily whether these three bugs are moving and close the sprint on the planned date either way."}
+{"id": "B025", "warn": false, "p_late": 0.25, "unfinished": 0.35, "message": ""}
+{"id": "B104", "warn": true, "p_late": 0.5, "unfinished": 0.65, "message": "We've taken on 13 issues, four of them unestimated, and one recent sprint ran 10 days past its end. Let's estimate the open items and set a firm close date now so we don't slip again."}
+{"id": "B062", "warn": false, "p_late": 0.25, "unfinished": 0.85, "message": ""}
+{"id": "B026", "warn": false, "p_late": 0.4, "unfinished": 0.9, "message": ""}
