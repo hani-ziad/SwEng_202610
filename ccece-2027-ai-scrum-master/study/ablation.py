@@ -122,7 +122,9 @@ def kappa(a, b):
 
 
 def within_auc(g, col):
-    v = [roc_auc_score(x.late, x[col]) for _, x in g.groupby("project") if x.late.nunique() == 2]
+    # same rule as study/score.py: projects with at least two late and two on-time sprints (6 of 8)
+    v = [roc_auc_score(x.late, x[col]) for _, x in g.groupby("project")
+         if x.late.sum() >= 2 and (1 - x.late).sum() >= 2]
     return float(np.mean(v))
 
 

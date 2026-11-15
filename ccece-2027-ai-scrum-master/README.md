@@ -14,6 +14,10 @@ Position paper for IEEE CCECE 2027, with a replay study of the sprint-replay tes
 | `study/rate.py` | Two independent rater agents judge every warning for unsupported claims and close-on-date advice. |
 | `study/ablation.py` | Added 15 Nov evening after the external review: the grounded agent rerun with the model's verdict hidden (P) or flipped (F), 24 more agent calls, with audit and bootstrap intervals. |
 | `study/scenarios.py` | Added 15 Nov evening: costs under three effectiveness scenarios (including zero) with never-warn and always-warn policies. |
+| `study/review2.py` | Added 15 Nov late, after the second review: flipped-call split, the 13 pilot sprints and results without them, projects in the within-project AUC, eligibility check. No agent calls. |
+| `study/train_side.py` | Added 15 Nov late: model AUC and error from cross-validation on training sprints, and M's thresholds tuned to each cost scenario (`results/cost_optimal_M.csv`). |
+| `study/sensitivity.py` | Added 15 Nov late: 36 more agent calls. T (training-only performance lines), C (true number, opposite written verdict), F2 (second flipped run). |
+| `study/rate_masked.py` | Added 15 Nov late: all 395 warnings re-rated by two fresh raters with the model lines shown for both arms, so the arm cannot be guessed. |
 | `study/paper_numbers.py` | Prints the paper's table rows and checks all study numbers in the paper against the result files. |
 | `study/write_guides.py` | Rebuilds the two guide documents from the result files. |
 | `pilot/` | The first 40-sprint pilot (4 Nov 2026), kept as it was. |

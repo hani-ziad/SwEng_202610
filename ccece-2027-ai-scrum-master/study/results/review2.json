@@ -1,0 +1,108 @@
+{
+ "flip": {
+  "followed": 102,
+  "followed_and_flipped_call_matched_outcome": 28,
+  "followed_and_flipped_call_missed_outcome": 74,
+  "points_model_right": 181,
+  "points_model_wrong": 59,
+  "followed_when_model_right": 74,
+  "followed_when_model_wrong": 28
+ },
+ "overlap_with_pilot": 13,
+ "all": {
+  "sprints": 120,
+  "late": 33,
+  "A_G": 0.8944444444444445,
+  "kappa_G": 0.7495267762854496,
+  "auc_M_c0": 0.73075583420411,
+  "auc_G_c0": 0.6872750493440147,
+  "rule_agree_L_c0": [
+   119,
+   120,
+   116
+  ],
+  "G_extra_warnings_on_ontime": [
+   16,
+   16,
+   16
+  ],
+  "G_extra_warnings": [
+   16,
+   16,
+   16
+  ],
+  "auc_G_minus_M_c0": -0.04348078486009532
+ },
+ "no_pilot": {
+  "sprints": 107,
+  "late": 25,
+  "A_G": 0.8862928348909658,
+  "kappa_G": 0.7262479029307533,
+  "auc_M_c0": 0.7282926829268292,
+  "auc_G_c0": 0.682439024390244,
+  "rule_agree_L_c0": [
+   106,
+   107,
+   104
+  ],
+  "G_extra_warnings_on_ontime": [
+   16,
+   16,
+   16
+  ],
+  "G_extra_warnings": [
+   16,
+   16,
+   16
+  ],
+  "auc_G_minus_M_c0": -0.045853658536585296,
+  "P_agree_true_M": 0.8785046728971962,
+  "F_follow_share": 0.43457943925233644
+ },
+ "within_project_auc_projects": {
+  "c0": {
+   "contributing": 6,
+   "excluded": [
+    "Apache Mesos",
+    "Titanium Mobile Platform"
+   ],
+   "late_per_project": {
+    "Apache Mesos": 1,
+    "Appcelerator Studio": 4,
+    "Atlassian Confluence Cloud": 5,
+    "Atlassian Confluence Server": 2,
+    "Lsstcorp Data management": 10,
+    "Mule": 4,
+    "The Titanium SDK": 6,
+    "Titanium Mobile Platform": 1
+   }
+  },
+  "c50": {
+   "contributing": 6,
+   "excluded": [
+    "Apache Mesos",
+    "Titanium Mobile Platform"
+   ],
+   "late_per_project": {
+    "Apache Mesos": 1,
+    "Appcelerator Studio": 4,
+    "Atlassian Confluence Cloud": 5,
+    "Atlassian Confluence Server": 2,
+    "Lsstcorp Data management": 10,
+    "Mule": 4,
+    "The Titanium SDK": 6,
+    "Titanium Mobile Platform": 1
+   }
+  }
+ },
+ "eligibility": {
+  "test_sprints": 786,
+  "auc_M_c0_all_test": 0.7513587774766637,
+  "nonempty": 482,
+  "auc_M_c0_nonempty": 0.7340024017841826,
+  "pool": 472,
+  "auc_M_c0_pool": 0.7390709176013424,
+  "late_rate_nonempty": 0.27800829875518673,
+  "late_rate_pool": 0.2838983050847458
+ }
+}

@@ -96,15 +96,11 @@ def expected():
         "warnings": str(s["n_warnings_total"]),
         "L warnings": str(fa["L_warnings"]), "G warnings": str(fa["G_warnings"]),
         "numbers": f"{fa['numbers']:,}", "numbers traced": f"{fa['numbers'] - fa['unsupported_numbers']:,}",
-        "unsupported L": str(ra["study"]["L"]["unsupported_both"]),
-        "unsupported G": str(ra["study"]["G"]["unsupported_both"]),
-        "unsupported L pct": f"{round(100 * ra['study']['L']['unsupported_both'] / ra['study']['L']['n'])}\\%",
-        "unsupported G pct": f"{round(100 * ra['study']['G']['unsupported_both'] / ra['study']['G']['n'])}\\%",
-        "kappa claims": f"{ra['study']['kappa_claims']:.2f}", "kappa close": f"{ra['study']['kappa_close']:.2f}",
+        # first (unmasked) rating, quoted as counts only since 15 Nov 2026 (night)
+        "first rating both": f'gave {ra["study"]["L"]["unsupported_both"]} and {ra["study"]["G"]["unsupported_both"]} when both',
+        "first rating either": f'{ra["study"]["L"]["unsupported_either"]} and {ra["study"]["G"]["unsupported_either"]} for either',
         "kappa vs original": f"{ra['pilot']['kappa_both_vs_original']:.2f}",
-        "close L": str(ra["study"]["L"]["close_both"]), "close G": str(ra["study"]["G"]["close_both"]),
-        "close L pct": f"{round(100 * ra['study']['L']['close_both'] / ra['study']['L']['n'])}\\%",
-        "close G pct": f"{round(100 * ra['study']['G']['close_both'] / ra['study']['G']['n'])}\\%",
+        "first close": f'against {ra["study"]["L"]["close_both"]} and {ra["study"]["G"]["close_both"]} in the first',
     }
     # added 15 Nov 2026 (evening): model-output ablation and cost scenarios
     ab = json.loads((R / "ablation_summary.json").read_text())
@@ -127,6 +123,51 @@ def expected():
     })
     assert band["M"]["contiguous"] and band["G"]["contiguous"]
     assert rows[("zero", 0.5)]["G_minus_M_lo"] <= 0 <= rows[("zero", 0.5)]["G_minus_M_hi"]
+
+    # added 15 Nov 2026 (night): masked re-rating, sensitivity runs, cost-optimal M, pilot overlap, eligibility
+    mk = json.loads((R / "ratings_masked_summary.json").read_text())
+    se = json.loads((R / "sensitivity_summary.json").read_text())
+    rv = json.loads((R / "review2.json").read_text())
+    ts = json.loads((R / "train_side.json").read_text())
+    pc = lambda a, b: f"{round(100 * a / b)}\\%"
+    L, G = mk["L"], mk["G"]
+    sv = se["intervals"]
+    e.update({
+        "masked both L": f"{L['uns_both']} of $L$'s warnings ({pc(L['uns_both'], L['n'])})",
+        "masked both G": f"{G['uns_both']} of $G$'s ({pc(G['uns_both'], G['n'])})",
+        "masked either": f"{L['uns_either']} and {G['uns_either']} ({pc(L['uns_either'], L['n'])} and {pc(G['uns_either'], G['n'])})",
+        "masked kappa": f"(kappa {mk['kappa_claims']:.2f}, {mk['disagree_claims']} disagreements)",
+        "masked ci L": f"{round(100 * L['uns_both_ci'][0])}\\% to {round(100 * L['uns_both_ci'][1])}\\% for $L$",
+        "masked ci G": f"{round(100 * G['uns_both_ci'][0])}\\% to {round(100 * G['uns_both_ci'][1])}\\% for $G$",
+        "masked close kappa": f"masked kappa {mk['kappa_close']:.2f}, {mk['disagree_close']} disagreements",
+        "masked close L": f"{L['close_both']} of $L$'s warnings ({pc(L['close_both'], L['n'])})",
+        "masked close G": f"{G['close_both']} of $G$'s ({pc(G['close_both'], G['n'])})",
+        "abstract uns": f"{pc(G['uns_both'], G['n'])} to {pc(L['uns_both'], L['n'])} of warnings",
+        "abstract close": f"{pc(G['close_both'], G['n'])} to {pc(L['close_both'], L['n'])} advised",
+        "F2 follow": f"followed on {se['F2']['follow_n']} points ({sv['F2_follow_minus_L']['point']:.2f} above the agent alone, "
+                     f"{sv['F2_follow_minus_L']['lo']:.2f} to {sv['F2_follow_minus_L']['hi']:.2f})",
+        "F F2 same": f"same call on {round(100 * se['F_F2_same_call'])}\\% of points",
+        "flip split": f"followed it on {rv['flip']['followed_when_model_right']} of the {rv['flip']['points_model_right']} points "
+                      f"where it was wrong and {rv['flip']['followed_when_model_wrong']} of the {rv['flip']['points_model_wrong']}",
+        "C follow": f"followed the stated call on {se['C']['follow_n']} of 240 points and kept the real call on "
+                    f"{round(100 * se['C']['agree_true_M'])}\\%",
+        "T agree": f"({round(100 * se['T']['agree_true_M'])}\\%, difference {sv['T_minus_G_agree']['point']:.2f}, "
+                   f"{sv['T_minus_G_agree']['lo']:.2f} to {sv['T_minus_G_agree']['hi']:.2f})",
+        "no pilot": f"On the {rv['no_pilot']['sprints']} sprints that were not in the pilot ({rv['no_pilot']['late']} late), "
+                    f"agreement was again {round(100 * rv['no_pilot']['A_G'])}\\%, all "
+                    f"{rv['no_pilot']['G_extra_warnings_on_ontime'][0]} extra warnings",
+        "no pilot auc": f"gap at planning was {rv['no_pilot']['auc_G_minus_M_c0']:.2f}",
+        "overlap": {13: "Thirteen"}[rv["overlap_with_pilot"]] + " of its sprints",
+        "elig": f"its planning AUC is {rv['eligibility']['auc_M_c0_pool']:.2f} on the pool and "
+                f"{rv['eligibility']['auc_M_c0_nonempty']:.2f} on all {rv['eligibility']['nonempty']} held-out",
+        "projects auc-p": {6: "six"}[rv["within_project_auc_projects"]["c0"]["contributing"]] + " projects with at least two late",
+    })
+    assert set(rv["no_pilot"]["G_extra_warnings_on_ontime"]) == {16} and rv["no_pilot"]["G_extra_warnings"] == [16, 16, 16]
+    assert rv["within_project_auc_projects"]["c50"]["contributing"] == 6
+    # G never cheaper than the cost-optimal M; tied only at strong, 0.2
+    co = {(r["scenario"], r["kappa_over_F"]): r["G_minus_Mopt"] for r in ts["cost_optimal_M"]}
+    assert all(v > -0.0005 for v in co.values()) and [k for k, v in co.items() if v < 0.0005] == [("strong", 0.2)]
+    e["tied once"] = "tied once, at $\\kappa/F=0.2$ with stronger warnings"
     return e
 
 
