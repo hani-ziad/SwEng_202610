@@ -87,13 +87,12 @@ const title = [
     children: [new TextRun({ text: TITLE, font: FONT, size: 48 })] }),
 ];
 const authors = [
-  ["Hani AbuSharkh", "Higher Colleges of Technology", "Al Ain, UAE", "habusharkh@hct.ac.ae"],
-  ["Maryam Hanif", "United Arab Emirates University", "Al Ain, UAE", "700052696@uaeu.ac.ae"],
+  ["Hani AbuSharkh", "Higher Colleges of Technology and", "United Arab Emirates University, Al Ain, UAE", "habusharkh@hct.ac.ae"],
   ["Rafat Damseh", "United Arab Emirates University", "Al Ain, UAE", "rdamseh@uaeu.ac.ae"],
 ];
-const aw = Math.floor(FULL / 3);
+const aw = Math.floor(FULL / authors.length);
 title.push(new Table({
-  width: { size: aw * 3, type: WidthType.DXA }, columnWidths: [aw, aw, aw], layout: TableLayoutType.FIXED,
+  width: { size: aw * authors.length, type: WidthType.DXA }, columnWidths: authors.map(() => aw), layout: TableLayoutType.FIXED,
   rows: [new TableRow({ children: authors.map((a) => new TableCell({
     width: { size: aw, type: WidthType.DXA },
     borders: { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder },

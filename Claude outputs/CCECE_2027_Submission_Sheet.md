@@ -11,12 +11,11 @@ Portal: **Sparcly** (conferences.sparcly.ai). Confirm it's the *2027* instance b
 ## Title
 Predicting Sprint Outcomes from Reconstructed Jira State: Count Baselines and a Leakage Audit
 
-(New title from the 8 Nov rewrite. Maryam and Rafat must agree to it before submission. Old title: "Reconstructing Sprint-Start Jira State for Leakage-Aware Outcome Prediction".)
+(New title from the 8 Nov rewrite. Rafat must agree to it before submission. Old title: "Reconstructing Sprint-Start Jira State for Leakage-Aware Outcome Prediction".)
 
 ## Authors
-1. **Hani AbuSharkh**, Higher Colleges of Technology, Al Ain, UAE, habusharkh@hct.ac.ae (corresponding and presenting author)
-2. **Maryam Hanif**, United Arab Emirates University, Al Ain, UAE, 700052696@uaeu.ac.ae
-3. **Rafat Damseh**, United Arab Emirates University, Al Ain, UAE, rdamseh@uaeu.ac.ae
+1. **Hani AbuSharkh**, Higher Colleges of Technology and United Arab Emirates University, Al Ain, UAE, habusharkh@hct.ac.ae (corresponding and presenting author)
+2. **Rafat Damseh**, United Arab Emirates University, Al Ain, UAE, rdamseh@uaeu.ac.ae
 
 ## Keywords / Index Terms
 Scrum; sprint analytics; Jira; machine learning; data leakage; baselines
